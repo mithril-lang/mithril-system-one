@@ -52,3 +52,7 @@ Code report generation/compiler checks took 6.263 seconds; App took 12.609 secon
 This repository is a fresh independent Git root, not a fork of the private Fund repository. It contains only the reviewed coding core, adapters, tests and public examples. The hosted compiler, auth/metering, deployment configuration and Desktop UI remain in their owning products. This package calls the existing services; it is not a self-hosted replacement for them. Existing consumers retain their reviewed pins until a separate migration.
 
 Core/examples: Apache-2.0. Hermes adapter and bundled Todo/policy assets retain the notices described in [NOTICE](NOTICE). This repository is published on GitHub; no npm package release is implied.
+
+## Comparison benchmark
+
+[Protocol, limits and reproducible commands](docs/benchmark.md). `node bench/run.mjs` prints a no-network six-call pilot plan. Live execution is opt-in, has an explicit inference-call limit and never retries unknown outcomes. The ordinary full-source baseline and template control use the same actual compiler/task checks. Comparative live results and billed savings are not available yet. [Japanese launch draft](docs/marketing/launch-draft-ja.md) stays within the existing single-call evidence.
