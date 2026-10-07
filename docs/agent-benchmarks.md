@@ -2,6 +2,8 @@
 
 These are self-run measurements with published settings and retained failures. They are **not an Artificial Analysis score, endorsement, or leaderboard submission**.
 
+System One's product scope is a [Mithril-specific agent harness](mithril-harness.md). Its primary evaluations are supported Mithril contract completion and semantic-loop correctness. The general terminal-agent runs below are separate integration diagnostics, preserved with their failures.
+
 ## External benchmark target
 
 The current [Artificial Analysis coding-agent methodology](https://artificialanalysis.ai/methodology/coding-agents-benchmarking) evaluates DeepSWE v1.1 (113 tasks), Terminal-Bench 4.0 (66), and SWE-Atlas-QnA (124). It averages three attempts within each task, weights tasks equally within a benchmark, then weights the three benchmarks equally. Efficiency measurements accompany quality. We adopt explicit task/attempt identities, equal task weighting and missing-data accounting, without claiming compatibility with the full Index.

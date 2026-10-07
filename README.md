@@ -1,10 +1,12 @@
 # Mithril System One Coding
 
-日本語 | English
+**A Mithril-specific agent harness for short proposals, fast compilation and checked results.**
 
-System One Coding の生成・検証コア、Hermes adapter、TodoMVC と Mithril report の実例をまとめた公開リポジトリです。Desktop と Web では通常の Chat からツールを呼び出し、共通エディタでソースを確認します。
+System One Coding turns a bounded model proposal into an inspectable `application.mith`, then runs the actual Mithril compiler and checks its semantic receipts and task contract. The current supported tasks are static reports, dashboards and directories. Hermes, Desktop and Web can use this flow through their existing tools and shared editor.
 
-This is a standalone public extraction of the current bounded coding core and its examples. It is not the separate DeepSeek Harness fork in mithril-lang/mithril-harness.
+The product goal is to clear supported Mithril contracts quickly. Evaluation focuses on contract pass rate, time to a checked artifact, proposal size and correct refusal of invalid sources. The package's CLI returns artifacts; saving and publishing use the owning product's workflow.
+
+This repository publishes the coding core, Hermes adapter and examples. See the [Mithril harness scope and acceptance criteria](docs/mithril-harness.md).
 
 ## Included
 
@@ -45,7 +47,7 @@ Open http://localhost:8000/. Tasks stay in browser localStorage.
 
 Mithril generation currently supports static dashboard/report/directory documents. Todo generates only toggle and unfinished-count logic; its other UI/state behavior is maintained JavaScript. Functional coverage is not full-app model-generation coverage.
 
-Code report generation/compiler checks took 6.263 seconds; App took 12.609 seconds. These are individual recorded calls, exclude Chat orchestration and publication, and do not establish a latency distribution or comparative advantage. API cost is unknown. [Coverage](docs/coverage.md), [architecture and integration](docs/integration.md), [provenance](provenance.json), [Todo](examples/todo/README.md), [actual report](examples/report/README.md).
+The latest repeated run cleared all eight executed System One Mithril contracts, with a median of **5.362 seconds**; one scheduled attempt remains unexecuted because the comparison run stopped on a baseline timeout. The compiler semantic loop passed **18/18 checks**, including invalid-source refusal; positive cases had a **0.189-second** median. These are bounded measurements, exclude Chat orchestration and publication, and leave billed cost unknown. [Full results](docs/agent-benchmarks.md), [coverage](docs/coverage.md), [architecture and integration](docs/integration.md), [provenance](provenance.json), [Todo](examples/todo/README.md), [actual report](examples/report/README.md).
 
 ## Publication boundary
 

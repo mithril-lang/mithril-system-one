@@ -1,5 +1,13 @@
 # 発信案 — 公開・投稿前の下書き
 
+## Mithril 特化の位置づけ
+
+System One Coding は Mithril 特化の agent harness。短い提案から `.mith` を組み立て、意味検証・コンパイル・内容チェックを通った成果物を返します。対象は静的レポート・ダッシュボード・ディレクトリです。
+
+反復試験で実行した8件はすべて合格し、生成からチェック完了までの中央値は5.362秒。予定1件は未実行です。費用と公開までの時間は未計測です。[対象範囲と合格条件](../mithril-harness.md)、[失敗・未実行を含む実測](../agent-benchmarks.md)。
+
+English: **A Mithril-specific agent harness: short proposals, fast compilation, checked artifacts.** Eight executed static-Mithril attempts passed, with a 5.362-second median; one scheduled attempt remains missing. Cost and publication time are unmeasured.
+
 ## 2026-10-07 の比較試験
 
 [3課題の試験結果と日英の発信案](../pilot-20261007.md)を追加。System One と同じQwenの全文生成が各3/3合格、中央値は5.76秒と15.83秒。既知フィールドのテンプレートは0.131秒。費用は未計測。以下の単発例とは別の記録であり、一般性能の倍率や料金削減率として使わない。
