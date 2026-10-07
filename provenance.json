@@ -273,7 +273,7 @@
       "upstream": "com-junkawasaki/mithril-todo",
       "revision": "1567d383776876a745db618b164701e875a74778",
       "source_sha256": "a9292c1e8a39400c36361eede6db6f702363f1cecb3d569c72b8647860721557",
-      "published_sha256": "a9292c1e8a39400c36361eede6db6f702363f1cecb3d569c72b8647860721557"
+      "published_sha256": "218be215e99fd93a35a3e3260bbc8f75ed6e9c2b11c4755a28ef2e88612d8be7"
     },
     {
       "path": "examples/todo/todomvc.css",
@@ -417,8 +417,9 @@
     }
   ],
   "test_adaptations": [
-    "Module import paths point to lib/. Private API system-policy regression is excluded: it depends on the private API service, not this package. Browser and core Todo tests are unchanged.",
+    "Module import paths point to lib/. Private API system-policy regression is excluded: it depends on the private API service, not this package. Todo core tests are unchanged; browser-test adaptations are listed below.",
     "Todo Playwright worker count is fixed at 3 to bound CI memory usage.",
-    "Only surplus final blank lines in Apache notice files are normalized; license terms are retained."
+    "Only surplus final blank lines in Apache notice files are normalized; license terms are retained.",
+    "Todo single-label expectations use list assertions to wait for asynchronous hashchange rendering without a strict-locator race."
   ]
 }

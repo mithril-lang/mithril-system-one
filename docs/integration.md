@@ -17,4 +17,4 @@ The Todo copy is pinned to 1567d383776876a745db618b164701e875a74778 of https://g
 
 ## Reproducibility
 
-provenance.json records each copied file's origin revision and source SHA256. Two test files have module-path adaptations. The private API-owned system-policy test is excluded instead of replaced with a fake implementation. The compiler fixture is an actual prior bounded compiler response used offline, not a new live inference run. Local CLI adapter tests do not qualify native Hermes profile installation.
+provenance.json records each copied file's origin revision and source SHA256. Two core test files have module-path adaptations; Todo uses 3 workers and list assertions that wait for hashchange rendering. The private API-owned system-policy test is excluded instead of replaced with a fake implementation. The compiler fixture is an actual prior bounded compiler response used offline, not a new live inference run. Local CLI adapter tests do not qualify native Hermes profile installation.
