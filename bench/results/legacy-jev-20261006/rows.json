@@ -1,0 +1,1613 @@
+{
+  "schema": "system-one-coding-comparison/v1",
+  "date": "2026-10-06T07:33:38.924Z",
+  "rounds": 5,
+  "scope": "Two CLJK bodies, both toggle states, 511 completion vectors, preserve unrelated marker; generation through admission and verifier process. No UI/build/deploy time.",
+  "max_attempts": 4,
+  "rows": [
+    {
+      "round": 1,
+      "method": "system-one-jev",
+      "verified": true,
+      "calls": 8,
+      "metrics": {
+        "max-concurrent-checks": 2,
+        "jev-controller-used": true,
+        "provider-failures": 0,
+        "attempts": 1,
+        "output-tokens": {
+          "total": 406,
+          "known-subtotal": 406,
+          "measured-calls": 8,
+          "calls": 8
+        },
+        "input-tokens": {
+          "total": 9554,
+          "known-subtotal": 9554,
+          "measured-calls": 8,
+          "calls": 8
+        },
+        "cancelled": false,
+        "success": true,
+        "status": "done",
+        "verification-passed": true,
+        "timing": {
+          "cli-wall-seconds": 2.328955,
+          "boundary": "Shared runner setup through receipt creation; excludes caller startup, task parsing and initial model download.",
+          "generation-seconds": {
+            "total": 1.6292111250000003,
+            "known-subtotal": 1.6292111250000003,
+            "measured-calls": 8,
+            "calls": 8
+          },
+          "load-seconds": {
+            "total": null,
+            "known-subtotal": null,
+            "measured-calls": 0,
+            "calls": 8
+          },
+          "verification-wall-seconds": 0.19757183299999997
+        },
+        "receipt-sha256": "3d8d0195e7634697471584a1b97178c9ee29bf83d551b2a8800854ab90f12947",
+        "decision-count": 8,
+        "changed-files": [
+          "src/todo/interaction.cljk",
+          "src/todo/summary.cljk"
+        ],
+        "model-kind": "jev-block",
+        "error": null,
+        "cost": {
+          "api-currency": "USD",
+          "api-amount": 0.000401268,
+          "api-amount-per-success": 0.000401268,
+          "electricity": null,
+          "device-amortization": null,
+          "human-development": null,
+          "total-cost": null,
+          "training": null
+        },
+        "receipt-id": "run-lX0xY3"
+      },
+      "decisions": [
+        {
+          "answer": {
+            "choice": "if-:bool",
+            "confidence": 0.91,
+            "probabilities": {
+              "argument": 0.06,
+              "literal-true": 0,
+              "stop": 0.01,
+              "if-:bool": 0.93,
+              "literal-false": 0
+            }
+          },
+          "wall-ms": 262.78058399999986
+        },
+        {
+          "answer": {
+            "choice": "argument",
+            "confidence": 0.68,
+            "probabilities": {
+              "literal-false": 0.17,
+              "stop": 0.01,
+              "literal-true": 0.03,
+              "argument": 0.75,
+              "if-:bool": 0.04
+            }
+          },
+          "wall-ms": 200.1275830000002
+        },
+        {
+          "answer": {
+            "choice": "literal-false",
+            "confidence": 0.81,
+            "probabilities": {
+              "argument": 0.1,
+              "if-:bool": 0.01,
+              "stop": 0.01,
+              "literal-false": 0.84,
+              "literal-true": 0.04
+            }
+          },
+          "wall-ms": 196.66866600000003
+        },
+        {
+          "answer": {
+            "choice": "literal-true",
+            "confidence": 0.9,
+            "probabilities": {
+              "argument": 0.05,
+              "stop": 0.01,
+              "if-:bool": 0,
+              "literal-false": 0.01,
+              "literal-true": 0.93
+            }
+          },
+          "wall-ms": 247.5737499999998
+        },
+        {
+          "answer": {
+            "choice": "count-vector-bool",
+            "confidence": 0.65,
+            "probabilities": {
+              "count-vector-bool": 0.83,
+              "stop": 0.17
+            }
+          },
+          "wall-ms": 183.14800000000014
+        },
+        {
+          "answer": {
+            "choice": "filter-vector-bool",
+            "confidence": 0.93,
+            "probabilities": {
+              "filter-vector-bool": 0.96,
+              "argument": 0.04,
+              "stop": 0
+            }
+          },
+          "wall-ms": 176.00362500000006
+        },
+        {
+          "answer": {
+            "choice": "reference-toggle",
+            "confidence": 0.97,
+            "probabilities": {
+              "reference-toggle": 0.99,
+              "stop": 0.01
+            }
+          },
+          "wall-ms": 185.86004200000025
+        },
+        {
+          "answer": {
+            "choice": "argument",
+            "confidence": 0.99,
+            "probabilities": {
+              "filter-vector-bool": 0,
+              "argument": 0.99,
+              "stop": 0.01
+            }
+          },
+          "wall-ms": 177.04887499999995
+        }
+      ],
+      "seconds": 2.867584875,
+      "input_tokens": 9554,
+      "output_tokens": 406,
+      "api_cost_usd": 0.000401268
+    },
+    {
+      "round": 1,
+      "method": "qwen/qwen3-coder-next",
+      "verified": true,
+      "input_tokens": 314,
+      "output_tokens": 48,
+      "api_cost_usd": 0.00010592,
+      "calls": 2,
+      "responses": [
+        {
+          "id": "gen-1791271979-t0noZltbML0a0lYYhCBh",
+          "usage": {
+            "prompt_tokens": 128,
+            "completion_tokens": 28,
+            "total_tokens": 156,
+            "cost": 0.0000676,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0000676,
+              "upstream_inference_prompt_cost": 0.0000256,
+              "upstream_inference_completions_cost": 0.000042
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "content": "{\"toggle\":\"(if done false true)\",\"remaining\":\"(count (filter (fn [s] (toggle s)) states))\"}"
+        },
+        {
+          "id": "gen-1791271980-xdcnnTT7koaKwh3mlPxU",
+          "usage": {
+            "prompt_tokens": 186,
+            "completion_tokens": 20,
+            "total_tokens": 206,
+            "cost": 0.00003832,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00003832,
+              "upstream_inference_prompt_cost": 0.00002232,
+              "upstream_inference_completions_cost": 0.000016
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "content": "{\"toggle\":\"(if done false true)\",\"remaining\":\"(count (filter toggle states))\"}"
+        }
+      ],
+      "seconds": 3.3278512910000004
+    },
+    {
+      "round": 1,
+      "method": "google/gemini-2.5-flash",
+      "verified": true,
+      "input_tokens": 122,
+      "output_tokens": 27,
+      "api_cost_usd": 0.0001041,
+      "calls": 1,
+      "responses": [
+        {
+          "id": "gen-1791271983-x7cNcKwMbfy7GyuBSjTa",
+          "usage": {
+            "prompt_tokens": 122,
+            "completion_tokens": 27,
+            "total_tokens": 149,
+            "cost": 0.0001041,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0001041,
+              "upstream_inference_prompt_cost": 0.0000366,
+              "upstream_inference_completions_cost": 0.0000675
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "content": "{\n  \"toggle\": \"(if done false true)\",\n  \"remaining\": \"(count (filter toggle states))\"\n}"
+        }
+      ],
+      "seconds": 1.584248708
+    },
+    {
+      "round": 1,
+      "method": "known-template",
+      "verified": true,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "api_cost_usd": 0,
+      "calls": 0,
+      "seconds": 0.36691345900000033
+    },
+    {
+      "round": 2,
+      "method": "qwen/qwen3-coder-next",
+      "verified": true,
+      "input_tokens": 314,
+      "output_tokens": 48,
+      "api_cost_usd": 0.00008924,
+      "calls": 2,
+      "responses": [
+        {
+          "id": "gen-1791271985-uodI1fHn35ULKziSYsWK",
+          "usage": {
+            "prompt_tokens": 128,
+            "completion_tokens": 28,
+            "total_tokens": 156,
+            "cost": 0.00003776,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00003776,
+              "upstream_inference_prompt_cost": 0.00001536,
+              "upstream_inference_completions_cost": 0.0000224
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "content": "{\"toggle\":\"(if done false true)\",\"remaining\":\"(count (filter (fn [s] (toggle s)) states))\"}"
+        },
+        {
+          "id": "gen-1791271986-pk1Al673LRAanVEPbY1J",
+          "usage": {
+            "prompt_tokens": 186,
+            "completion_tokens": 20,
+            "total_tokens": 206,
+            "cost": 0.00005148,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00005148,
+              "upstream_inference_prompt_cost": 0.00003348,
+              "upstream_inference_completions_cost": 0.000018
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "content": "{\"toggle\":\"(if done false true)\",\"remaining\":\"(count (filter toggle states))\"}"
+        }
+      ],
+      "seconds": 2.195163291000001
+    },
+    {
+      "round": 2,
+      "method": "google/gemini-2.5-flash",
+      "verified": true,
+      "input_tokens": 300,
+      "output_tokens": 62,
+      "api_cost_usd": 0.000245,
+      "calls": 2,
+      "responses": [
+        {
+          "id": "gen-1791271987-ZCEMCjltuY9NvELI1Ioz",
+          "usage": {
+            "prompt_tokens": 122,
+            "completion_tokens": 35,
+            "total_tokens": 157,
+            "cost": 0.0001241,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0001241,
+              "upstream_inference_prompt_cost": 0.0000366,
+              "upstream_inference_completions_cost": 0.0000875
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "content": "{\n  \"toggle\": \"(if done false true)\",\n  \"remaining\": \"(count (filter (fn [x] (toggle x)) states))\"\n}"
+        },
+        {
+          "id": "gen-1791271988-1ND9LiczjTv8pt9E7Zyl",
+          "usage": {
+            "prompt_tokens": 178,
+            "completion_tokens": 27,
+            "total_tokens": 205,
+            "cost": 0.0001209,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0001209,
+              "upstream_inference_prompt_cost": 0.0000534,
+              "upstream_inference_completions_cost": 0.0000675
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "content": "{\n  \"toggle\": \"(if done false true)\",\n  \"remaining\": \"(count (filter toggle states))\"\n}"
+        }
+      ],
+      "seconds": 2.778137417
+    },
+    {
+      "round": 2,
+      "method": "system-one-jev",
+      "verified": true,
+      "calls": 8,
+      "metrics": {
+        "max-concurrent-checks": 2,
+        "jev-controller-used": true,
+        "provider-failures": 0,
+        "attempts": 1,
+        "output-tokens": {
+          "total": 406,
+          "known-subtotal": 406,
+          "measured-calls": 8,
+          "calls": 8
+        },
+        "input-tokens": {
+          "total": 9554,
+          "known-subtotal": 9554,
+          "measured-calls": 8,
+          "calls": 8
+        },
+        "cancelled": false,
+        "success": true,
+        "status": "done",
+        "verification-passed": true,
+        "timing": {
+          "cli-wall-seconds": 2.4011715,
+          "boundary": "Shared runner setup through receipt creation; excludes caller startup, task parsing and initial model download.",
+          "generation-seconds": {
+            "total": 1.8531232899999994,
+            "known-subtotal": 1.8531232899999994,
+            "measured-calls": 8,
+            "calls": 8
+          },
+          "load-seconds": {
+            "total": null,
+            "known-subtotal": null,
+            "measured-calls": 0,
+            "calls": 8
+          },
+          "verification-wall-seconds": 0.19536995800000023
+        },
+        "receipt-sha256": "a9b2e7a4da22e13d8aa035d27255295f30a4cf5f57d6d8a6e6bfc825b4243dee",
+        "decision-count": 8,
+        "changed-files": [
+          "src/todo/interaction.cljk",
+          "src/todo/summary.cljk"
+        ],
+        "model-kind": "jev-block",
+        "error": null,
+        "cost": {
+          "api-currency": "USD",
+          "api-amount": 0.000401268,
+          "api-amount-per-success": 0.000401268,
+          "electricity": null,
+          "device-amortization": null,
+          "human-development": null,
+          "total-cost": null,
+          "training": null
+        },
+        "receipt-id": "run-UAPlRn"
+      },
+      "decisions": [
+        {
+          "answer": {
+            "choice": "if-:bool",
+            "confidence": 0.92,
+            "probabilities": {
+              "stop": 0.01,
+              "literal-false": 0,
+              "literal-true": 0,
+              "if-:bool": 0.94,
+              "argument": 0.05
+            }
+          },
+          "wall-ms": 235.72508300000004
+        },
+        {
+          "answer": {
+            "choice": "argument",
+            "confidence": 0.83,
+            "probabilities": {
+              "if-:bool": 0.04,
+              "stop": 0.01,
+              "argument": 0.87,
+              "literal-true": 0.02,
+              "literal-false": 0.06
+            }
+          },
+          "wall-ms": 355.297875
+        },
+        {
+          "answer": {
+            "choice": "literal-false",
+            "confidence": 0.84,
+            "probabilities": {
+              "argument": 0.07,
+              "stop": 0.01,
+              "if-:bool": 0,
+              "literal-true": 0.04,
+              "literal-false": 0.88
+            }
+          },
+          "wall-ms": 207.57025
+        },
+        {
+          "answer": {
+            "choice": "literal-true",
+            "confidence": 0.89,
+            "probabilities": {
+              "argument": 0.05,
+              "if-:bool": 0,
+              "literal-false": 0.02,
+              "literal-true": 0.92,
+              "stop": 0.01
+            }
+          },
+          "wall-ms": 261.4302499999999
+        },
+        {
+          "answer": {
+            "choice": "count-vector-bool",
+            "confidence": 0.69,
+            "probabilities": {
+              "count-vector-bool": 0.85,
+              "stop": 0.15
+            }
+          },
+          "wall-ms": 167.942583
+        },
+        {
+          "answer": {
+            "choice": "filter-vector-bool",
+            "confidence": 0.92,
+            "probabilities": {
+              "filter-vector-bool": 0.95,
+              "argument": 0.05,
+              "stop": 0
+            }
+          },
+          "wall-ms": 263.2981659999998
+        },
+        {
+          "answer": {
+            "choice": "reference-toggle",
+            "confidence": 0.98,
+            "probabilities": {
+              "stop": 0.01,
+              "reference-toggle": 0.99
+            }
+          },
+          "wall-ms": 179.38070800000014
+        },
+        {
+          "answer": {
+            "choice": "argument",
+            "confidence": 0.98,
+            "probabilities": {
+              "argument": 0.99,
+              "stop": 0.01,
+              "filter-vector-bool": 0
+            }
+          },
+          "wall-ms": 182.4783749999997
+        }
+      ],
+      "seconds": 2.878418167,
+      "input_tokens": 9554,
+      "output_tokens": 406,
+      "api_cost_usd": 0.000401268
+    },
+    {
+      "round": 2,
+      "method": "known-template",
+      "verified": true,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "api_cost_usd": 0,
+      "calls": 0,
+      "seconds": 0.3736794580000005
+    },
+    {
+      "round": 3,
+      "method": "google/gemini-2.5-flash",
+      "verified": true,
+      "input_tokens": 297,
+      "output_tokens": 57,
+      "api_cost_usd": 0.0002316,
+      "calls": 2,
+      "responses": [
+        {
+          "id": "gen-1791271993-aoGFtBq0ArBsvox8JpwX",
+          "usage": {
+            "prompt_tokens": 122,
+            "completion_tokens": 32,
+            "total_tokens": 154,
+            "cost": 0.0001166,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0001166,
+              "upstream_inference_prompt_cost": 0.0000366,
+              "upstream_inference_completions_cost": 0.00008
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "content": "{\n  \"toggle\": \"(if done false true)\",\n  \"remaining\": \"(count (filter (if toggle false true) states))\"\n}"
+        },
+        {
+          "id": "gen-1791271994-8KrgN4itlVG7IwbT7ZF3",
+          "usage": {
+            "prompt_tokens": 175,
+            "completion_tokens": 25,
+            "total_tokens": 200,
+            "cost": 0.000115,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.000115,
+              "upstream_inference_prompt_cost": 0.0000525,
+              "upstream_inference_completions_cost": 0.0000625
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "content": "{\n  \"toggle\": \"(not done)\",\n  \"remaining\": \"(count (filter toggle states))\"\n}"
+        }
+      ],
+      "seconds": 2.6243323750000016
+    },
+    {
+      "round": 3,
+      "method": "system-one-jev",
+      "verified": true,
+      "calls": 9,
+      "metrics": {
+        "max-concurrent-checks": 2,
+        "jev-controller-used": true,
+        "provider-failures": 0,
+        "attempts": 1,
+        "output-tokens": {
+          "total": 469,
+          "known-subtotal": 469,
+          "measured-calls": 9,
+          "calls": 9
+        },
+        "input-tokens": {
+          "total": 10596,
+          "known-subtotal": 10596,
+          "measured-calls": 9,
+          "calls": 9
+        },
+        "cancelled": false,
+        "success": true,
+        "status": "done",
+        "verification-passed": true,
+        "timing": {
+          "cli-wall-seconds": 2.515462625,
+          "boundary": "Shared runner setup through receipt creation; excludes caller startup, task parsing and initial model download.",
+          "generation-seconds": {
+            "total": 2.0204164979999995,
+            "known-subtotal": 2.0204164979999995,
+            "measured-calls": 9,
+            "calls": 9
+          },
+          "load-seconds": {
+            "total": null,
+            "known-subtotal": null,
+            "measured-calls": 0,
+            "calls": 9
+          },
+          "verification-wall-seconds": 0.1990364169999998
+        },
+        "receipt-sha256": "c66fa6d6a42179fbcd3b22be1d1ef255c9eba0ae92c83fc20708ebdcb63e3ae5",
+        "decision-count": 9,
+        "changed-files": [
+          "src/todo/interaction.cljk",
+          "src/todo/summary.cljk"
+        ],
+        "model-kind": "jev-block",
+        "error": null,
+        "cost": {
+          "api-currency": "USD",
+          "api-amount": 0.00044503200000000004,
+          "api-amount-per-success": 0.00044503200000000004,
+          "electricity": null,
+          "device-amortization": null,
+          "human-development": null,
+          "total-cost": null,
+          "training": null
+        },
+        "receipt-id": "run-FuWtZc"
+      },
+      "decisions": [
+        {
+          "answer": {
+            "choice": "if-:bool",
+            "confidence": 0.92,
+            "probabilities": {
+              "stop": 0.01,
+              "literal-false": 0,
+              "if-:bool": 0.93,
+              "argument": 0.05,
+              "literal-true": 0
+            }
+          },
+          "wall-ms": 338.5174579999999
+        },
+        {
+          "answer": {
+            "choice": "if-:bool",
+            "confidence": 0.89,
+            "probabilities": {
+              "argument": 0.07,
+              "literal-true": 0,
+              "if-:bool": 0.91,
+              "stop": 0.01,
+              "literal-false": 0.01
+            }
+          },
+          "wall-ms": 189.14045800000008
+        },
+        {
+          "answer": {
+            "choice": "argument",
+            "confidence": 0.82,
+            "probabilities": {
+              "literal-false": 0.06,
+              "stop": 0.01,
+              "literal-true": 0.03,
+              "if-:bool": 0.05,
+              "argument": 0.85
+            }
+          },
+          "wall-ms": 224.09783300000004
+        },
+        {
+          "answer": {
+            "choice": "literal-false",
+            "confidence": 0.83,
+            "probabilities": {
+              "argument": 0.07,
+              "literal-true": 0.05,
+              "stop": 0.01,
+              "if-:bool": 0,
+              "literal-false": 0.87
+            }
+          },
+          "wall-ms": 222.24091599999997
+        },
+        {
+          "answer": {
+            "choice": "literal-true",
+            "confidence": 0.92,
+            "probabilities": {
+              "argument": 0.04,
+              "literal-true": 0.94,
+              "literal-false": 0.01,
+              "if-:bool": 0,
+              "stop": 0.01
+            }
+          },
+          "wall-ms": 223.80483299999992
+        },
+        {
+          "answer": {
+            "choice": "count-vector-bool",
+            "confidence": 0.72,
+            "probabilities": {
+              "count-vector-bool": 0.86,
+              "stop": 0.14
+            }
+          },
+          "wall-ms": 185.49479199999996
+        },
+        {
+          "answer": {
+            "choice": "filter-vector-bool",
+            "confidence": 0.94,
+            "probabilities": {
+              "filter-vector-bool": 0.96,
+              "argument": 0.04,
+              "stop": 0
+            }
+          },
+          "wall-ms": 221.1909999999998
+        },
+        {
+          "answer": {
+            "choice": "reference-toggle",
+            "confidence": 0.97,
+            "probabilities": {
+              "stop": 0.01,
+              "reference-toggle": 0.99
+            }
+          },
+          "wall-ms": 214.96645799999988
+        },
+        {
+          "answer": {
+            "choice": "argument",
+            "confidence": 0.99,
+            "probabilities": {
+              "argument": 1,
+              "stop": 0,
+              "filter-vector-bool": 0
+            }
+          },
+          "wall-ms": 200.96275000000014
+        }
+      ],
+      "seconds": 2.9955196249999974,
+      "input_tokens": 10596,
+      "output_tokens": 469,
+      "api_cost_usd": 0.00044503200000000004
+    },
+    {
+      "round": 3,
+      "method": "qwen/qwen3-coder-next",
+      "verified": true,
+      "input_tokens": 314,
+      "output_tokens": 48,
+      "api_cost_usd": 0.00008656,
+      "calls": 2,
+      "responses": [
+        {
+          "id": "gen-1791271998-JI4aMgj2s2Ow3KcTo5Bc",
+          "usage": {
+            "prompt_tokens": 128,
+            "completion_tokens": 28,
+            "total_tokens": 156,
+            "cost": 0.00004824,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00004824,
+              "upstream_inference_prompt_cost": 0.00002304,
+              "upstream_inference_completions_cost": 0.0000252
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "content": "{\"toggle\":\"(if done false true)\",\"remaining\":\"(count (filter (fn [s] (toggle s)) states))\"}"
+        },
+        {
+          "id": "gen-1791271999-CR8A5ljcKfak7dwIvRpv",
+          "usage": {
+            "prompt_tokens": 186,
+            "completion_tokens": 20,
+            "total_tokens": 206,
+            "cost": 0.00003832,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00003832,
+              "upstream_inference_prompt_cost": 0.00002232,
+              "upstream_inference_completions_cost": 0.000016
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "content": "{\"toggle\":\"(if done false true)\",\"remaining\":\"(count (filter toggle states))\"}"
+        }
+      ],
+      "seconds": 1.9926838750000024
+    },
+    {
+      "round": 3,
+      "method": "known-template",
+      "verified": true,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "api_cost_usd": 0,
+      "calls": 0,
+      "seconds": 0.3608743749999994
+    },
+    {
+      "round": 4,
+      "method": "system-one-jev",
+      "verified": true,
+      "calls": 8,
+      "metrics": {
+        "max-concurrent-checks": 2,
+        "jev-controller-used": true,
+        "provider-failures": 0,
+        "attempts": 1,
+        "output-tokens": {
+          "total": 406,
+          "known-subtotal": 406,
+          "measured-calls": 8,
+          "calls": 8
+        },
+        "input-tokens": {
+          "total": 9554,
+          "known-subtotal": 9554,
+          "measured-calls": 8,
+          "calls": 8
+        },
+        "cancelled": false,
+        "success": true,
+        "status": "done",
+        "verification-passed": true,
+        "timing": {
+          "cli-wall-seconds": 2.4789923750000002,
+          "boundary": "Shared runner setup through receipt creation; excludes caller startup, task parsing and initial model download.",
+          "generation-seconds": {
+            "total": 1.8954965000000001,
+            "known-subtotal": 1.8954965000000001,
+            "measured-calls": 8,
+            "calls": 8
+          },
+          "load-seconds": {
+            "total": null,
+            "known-subtotal": null,
+            "measured-calls": 0,
+            "calls": 8
+          },
+          "verification-wall-seconds": 0.21669437500000005
+        },
+        "receipt-sha256": "41f6772f568ea378bab4d82869e735f332d89e7af32b827294231b9734b33831",
+        "decision-count": 8,
+        "changed-files": [
+          "src/todo/interaction.cljk",
+          "src/todo/summary.cljk"
+        ],
+        "model-kind": "jev-block",
+        "error": null,
+        "cost": {
+          "api-currency": "USD",
+          "api-amount": 0.000401268,
+          "api-amount-per-success": 0.000401268,
+          "electricity": null,
+          "device-amortization": null,
+          "human-development": null,
+          "total-cost": null,
+          "training": null
+        },
+        "receipt-id": "run-HwXENK"
+      },
+      "decisions": [
+        {
+          "answer": {
+            "choice": "if-:bool",
+            "confidence": 0.89,
+            "probabilities": {
+              "stop": 0.02,
+              "if-:bool": 0.9,
+              "argument": 0.07,
+              "literal-false": 0.01,
+              "literal-true": 0
+            }
+          },
+          "wall-ms": 203.57025
+        },
+        {
+          "answer": {
+            "choice": "argument",
+            "confidence": 0.83,
+            "probabilities": {
+              "literal-true": 0.03,
+              "argument": 0.86,
+              "stop": 0.01,
+              "literal-false": 0.06,
+              "if-:bool": 0.04
+            }
+          },
+          "wall-ms": 218.7377090000001
+        },
+        {
+          "answer": {
+            "choice": "literal-false",
+            "confidence": 0.83,
+            "probabilities": {
+              "literal-true": 0.03,
+              "argument": 0.1,
+              "if-:bool": 0.01,
+              "literal-false": 0.85,
+              "stop": 0.01
+            }
+          },
+          "wall-ms": 201.3181669999999
+        },
+        {
+          "answer": {
+            "choice": "literal-true",
+            "confidence": 0.94,
+            "probabilities": {
+              "if-:bool": 0,
+              "literal-false": 0.01,
+              "argument": 0.03,
+              "literal-true": 0.95,
+              "stop": 0.01
+            }
+          },
+          "wall-ms": 229.61200000000008
+        },
+        {
+          "answer": {
+            "choice": "count-vector-bool",
+            "confidence": 0.71,
+            "probabilities": {
+              "stop": 0.15,
+              "count-vector-bool": 0.85
+            }
+          },
+          "wall-ms": 180.434125
+        },
+        {
+          "answer": {
+            "choice": "filter-vector-bool",
+            "confidence": 0.91,
+            "probabilities": {
+              "stop": 0.01,
+              "argument": 0.05,
+              "filter-vector-bool": 0.94
+            }
+          },
+          "wall-ms": 218.80491600000005
+        },
+        {
+          "answer": {
+            "choice": "reference-toggle",
+            "confidence": 0.96,
+            "probabilities": {
+              "stop": 0.02,
+              "reference-toggle": 0.98
+            }
+          },
+          "wall-ms": 455.19949999999994
+        },
+        {
+          "answer": {
+            "choice": "argument",
+            "confidence": 0.99,
+            "probabilities": {
+              "filter-vector-bool": 0,
+              "argument": 0.99,
+              "stop": 0.01
+            }
+          },
+          "wall-ms": 187.81983300000002
+        }
+      ],
+      "seconds": 2.973372625,
+      "input_tokens": 9554,
+      "output_tokens": 406,
+      "api_cost_usd": 0.000401268
+    },
+    {
+      "round": 4,
+      "method": "qwen/qwen3-coder-next",
+      "verified": true,
+      "input_tokens": 314,
+      "output_tokens": 48,
+      "api_cost_usd": 0.00010496,
+      "calls": 2,
+      "responses": [
+        {
+          "id": "gen-1791272004-IQxWoGF7rAUcFxBZZkOk",
+          "usage": {
+            "prompt_tokens": 128,
+            "completion_tokens": 28,
+            "total_tokens": 156,
+            "cost": 0.00003776,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.00003776,
+              "upstream_inference_prompt_cost": 0.00001536,
+              "upstream_inference_completions_cost": 0.0000224
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "content": "{\"toggle\":\"(if done false true)\",\"remaining\":\"(count (filter (fn [s] (toggle s)) states))\"}"
+        },
+        {
+          "id": "gen-1791272005-PjIC4UUIDfEU2Q8w4deC",
+          "usage": {
+            "prompt_tokens": 186,
+            "completion_tokens": 20,
+            "total_tokens": 206,
+            "cost": 0.0000672,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0000672,
+              "upstream_inference_prompt_cost": 0.0000372,
+              "upstream_inference_completions_cost": 0.00003
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "content": "{\"toggle\":\"(if done false true)\",\"remaining\":\"(count (filter toggle states))\"}"
+        }
+      ],
+      "seconds": 4.441410416000003
+    },
+    {
+      "round": 4,
+      "method": "google/gemini-2.5-flash",
+      "verified": true,
+      "input_tokens": 521,
+      "output_tokens": 85,
+      "api_cost_usd": 0.0003688,
+      "calls": 3,
+      "responses": [
+        {
+          "id": "gen-1791272008-2kPfbukCzQAzSGaHRw31",
+          "usage": {
+            "prompt_tokens": 122,
+            "completion_tokens": 32,
+            "total_tokens": 154,
+            "cost": 0.0001166,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0001166,
+              "upstream_inference_prompt_cost": 0.0000366,
+              "upstream_inference_completions_cost": 0.00008
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "content": "{\n  \"toggle\": \"(if done false true)\",\n  \"remaining\": \"(count (filter (if toggle false true) states))\"\n}"
+        },
+        {
+          "id": "gen-1791272009-gRCXmTWCSv204VFBLUgA",
+          "usage": {
+            "prompt_tokens": 175,
+            "completion_tokens": 28,
+            "total_tokens": 203,
+            "cost": 0.0001225,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0001225,
+              "upstream_inference_prompt_cost": 0.0000525,
+              "upstream_inference_completions_cost": 0.00007
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "content": "{\n  \"toggle\": \"(not done)\",\n  \"remaining\": \"(count (filter (not toggle) states))\"\n}"
+        },
+        {
+          "id": "gen-1791272011-TBQTMdzh2sgePkIRG2AX",
+          "usage": {
+            "prompt_tokens": 224,
+            "completion_tokens": 25,
+            "total_tokens": 249,
+            "cost": 0.0001297,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0001297,
+              "upstream_inference_prompt_cost": 0.0000672,
+              "upstream_inference_completions_cost": 0.0000625
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "content": "{\n  \"toggle\": \"(not done)\",\n  \"remaining\": \"(count (filter toggle states))\"\n}"
+        }
+      ],
+      "seconds": 3.881159708000003
+    },
+    {
+      "round": 4,
+      "method": "known-template",
+      "verified": true,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "api_cost_usd": 0,
+      "calls": 0,
+      "seconds": 0.35653279199999816
+    },
+    {
+      "round": 5,
+      "method": "qwen/qwen3-coder-next",
+      "verified": true,
+      "input_tokens": 128,
+      "output_tokens": 20,
+      "api_cost_usd": 0.0000684,
+      "calls": 1,
+      "responses": [
+        {
+          "id": "gen-1791272012-6YkfAKVrzWbQCS5xeeZP",
+          "usage": {
+            "prompt_tokens": 128,
+            "completion_tokens": 20,
+            "total_tokens": 148,
+            "cost": 0.0000684,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0000684,
+              "upstream_inference_prompt_cost": 0.0000384,
+              "upstream_inference_completions_cost": 0.00003
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "content": "{\"toggle\":\"(if done false true)\",\"remaining\":\"(count (filter toggle states))\"}"
+        }
+      ],
+      "seconds": 1.2035705830000005
+    },
+    {
+      "round": 5,
+      "method": "google/gemini-2.5-flash",
+      "verified": true,
+      "input_tokens": 122,
+      "output_tokens": 27,
+      "api_cost_usd": 0.0001041,
+      "calls": 1,
+      "responses": [
+        {
+          "id": "gen-1791272014-e1P6MxpOrChiofsm8Mzu",
+          "usage": {
+            "prompt_tokens": 122,
+            "completion_tokens": 27,
+            "total_tokens": 149,
+            "cost": 0.0001041,
+            "is_byok": false,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "audio_tokens": 0,
+              "video_tokens": 0
+            },
+            "cost_details": {
+              "upstream_inference_cost": 0.0001041,
+              "upstream_inference_prompt_cost": 0.0000366,
+              "upstream_inference_completions_cost": 0.0000675
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "image_tokens": 0,
+              "audio_tokens": 0
+            }
+          },
+          "content": "{\n  \"toggle\": \"(if done false true)\",\n  \"remaining\": \"(count (filter toggle states))\"\n}"
+        }
+      ],
+      "seconds": 1.4693595419999983
+    },
+    {
+      "round": 5,
+      "method": "system-one-jev",
+      "verified": true,
+      "calls": 8,
+      "metrics": {
+        "max-concurrent-checks": 2,
+        "jev-controller-used": true,
+        "provider-failures": 0,
+        "attempts": 1,
+        "output-tokens": {
+          "total": 406,
+          "known-subtotal": 406,
+          "measured-calls": 8,
+          "calls": 8
+        },
+        "input-tokens": {
+          "total": 9554,
+          "known-subtotal": 9554,
+          "measured-calls": 8,
+          "calls": 8
+        },
+        "cancelled": false,
+        "success": true,
+        "status": "done",
+        "verification-passed": true,
+        "timing": {
+          "cli-wall-seconds": 2.5644244169999997,
+          "boundary": "Shared runner setup through receipt creation; excludes caller startup, task parsing and initial model download.",
+          "generation-seconds": {
+            "total": 1.5915246230000004,
+            "known-subtotal": 1.5915246230000004,
+            "measured-calls": 8,
+            "calls": 8
+          },
+          "load-seconds": {
+            "total": null,
+            "known-subtotal": null,
+            "measured-calls": 0,
+            "calls": 8
+          },
+          "verification-wall-seconds": 0.19742241699999977
+        },
+        "receipt-sha256": "eb8fdefb1483812a8beef58f63ba1cb2f724a7c0ef927d435b38b8c74175432f",
+        "decision-count": 8,
+        "changed-files": [
+          "src/todo/interaction.cljk",
+          "src/todo/summary.cljk"
+        ],
+        "model-kind": "jev-block",
+        "error": null,
+        "cost": {
+          "api-currency": "USD",
+          "api-amount": 0.000401268,
+          "api-amount-per-success": 0.000401268,
+          "electricity": null,
+          "device-amortization": null,
+          "human-development": null,
+          "total-cost": null,
+          "training": null
+        },
+        "receipt-id": "run-vqjVth"
+      },
+      "decisions": [
+        {
+          "answer": {
+            "choice": "if-:bool",
+            "confidence": 0.89,
+            "probabilities": {
+              "literal-false": 0.01,
+              "literal-true": 0,
+              "if-:bool": 0.92,
+              "stop": 0.01,
+              "argument": 0.06
+            }
+          },
+          "wall-ms": 195.07016700000008
+        },
+        {
+          "answer": {
+            "choice": "argument",
+            "confidence": 0.81,
+            "probabilities": {
+              "stop": 0.01,
+              "if-:bool": 0.04,
+              "literal-false": 0.08,
+              "literal-true": 0.02,
+              "argument": 0.85
+            }
+          },
+          "wall-ms": 194.63412500000004
+        },
+        {
+          "answer": {
+            "choice": "literal-false",
+            "confidence": 0.84,
+            "probabilities": {
+              "if-:bool": 0.01,
+              "literal-false": 0.87,
+              "literal-true": 0.04,
+              "argument": 0.07,
+              "stop": 0.01
+            }
+          },
+          "wall-ms": 224.63966600000003
+        },
+        {
+          "answer": {
+            "choice": "literal-true",
+            "confidence": 0.92,
+            "probabilities": {
+              "if-:bool": 0,
+              "argument": 0.05,
+              "literal-true": 0.93,
+              "stop": 0.01,
+              "literal-false": 0.01
+            }
+          },
+          "wall-ms": 189.88983299999995
+        },
+        {
+          "answer": {
+            "choice": "count-vector-bool",
+            "confidence": 0.67,
+            "probabilities": {
+              "stop": 0.17,
+              "count-vector-bool": 0.83
+            }
+          },
+          "wall-ms": 197.7610830000001
+        },
+        {
+          "answer": {
+            "choice": "filter-vector-bool",
+            "confidence": 0.93,
+            "probabilities": {
+              "filter-vector-bool": 0.96,
+              "argument": 0.04,
+              "stop": 0
+            }
+          },
+          "wall-ms": 180.04133300000012
+        },
+        {
+          "answer": {
+            "choice": "reference-toggle",
+            "confidence": 0.98,
+            "probabilities": {
+              "reference-toggle": 0.99,
+              "stop": 0.01
+            }
+          },
+          "wall-ms": 182.54849999999988
+        },
+        {
+          "answer": {
+            "choice": "argument",
+            "confidence": 0.98,
+            "probabilities": {
+              "stop": 0.01,
+              "filter-vector-bool": 0,
+              "argument": 0.99
+            }
+          },
+          "wall-ms": 226.93991600000027
+        }
+      ],
+      "seconds": 3.0333375409999936,
+      "input_tokens": 9554,
+      "output_tokens": 406,
+      "api_cost_usd": 0.000401268
+    },
+    {
+      "round": 5,
+      "method": "known-template",
+      "verified": true,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "api_cost_usd": 0,
+      "calls": 0,
+      "seconds": 0.3597867499999993
+    }
+  ],
+  "summary": [
+    {
+      "method": "system-one-jev",
+      "successes": 5,
+      "runs": 5,
+      "median_seconds": 2.973372625,
+      "median_api_cost_usd": 0.000401268,
+      "median_input_tokens": 9554,
+      "median_output_tokens": 406,
+      "calls": [
+        8,
+        8,
+        9,
+        8,
+        8
+      ]
+    },
+    {
+      "method": "qwen/qwen3-coder-next",
+      "successes": 5,
+      "runs": 5,
+      "median_seconds": 2.195163291000001,
+      "median_api_cost_usd": 0.00008924,
+      "median_input_tokens": 314,
+      "median_output_tokens": 48,
+      "calls": [
+        2,
+        2,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "method": "google/gemini-2.5-flash",
+      "successes": 5,
+      "runs": 5,
+      "median_seconds": 2.6243323750000016,
+      "median_api_cost_usd": 0.0002316,
+      "median_input_tokens": 297,
+      "median_output_tokens": 57,
+      "calls": [
+        1,
+        2,
+        2,
+        3,
+        1
+      ]
+    },
+    {
+      "method": "known-template",
+      "successes": 5,
+      "runs": 5,
+      "median_seconds": 0.3608743749999994,
+      "median_api_cost_usd": 0,
+      "median_input_tokens": 0,
+      "median_output_tokens": 0,
+      "calls": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "total_api_cost_usd": 0.0035587839999999997,
+  "host": {
+    "platform": "darwin",
+    "arch": "arm64",
+    "node": "v26.0.0",
+    "cpu": "Apple M1 Max"
+  },
+  "jev_model_alias": "typesafe/jev-1.13"
+}

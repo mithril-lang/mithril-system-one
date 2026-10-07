@@ -56,3 +56,5 @@ Core/examples: Apache-2.0. Hermes adapter and bundled Todo/policy assets retain 
 ## Comparison benchmark
 
 [Protocol, limits and reproducible commands](docs/benchmark.md). `node bench/run.mjs` prints a no-network six-call pilot plan. Live execution is opt-in, has an explicit inference-call limit and never retries unknown outcomes. The ordinary full-source baseline and template control use the same actual compiler/task checks. Comparative live results and billed savings are not available yet. [Japanese launch draft](docs/marketing/launch-draft-ja.md) stays within the existing single-call evidence.
+
+[Historical Jev comparison and current API availability](docs/jev-comparison.md): raw recorded results are separate from today's Mithril-language pilot. The recorded Jev experiment did not lead its ordinary-LLM controls in speed or provider-reported cost.

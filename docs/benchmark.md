@@ -53,3 +53,7 @@ Offline transport tests exercise matched contract checks, ordering, usage-on-fai
 ## Billing reconciliation
 
 `bench/billing.mjs` joins separately supplied settled account billing records by `x-mithril-request-id`, with integer micro-USD amounts. It never reads account credentials, modifies a ledger, or guesses a price. Missing IDs or charges remain unknown; failed attempts retain their settled charges. Template/compiler infrastructure cost remains unknown. These account charges are not a provider invoice or total system cost; free-tier zero charges must not become a claim of zero compute cost. Do not publish unrelated billing records.
+
+## Jev
+
+[The Jev comparison](jev-comparison.md) includes existing historical raw records and their narrow-task limits. A current Mithril API Jev arm is unavailable: the advertised models and API do not implement the required Jev Decisions contract. Do not use OpenRouter or label a Qwen structured-output arm as Jev to fill the missing comparison.

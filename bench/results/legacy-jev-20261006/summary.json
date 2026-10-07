@@ -1,0 +1,51 @@
+{
+  "format": "mithril.benchmark-historical-summary/v1",
+  "recorded_at": "2026-10-06T07:33:38.924Z",
+  "source": {
+    "repository": "mithril-lang/mithril-fund",
+    "revision": "e5f6f2867751b8bbed3e4c27f4eb594eab317a86",
+    "path": "apps/code/public/coding-benchmark.json",
+    "sha256": "5b18c83e80dee9c711fa96d85bd5f727c4d6f4282a9b47b9bb71c31634adac89"
+  },
+  "provider": "OpenRouter (historical only; not called in this work)",
+  "scope": "Two CLJK bodies, both toggle states, 511 completion vectors, preserve unrelated marker; generation through admission and verifier process. No UI/build/deploy time.",
+  "max_attempts": 4,
+  "methods": [
+    {
+      "method": "system-one-jev",
+      "attempts": 5,
+      "successes": 5,
+      "median_seconds": 2.973372625,
+      "median_provider_reported_cost_usd": 0.000401268,
+      "total_inference_calls": 41,
+      "total_cost_usd": null
+    },
+    {
+      "method": "qwen/qwen3-coder-next",
+      "attempts": 5,
+      "successes": 5,
+      "median_seconds": 2.195163291000001,
+      "median_provider_reported_cost_usd": 0.00008924,
+      "total_inference_calls": 9,
+      "total_cost_usd": null
+    },
+    {
+      "method": "google/gemini-2.5-flash",
+      "attempts": 5,
+      "successes": 5,
+      "median_seconds": 2.6243323750000016,
+      "median_provider_reported_cost_usd": 0.0002316,
+      "total_inference_calls": 9,
+      "total_cost_usd": null
+    },
+    {
+      "method": "known-template",
+      "attempts": 5,
+      "successes": 5,
+      "median_seconds": 0.3608743749999994,
+      "median_provider_reported_cost_usd": 0,
+      "total_inference_calls": 0,
+      "total_cost_usd": null
+    }
+  ]
+}
