@@ -14,6 +14,6 @@ for(const [name,[repo,sha]] of Object.entries(pins)){
 }
 run('npm',['install','--omit=dev','--ignore-scripts','--no-audit','--no-fund','--no-package-lock'],resolve(root,'org-babashka-nbb'));
 const engine=resolve(root,'org-babashka-nbb/cli.js');
-const cp=execFileSync(process.execPath,[engine,'--classpath',resolve(root,'text/src'),resolve(root,'kotoba/bin/kbb_deps.cljk'),'-Spath'],{cwd:resolve(root,'mithril'),env:{...process.env,KBB_ENGINE:engine},encoding:'utf8',timeout:180000,maxBuffer:2e6});
+const cp=execFileSync(process.execPath,[engine,'--config',resolve(import.meta.dirname,'empty.edn'),'--classpath',resolve(root,'text/src'),resolve(root,'kotoba/bin/kbb_deps.cljk'),'-Spath'],{cwd:resolve(root,'mithril'),env:{...process.env,KBB_ENGINE:engine},encoding:'utf8',timeout:180000,maxBuffer:2e6});
 writeFileSync(resolve(root,'classpath.json'),JSON.stringify({pins,engine,classpath:cp.trim().split(':').map(p=>resolve(root,'mithril',p)).join(':')}));
 console.log(JSON.stringify({ready:true,pins}));
