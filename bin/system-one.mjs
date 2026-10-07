@@ -9,10 +9,10 @@ try {
  } else {
   if(args.length!==4 || args[0]!=='run' || args[1]!=='--template' || !['mithril-app','todo'].includes(args[2]) || args[3]!=='--stdin')throw Error('invalid_arguments');
   const chunks=[];let size=0;for await(const chunk of process.stdin){size+=chunk.length;if(size>8192)throw Error('invalid_goal');chunks.push(chunk);}
-  const input=JSON.parse(Buffer.concat(chunks).toString('utf8'));
-  if(typeof input.goal!=='string'||!input.goal.trim()||input.goal.length>2000)throw Error('invalid_goal');
+  let input;try{input=JSON.parse(Buffer.concat(chunks).toString('utf8'));}catch{throw Error('invalid_goal');}
+  if(typeof input?.goal!=='string'||!input.goal.trim()||input.goal.length>2000)throw Error('invalid_goal');
   const token=process.env.MITHRIL_API_KEY;
-  if(typeof token!=='string'||!token.trim()||token.length>1024)throw Error('mithril_authorization_required');
+  if(typeof token!=='string'||!token.trim()||token.length>1024||/[\r\n]/.test(token))throw Error('mithril_authorization_required');
   const request=new Request('https://code.mithril.fund',{headers:{'x-mithril-token':token}});
   const result=await (args[2]==='todo'?generate:generateMithril)(input.goal,request);
   console.log(JSON.stringify(result));

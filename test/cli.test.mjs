@@ -6,7 +6,7 @@ test('CLI rejects invalid arguments before any network access',()=>{
  const result=run(['run','--template','shell','--stdin']);assert.equal(result.status,1);assert.equal(result.stdout,'');assert.equal(JSON.parse(result.stderr).error,'invalid_arguments');
 });
 test('CLI rejects oversized or missing goals without echoing input',()=>{
- for(const input of ['{}',JSON.stringify({goal:'x'.repeat(2001)}),'x'.repeat(8193)]) {
+ for(const input of ['{}','null','not json',JSON.stringify({goal:'x'.repeat(2001)}),'x'.repeat(8193)]) {
   const result=run(['run','--template','mithril-app','--stdin'],input);assert.equal(result.status,1);assert.equal(result.stdout,'');assert.equal(JSON.parse(result.stderr).error,'invalid_goal');
  }
 });
