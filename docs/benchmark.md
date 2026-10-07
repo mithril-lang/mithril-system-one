@@ -1,6 +1,6 @@
 # Reproducible comparison protocol — 2026-10-07 JST
 
-Status: executable benchmark and offline checks are available. No live comparative measurements are published yet. Prior single-call case receipts are examples, not a comparison dataset.
+Status: the [three-task live pilot](pilot-20261007.md) is published with all nine attempts. Costs remain unmeasured. Prior single-call case receipts are examples, not part of the comparison dataset.
 
 ## Arms and equivalent task contract
 

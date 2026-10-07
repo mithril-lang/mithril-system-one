@@ -1,0 +1,315 @@
+{
+  "mode": "live",
+  "format": "mithril.system-one-comparison/v1",
+  "model": "qwen/qwen3.8-27b",
+  "inference": "https://api.mithril.fund/v1/chat/completions",
+  "task_count": 3,
+  "rounds": 1,
+  "arms": [
+    "system-one",
+    "llm-source",
+    "template"
+  ],
+  "max_api_calls": 6,
+  "required_api_calls": 6,
+  "temperature": 0,
+  "max_completion_tokens": 2048,
+  "scope": "Public bounded static document parameterization fixtures, not held-out SWE tasks or whole Todo generation. Same expected content, existing starter/catalog, compiler, admission and contract checks. Full-source baseline is not an optimized minimal-patch baseline.",
+  "timing_boundary": "Brief dispatch through admitted artifact and exact task validation. Chat, manual review and publication excluded. Compiler service wall time included; invoice and infrastructure costs unavailable.",
+  "retry_policy": "none; stop the whole run on unknown outcomes or authorization/quota failure",
+  "scheduled": [
+    {
+      "task_id": "static-01",
+      "round": 1,
+      "method": "system-one"
+    },
+    {
+      "task_id": "static-01",
+      "round": 1,
+      "method": "llm-source"
+    },
+    {
+      "task_id": "static-01",
+      "round": 1,
+      "method": "template"
+    },
+    {
+      "task_id": "static-02",
+      "round": 1,
+      "method": "llm-source"
+    },
+    {
+      "task_id": "static-02",
+      "round": 1,
+      "method": "template"
+    },
+    {
+      "task_id": "static-02",
+      "round": 1,
+      "method": "system-one"
+    },
+    {
+      "task_id": "static-03",
+      "round": 1,
+      "method": "template"
+    },
+    {
+      "task_id": "static-03",
+      "round": 1,
+      "method": "system-one"
+    },
+    {
+      "task_id": "static-03",
+      "round": 1,
+      "method": "llm-source"
+    }
+  ],
+  "rows": [
+    {
+      "task_id": "static-01",
+      "round": 1,
+      "method": "system-one",
+      "success": true,
+      "inference_calls": 1,
+      "compiler_calls": 1,
+      "input_tokens": 191,
+      "output_tokens": 63,
+      "api_reported_cost_usd": null,
+      "billed_cost_usd": null,
+      "cost_source": null,
+      "completion_ids": [
+        "chatcmpl-769f8d14-858d-4fe9-b9c7-be28e095c006"
+      ],
+      "api_request_ids": [
+        "chat:769f8d14-858d-4fe9-b9c7-be28e095c006"
+      ],
+      "seconds": 6.550011291000001,
+      "error": null,
+      "outcome_unknown": false,
+      "graph_digest": "sha256:e0eeffb52f88263c5c9cfd6466d798bfe9c0ec2edd5d130c27d079c5269fbfe9"
+    },
+    {
+      "task_id": "static-01",
+      "round": 1,
+      "method": "llm-source",
+      "success": true,
+      "inference_calls": 1,
+      "compiler_calls": 1,
+      "input_tokens": 671,
+      "output_tokens": 493,
+      "api_reported_cost_usd": null,
+      "billed_cost_usd": null,
+      "cost_source": null,
+      "completion_ids": [
+        "chatcmpl-f9a6de26-684c-43e2-8966-44738fb2ded7"
+      ],
+      "api_request_ids": [
+        "chat:f9a6de26-684c-43e2-8966-44738fb2ded7"
+      ],
+      "seconds": 16.00934875,
+      "error": null,
+      "outcome_unknown": false,
+      "graph_digest": "sha256:e0eeffb52f88263c5c9cfd6466d798bfe9c0ec2edd5d130c27d079c5269fbfe9"
+    },
+    {
+      "task_id": "static-01",
+      "round": 1,
+      "method": "template",
+      "success": true,
+      "inference_calls": 0,
+      "compiler_calls": 1,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "api_reported_cost_usd": 0,
+      "billed_cost_usd": null,
+      "cost_source": "no_inference_call",
+      "completion_ids": [],
+      "api_request_ids": [],
+      "seconds": 0.14956220899999972,
+      "error": null,
+      "outcome_unknown": false,
+      "graph_digest": "sha256:e0eeffb52f88263c5c9cfd6466d798bfe9c0ec2edd5d130c27d079c5269fbfe9"
+    },
+    {
+      "task_id": "static-02",
+      "round": 1,
+      "method": "llm-source",
+      "success": true,
+      "inference_calls": 1,
+      "compiler_calls": 1,
+      "input_tokens": 671,
+      "output_tokens": 494,
+      "api_reported_cost_usd": null,
+      "billed_cost_usd": null,
+      "cost_source": null,
+      "completion_ids": [
+        "chatcmpl-075954c4-50d6-4f8d-af77-09e6bc57fcea"
+      ],
+      "api_request_ids": [
+        "chat:075954c4-50d6-4f8d-af77-09e6bc57fcea"
+      ],
+      "seconds": 15.612559041,
+      "error": null,
+      "outcome_unknown": false,
+      "graph_digest": "sha256:83e298e3e3a918f36a770eee0a4e5a45ba41ee14748fcb37970a1718f3d3645c"
+    },
+    {
+      "task_id": "static-02",
+      "round": 1,
+      "method": "template",
+      "success": true,
+      "inference_calls": 0,
+      "compiler_calls": 1,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "api_reported_cost_usd": 0,
+      "billed_cost_usd": null,
+      "cost_source": "no_inference_call",
+      "completion_ids": [],
+      "api_request_ids": [],
+      "seconds": 0.1313943749999962,
+      "error": null,
+      "outcome_unknown": false,
+      "graph_digest": "sha256:83e298e3e3a918f36a770eee0a4e5a45ba41ee14748fcb37970a1718f3d3645c"
+    },
+    {
+      "task_id": "static-02",
+      "round": 1,
+      "method": "system-one",
+      "success": true,
+      "inference_calls": 1,
+      "compiler_calls": 1,
+      "input_tokens": 191,
+      "output_tokens": 63,
+      "api_reported_cost_usd": null,
+      "billed_cost_usd": null,
+      "cost_source": null,
+      "completion_ids": [
+        "chatcmpl-34366ea3-e400-4560-a555-34d1496c3c28"
+      ],
+      "api_request_ids": [
+        "chat:34366ea3-e400-4560-a555-34d1496c3c28"
+      ],
+      "seconds": 5.737169374999998,
+      "error": null,
+      "outcome_unknown": false,
+      "graph_digest": "sha256:83e298e3e3a918f36a770eee0a4e5a45ba41ee14748fcb37970a1718f3d3645c"
+    },
+    {
+      "task_id": "static-03",
+      "round": 1,
+      "method": "template",
+      "success": true,
+      "inference_calls": 0,
+      "compiler_calls": 1,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "api_reported_cost_usd": 0,
+      "billed_cost_usd": null,
+      "cost_source": "no_inference_call",
+      "completion_ids": [],
+      "api_request_ids": [],
+      "seconds": 0.11039433299999656,
+      "error": null,
+      "outcome_unknown": false,
+      "graph_digest": "sha256:6a59ac4ef2822afbccb4491f764b5025c791a1dcf0493dfaddeb748cea37b2b0"
+    },
+    {
+      "task_id": "static-03",
+      "round": 1,
+      "method": "system-one",
+      "success": true,
+      "inference_calls": 1,
+      "compiler_calls": 1,
+      "input_tokens": 191,
+      "output_tokens": 63,
+      "api_reported_cost_usd": null,
+      "billed_cost_usd": null,
+      "cost_source": null,
+      "completion_ids": [
+        "chatcmpl-18a5aaa2-5f0d-439e-9cc4-05eb60dfa1a2"
+      ],
+      "api_request_ids": [
+        "chat:18a5aaa2-5f0d-439e-9cc4-05eb60dfa1a2"
+      ],
+      "seconds": 5.759756874999999,
+      "error": null,
+      "outcome_unknown": false,
+      "graph_digest": "sha256:6a59ac4ef2822afbccb4491f764b5025c791a1dcf0493dfaddeb748cea37b2b0"
+    },
+    {
+      "task_id": "static-03",
+      "round": 1,
+      "method": "llm-source",
+      "success": true,
+      "inference_calls": 1,
+      "compiler_calls": 1,
+      "input_tokens": 671,
+      "output_tokens": 493,
+      "api_reported_cost_usd": null,
+      "billed_cost_usd": null,
+      "cost_source": null,
+      "completion_ids": [
+        "chatcmpl-620e10cc-b7d1-4ab9-973a-d414d4560c8d"
+      ],
+      "api_request_ids": [
+        "chat:620e10cc-b7d1-4ab9-973a-d414d4560c8d"
+      ],
+      "seconds": 15.8327845,
+      "error": null,
+      "outcome_unknown": false,
+      "graph_digest": "sha256:6a59ac4ef2822afbccb4491f764b5025c791a1dcf0493dfaddeb748cea37b2b0"
+    }
+  ],
+  "summary": [
+    {
+      "method": "system-one",
+      "attempts": 3,
+      "successes": 3,
+      "success_rate": 1,
+      "successful_p50_seconds": 5.759756874999999,
+      "successful_p95_seconds": 6.550011291000001,
+      "all_attempt_p50_seconds": 5.759756874999999,
+      "input_tokens": 573,
+      "output_tokens": 189,
+      "billed_cost_per_success_usd": null
+    },
+    {
+      "method": "llm-source",
+      "attempts": 3,
+      "successes": 3,
+      "success_rate": 1,
+      "successful_p50_seconds": 15.8327845,
+      "successful_p95_seconds": 16.00934875,
+      "all_attempt_p50_seconds": 15.8327845,
+      "input_tokens": 2013,
+      "output_tokens": 1480,
+      "billed_cost_per_success_usd": null
+    },
+    {
+      "method": "template",
+      "attempts": 3,
+      "successes": 3,
+      "success_rate": 1,
+      "successful_p50_seconds": 0.1313943749999962,
+      "successful_p95_seconds": 0.14956220899999972,
+      "all_attempt_p50_seconds": 0.1313943749999962,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "billed_cost_per_success_usd": null
+    },
+    {
+      "method": "llm-fields",
+      "attempts": 0,
+      "successes": 0,
+      "success_rate": null,
+      "successful_p50_seconds": null,
+      "successful_p95_seconds": null,
+      "all_attempt_p50_seconds": null,
+      "input_tokens": null,
+      "output_tokens": null,
+      "billed_cost_per_success_usd": null
+    }
+  ],
+  "stopped": null
+}

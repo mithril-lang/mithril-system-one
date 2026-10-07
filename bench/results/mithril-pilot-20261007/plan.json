@@ -1,0 +1,66 @@
+{
+  "format": "mithril.system-one-comparison/v1",
+  "model": "qwen/qwen3.8-27b",
+  "inference": "https://api.mithril.fund/v1/chat/completions",
+  "task_count": 3,
+  "rounds": 1,
+  "arms": [
+    "system-one",
+    "llm-source",
+    "template"
+  ],
+  "max_api_calls": 6,
+  "required_api_calls": 6,
+  "temperature": 0,
+  "max_completion_tokens": 2048,
+  "scope": "Public bounded static document parameterization fixtures, not held-out SWE tasks or whole Todo generation. Same expected content, existing starter/catalog, compiler, admission and contract checks. Full-source baseline is not an optimized minimal-patch baseline.",
+  "timing_boundary": "Brief dispatch through admitted artifact and exact task validation. Chat, manual review and publication excluded. Compiler service wall time included; invoice and infrastructure costs unavailable.",
+  "retry_policy": "none; stop the whole run on unknown outcomes or authorization/quota failure",
+  "scheduled": [
+    {
+      "task_id": "static-01",
+      "round": 1,
+      "method": "system-one"
+    },
+    {
+      "task_id": "static-01",
+      "round": 1,
+      "method": "llm-source"
+    },
+    {
+      "task_id": "static-01",
+      "round": 1,
+      "method": "template"
+    },
+    {
+      "task_id": "static-02",
+      "round": 1,
+      "method": "llm-source"
+    },
+    {
+      "task_id": "static-02",
+      "round": 1,
+      "method": "template"
+    },
+    {
+      "task_id": "static-02",
+      "round": 1,
+      "method": "system-one"
+    },
+    {
+      "task_id": "static-03",
+      "round": 1,
+      "method": "template"
+    },
+    {
+      "task_id": "static-03",
+      "round": 1,
+      "method": "system-one"
+    },
+    {
+      "task_id": "static-03",
+      "round": 1,
+      "method": "llm-source"
+    }
+  ]
+}
