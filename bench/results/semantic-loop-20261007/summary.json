@@ -1,0 +1,532 @@
+{
+  "mode": "live",
+  "format": "mithril.semantic-loop-benchmark/v1",
+  "scope": "Custom public positive and rejection contract cases; no model inference, shell workflow or external leaderboard score.",
+  "rounds": 3,
+  "cases": [
+    {
+      "id": "static-01",
+      "expected_admitted": true
+    },
+    {
+      "id": "static-02",
+      "expected_admitted": true
+    },
+    {
+      "id": "static-03",
+      "expected_admitted": true
+    },
+    {
+      "id": "incomplete-form",
+      "expected_admitted": false
+    },
+    {
+      "id": "unknown-ontology",
+      "expected_admitted": false
+    },
+    {
+      "id": "unknown-library-digest",
+      "expected_admitted": false
+    }
+  ],
+  "max_compiler_calls": 18,
+  "inference_calls": 0,
+  "rows": [
+    {
+      "case_id": "static-01",
+      "round": 1,
+      "expected_admitted": true,
+      "success": true,
+      "http_status": 200,
+      "compile_status": "admitted",
+      "steps": [
+        {
+          "id": "infer",
+          "status": "executed"
+        },
+        {
+          "id": "query",
+          "status": "executed"
+        },
+        {
+          "id": "validate",
+          "status": "executed"
+        },
+        {
+          "id": "compile",
+          "status": "executed"
+        },
+        {
+          "id": "test",
+          "status": "executed"
+        },
+        {
+          "id": "deploy",
+          "status": "not-run"
+        }
+      ],
+      "seconds": 0.440236584,
+      "inference_calls": 0,
+      "compiler_calls": 1,
+      "billed_cost_usd": null,
+      "error": null,
+      "outcome_unknown": false
+    },
+    {
+      "case_id": "static-02",
+      "round": 1,
+      "expected_admitted": true,
+      "success": true,
+      "http_status": 200,
+      "compile_status": "admitted",
+      "steps": [
+        {
+          "id": "infer",
+          "status": "executed"
+        },
+        {
+          "id": "query",
+          "status": "executed"
+        },
+        {
+          "id": "validate",
+          "status": "executed"
+        },
+        {
+          "id": "compile",
+          "status": "executed"
+        },
+        {
+          "id": "test",
+          "status": "executed"
+        },
+        {
+          "id": "deploy",
+          "status": "not-run"
+        }
+      ],
+      "seconds": 0.18916029200000004,
+      "inference_calls": 0,
+      "compiler_calls": 1,
+      "billed_cost_usd": null,
+      "error": null,
+      "outcome_unknown": false
+    },
+    {
+      "case_id": "static-03",
+      "round": 1,
+      "expected_admitted": true,
+      "success": true,
+      "http_status": 200,
+      "compile_status": "admitted",
+      "steps": [
+        {
+          "id": "infer",
+          "status": "executed"
+        },
+        {
+          "id": "query",
+          "status": "executed"
+        },
+        {
+          "id": "validate",
+          "status": "executed"
+        },
+        {
+          "id": "compile",
+          "status": "executed"
+        },
+        {
+          "id": "test",
+          "status": "executed"
+        },
+        {
+          "id": "deploy",
+          "status": "not-run"
+        }
+      ],
+      "seconds": 0.17339079199999993,
+      "inference_calls": 0,
+      "compiler_calls": 1,
+      "billed_cost_usd": null,
+      "error": null,
+      "outcome_unknown": false
+    },
+    {
+      "case_id": "incomplete-form",
+      "round": 1,
+      "expected_admitted": false,
+      "success": true,
+      "http_status": 422,
+      "compile_status": "refused",
+      "steps": [],
+      "seconds": 0.023998083000000066,
+      "inference_calls": 0,
+      "compiler_calls": 1,
+      "billed_cost_usd": null,
+      "error": null,
+      "outcome_unknown": false
+    },
+    {
+      "case_id": "unknown-ontology",
+      "round": 1,
+      "expected_admitted": false,
+      "success": true,
+      "http_status": 422,
+      "compile_status": "refused",
+      "steps": [],
+      "seconds": 0.10700041599999997,
+      "inference_calls": 0,
+      "compiler_calls": 1,
+      "billed_cost_usd": null,
+      "error": null,
+      "outcome_unknown": false
+    },
+    {
+      "case_id": "unknown-library-digest",
+      "round": 1,
+      "expected_admitted": false,
+      "success": true,
+      "http_status": 422,
+      "compile_status": "refused",
+      "steps": [],
+      "seconds": 0.01951724999999999,
+      "inference_calls": 0,
+      "compiler_calls": 1,
+      "billed_cost_usd": null,
+      "error": null,
+      "outcome_unknown": false
+    },
+    {
+      "case_id": "static-01",
+      "round": 2,
+      "expected_admitted": true,
+      "success": true,
+      "http_status": 200,
+      "compile_status": "admitted",
+      "steps": [
+        {
+          "id": "infer",
+          "status": "executed"
+        },
+        {
+          "id": "query",
+          "status": "executed"
+        },
+        {
+          "id": "validate",
+          "status": "executed"
+        },
+        {
+          "id": "compile",
+          "status": "executed"
+        },
+        {
+          "id": "test",
+          "status": "executed"
+        },
+        {
+          "id": "deploy",
+          "status": "not-run"
+        }
+      ],
+      "seconds": 0.15842770899999994,
+      "inference_calls": 0,
+      "compiler_calls": 1,
+      "billed_cost_usd": null,
+      "error": null,
+      "outcome_unknown": false
+    },
+    {
+      "case_id": "static-02",
+      "round": 2,
+      "expected_admitted": true,
+      "success": true,
+      "http_status": 200,
+      "compile_status": "admitted",
+      "steps": [
+        {
+          "id": "infer",
+          "status": "executed"
+        },
+        {
+          "id": "query",
+          "status": "executed"
+        },
+        {
+          "id": "validate",
+          "status": "executed"
+        },
+        {
+          "id": "compile",
+          "status": "executed"
+        },
+        {
+          "id": "test",
+          "status": "executed"
+        },
+        {
+          "id": "deploy",
+          "status": "not-run"
+        }
+      ],
+      "seconds": 0.13869833300000003,
+      "inference_calls": 0,
+      "compiler_calls": 1,
+      "billed_cost_usd": null,
+      "error": null,
+      "outcome_unknown": false
+    },
+    {
+      "case_id": "static-03",
+      "round": 2,
+      "expected_admitted": true,
+      "success": true,
+      "http_status": 200,
+      "compile_status": "admitted",
+      "steps": [
+        {
+          "id": "infer",
+          "status": "executed"
+        },
+        {
+          "id": "query",
+          "status": "executed"
+        },
+        {
+          "id": "validate",
+          "status": "executed"
+        },
+        {
+          "id": "compile",
+          "status": "executed"
+        },
+        {
+          "id": "test",
+          "status": "executed"
+        },
+        {
+          "id": "deploy",
+          "status": "not-run"
+        }
+      ],
+      "seconds": 0.196818,
+      "inference_calls": 0,
+      "compiler_calls": 1,
+      "billed_cost_usd": null,
+      "error": null,
+      "outcome_unknown": false
+    },
+    {
+      "case_id": "incomplete-form",
+      "round": 2,
+      "expected_admitted": false,
+      "success": true,
+      "http_status": 422,
+      "compile_status": "refused",
+      "steps": [],
+      "seconds": 0.02856400000000008,
+      "inference_calls": 0,
+      "compiler_calls": 1,
+      "billed_cost_usd": null,
+      "error": null,
+      "outcome_unknown": false
+    },
+    {
+      "case_id": "unknown-ontology",
+      "round": 2,
+      "expected_admitted": false,
+      "success": true,
+      "http_status": 422,
+      "compile_status": "refused",
+      "steps": [],
+      "seconds": 0.023581707999999934,
+      "inference_calls": 0,
+      "compiler_calls": 1,
+      "billed_cost_usd": null,
+      "error": null,
+      "outcome_unknown": false
+    },
+    {
+      "case_id": "unknown-library-digest",
+      "round": 2,
+      "expected_admitted": false,
+      "success": true,
+      "http_status": 422,
+      "compile_status": "refused",
+      "steps": [],
+      "seconds": 0.02911866699999996,
+      "inference_calls": 0,
+      "compiler_calls": 1,
+      "billed_cost_usd": null,
+      "error": null,
+      "outcome_unknown": false
+    },
+    {
+      "case_id": "static-01",
+      "round": 3,
+      "expected_admitted": true,
+      "success": true,
+      "http_status": 200,
+      "compile_status": "admitted",
+      "steps": [
+        {
+          "id": "infer",
+          "status": "executed"
+        },
+        {
+          "id": "query",
+          "status": "executed"
+        },
+        {
+          "id": "validate",
+          "status": "executed"
+        },
+        {
+          "id": "compile",
+          "status": "executed"
+        },
+        {
+          "id": "test",
+          "status": "executed"
+        },
+        {
+          "id": "deploy",
+          "status": "not-run"
+        }
+      ],
+      "seconds": 0.19851733400000013,
+      "inference_calls": 0,
+      "compiler_calls": 1,
+      "billed_cost_usd": null,
+      "error": null,
+      "outcome_unknown": false
+    },
+    {
+      "case_id": "static-02",
+      "round": 3,
+      "expected_admitted": true,
+      "success": true,
+      "http_status": 200,
+      "compile_status": "admitted",
+      "steps": [
+        {
+          "id": "infer",
+          "status": "executed"
+        },
+        {
+          "id": "query",
+          "status": "executed"
+        },
+        {
+          "id": "validate",
+          "status": "executed"
+        },
+        {
+          "id": "compile",
+          "status": "executed"
+        },
+        {
+          "id": "test",
+          "status": "executed"
+        },
+        {
+          "id": "deploy",
+          "status": "not-run"
+        }
+      ],
+      "seconds": 0.2342170000000001,
+      "inference_calls": 0,
+      "compiler_calls": 1,
+      "billed_cost_usd": null,
+      "error": null,
+      "outcome_unknown": false
+    },
+    {
+      "case_id": "static-03",
+      "round": 3,
+      "expected_admitted": true,
+      "success": true,
+      "http_status": 200,
+      "compile_status": "admitted",
+      "steps": [
+        {
+          "id": "infer",
+          "status": "executed"
+        },
+        {
+          "id": "query",
+          "status": "executed"
+        },
+        {
+          "id": "validate",
+          "status": "executed"
+        },
+        {
+          "id": "compile",
+          "status": "executed"
+        },
+        {
+          "id": "test",
+          "status": "executed"
+        },
+        {
+          "id": "deploy",
+          "status": "not-run"
+        }
+      ],
+      "seconds": 0.14490533300000016,
+      "inference_calls": 0,
+      "compiler_calls": 1,
+      "billed_cost_usd": null,
+      "error": null,
+      "outcome_unknown": false
+    },
+    {
+      "case_id": "incomplete-form",
+      "round": 3,
+      "expected_admitted": false,
+      "success": true,
+      "http_status": 422,
+      "compile_status": "refused",
+      "steps": [],
+      "seconds": 0.022708458000000063,
+      "inference_calls": 0,
+      "compiler_calls": 1,
+      "billed_cost_usd": null,
+      "error": null,
+      "outcome_unknown": false
+    },
+    {
+      "case_id": "unknown-ontology",
+      "round": 3,
+      "expected_admitted": false,
+      "success": true,
+      "http_status": 422,
+      "compile_status": "refused",
+      "steps": [],
+      "seconds": 0.01886262499999975,
+      "inference_calls": 0,
+      "compiler_calls": 1,
+      "billed_cost_usd": null,
+      "error": null,
+      "outcome_unknown": false
+    },
+    {
+      "case_id": "unknown-library-digest",
+      "round": 3,
+      "expected_admitted": false,
+      "success": true,
+      "http_status": 422,
+      "compile_status": "refused",
+      "steps": [],
+      "seconds": 0.03200858299999982,
+      "inference_calls": 0,
+      "compiler_calls": 1,
+      "billed_cost_usd": null,
+      "error": null,
+      "outcome_unknown": false
+    }
+  ],
+  "stopped": null
+}

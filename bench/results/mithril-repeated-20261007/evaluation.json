@@ -1,0 +1,125 @@
+{
+  "format": "mithril.repeated-evaluation/v1",
+  "complete": false,
+  "stopped": "transport_outcome_unknown",
+  "official_aa_score": null,
+  "methods": [
+    {
+      "method": "system-one",
+      "official_aa_score": null,
+      "scheduled": 9,
+      "attempted": 8,
+      "passed": 8,
+      "missing": 1,
+      "outcome_unknown": 0,
+      "complete": false,
+      "per_task": [
+        {
+          "task_id": "static-01",
+          "scheduled": 3,
+          "attempted": 3,
+          "passed": 3,
+          "pass_at_1": 1
+        },
+        {
+          "task_id": "static-02",
+          "scheduled": 3,
+          "attempted": 3,
+          "passed": 3,
+          "pass_at_1": 1
+        },
+        {
+          "task_id": "static-03",
+          "scheduled": 3,
+          "attempted": 2,
+          "passed": 2,
+          "pass_at_1": null
+        }
+      ],
+      "task_normalized_pass_at_1": null,
+      "all_attempt_mean_seconds": 5.547511885375002,
+      "all_attempt_p50_seconds": 5.3620587919999965,
+      "all_attempt_p95_seconds": 6.387583417,
+      "successful_mean_seconds": 5.547511885375002,
+      "billed_cost_per_task_usd": null
+    },
+    {
+      "method": "llm-source",
+      "official_aa_score": null,
+      "scheduled": 9,
+      "attempted": 9,
+      "passed": 8,
+      "missing": 0,
+      "outcome_unknown": 1,
+      "complete": true,
+      "per_task": [
+        {
+          "task_id": "static-01",
+          "scheduled": 3,
+          "attempted": 3,
+          "passed": 3,
+          "pass_at_1": 1
+        },
+        {
+          "task_id": "static-02",
+          "scheduled": 3,
+          "attempted": 3,
+          "passed": 3,
+          "pass_at_1": 1
+        },
+        {
+          "task_id": "static-03",
+          "scheduled": 3,
+          "attempted": 3,
+          "passed": 2,
+          "pass_at_1": 0.6666666666666666
+        }
+      ],
+      "task_normalized_pass_at_1": 0.8888888888888888,
+      "all_attempt_mean_seconds": 17.488555495555556,
+      "all_attempt_p50_seconds": 14.148330459000004,
+      "all_attempt_p95_seconds": 45.00402887499999,
+      "successful_mean_seconds": 14.049121323125,
+      "billed_cost_per_task_usd": null
+    },
+    {
+      "method": "template",
+      "official_aa_score": null,
+      "scheduled": 9,
+      "attempted": 8,
+      "passed": 8,
+      "missing": 1,
+      "outcome_unknown": 0,
+      "complete": false,
+      "per_task": [
+        {
+          "task_id": "static-01",
+          "scheduled": 3,
+          "attempted": 3,
+          "passed": 3,
+          "pass_at_1": 1
+        },
+        {
+          "task_id": "static-02",
+          "scheduled": 3,
+          "attempted": 3,
+          "passed": 3,
+          "pass_at_1": 1
+        },
+        {
+          "task_id": "static-03",
+          "scheduled": 3,
+          "attempted": 2,
+          "passed": 2,
+          "pass_at_1": null
+        }
+      ],
+      "task_normalized_pass_at_1": null,
+      "all_attempt_mean_seconds": 0.17511573950000092,
+      "all_attempt_p50_seconds": 0.17042429199999606,
+      "all_attempt_p95_seconds": 0.22184829199999512,
+      "successful_mean_seconds": 0.17511573950000092,
+      "billed_cost_per_task_usd": null
+    }
+  ]
+}

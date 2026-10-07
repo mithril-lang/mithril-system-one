@@ -2,6 +2,8 @@
 
 Status: the [three-task live pilot](pilot-20261007.md) is published with all nine attempts. Costs remain unmeasured. Prior single-call case receipts are examples, not part of the comparison dataset.
 
+The subsequent [coding and agent-loop evaluation](agent-benchmarks.md) retains an interrupted three-repeat run, including an unknown full-source timeout and missing planned attempts. It also records real semantic-loop checks and the separate official-task Harbor smoke runner. Do not combine the successful first pilot with the later run while dropping failures or missing attempts.
+
 ## Arms and equivalent task contract
 
 1. `system-one`: five-field model proposal, Mithril emission and actual compiler validation.

@@ -1,0 +1,35 @@
+{
+  "format": "mithril.harbor-smoke/v1",
+  "task": "session-window-debug",
+  "task_count": 1,
+  "attempts": 1,
+  "max_agent_turns": 16,
+  "max_upstream_calls": 20,
+  "agent_timeout_seconds": 600,
+  "completion_token_cap": 4096,
+  "temperature": 0,
+  "reward": 0.0,
+  "exception_type": "NonZeroAgentExitCodeError",
+  "agent_seconds": 215.610573,
+  "environment_seconds": 1.880971,
+  "setup_seconds": 359.160857,
+  "verifier_seconds": 18.937625,
+  "upstream_calls": 18,
+  "metered_input_tokens": 206247,
+  "metered_output_tokens": 5436,
+  "billed_cost_usd": null,
+  "official_aa_score": null,
+  "framework_reported_input_tokens": 0,
+  "framework_reported_output_tokens": 0,
+  "source_trial_result_sha256": "5ca48dea9b99fe69912fde7f066e9826c2c87a40571111af64fda0473aff4cab",
+  "started_at": "2026-10-07T07:49:23.279822Z",
+  "finished_at": "2026-10-07T07:59:32.199286Z",
+  "trace_summary": {
+    "steps": 19,
+    "tool_calls": {
+      "read_file": 8,
+      "search_files": 2,
+      "terminal": 12
+    }
+  }
+}

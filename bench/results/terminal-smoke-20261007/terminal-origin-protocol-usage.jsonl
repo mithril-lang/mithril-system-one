@@ -1,0 +1,1 @@
+{"call": 1, "model": "qwen/qwen3.8-27b", "billed_cost_usd": null, "status": 200, "usage": {"prompt_tokens": 449, "completion_tokens": 11, "total_tokens": 460}, "request_id": "chat:ede83ef4-3e32-4fc6-a308-3dd7150abbc8", "completion_id": "chatcmpl-ede83ef4-3e32-4fc6-a308-3dd7150abbc8", "seconds": 4.5371750419726595}

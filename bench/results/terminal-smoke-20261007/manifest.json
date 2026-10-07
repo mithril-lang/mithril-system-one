@@ -1,0 +1,30 @@
+{
+  "source": "terminal-bench/terminal-bench@4.0.0",
+  "acquired_tasks": 66,
+  "selected_task": "session-window-debug",
+  "methodology": "https://artificialanalysis.ai/methodology/coding-agents-benchmarking",
+  "official_score": null,
+  "selected_files": {
+    "task.toml": "196612341158c4a2a8650fc5c48c78449f8381daf2a33d1eca3f2607f5a513bf",
+    "instruction.md": "65b05c866323a7b7195a5ab72ac9c4844d1d4e5f179ff24c15baf86a5a50e193",
+    "environment/Dockerfile": "9add640cf09a431f6e684aa75058ce2c2db87b80edb3482d0f6f0c90a69a24bb"
+  },
+  "categories": {
+    "Software": 18,
+    "Operations": 9,
+    "Security": 5,
+    "Hardware": 5,
+    "Science": 14,
+    "ML": 11,
+    "Media": 4
+  },
+  "client": {
+    "node": "26.7.0",
+    "harbor": "0.24.0",
+    "docker": "29.4.0",
+    "architecture": "aarch64",
+    "docker_cpus": 10,
+    "docker_memory_bytes": 16819609600
+  },
+  "resources": "Official task CPU and memory preserved; eight agent turns,600 second active-agent cap,4096 completion token cap; CPU smoke subset, not full task allowance."
+}

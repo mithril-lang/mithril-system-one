@@ -1,0 +1,151 @@
+{
+  "row": {
+    "task_id": "static-01",
+    "round": 2,
+    "method": "system-one",
+    "success": true,
+    "inference_calls": 1,
+    "compiler_calls": 1,
+    "input_tokens": 191,
+    "output_tokens": 63,
+    "api_reported_cost_usd": null,
+    "billed_cost_usd": null,
+    "cost_source": null,
+    "completion_ids": [
+      "chatcmpl-1d7b382e-2afa-4a66-8042-960f08796670"
+    ],
+    "api_request_ids": [
+      "chat:1d7b382e-2afa-4a66-8042-960f08796670"
+    ],
+    "seconds": 5.872515415999994,
+    "error": null,
+    "outcome_unknown": false,
+    "graph_digest": "sha256:e0eeffb52f88263c5c9cfd6466d798bfe9c0ec2edd5d130c27d079c5269fbfe9"
+  },
+  "artifacts": {
+    "source": "(mithril/app-agent\n  :id \"https://app.mithril.fund/id/starter\"\n  :goal \"https://mithril.fund/id/goal/compile-test-deploy-app\"\n  :ontology \"a8d21164d99278f517181b06d063ea8a63249bff57e8e1a5e72aed5758a28f47\"\n  :imports\n  [(mithril/import\n     :library \"https://mithril.fund/lib/app/agent-loop-v1\"\n     :digest \"sha256:b7d1290a2fe8d8f6f0a17c49d2774b9396e9389fb5d070e98335d8d5517266ce\")]\n  :loop\n  (mithril/loop\n    :max-steps 6\n    :reasoner \"https://mithril.fund/lib/app/agent-loop-v1/reasoner/owl2-rl\"\n    :query \"https://mithril.fund/lib/app/agent-loop-v1/query/component-catalog\"\n    :validator \"https://mithril.fund/lib/app/agent-loop-v1/validator/shacl-core\"\n    :compiler \"https://mithril.fund/lib/app/agent-loop-v1/compiler/web-ir\"\n    :tester \"https://mithril.fund/lib/app/agent-loop-v1/tester/conformance\"\n    :deployer \"https://mithril.fund/lib/app/agent-loop-v1/deployer/self-contained-url\"\n    :governor \"https://mithril.fund/lib/app/agent-loop-v1/governor/static-read-only\")\n  :app\n  (mithril/app\n    :name \"Mithril benchmark 1\"\n    :description \"Self-contained static document 1.\"\n    :headline \"Verified document 1\"\n    :summary \"Review exact content for scenario 1.\"\n    :template \"https://mithril.fund/id/template/report\"\n    :data-shape \"https://mithril.fund/id/shape/claim-list\"))\n",
+    "artifact": {
+      "format": "https://mithril.fund/artifact/app-agent-v1",
+      "media-type": "application/ld+json",
+      "graph-digest": "sha256:e0eeffb52f88263c5c9cfd6466d798bfe9c0ec2edd5d130c27d079c5269fbfe9",
+      "app-ir": {
+        "version": "v1",
+        "goal": "compile-test-deploy-app",
+        "ontology": "a8d21164d99278f517181b06d063ea8a63249bff57e8e1a5e72aed5758a28f47",
+        "import": {
+          "library": "https://mithril.fund/lib/app/agent-loop-v1",
+          "digest": "sha256:b7d1290a2fe8d8f6f0a17c49d2774b9396e9389fb5d070e98335d8d5517266ce"
+        },
+        "budget": {
+          "max-steps": 6,
+          "max-source-bytes": 8192
+        },
+        "operations": {
+          "reasoner": "https://mithril.fund/lib/app/agent-loop-v1/reasoner/owl2-rl",
+          "query": "https://mithril.fund/lib/app/agent-loop-v1/query/component-catalog",
+          "validator": "https://mithril.fund/lib/app/agent-loop-v1/validator/shacl-core",
+          "compiler": "https://mithril.fund/lib/app/agent-loop-v1/compiler/web-ir",
+          "tester": "https://mithril.fund/lib/app/agent-loop-v1/tester/conformance",
+          "deployer": "https://mithril.fund/lib/app/agent-loop-v1/deployer/self-contained-url",
+          "governor": "https://mithril.fund/lib/app/agent-loop-v1/governor/static-read-only"
+        },
+        "app": {
+          "name": "Mithril benchmark 1",
+          "description": "Self-contained static document 1.",
+          "headline": "Verified document 1",
+          "summary": "Review exact content for scenario 1.",
+          "template": "https://mithril.fund/id/template/report",
+          "data-shape": "https://mithril.fund/id/shape/claim-list"
+        },
+        "effects": [
+          "static-document",
+          "self-contained-url"
+        ]
+      }
+    },
+    "trace": [
+      {
+        "id": "infer",
+        "operation": "OWL 2 RL materialization",
+        "status": "executed",
+        "engine": "materialize-owl2-rl",
+        "input-digest": "sha256:ef4ee31eadeac18770b6c48e28c5efd0835748deeee2bc9a886236cef716aa7b",
+        "output-digest": "sha256:92e2473dc483c5d27f9e1c149810af31fcd21a54632013c1771464900a4b76c8",
+        "metrics": {
+          "asserted-triples": 4,
+          "derived-triples": 1
+        }
+      },
+      {
+        "id": "query",
+        "operation": "SPARQL algebra",
+        "status": "executed",
+        "engine": "select",
+        "input-digest": "sha256:248e52c006b4392526cdd19e781f956e1f02acebd964eb11997a468684b0c76c",
+        "output-digest": "sha256:dab5dc2809e0b164233f58812638c018fb80899bf079cabdf8f0a2c4e414c20a",
+        "metrics": {
+          "rows": 1
+        }
+      },
+      {
+        "id": "validate",
+        "operation": "SHACL bounded validation",
+        "status": "executed",
+        "engine": "shacl-edge-adapter",
+        "input-digest": "sha256:51d8a9115ecdfa07afb75caafee31bba06759d42ab89c7c5e84164188a659e77",
+        "output-digest": "sha256:adfc5c3d5f487ad7a36294d016050df206aad3d00bd4ed063d87c236049e61aa",
+        "metrics": {
+          "violations": 0,
+          "constraints": [
+            "min-count",
+            "max-count",
+            "datatype",
+            "in"
+          ]
+        }
+      },
+      {
+        "id": "compile",
+        "operation": "Mithril App IR",
+        "status": "executed",
+        "engine": "compile-text",
+        "input-digest": "sha256:e0eeffb52f88263c5c9cfd6466d798bfe9c0ec2edd5d130c27d079c5269fbfe9",
+        "output-digest": "sha256:01f00870554203f11a5418a4dd712d9ee292230bf952d9e306b70c18d58df097",
+        "metrics": {
+          "operations": 7
+        }
+      },
+      {
+        "id": "test",
+        "operation": "bounded artifact conformance",
+        "status": "executed",
+        "engine": "artifact-check",
+        "input-digest": "sha256:01f00870554203f11a5418a4dd712d9ee292230bf952d9e306b70c18d58df097",
+        "output-digest": "sha256:d22d6fa78e5b4c8e058648567a266b3287cc358c90700a0007b3ea7caf8874b6",
+        "metrics": {
+          "checks": 2,
+          "failures": 0
+        }
+      },
+      {
+        "id": "deploy",
+        "operation": "self-contained URL",
+        "status": "not-run",
+        "detail": "deployment requires the separate user action"
+      }
+    ],
+    "html": "<!doctype html><html lang=\"en\"><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>Mithril benchmark 1</title><main><h1>Verified document 1</h1><p>Review exact content for scenario 1.</p><p>Self-contained static document 1.</p></main></html>\n",
+    "proposals": [
+      {
+        "completion_id": "chatcmpl-1d7b382e-2afa-4a66-8042-960f08796670",
+        "model": "qwen/qwen3.8-27b",
+        "usage": {
+          "prompt_tokens": 191,
+          "completion_tokens": 63,
+          "total_tokens": 254
+        },
+        "content": "{\n  \"name\": \"Mithril benchmark 1\",\n  \"description\": \"Self-contained static document 1.\",\n  \"headline\": \"Verified document 1\",\n  \"summary\": \"Review exact content for scenario 1.\",\n  \"template\": \"report\"\n}"
+      }
+    ]
+  }
+}

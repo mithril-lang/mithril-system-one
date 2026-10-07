@@ -1,0 +1,1 @@
+{"call": 1, "model": "qwen/qwen3.8-27b", "billed_cost_usd": null, "status": 403, "error": "upstream_http_refused", "seconds": 0.05442795902490616}

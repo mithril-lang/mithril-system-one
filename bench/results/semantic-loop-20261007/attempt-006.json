@@ -1,0 +1,23 @@
+{
+  "row": {
+    "case_id": "unknown-library-digest",
+    "round": 1,
+    "expected_admitted": false,
+    "success": true,
+    "http_status": 422,
+    "compile_status": "refused",
+    "steps": [],
+    "seconds": 0.01951724999999999,
+    "inference_calls": 0,
+    "compiler_calls": 1,
+    "billed_cost_usd": null,
+    "error": null,
+    "outcome_unknown": false
+  },
+  "source": "(mithril/app-agent\n  :id \"https://app.mithril.fund/id/starter\"\n  :goal \"https://mithril.fund/id/goal/compile-test-deploy-app\"\n  :ontology \"a8d21164d99278f517181b06d063ea8a63249bff57e8e1a5e72aed5758a28f47\"\n  :imports\n  [(mithril/import\n     :library \"https://mithril.fund/lib/app/agent-loop-v1\"\n     :digest \"sha256:0000000000000000000000000000000000000000000000000000000000000000\")]\n  :loop\n  (mithril/loop\n    :max-steps 6\n    :reasoner \"https://mithril.fund/lib/app/agent-loop-v1/reasoner/owl2-rl\"\n    :query \"https://mithril.fund/lib/app/agent-loop-v1/query/component-catalog\"\n    :validator \"https://mithril.fund/lib/app/agent-loop-v1/validator/shacl-core\"\n    :compiler \"https://mithril.fund/lib/app/agent-loop-v1/compiler/web-ir\"\n    :tester \"https://mithril.fund/lib/app/agent-loop-v1/tester/conformance\"\n    :deployer \"https://mithril.fund/lib/app/agent-loop-v1/deployer/self-contained-url\"\n    :governor \"https://mithril.fund/lib/app/agent-loop-v1/governor/static-read-only\")\n  :app\n  (mithril/app\n    :name \"Mithril benchmark 1\"\n    :description \"Self-contained static document 1.\"\n    :headline \"Verified document 1\"\n    :summary \"Review exact content for scenario 1.\"\n    :template \"https://mithril.fund/id/template/report\"\n    :data-shape \"https://mithril.fund/id/shape/claim-list\"))\n",
+  "response": {
+    "status": "refused",
+    "code": ":mithril/library-digest-mismatch",
+    "detail": "app agent library digest mismatch"
+  }
+}

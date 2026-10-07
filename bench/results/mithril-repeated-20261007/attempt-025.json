@@ -1,0 +1,24 @@
+{
+  "row": {
+    "task_id": "static-03",
+    "round": 3,
+    "method": "llm-source",
+    "success": false,
+    "inference_calls": 1,
+    "compiler_calls": 0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "api_reported_cost_usd": null,
+    "billed_cost_usd": null,
+    "cost_source": null,
+    "completion_ids": [],
+    "api_request_ids": [],
+    "seconds": 45.00402887499999,
+    "error": "transport_outcome_unknown",
+    "outcome_unknown": true
+  },
+  "artifacts": {
+    "source": null,
+    "proposals": []
+  }
+}

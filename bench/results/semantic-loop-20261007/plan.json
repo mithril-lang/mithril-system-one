@@ -1,0 +1,33 @@
+{
+  "format": "mithril.semantic-loop-benchmark/v1",
+  "scope": "Custom public positive and rejection contract cases; no model inference, shell workflow or external leaderboard score.",
+  "rounds": 3,
+  "cases": [
+    {
+      "id": "static-01",
+      "expected_admitted": true
+    },
+    {
+      "id": "static-02",
+      "expected_admitted": true
+    },
+    {
+      "id": "static-03",
+      "expected_admitted": true
+    },
+    {
+      "id": "incomplete-form",
+      "expected_admitted": false
+    },
+    {
+      "id": "unknown-ontology",
+      "expected_admitted": false
+    },
+    {
+      "id": "unknown-library-digest",
+      "expected_admitted": false
+    }
+  ],
+  "max_compiler_calls": 18,
+  "inference_calls": 0
+}
