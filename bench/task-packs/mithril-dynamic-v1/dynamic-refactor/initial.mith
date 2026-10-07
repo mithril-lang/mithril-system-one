@@ -1,0 +1,11 @@
+(mithril/ontology
+        :id "https://mithril.fund/ontology/dynamic-todo-v1"
+        :profile ["https://www.w3.org/TR/rdf11-concepts/" "https://www.w3.org/TR/owl2-profiles/#OWL_2_RL" "https://www.w3.org/TR/shacl/"]
+        :graph [(owl/class :id "https://mithril.fund/test/dynamic#Task")
+        (owl/class :id "https://mithril.fund/test/dynamic#Open" :rdfs/sub-class-of "https://mithril.fund/test/dynamic#Task")
+        (owl/class :id "https://mithril.fund/test/dynamic#Done" :rdfs/sub-class-of "https://mithril.fund/test/dynamic#Task")
+        (owl/datatype-property :id "https://mithril.fund/test/dynamic#label")
+        (shacl/node-shape :id "https://mithril.fund/test/dynamic#TaskShape" :sh/target-class "https://mithril.fund/test/dynamic#Task"
+        :sh/property [(shacl/property-shape :sh/path "https://mithril.fund/test/dynamic#label"
+        :sh/min-count 1 :sh/max-count 1 :sh/datatype "http://www.w3.org/2001/XMLSchema#string")])])
+       

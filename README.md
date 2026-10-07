@@ -64,3 +64,7 @@ Core/examples: Apache-2.0. Hermes adapter and bundled Todo/policy assets retain 
 [Historical Jev comparison and current API availability](docs/jev-comparison.md): raw recorded results are separate from today's Mithril-language pilot. The recorded Jev experiment did not lead its ordinary-LLM controls in speed or provider-reported cost.
 
 [Coding and agent-loop evaluations](docs/agent-benchmarks.md) add a three-repeat run with its timeout and missing attempts retained, 18 real semantic-loop contract checks, and an optional pinned Harbor adapter for the public Mithril Hermes fork. External task smoke results and transport qualification are separate from bounded Mithril generation. No official Artificial Analysis score or billed savings are claimed.
+
+Dynamic Mithril evaluation now includes input-dependent OWL inference and SHACL
+validation over eleven Todo states, repair tasks and semantic refactoring. See
+[the dynamic evaluation contract and reproduction steps](docs/mithril-dynamic-evaluation.md).

@@ -1,0 +1,20 @@
+(ns system-one.dynamic
+  (:require [mithril.compiler :as compiler]
+            [mithril.reason :as reason]))
+(def fs (js/require "fs"))
+(defn safe-json [v]
+  (cond (keyword? v) (name v)
+        (map? v) (into {} (map (fn [[k x]] [(safe-json k) (safe-json x)]) v))
+        (or (sequential? v) (set? v)) (mapv safe-json v)
+        :else v))
+(let [input (js->clj (js/JSON.parse (.readFileSync fs 0 "utf8")) :keywordize-keys true)
+      results (mapv
+               (fn [{:keys [source cases]}]
+                 (let [artifact (compiler/compile-ontology-text "candidate.mith" source)]
+                   {:graph-digest (:graph-digest artifact)
+                    :cases (mapv (fn [{:keys [id data]}]
+                                   (let [r (reason/reason artifact (reason/parse-data "state.nq" data) {})]
+                                     {:id id :status (:status r) :types (:types r)
+                                      :violations (:violations r) :counts (:counts r)
+                                      :consistent (:consistent? r)})) cases)})) (:batches input))]
+  (println (js/JSON.stringify (clj->js (safe-json results)))))

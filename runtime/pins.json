@@ -1,0 +1,6 @@
+{
+  "mithril": ["mithril-lang/mithril", "439a202fcf5ad5d0712217c98deb0bfac56de4e9"],
+  "org-babashka-nbb": ["kotoba-lang/org-babashka-nbb", "829f0ba11016e925001d80e51f12848c4ad58112"],
+  "kotoba": ["kotoba-lang/kotoba", "6ffc07a7006dd0202b0feb0c586d8bd341f086b9"],
+  "text": ["kotoba-lang/text", "51f6ad401aa28a916e321c03c39bc25189af283c"]
+}

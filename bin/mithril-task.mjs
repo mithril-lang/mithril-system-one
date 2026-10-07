@@ -3,21 +3,23 @@ import {mkdir,writeFile,readFile,lstat} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import {taskById,equivalentTasks,ontologyContract,ordinaryHtml} from '../bench/mithril-equivalent-tasks.mjs';
 import {runTask,verifyEquivalent} from '../lib/mithril-task-agent.mjs';
+import {dynamicTaskById,dynamicTasks} from '../bench/mithril-dynamic-tasks.mjs';
+import {runDynamicTask} from '../lib/mithril-dynamic.mjs';
 import {compileMithril} from '../lib/mithril-language.mjs';
 
 async function regular(path){const stat=await lstat(path);if(!stat.isFile()||stat.isSymbolicLink()||stat.size>8192)throw Error('workspace_file_refused');return readFile(path,'utf8');}
 export async function main(args=process.argv.slice(2)){
- if(args.length===1&&args[0]==='list'){console.log(JSON.stringify(equivalentTasks.map(({id,kind,ordinary})=>({id,kind,ordinary})),null,2));return;}
+ if(args.length===1&&args[0]==='list'){console.log(JSON.stringify([...equivalentTasks,...dynamicTasks].map(({id,kind,ordinary})=>({id,kind,ordinary})),null,2));return;}
  if(args.length===2&&args[0]==='agent'&&args[1]==='--stdin'){
   const chunks=[];let bytes=0;for await(const chunk of process.stdin){bytes+=chunk.length;if(bytes>16384)throw Error('invalid_arguments');chunks.push(chunk);}
   const input=JSON.parse(Buffer.concat(chunks).toString('utf8'));
   if(!input||typeof input!=='object'||Array.isArray(input)||Object.keys(input).some(k=>!['task_id','method','source'].includes(k)))throw Error('invalid_arguments');
-  const task=taskById(input.task_id),method=input.method??'ontology';let request;
+  const task=dynamicTaskById(input.task_id)??taskById(input.task_id),method=input.method??'ontology';let request;
   if(method==='system-one'){
    const key=process.env.MITHRIL_API_KEY;if(!key||key.length>1024||/[\r\n]/.test(key))throw Error('mithril_authorization_required');
    request=new Request('https://code.mithril.fund',{headers:{'x-mithril-token':key}});
   }
-  const result=await runTask(task,{method,request,initial:input.source??task.initial});
+  const result=await (dynamicTaskById(task.id)?runDynamicTask:runTask)(task,{method,request,initial:input.source??task.initial});
   console.log(JSON.stringify(result));if(!result.row.success)process.exitCode=1;return;
  }
  const [command,id,path,method='ontology']=args;

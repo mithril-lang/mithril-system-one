@@ -7,3 +7,10 @@ Install using your owning Hermes profile's normal plugin mechanism, set `system_
 Arguments: `task_id`, `method` (`ontology` or `system-one`), optional bounded Mithril `source`. The child receives JSON input and executes a fixed Node entrypoint, with no generated command or arbitrary process execution. It returns candidates and receipts without saving or publishing files. A host timeout means an unknown outcome and must not be retried.
 
 The local adapter tests qualify registration and the subprocess/data/credential boundary. Native Hermes activation remains a separate verification step.
+
+Version 0.2.0 adds `dynamic-repair-inheritance`, `dynamic-repair-validation` and
+`dynamic-refactor` to the same tool. Run `npm run setup:dynamic` in the configured
+checkout before using them. They execute the pinned real Mithril compiler and
+OWL/SHACL engine locally over eleven input snapshots. See
+[dynamic evaluation](../../../docs/mithril-dynamic-evaluation.md) for the exact
+contract and limits. Static-document tasks keep their existing hosted compiler.

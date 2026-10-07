@@ -59,12 +59,12 @@ def register(ctx):
         description="Compile and verify a supported Mithril task",
         schema={"name": "mithril_task", "description": (
             "Run one original bounded Mithril task: create-report, repair-summary, migrate-directory, "
-            "repair-shape, repair-import, compact-refactor. ontology uses deterministic catalog rules; "
+            "repair-shape, repair-import, compact-refactor; dynamic-repair-inheritance, dynamic-repair-validation, dynamic-refactor. ontology uses deterministic catalog rules; "
             "system-one uses one Mithril API proposal. Returns candidate source and real compiler "
             "receipts with exact output/refactor checks. No files, shell, commits or publishing. "
-            "Never retry unknown outcomes. These are public static-document tasks."),
+            "Never retry unknown outcomes. Dynamic tasks execute pinned Mithril OWL/SHACL on 11 Todo input snapshots; static tasks render documents."),
             "parameters": {"type": "object", "properties": {
-                "task_id": {"type": "string", "enum": ["create-report", "repair-summary", "migrate-directory", "repair-shape", "repair-import", "compact-refactor"]},
+                "task_id": {"type": "string", "enum": ["create-report", "repair-summary", "migrate-directory", "repair-shape", "repair-import", "compact-refactor", "dynamic-repair-inheritance", "dynamic-repair-validation", "dynamic-refactor"]},
                 "method": {"type": "string", "enum": ["ontology", "system-one"]},
                 "source": {"type": "string", "maxLength": 8192}},
                 "required": ["task_id", "method"], "additionalProperties": False}})

@@ -1,0 +1,204 @@
+{
+  "id": "dynamic-repair-validation",
+  "kind": "repair",
+  "problem": "Reject a task with no label; accept the same task after supplying one label.",
+  "states": [
+    {
+      "id": "add",
+      "data": "<urn:todo:a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://mithril.fund/test/dynamic#Open> .\n<urn:todo:a> <https://mithril.fund/test/dynamic#label> \"Write Mithril\" .",
+      "ordinary_expected": {
+        "tasks": [
+          "a"
+        ],
+        "done": [],
+        "violations": [],
+        "status": "conforms"
+      }
+    },
+    {
+      "id": "complete",
+      "data": "<urn:todo:a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://mithril.fund/test/dynamic#Done> .\n<urn:todo:a> <https://mithril.fund/test/dynamic#label> \"Write Mithril\" .",
+      "ordinary_expected": {
+        "tasks": [
+          "a"
+        ],
+        "done": [
+          "a"
+        ],
+        "violations": [],
+        "status": "conforms"
+      }
+    },
+    {
+      "id": "second-task",
+      "data": "<urn:todo:a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://mithril.fund/test/dynamic#Done> .\n<urn:todo:a> <https://mithril.fund/test/dynamic#label> \"Write Mithril\" .\n<urn:todo:b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://mithril.fund/test/dynamic#Open> .\n<urn:todo:b> <https://mithril.fund/test/dynamic#label> \"Publish\" .",
+      "ordinary_expected": {
+        "tasks": [
+          "a",
+          "b"
+        ],
+        "done": [
+          "a"
+        ],
+        "violations": [],
+        "status": "conforms"
+      }
+    },
+    {
+      "id": "reopen",
+      "data": "<urn:todo:a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://mithril.fund/test/dynamic#Open> .\n<urn:todo:a> <https://mithril.fund/test/dynamic#label> \"Write Mithril\" .\n<urn:todo:b> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://mithril.fund/test/dynamic#Open> .\n<urn:todo:b> <https://mithril.fund/test/dynamic#label> \"Publish\" .",
+      "ordinary_expected": {
+        "tasks": [
+          "a",
+          "b"
+        ],
+        "done": [],
+        "violations": [],
+        "status": "conforms"
+      }
+    },
+    {
+      "id": "delete",
+      "data": "<urn:todo:a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://mithril.fund/test/dynamic#Open> .\n<urn:todo:a> <https://mithril.fund/test/dynamic#label> \"Write Mithril\" .",
+      "ordinary_expected": {
+        "tasks": [
+          "a"
+        ],
+        "done": [],
+        "violations": [],
+        "status": "conforms"
+      }
+    },
+    {
+      "id": "missing-label",
+      "data": "<urn:todo:a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://mithril.fund/test/dynamic#Open> .\n<urn:todo:a> <https://mithril.fund/test/dynamic#label> \"Write Mithril\" .\n<urn:todo:c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://mithril.fund/test/dynamic#Open> .",
+      "ordinary_expected": {
+        "tasks": [
+          "a",
+          "c"
+        ],
+        "done": [],
+        "violations": [
+          [
+            "c",
+            "sh:minCount"
+          ]
+        ],
+        "status": "violations"
+      }
+    },
+    {
+      "id": "duplicate-label",
+      "data": "<urn:todo:a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://mithril.fund/test/dynamic#Open> .\n<urn:todo:a> <https://mithril.fund/test/dynamic#label> \"Write Mithril\" .\n<urn:todo:c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://mithril.fund/test/dynamic#Open> .\n<urn:todo:d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://mithril.fund/test/dynamic#Done> .\n<urn:todo:d> <https://mithril.fund/test/dynamic#label> \"one\" .\n<urn:todo:d> <https://mithril.fund/test/dynamic#label> \"two\" .",
+      "ordinary_expected": {
+        "tasks": [
+          "a",
+          "c",
+          "d"
+        ],
+        "done": [
+          "d"
+        ],
+        "violations": [
+          [
+            "c",
+            "sh:minCount"
+          ],
+          [
+            "d",
+            "sh:maxCount"
+          ]
+        ],
+        "status": "violations"
+      }
+    },
+    {
+      "id": "wrong-datatype",
+      "data": "<urn:todo:a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://mithril.fund/test/dynamic#Open> .\n<urn:todo:a> <https://mithril.fund/test/dynamic#label> \"Write Mithril\" .\n<urn:todo:c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://mithril.fund/test/dynamic#Open> .\n<urn:todo:d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://mithril.fund/test/dynamic#Done> .\n<urn:todo:d> <https://mithril.fund/test/dynamic#label> \"one\" .\n<urn:todo:d> <https://mithril.fund/test/dynamic#label> \"two\" .\n<urn:todo:e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://mithril.fund/test/dynamic#Open> .\n<urn:todo:e> <https://mithril.fund/test/dynamic#label> \"42\"^^<http://www.w3.org/2001/XMLSchema#integer> .",
+      "ordinary_expected": {
+        "tasks": [
+          "a",
+          "c",
+          "d",
+          "e"
+        ],
+        "done": [
+          "d"
+        ],
+        "violations": [
+          [
+            "c",
+            "sh:minCount"
+          ],
+          [
+            "d",
+            "sh:maxCount"
+          ],
+          [
+            "e",
+            "sh:datatype"
+          ]
+        ],
+        "status": "violations"
+      }
+    },
+    {
+      "id": "repair-input",
+      "data": "<urn:todo:a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://mithril.fund/test/dynamic#Open> .\n<urn:todo:a> <https://mithril.fund/test/dynamic#label> \"Write Mithril\" .\n<urn:todo:c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://mithril.fund/test/dynamic#Open> .\n<urn:todo:c> <https://mithril.fund/test/dynamic#label> \"Fixed\" .\n<urn:todo:d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://mithril.fund/test/dynamic#Done> .\n<urn:todo:d> <https://mithril.fund/test/dynamic#label> \"one\" .\n<urn:todo:d> <https://mithril.fund/test/dynamic#label> \"two\" .\n<urn:todo:e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://mithril.fund/test/dynamic#Open> .\n<urn:todo:e> <https://mithril.fund/test/dynamic#label> \"42\"^^<http://www.w3.org/2001/XMLSchema#integer> .",
+      "ordinary_expected": {
+        "tasks": [
+          "a",
+          "c",
+          "d",
+          "e"
+        ],
+        "done": [
+          "d"
+        ],
+        "violations": [
+          [
+            "d",
+            "sh:maxCount"
+          ],
+          [
+            "e",
+            "sh:datatype"
+          ]
+        ],
+        "status": "violations"
+      }
+    },
+    {
+      "id": "remove-invalid-duplicate",
+      "data": "<urn:todo:a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://mithril.fund/test/dynamic#Open> .\n<urn:todo:a> <https://mithril.fund/test/dynamic#label> \"Write Mithril\" .\n<urn:todo:c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://mithril.fund/test/dynamic#Open> .\n<urn:todo:c> <https://mithril.fund/test/dynamic#label> \"Fixed\" .\n<urn:todo:e> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://mithril.fund/test/dynamic#Open> .\n<urn:todo:e> <https://mithril.fund/test/dynamic#label> \"42\"^^<http://www.w3.org/2001/XMLSchema#integer> .",
+      "ordinary_expected": {
+        "tasks": [
+          "a",
+          "c",
+          "e"
+        ],
+        "done": [],
+        "violations": [
+          [
+            "e",
+            "sh:datatype"
+          ]
+        ],
+        "status": "violations"
+      }
+    },
+    {
+      "id": "remove-invalid-type",
+      "data": "<urn:todo:a> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://mithril.fund/test/dynamic#Open> .\n<urn:todo:a> <https://mithril.fund/test/dynamic#label> \"Write Mithril\" .\n<urn:todo:c> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://mithril.fund/test/dynamic#Open> .\n<urn:todo:c> <https://mithril.fund/test/dynamic#label> \"Fixed\" .",
+      "ordinary_expected": {
+        "tasks": [
+          "a",
+          "c"
+        ],
+        "done": [],
+        "violations": [],
+        "status": "conforms"
+      }
+    }
+  ]
+}
