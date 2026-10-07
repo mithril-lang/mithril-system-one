@@ -12,9 +12,9 @@
     {
       "path": "lib/mithril-language.mjs",
       "upstream": "mithril-lang/mithril-fund",
-      "revision": "3a55edb66bb2c07c48a2317e43de056a4989f8c7",
-      "source_sha256": "a5731163545aa3e58e565e7f9ec0883048fa9e53592e4f9d961a44b0e4dfe4a4",
-      "published_sha256": "a5731163545aa3e58e565e7f9ec0883048fa9e53592e4f9d961a44b0e4dfe4a4"
+      "revision": "15565b3a1386de2e05d94ed452154a9d74d5a4e1",
+      "source_sha256": "49a6d88f7dbf7538a0d440095f88c8c80a7d823e8bc52c3c4be2845951de4350",
+      "published_sha256": "49a6d88f7dbf7538a0d440095f88c8c80a7d823e8bc52c3c4be2845951de4350"
     },
     {
       "path": "lib/mithril-starter.mjs",
