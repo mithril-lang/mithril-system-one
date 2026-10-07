@@ -1,0 +1,12 @@
+name: mithril-tasks
+version: 0.1.0
+description: Original Mithril task harness with bounded edit proposals and compiler verification
+author: Mithril
+license: Apache-2.0
+provides_tools:
+  - mithril_task
+config_schema:
+  system_one_root:
+    type: str
+    required: true
+    description: Reviewed local checkout of mithril-lang/mithril-system-one (Node.js22+).

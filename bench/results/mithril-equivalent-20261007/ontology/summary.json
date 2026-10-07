@@ -1,0 +1,317 @@
+{
+  "format": "mithril.equivalent-task-suite/v1",
+  "scope": "Six original static-document tasks adapted to Mithril; not standard benchmark scores.",
+  "methods": [
+    "ontology"
+  ],
+  "rounds": 1,
+  "max_inference_calls": 0,
+  "max_compiler_calls": 9,
+  "tasks": [
+    {
+      "id": "create-report",
+      "kind": "create",
+      "ordinary": "Implement a static incident report from the supplied content contract.",
+      "ontology": {
+        "scope": "Bounded app-agent-v1 catalog constraints; not arbitrary ontology reasoning.",
+        "asserted": {
+          "application": {
+            "name": "Incident review",
+            "description": "Reviewed public incident evidence.",
+            "headline": "Verified incidents",
+            "summary": "Three incidents are ready for review.",
+            "template": "report"
+          },
+          "template_shape_catalog": {
+            "report": "claim-list",
+            "dashboard": "metric-cards",
+            "directory": "entity-directory"
+          }
+        },
+        "obligations": [
+          "exact-content",
+          "template-selects-shape",
+          "approved-ontology-and-library",
+          "semantic-stages-executed",
+          "ordinary-output-equivalence"
+        ],
+        "derived": {
+          "template": "https://mithril.fund/id/template/report",
+          "data_shape": "https://mithril.fund/id/shape/claim-list"
+        }
+      }
+    },
+    {
+      "id": "repair-summary",
+      "kind": "bugfix",
+      "ordinary": "Fix the incorrect incident count in a rendered report; preserve all other content.",
+      "ontology": {
+        "scope": "Bounded app-agent-v1 catalog constraints; not arbitrary ontology reasoning.",
+        "asserted": {
+          "application": {
+            "name": "Incident review",
+            "description": "Reviewed public incident evidence.",
+            "headline": "Verified incidents",
+            "summary": "Three incidents are ready for review.",
+            "template": "report"
+          },
+          "template_shape_catalog": {
+            "report": "claim-list",
+            "dashboard": "metric-cards",
+            "directory": "entity-directory"
+          }
+        },
+        "obligations": [
+          "exact-content",
+          "template-selects-shape",
+          "approved-ontology-and-library",
+          "semantic-stages-executed",
+          "ordinary-output-equivalence"
+        ],
+        "derived": {
+          "template": "https://mithril.fund/id/template/report",
+          "data_shape": "https://mithril.fund/id/shape/claim-list"
+        }
+      }
+    },
+    {
+      "id": "migrate-directory",
+      "kind": "migration",
+      "ordinary": "Migrate a report to a directory view while preserving its name and text.",
+      "ontology": {
+        "scope": "Bounded app-agent-v1 catalog constraints; not arbitrary ontology reasoning.",
+        "asserted": {
+          "application": {
+            "name": "Incident review",
+            "description": "Reviewed public incident evidence.",
+            "headline": "Verified incidents",
+            "summary": "Three incidents are ready for review.",
+            "template": "directory"
+          },
+          "template_shape_catalog": {
+            "report": "claim-list",
+            "dashboard": "metric-cards",
+            "directory": "entity-directory"
+          }
+        },
+        "obligations": [
+          "exact-content",
+          "template-selects-shape",
+          "approved-ontology-and-library",
+          "semantic-stages-executed",
+          "ordinary-output-equivalence"
+        ],
+        "derived": {
+          "template": "https://mithril.fund/id/template/directory",
+          "data_shape": "https://mithril.fund/id/shape/entity-directory"
+        }
+      }
+    },
+    {
+      "id": "repair-shape",
+      "kind": "ontology",
+      "ordinary": "Resolve a schema/view mismatch so the report satisfies its template-to-shape contract and its visible content stays unchanged.",
+      "ontology": {
+        "scope": "Bounded app-agent-v1 catalog constraints; not arbitrary ontology reasoning.",
+        "asserted": {
+          "application": {
+            "name": "Incident review",
+            "description": "Reviewed public incident evidence.",
+            "headline": "Verified incidents",
+            "summary": "Three incidents are ready for review.",
+            "template": "report"
+          },
+          "template_shape_catalog": {
+            "report": "claim-list",
+            "dashboard": "metric-cards",
+            "directory": "entity-directory"
+          }
+        },
+        "obligations": [
+          "exact-content",
+          "template-selects-shape",
+          "approved-ontology-and-library",
+          "semantic-stages-executed",
+          "ordinary-output-equivalence"
+        ],
+        "derived": {
+          "template": "https://mithril.fund/id/template/report",
+          "data_shape": "https://mithril.fund/id/shape/claim-list"
+        }
+      }
+    },
+    {
+      "id": "repair-import",
+      "kind": "dependency",
+      "ordinary": "Repair a corrupted dependency lock using the supplied approved library binding; preserve visible output.",
+      "ontology": {
+        "scope": "Bounded app-agent-v1 catalog constraints; not arbitrary ontology reasoning.",
+        "asserted": {
+          "application": {
+            "name": "Incident review",
+            "description": "Reviewed public incident evidence.",
+            "headline": "Verified incidents",
+            "summary": "Three incidents are ready for review.",
+            "template": "report"
+          },
+          "template_shape_catalog": {
+            "report": "claim-list",
+            "dashboard": "metric-cards",
+            "directory": "entity-directory"
+          }
+        },
+        "obligations": [
+          "exact-content",
+          "template-selects-shape",
+          "approved-ontology-and-library",
+          "semantic-stages-executed",
+          "ordinary-output-equivalence"
+        ],
+        "derived": {
+          "template": "https://mithril.fund/id/template/report",
+          "data_shape": "https://mithril.fund/id/shape/claim-list"
+        }
+      }
+    },
+    {
+      "id": "compact-refactor",
+      "kind": "refactor",
+      "ordinary": "Refactor source formatting to fewer UTF-8 bytes without changing any compiled semantics or visible output.",
+      "ontology": {
+        "scope": "Bounded app-agent-v1 catalog constraints; not arbitrary ontology reasoning.",
+        "asserted": {
+          "application": {
+            "name": "Incident review",
+            "description": "Reviewed public incident evidence.",
+            "headline": "Verified incidents",
+            "summary": "Three incidents are ready for review.",
+            "template": "report"
+          },
+          "template_shape_catalog": {
+            "report": "claim-list",
+            "dashboard": "metric-cards",
+            "directory": "entity-directory"
+          }
+        },
+        "obligations": [
+          "exact-content",
+          "template-selects-shape",
+          "approved-ontology-and-library",
+          "semantic-stages-executed",
+          "ordinary-output-equivalence",
+          "preserve-entire-app-ir",
+          "reduce-source-bytes"
+        ],
+        "derived": {
+          "template": "https://mithril.fund/id/template/report",
+          "data_shape": "https://mithril.fund/id/shape/claim-list"
+        }
+      }
+    }
+  ],
+  "rows": [
+    {
+      "task_id": "create-report",
+      "kind": "create",
+      "method": "ontology",
+      "success": true,
+      "seconds": 1.798886125,
+      "inference_calls": 0,
+      "compiler_calls": 1,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "billed_cost_usd": null,
+      "outcome_unknown": false,
+      "error": null,
+      "round": 1
+    },
+    {
+      "task_id": "repair-summary",
+      "kind": "bugfix",
+      "method": "ontology",
+      "success": true,
+      "seconds": 0.37937070900000003,
+      "inference_calls": 0,
+      "compiler_calls": 1,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "billed_cost_usd": null,
+      "outcome_unknown": false,
+      "error": null,
+      "round": 1
+    },
+    {
+      "task_id": "migrate-directory",
+      "kind": "migration",
+      "method": "ontology",
+      "success": true,
+      "seconds": 0.2806702089999999,
+      "inference_calls": 0,
+      "compiler_calls": 1,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "billed_cost_usd": null,
+      "outcome_unknown": false,
+      "error": null,
+      "round": 1
+    },
+    {
+      "task_id": "repair-shape",
+      "kind": "ontology",
+      "method": "ontology",
+      "success": true,
+      "seconds": 0.5199112090000003,
+      "inference_calls": 0,
+      "compiler_calls": 2,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "billed_cost_usd": null,
+      "outcome_unknown": false,
+      "error": null,
+      "round": 1
+    },
+    {
+      "task_id": "repair-import",
+      "kind": "dependency",
+      "method": "ontology",
+      "success": true,
+      "seconds": 0.2289064169999997,
+      "inference_calls": 0,
+      "compiler_calls": 2,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "billed_cost_usd": null,
+      "outcome_unknown": false,
+      "error": null,
+      "round": 1
+    },
+    {
+      "task_id": "compact-refactor",
+      "kind": "refactor",
+      "method": "ontology",
+      "success": true,
+      "seconds": 0.3512287500000002,
+      "inference_calls": 0,
+      "compiler_calls": 2,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "billed_cost_usd": null,
+      "outcome_unknown": false,
+      "error": null,
+      "round": 1
+    }
+  ],
+  "stopped": null,
+  "complete": true,
+  "measurements": [
+    {
+      "method": "ontology",
+      "planned": 6,
+      "executed": 6,
+      "passed": 6,
+      "missing": 0,
+      "all_attempt_median_seconds": 0.3512287500000002,
+      "billed_cost_usd": null
+    }
+  ]
+}

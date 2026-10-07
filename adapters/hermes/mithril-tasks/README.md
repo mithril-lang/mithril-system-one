@@ -1,0 +1,9 @@
+# Mithril task tool for Hermes
+
+This opt-in local adapter runs the original six-task suite through the same Mithril harness as the terminal CLI. It adds `mithril_task`; the existing `mithril_code` extraction and its pins remain intact.
+
+Install using your owning Hermes profile's normal plugin mechanism, set `system_one_root` to a reviewed checkout of this repository, and use a new conversation to discover the tool. Node.js22+ is required. The `system-one` method uses that profile's existing `MITHRIL_API_KEY`; `ontology` uses no inference credential. No profile is installed or activated by this repository.
+
+Arguments: `task_id`, `method` (`ontology` or `system-one`), optional bounded Mithril `source`. The child receives JSON input and executes a fixed Node entrypoint, with no generated command or arbitrary process execution. It returns candidates and receipts without saving or publishing files. A host timeout means an unknown outcome and must not be retried.
+
+The local adapter tests qualify registration and the subprocess/data/credential boundary. Native Hermes activation remains a separate verification step.

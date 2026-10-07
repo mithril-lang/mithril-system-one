@@ -27,6 +27,8 @@ Use the same Mithril tasks, model, compiler and contracts for full-source and kn
 
 ## Current evidence
 
+The [original Mithril task suite](mithril-equivalent-tasks.md) extends this flow to bounded source maintenance: bug fixing, template migration, shape/import repair and format-only refactor. It provides terminal and Hermes tool entrypoints with ordinary-output and whole-IR equivalence checks.
+
 The [published evaluation](agent-benchmarks.md) records eight passing System One attempts with a 5.362-second median and one missing scheduled attempt. The semantic loop passed 18/18 admission/refusal checks, with a 0.189-second positive-case median. This supports a concrete demonstration of fast completion on the tested static Mithril tasks. It does not establish universal completion times or monetary savings.
 
 General repository-edit benchmarks are secondary integration diagnostics. The recorded Hermes Terminal-Bench attempts remain published as unsuccessful diagnostics; they do not define the specialized Mithril product's primary score. No Artificial Analysis leaderboard score is available.

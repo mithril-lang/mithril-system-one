@@ -1,0 +1,7 @@
+{
+  "name": "Incident review",
+  "description": "Reviewed public incident evidence.",
+  "headline": "Verified incidents",
+  "summary": "Three incidents are ready for review.",
+  "template": "report"
+}

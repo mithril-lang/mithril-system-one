@@ -1,0 +1,394 @@
+{
+  "row": {
+    "task_id": "compact-refactor",
+    "kind": "refactor",
+    "method": "ontology",
+    "success": true,
+    "seconds": 0.14339974999999994,
+    "inference_calls": 0,
+    "compiler_calls": 2,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "billed_cost_usd": null,
+    "outcome_unknown": false,
+    "error": null,
+    "round": 1
+  },
+  "trace": [
+    {
+      "tool": "inspect",
+      "state": {
+        "empty": false,
+        "app": {
+          "name": "Incident review",
+          "description": "Reviewed public incident evidence.",
+          "headline": "Verified incidents",
+          "summary": "Three incidents are ready for review.",
+          "template": "report"
+        },
+        "shape": "https://mithril.fund/id/shape/claim-list",
+        "ontology": "a8d21164d99278f517181b06d063ea8a63249bff57e8e1a5e72aed5758a28f47",
+        "library": "https://mithril.fund/lib/app/agent-loop-v1",
+        "digest": "sha256:b7d1290a2fe8d8f6f0a17c49d2774b9396e9389fb5d070e98335d8d5517266ce"
+      }
+    },
+    {
+      "tool": "compile-before",
+      "status": "admitted",
+      "digest": "sha256:702a16fea2b8861427155d0a5d9387029fe3b4357cbc0349b77237c65c7de23a"
+    },
+    {
+      "tool": "propose",
+      "plan": [
+        {
+          "op": "compact"
+        }
+      ]
+    },
+    {
+      "tool": "apply",
+      "source_bytes": 1210
+    },
+    {
+      "tool": "compile",
+      "status": "admitted",
+      "digest": "sha256:702a16fea2b8861427155d0a5d9387029fe3b4357cbc0349b77237c65c7de23a"
+    },
+    {
+      "tool": "verify",
+      "checks": [
+        "exact-content",
+        "shape-binding",
+        "approved-bindings",
+        "ordinary-html-equivalence",
+        "whole-ir-equivalence",
+        "smaller-source"
+      ]
+    }
+  ],
+  "source": "(mithril/app-agent :id \"https://app.mithril.fund/id/starter\" :goal \"https://mithril.fund/id/goal/compile-test-deploy-app\" :ontology \"a8d21164d99278f517181b06d063ea8a63249bff57e8e1a5e72aed5758a28f47\" :imports [(mithril/import :library \"https://mithril.fund/lib/app/agent-loop-v1\" :digest \"sha256:b7d1290a2fe8d8f6f0a17c49d2774b9396e9389fb5d070e98335d8d5517266ce\")] :loop (mithril/loop :max-steps 6 :reasoner \"https://mithril.fund/lib/app/agent-loop-v1/reasoner/owl2-rl\" :query \"https://mithril.fund/lib/app/agent-loop-v1/query/component-catalog\" :validator \"https://mithril.fund/lib/app/agent-loop-v1/validator/shacl-core\" :compiler \"https://mithril.fund/lib/app/agent-loop-v1/compiler/web-ir\" :tester \"https://mithril.fund/lib/app/agent-loop-v1/tester/conformance\" :deployer \"https://mithril.fund/lib/app/agent-loop-v1/deployer/self-contained-url\" :governor \"https://mithril.fund/lib/app/agent-loop-v1/governor/static-read-only\") :app (mithril/app :name \"Incident review\" :description \"Reviewed public incident evidence.\" :headline \"Verified incidents\" :summary \"Three incidents are ready for review.\" :template \"https://mithril.fund/id/template/report\" :data-shape \"https://mithril.fund/id/shape/claim-list\"))\n",
+  "compiled": {
+    "status": "admitted",
+    "artifact": {
+      "format": "https://mithril.fund/artifact/app-agent-v1",
+      "media-type": "application/ld+json",
+      "graph-digest": "sha256:702a16fea2b8861427155d0a5d9387029fe3b4357cbc0349b77237c65c7de23a",
+      "app-ir": {
+        "version": "v1",
+        "goal": "compile-test-deploy-app",
+        "ontology": "a8d21164d99278f517181b06d063ea8a63249bff57e8e1a5e72aed5758a28f47",
+        "import": {
+          "library": "https://mithril.fund/lib/app/agent-loop-v1",
+          "digest": "sha256:b7d1290a2fe8d8f6f0a17c49d2774b9396e9389fb5d070e98335d8d5517266ce"
+        },
+        "budget": {
+          "max-steps": 6,
+          "max-source-bytes": 8192
+        },
+        "operations": {
+          "reasoner": "https://mithril.fund/lib/app/agent-loop-v1/reasoner/owl2-rl",
+          "query": "https://mithril.fund/lib/app/agent-loop-v1/query/component-catalog",
+          "validator": "https://mithril.fund/lib/app/agent-loop-v1/validator/shacl-core",
+          "compiler": "https://mithril.fund/lib/app/agent-loop-v1/compiler/web-ir",
+          "tester": "https://mithril.fund/lib/app/agent-loop-v1/tester/conformance",
+          "deployer": "https://mithril.fund/lib/app/agent-loop-v1/deployer/self-contained-url",
+          "governor": "https://mithril.fund/lib/app/agent-loop-v1/governor/static-read-only"
+        },
+        "app": {
+          "name": "Incident review",
+          "description": "Reviewed public incident evidence.",
+          "headline": "Verified incidents",
+          "summary": "Three incidents are ready for review.",
+          "template": "https://mithril.fund/id/template/report",
+          "data-shape": "https://mithril.fund/id/shape/claim-list"
+        },
+        "effects": [
+          "static-document",
+          "self-contained-url"
+        ]
+      }
+    },
+    "semanticRun": {
+      "format": "https://mithril.fund/receipt/semantic-execution-v1",
+      "status": "executed",
+      "artifact-digest": "sha256:702a16fea2b8861427155d0a5d9387029fe3b4357cbc0349b77237c65c7de23a",
+      "state-digest": "sha256:651cece26b5dca935f6d3b02c4b5cbbdf286f544854514e268ddc6a07171104c",
+      "receipts": [
+        {
+          "id": "infer",
+          "operation": "OWL 2 RL materialization",
+          "status": "executed",
+          "engine": "materialize-owl2-rl",
+          "input-digest": "sha256:d92202d5b084c9c257b12ee417249aff889f690845fa26861a82c4c038a891bf",
+          "output-digest": "sha256:9cb5e53e787576497fc3b4f8acdbdc5d9d4d3076a549bdbc91223f8e86223d5d",
+          "metrics": {
+            "asserted-triples": 4,
+            "derived-triples": 1
+          }
+        },
+        {
+          "id": "query",
+          "operation": "SPARQL algebra",
+          "status": "executed",
+          "engine": "select",
+          "input-digest": "sha256:f76ac8c8c6d4fd6db9fe143d32433d997008f9fdfcafd3c28a46386c8147ba05",
+          "output-digest": "sha256:ab6facbd362aa70a1231692d77922ee2dc91a53405df105c429894b7731e57ef",
+          "metrics": {
+            "rows": 1
+          }
+        },
+        {
+          "id": "validate",
+          "operation": "SHACL bounded validation",
+          "status": "executed",
+          "engine": "shacl-edge-adapter",
+          "input-digest": "sha256:b86dbaa00655bef5ed3abac2a805395120b175a184e4c367c35fcce2ad2d0a1c",
+          "output-digest": "sha256:adfc5c3d5f487ad7a36294d016050df206aad3d00bd4ed063d87c236049e61aa",
+          "metrics": {
+            "violations": 0,
+            "constraints": [
+              "min-count",
+              "max-count",
+              "datatype",
+              "in"
+            ]
+          }
+        }
+      ]
+    },
+    "trace": [
+      {
+        "id": "infer",
+        "operation": "OWL 2 RL materialization",
+        "status": "executed",
+        "engine": "materialize-owl2-rl",
+        "input-digest": "sha256:d92202d5b084c9c257b12ee417249aff889f690845fa26861a82c4c038a891bf",
+        "output-digest": "sha256:9cb5e53e787576497fc3b4f8acdbdc5d9d4d3076a549bdbc91223f8e86223d5d",
+        "metrics": {
+          "asserted-triples": 4,
+          "derived-triples": 1
+        }
+      },
+      {
+        "id": "query",
+        "operation": "SPARQL algebra",
+        "status": "executed",
+        "engine": "select",
+        "input-digest": "sha256:f76ac8c8c6d4fd6db9fe143d32433d997008f9fdfcafd3c28a46386c8147ba05",
+        "output-digest": "sha256:ab6facbd362aa70a1231692d77922ee2dc91a53405df105c429894b7731e57ef",
+        "metrics": {
+          "rows": 1
+        }
+      },
+      {
+        "id": "validate",
+        "operation": "SHACL bounded validation",
+        "status": "executed",
+        "engine": "shacl-edge-adapter",
+        "input-digest": "sha256:b86dbaa00655bef5ed3abac2a805395120b175a184e4c367c35fcce2ad2d0a1c",
+        "output-digest": "sha256:adfc5c3d5f487ad7a36294d016050df206aad3d00bd4ed063d87c236049e61aa",
+        "metrics": {
+          "violations": 0,
+          "constraints": [
+            "min-count",
+            "max-count",
+            "datatype",
+            "in"
+          ]
+        }
+      },
+      {
+        "id": "compile",
+        "operation": "Mithril App IR",
+        "status": "executed",
+        "engine": "compile-text",
+        "input-digest": "sha256:702a16fea2b8861427155d0a5d9387029fe3b4357cbc0349b77237c65c7de23a",
+        "output-digest": "sha256:f20d48233f3760013ceb8ca0cf02a8be3d28dc8e02881f335aff61607bdcedf8",
+        "metrics": {
+          "operations": 7
+        }
+      },
+      {
+        "id": "test",
+        "operation": "bounded artifact conformance",
+        "status": "executed",
+        "engine": "artifact-check",
+        "input-digest": "sha256:f20d48233f3760013ceb8ca0cf02a8be3d28dc8e02881f335aff61607bdcedf8",
+        "output-digest": "sha256:d22d6fa78e5b4c8e058648567a266b3287cc358c90700a0007b3ea7caf8874b6",
+        "metrics": {
+          "checks": 2,
+          "failures": 0
+        }
+      },
+      {
+        "id": "deploy",
+        "operation": "self-contained URL",
+        "status": "not-run",
+        "detail": "deployment requires the separate user action"
+      }
+    ]
+  },
+  "before": {
+    "status": "admitted",
+    "artifact": {
+      "format": "https://mithril.fund/artifact/app-agent-v1",
+      "media-type": "application/ld+json",
+      "graph-digest": "sha256:702a16fea2b8861427155d0a5d9387029fe3b4357cbc0349b77237c65c7de23a",
+      "app-ir": {
+        "version": "v1",
+        "goal": "compile-test-deploy-app",
+        "ontology": "a8d21164d99278f517181b06d063ea8a63249bff57e8e1a5e72aed5758a28f47",
+        "import": {
+          "library": "https://mithril.fund/lib/app/agent-loop-v1",
+          "digest": "sha256:b7d1290a2fe8d8f6f0a17c49d2774b9396e9389fb5d070e98335d8d5517266ce"
+        },
+        "budget": {
+          "max-steps": 6,
+          "max-source-bytes": 8192
+        },
+        "operations": {
+          "reasoner": "https://mithril.fund/lib/app/agent-loop-v1/reasoner/owl2-rl",
+          "query": "https://mithril.fund/lib/app/agent-loop-v1/query/component-catalog",
+          "validator": "https://mithril.fund/lib/app/agent-loop-v1/validator/shacl-core",
+          "compiler": "https://mithril.fund/lib/app/agent-loop-v1/compiler/web-ir",
+          "tester": "https://mithril.fund/lib/app/agent-loop-v1/tester/conformance",
+          "deployer": "https://mithril.fund/lib/app/agent-loop-v1/deployer/self-contained-url",
+          "governor": "https://mithril.fund/lib/app/agent-loop-v1/governor/static-read-only"
+        },
+        "app": {
+          "name": "Incident review",
+          "description": "Reviewed public incident evidence.",
+          "headline": "Verified incidents",
+          "summary": "Three incidents are ready for review.",
+          "template": "https://mithril.fund/id/template/report",
+          "data-shape": "https://mithril.fund/id/shape/claim-list"
+        },
+        "effects": [
+          "static-document",
+          "self-contained-url"
+        ]
+      }
+    },
+    "semanticRun": {
+      "format": "https://mithril.fund/receipt/semantic-execution-v1",
+      "status": "executed",
+      "artifact-digest": "sha256:702a16fea2b8861427155d0a5d9387029fe3b4357cbc0349b77237c65c7de23a",
+      "state-digest": "sha256:651cece26b5dca935f6d3b02c4b5cbbdf286f544854514e268ddc6a07171104c",
+      "receipts": [
+        {
+          "id": "infer",
+          "operation": "OWL 2 RL materialization",
+          "status": "executed",
+          "engine": "materialize-owl2-rl",
+          "input-digest": "sha256:d92202d5b084c9c257b12ee417249aff889f690845fa26861a82c4c038a891bf",
+          "output-digest": "sha256:9cb5e53e787576497fc3b4f8acdbdc5d9d4d3076a549bdbc91223f8e86223d5d",
+          "metrics": {
+            "asserted-triples": 4,
+            "derived-triples": 1
+          }
+        },
+        {
+          "id": "query",
+          "operation": "SPARQL algebra",
+          "status": "executed",
+          "engine": "select",
+          "input-digest": "sha256:f76ac8c8c6d4fd6db9fe143d32433d997008f9fdfcafd3c28a46386c8147ba05",
+          "output-digest": "sha256:ab6facbd362aa70a1231692d77922ee2dc91a53405df105c429894b7731e57ef",
+          "metrics": {
+            "rows": 1
+          }
+        },
+        {
+          "id": "validate",
+          "operation": "SHACL bounded validation",
+          "status": "executed",
+          "engine": "shacl-edge-adapter",
+          "input-digest": "sha256:b86dbaa00655bef5ed3abac2a805395120b175a184e4c367c35fcce2ad2d0a1c",
+          "output-digest": "sha256:adfc5c3d5f487ad7a36294d016050df206aad3d00bd4ed063d87c236049e61aa",
+          "metrics": {
+            "violations": 0,
+            "constraints": [
+              "min-count",
+              "max-count",
+              "datatype",
+              "in"
+            ]
+          }
+        }
+      ]
+    },
+    "trace": [
+      {
+        "id": "infer",
+        "operation": "OWL 2 RL materialization",
+        "status": "executed",
+        "engine": "materialize-owl2-rl",
+        "input-digest": "sha256:d92202d5b084c9c257b12ee417249aff889f690845fa26861a82c4c038a891bf",
+        "output-digest": "sha256:9cb5e53e787576497fc3b4f8acdbdc5d9d4d3076a549bdbc91223f8e86223d5d",
+        "metrics": {
+          "asserted-triples": 4,
+          "derived-triples": 1
+        }
+      },
+      {
+        "id": "query",
+        "operation": "SPARQL algebra",
+        "status": "executed",
+        "engine": "select",
+        "input-digest": "sha256:f76ac8c8c6d4fd6db9fe143d32433d997008f9fdfcafd3c28a46386c8147ba05",
+        "output-digest": "sha256:ab6facbd362aa70a1231692d77922ee2dc91a53405df105c429894b7731e57ef",
+        "metrics": {
+          "rows": 1
+        }
+      },
+      {
+        "id": "validate",
+        "operation": "SHACL bounded validation",
+        "status": "executed",
+        "engine": "shacl-edge-adapter",
+        "input-digest": "sha256:b86dbaa00655bef5ed3abac2a805395120b175a184e4c367c35fcce2ad2d0a1c",
+        "output-digest": "sha256:adfc5c3d5f487ad7a36294d016050df206aad3d00bd4ed063d87c236049e61aa",
+        "metrics": {
+          "violations": 0,
+          "constraints": [
+            "min-count",
+            "max-count",
+            "datatype",
+            "in"
+          ]
+        }
+      },
+      {
+        "id": "compile",
+        "operation": "Mithril App IR",
+        "status": "executed",
+        "engine": "compile-text",
+        "input-digest": "sha256:702a16fea2b8861427155d0a5d9387029fe3b4357cbc0349b77237c65c7de23a",
+        "output-digest": "sha256:f20d48233f3760013ceb8ca0cf02a8be3d28dc8e02881f335aff61607bdcedf8",
+        "metrics": {
+          "operations": 7
+        }
+      },
+      {
+        "id": "test",
+        "operation": "bounded artifact conformance",
+        "status": "executed",
+        "engine": "artifact-check",
+        "input-digest": "sha256:f20d48233f3760013ceb8ca0cf02a8be3d28dc8e02881f335aff61607bdcedf8",
+        "output-digest": "sha256:d22d6fa78e5b4c8e058648567a266b3287cc358c90700a0007b3ea7caf8874b6",
+        "metrics": {
+          "checks": 2,
+          "failures": 0
+        }
+      },
+      {
+        "id": "deploy",
+        "operation": "self-contained URL",
+        "status": "not-run",
+        "detail": "deployment requires the separate user action"
+      }
+    ]
+  },
+  "ordinary_html": "<!doctype html><html lang=\"en\"><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>Incident review</title><main><h1>Verified incidents</h1><p>Three incidents are ready for review.</p><p>Reviewed public incident evidence.</p></main></html>\n",
+  "html": "<!doctype html><html lang=\"en\"><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>Incident review</title><main><h1>Verified incidents</h1><p>Three incidents are ready for review.</p><p>Reviewed public incident evidence.</p></main></html>\n"
+}

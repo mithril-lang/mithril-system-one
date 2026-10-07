@@ -1,0 +1,39 @@
+{
+  "row": {
+    "task_id": "repair-shape",
+    "kind": "ontology",
+    "method": "ontology",
+    "success": false,
+    "seconds": 0.10754587499999992,
+    "inference_calls": 0,
+    "compiler_calls": 1,
+    "input_tokens": null,
+    "output_tokens": null,
+    "billed_cost_usd": null,
+    "outcome_unknown": false,
+    "error": "initial_not_refused",
+    "round": 1
+  },
+  "trace": [
+    {
+      "tool": "inspect",
+      "state": {
+        "empty": false,
+        "app": {
+          "name": "Incident review",
+          "description": "Reviewed public incident evidence.",
+          "headline": "Verified incidents",
+          "summary": "Three incidents are ready for review.",
+          "template": "report"
+        },
+        "shape": "https://mithril.fund/id/shape/entity-directory",
+        "ontology": "a8d21164d99278f517181b06d063ea8a63249bff57e8e1a5e72aed5758a28f47",
+        "library": "https://mithril.fund/lib/app/agent-loop-v1",
+        "digest": "sha256:b7d1290a2fe8d8f6f0a17c49d2774b9396e9389fb5d070e98335d8d5517266ce"
+      }
+    }
+  ],
+  "source": "(mithril/app-agent\n  :id \"https://app.mithril.fund/id/starter\"\n  :goal \"https://mithril.fund/id/goal/compile-test-deploy-app\"\n  :ontology \"a8d21164d99278f517181b06d063ea8a63249bff57e8e1a5e72aed5758a28f47\"\n  :imports\n  [(mithril/import\n     :library \"https://mithril.fund/lib/app/agent-loop-v1\"\n     :digest \"sha256:b7d1290a2fe8d8f6f0a17c49d2774b9396e9389fb5d070e98335d8d5517266ce\")]\n  :loop\n  (mithril/loop\n    :max-steps 6\n    :reasoner \"https://mithril.fund/lib/app/agent-loop-v1/reasoner/owl2-rl\"\n    :query \"https://mithril.fund/lib/app/agent-loop-v1/query/component-catalog\"\n    :validator \"https://mithril.fund/lib/app/agent-loop-v1/validator/shacl-core\"\n    :compiler \"https://mithril.fund/lib/app/agent-loop-v1/compiler/web-ir\"\n    :tester \"https://mithril.fund/lib/app/agent-loop-v1/tester/conformance\"\n    :deployer \"https://mithril.fund/lib/app/agent-loop-v1/deployer/self-contained-url\"\n    :governor \"https://mithril.fund/lib/app/agent-loop-v1/governor/static-read-only\")\n  :app\n  (mithril/app\n    :name \"Incident review\"\n    :description \"Reviewed public incident evidence.\"\n    :headline \"Verified incidents\"\n    :summary \"Three incidents are ready for review.\"\n    :template \"https://mithril.fund/id/template/report\"\n    :data-shape \"https://mithril.fund/id/shape/entity-directory\"))\n",
+  "compiled": null,
+  "before": null
+}

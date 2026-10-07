@@ -1,0 +1,2 @@
+# Preserve the intentionally padded refactor input exactly as measured.
+bench/task-packs/mithril-v1/compact-refactor/application.mith whitespace=-blank-at-eol,-blank-at-eof

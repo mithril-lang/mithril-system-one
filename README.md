@@ -8,6 +8,8 @@ The product goal is to clear supported Mithril contracts quickly. Evaluation foc
 
 This repository publishes the coding core, Hermes adapter and examples. See the [Mithril harness scope and acceptance criteria](docs/mithril-harness.md).
 
+The [Mithril task / ontology / terminal suite](docs/mithril-equivalent-tasks.md) adds six original tasks for creation, bug fixing, migration, schema repair, dependency repair and format-only refactor. It checks ordinary JavaScript output equivalence and whole-IR preservation for refactor. Its pilot records 6/6 passes for the catalog-rule control and 5/6 for System One proposals, with failures retained. Start with `node bin/mithril-task.mjs list`.
+
 ## Included
 
 - `lib/mithril-language.mjs`: fixed Mithril API proposal → inert `application.mith` → actual bounded App compiler → source/artifact/HTML/receipts.

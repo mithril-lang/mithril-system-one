@@ -1,0 +1,41 @@
+{
+  "format": "mithril.equivalent-record-manifest/v1",
+  "inference_endpoint": "https://api.mithril.fund/v1/chat/completions",
+  "inference_calls": 6,
+  "official_benchmark_score": null,
+  "billed_cost_usd": null,
+  "notes": [
+    "One attempt per task per qualified method; original public static-document tasks.",
+    "Qualification retained: compiler admitted mismatched known shape, so initial refusal assumption was corrected to task-level mismatch checking.",
+    "Failed system-one dependency proposal content was not retained; metered usage remains recorded. Subsequent runner instrumentation captures bounded model response content for diagnosis without retries.",
+    "Terminal refactor and stdio adapter were separately verified through real compiler calls."
+  ],
+  "sha256": {
+    "ontology/attempt-001.json": "3186315d90bac0bd50b5e49df2ad4d45b9718565ffac6234815e25ac79e8cb56",
+    "ontology/attempt-002.json": "aa4191a4362019009d7840f885d879ddef4c5396d204893f86dafa3c3c7e0586",
+    "ontology/attempt-003.json": "f649d9c6946947e1484be823a2c3e99e3a990b7c19b1bcb5685b1b765e7a2769",
+    "ontology/attempt-004.json": "0915b0459abad19c1ea33eabd760a54b72388f20c98c51d63d825dd4de4d998c",
+    "ontology/attempt-005.json": "33e24d2bc3e22acaa25cc6d27de865ba2fca306060abe7e444928c1aea9d2c5c",
+    "ontology/attempt-006.json": "ccaf676dca416c265c36c3c9f0e82ba27774b169745b64afc293080cd72cde41",
+    "ontology/plan.json": "384f3d3729731976b76a48c114d81e4423b1252e3e46ad612ff5e901c92a1e7e",
+    "ontology/summary.json": "cf8a426760b61a2fdffa72a0b89eb6f5b4bf4089e7f78ed47b4e7f0ce191fe64",
+    "qualification/attempt-001.json": "895c48714f4ca9ac3309f168e210316e92594403a7518e9f7c07a83c37b7295d",
+    "qualification/attempt-002.json": "f4a0aa205f164bf8a6b3c86c7b185343277042f876d78a5380ebf2d7223e7ebb",
+    "qualification/attempt-003.json": "80a7db54335522543b87e7ab95d940727d465079c842351bdb6e7af145382499",
+    "qualification/attempt-004.json": "6d490153ab8c37cfad4b72161a3321a199f9284ad258a1d3f21e937b2549e6ca",
+    "qualification/attempt-005.json": "e0950e4317704fd68484f5725d04c54c5d31535552ca9f8c70fb739003b537f1",
+    "qualification/attempt-006.json": "4f5dc848c8fec840cf63d9385c21b73a8be707dca0fe867799e12830f39e8fba",
+    "qualification/plan.json": "d875615814bacb675b743e39fae7fae90943310dd62f5ddb4b256ba4c918dbe6",
+    "qualification/summary.json": "5306311e3253d82f2cd1b8a7fae385d24c4ddb31b5b88c78b9c587c8c5d84395",
+    "system-one/attempt-001.json": "d8c036e72b2fc36e50e9974f84e958695e0c16c935e97d1e6b70e8376ea65716",
+    "system-one/attempt-002.json": "4ef0bf5e199f403fb24ad4bb151a8da23354d1c7e0df96d76e117e11bdc15391",
+    "system-one/attempt-003.json": "02e68d8b767714b2b0acaa1d5bb05e84f13f16901d69031f65485bfaf453396c",
+    "system-one/attempt-004.json": "ceebd383838c721f1e7f28f89f54f2774ed906b0ce746dc3a3f8f4158823212c",
+    "system-one/attempt-005.json": "fe734d9662fcbd4c619c240626ccf4cee2b10b2ed81a41519133b793cb7a9c60",
+    "system-one/attempt-006.json": "169ee2f4930c25d77ba5f8044f1dc083202b31de2a3fa35e1fedd63615847273",
+    "system-one/plan.json": "cb963908aaaa9c8c0df095568d801ce1c38a43f21a4ad0f9e46726c156a68dc6",
+    "system-one/summary.json": "ca8c4b1059cf67feb8c9e43a3c355c4e04addba46a7c6fdd678357c71e57d63f",
+    "terminal-refactor.json": "2db7f841c431503ee7238c81d421107993e49349b7f7d895ed85ae5c0121f40c",
+    "terminal-stdio-agent.json": "f06b26b03a0ef633083f59cef0d7adabadc9a791f8b90c7b15742ed22136e79c"
+  }
+}

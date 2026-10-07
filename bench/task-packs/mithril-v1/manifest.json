@@ -1,0 +1,31 @@
+{
+  "format": "mithril.original-task-pack/v1",
+  "license": "Apache-2.0",
+  "scope": "Original public static-document adaptations; no standard benchmark task or grader is replaced.",
+  "tasks": [
+    {
+      "id": "create-report",
+      "kind": "create"
+    },
+    {
+      "id": "repair-summary",
+      "kind": "bugfix"
+    },
+    {
+      "id": "migrate-directory",
+      "kind": "migration"
+    },
+    {
+      "id": "repair-shape",
+      "kind": "ontology"
+    },
+    {
+      "id": "repair-import",
+      "kind": "dependency"
+    },
+    {
+      "id": "compact-refactor",
+      "kind": "refactor"
+    }
+  ]
+}
