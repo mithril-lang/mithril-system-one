@@ -21,3 +21,19 @@ https://github.com/mithril-lang/mithril-system-one
 - 現在：少ない出力で静的文書を組み立て、実コンパイラで検証した具体例。
 - 小規模試験後：限定3課題・単一モデル・単一試行での比較観測。料金差は未計測なら主張しない。
 - 十分な比較後：課題集合、反復回数、成功率、時間境界を併記して測れた差だけを述べる。全機能がmodel生成されたTodo、汎用SWE性能、独自性・世界初は現状の証拠に含まれない。
+
+## English version — same evidence boundary
+
+127 output tokens → a compiled and checked Mithril static app.
+We published a 6.263-second example, its source, and inference/compiler receipts.
+System One Coding: a short proposal, then inspectable compilation and validation.
+https://github.com/mithril-lang/mithril-system-one
+
+Single static-report example; 1,288 input tokens. Timing covers the coding proposal, source emission, compiler and bounded checks; Chat orchestration, manual edits and publishing are excluded. API cost is unmeasured. Comparative speed and savings have not been established.
+
+## 実演の収録手順
+
+- 冒頭：実行する課題と、静的reportに限定した検証であることを画面に表示。
+- 続けて：同じ画面で実行開始、モデル提案、実際の .mith とコンパイル・検証結果まで録画。体感の待ち時間を編集で短縮しない。
+- 最後：入力／出力トークン、計測境界、repoへのリンク。未計測の費用や倍率を表示しない。
+- 比較実測後：全方式の合否・失敗を含む結果を別画面で表示する。生成を録画する追加リクエストは比較6回の承認に含めず、別途実行範囲を決める。
