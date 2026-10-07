@@ -1,5 +1,5 @@
 name: mithril-tasks
-version: 0.1.0
+version: 0.1.1
 description: Original Mithril task harness with bounded edit proposals and compiler verification
 author: Mithril
 license: Apache-2.0

@@ -53,3 +53,13 @@ class AdapterTests(unittest.TestCase):
         self.assertEqual(ctx.tool["name"], "mithril_task")
         self.assertFalse(ctx.tool["schema"]["parameters"]["additionalProperties"])
         self.assertTrue(ctx.tool["check_fn"]())
+
+    def test_success_omits_null_error_and_failures_retain_their_cause(self):
+        for row in ({"success": True, "error": None}, {"success": False, "error": "plan_refused"}):
+            with patch.object(plugin.subprocess, "run", return_value=types.SimpleNamespace(stdout=json.dumps({"row": row}), returncode=0 if row["success"] else 1)):
+                value = plugin.invoke(ROOT, {"task_id": "compact-refactor", "method": "ontology"})
+                self.assertEqual(value["ok"], row["success"])
+                if row["success"]:
+                    self.assertNotIn("error", value["result"]["row"])
+                else:
+                    self.assertEqual(value["result"]["row"]["error"], "plan_refused")

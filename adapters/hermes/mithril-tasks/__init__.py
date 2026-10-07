@@ -36,6 +36,11 @@ def invoke(root, args, key=""):
         value = json.loads(result.stdout)
         if not isinstance(value, dict) or not isinstance(value.get("row"), dict):
             return {"ok": False, "error": "mithril_task_failed", "retry": False}
+        # Hermes's string-result classifier treats an early `"error"` key as
+        # failure even when its value is null. Preserve real failure codes;
+        # omit only the null placeholder on a successful task.
+        if value["row"].get("success") is True and value["row"].get("error") is None:
+            value["row"].pop("error", None)
         return {"ok": value["row"].get("success") is True, "result": value}
     except subprocess.TimeoutExpired:
         return {"ok": False, "error": "run_outcome_unknown", "retry": False}
