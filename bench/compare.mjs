@@ -24,7 +24,7 @@ export function schedule(selected=tasks,rounds=1,arms=methods) {
  return rows;
 }
 export async function attempt({task,round,method},request,transport=fetch) {
- const started=performance.now(); const row={task_id:task.id,round,method,success:false,inference_calls:0,compiler_calls:0,input_tokens:null,output_tokens:null,api_reported_cost_usd:null,billed_cost_usd:null,cost_source:null,completion_ids:[],seconds:null,error:null,outcome_unknown:false};
+ const started=performance.now(); const row={task_id:task.id,round,method,success:false,inference_calls:0,compiler_calls:0,input_tokens:null,output_tokens:null,api_reported_cost_usd:null,billed_cost_usd:null,cost_source:null,completion_ids:[],api_request_ids:[],seconds:null,error:null,outcome_unknown:false};
  const proposals=[];
  const observed=async(url,init)=>{
   if(url===API+'/chat/completions')row.inference_calls++;else row.compiler_calls++;
@@ -34,6 +34,7 @@ export async function attempt({task,round,method},request,transport=fetch) {
    if(response.status>=500){row.outcome_unknown=true;throw Error('inference_outcome_unknown');}
    // Record usage even when the known response fails admission. Never persist headers or credentials.
    try{
+    const requestId=response.headers.get('x-mithril-request-id');if(requestId)row.api_request_ids.push(requestId);
     const value=await response.clone().json();
     if(value.id)row.completion_ids.push(value.id);
     if(Number.isSafeInteger(value.usage?.prompt_tokens)&&Number.isSafeInteger(value.usage?.completion_tokens)&&value.usage.prompt_tokens>=0&&value.usage.completion_tokens>=0){

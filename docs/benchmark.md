@@ -49,3 +49,7 @@ The command above still only plans. Live execution would make600 inference calls
 - `attempt-NNN.json` retains source/artifact/trace and owned model proposals. Review files before publication; receipts are not signed third-party attestations.
 
 Offline transport tests exercise matched contract checks, ordering, usage-on-failure, budget preflight and unknown-outcome refusal. They do not count as live results. GitHub CI runs the offline tests only.
+
+## Billing reconciliation
+
+`bench/billing.mjs` joins separately supplied settled account billing records by `x-mithril-request-id`, with integer micro-USD amounts. It never reads account credentials, modifies a ledger, or guesses a price. Missing IDs or charges remain unknown; failed attempts retain their settled charges. Template/compiler infrastructure cost remains unknown. These account charges are not a provider invoice or total system cost; free-tier zero charges must not become a claim of zero compute cost. Do not publish unrelated billing records.

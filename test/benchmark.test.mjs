@@ -57,3 +57,13 @@ test('planning is no-network and oversized call budgets stop before credential a
 test('optimized fields control is explicit and must consume its own budget',()=>{
  const plan=schedule(tasks.slice(0,3),1,['system-one','llm-source','llm-fields','template']);assert.equal(plan.filter(r=>r.method!=='template').length,9);assert.throws(()=>schedule(tasks,1,['unsupported']));
 });
+
+import {applyBilling} from '../bench/billing.mjs';
+test('settled cost joins require complete matching request IDs, retain failed charges and reject duplicates',()=>{
+ const rows=[{method:'system-one',success:true,seconds:1,input_tokens:1,output_tokens:1,inference_calls:1,api_request_ids:['owned-1']},{method:'system-one',success:false,seconds:3,input_tokens:2,output_tokens:2,inference_calls:1,api_request_ids:['owned-2']}];
+ const applied=applyBilling(rows,[{request_id:'owned-1',amount_micro_usd:100,status:'settled'},{request_id:'owned-2',amount_micro_usd:200,status:'settled'}]);
+ assert.ok(Math.abs(summarize(applied)[0].billed_cost_per_success_usd-.0003)<1e-12);
+ assert.equal(applyBilling(rows,[{request_id:'owned-1',amount_micro_usd:100,status:'settled'}])[1].billed_cost_usd,null);
+ assert.throws(()=>applyBilling(rows,[{request_id:'owned-1',amount_micro_usd:1,status:'settled'},{request_id:'owned-1',amount_micro_usd:2,status:'settled'}]));
+ assert.equal(applyBilling([{inference_calls:0,api_request_ids:[]}],[])[0].billed_cost_usd,null);
+});
