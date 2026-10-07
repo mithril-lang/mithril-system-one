@@ -1,0 +1,17 @@
+{
+  "name": "mithril-todomvc",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "todomvc-app-css": "2.4.3",
+    "todomvc-common": "1.0.5"
+  },
+  "scripts": {
+    "test": "node --test test/core.test.mjs",
+    "test:browser": "playwright test",
+    "test:all": "npm test && npm run test:browser"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0"
+  }
+}

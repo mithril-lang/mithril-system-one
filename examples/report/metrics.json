@@ -1,0 +1,25 @@
+{
+  "verification-passed": true,
+  "model-kind": "mithril-language-app",
+  "provider": "mithril",
+  "model": "qwen/qwen3.8-27b",
+  "endpoint": "https://api.mithril.fund/v1/chat/completions",
+  "receipt-id": "chatcmpl-2a543392-8cf1-4bb7-abb8-05319db37619",
+  "receipt-sha256": "8508d69561835f0f30472b843acda01541705f1618148c13d1040c93a19fc111",
+  "decision-count": 1,
+  "attempts": 1,
+  "input-tokens": {
+    "total": 1288
+  },
+  "output-tokens": {
+    "total": 127
+  },
+  "cost": {
+    "api-amount": null,
+    "api-currency": "USD"
+  },
+  "timing": {
+    "cli-wall-seconds": 6.263,
+    "boundary": "Mithril API proposal, Mithril Form emission, actual App compiler and bounded semantic execution; publishing excluded."
+  }
+}

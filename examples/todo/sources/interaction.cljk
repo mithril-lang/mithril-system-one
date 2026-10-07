@@ -1,0 +1,3 @@
+(ns todo.interaction)
+(defn toggle [done] (if done false true))
+(def marker :kept)

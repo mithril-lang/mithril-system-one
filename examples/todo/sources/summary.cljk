@@ -1,0 +1,3 @@
+(ns todo.summary (:require [todo.interaction]))
+(defn remaining [states] (count (filterv todo.interaction/toggle states)))
+(def marker :kept)

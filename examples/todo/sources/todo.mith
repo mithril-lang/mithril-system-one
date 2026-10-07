@@ -1,0 +1,13 @@
+(mithril/block-program
+  :goal "Implement toggle(done) to invert a boolean completion flag. Implement remaining(states) to count the false completion flags in a vector. Empty input returns zero; each duplicate false contributes. Preserve unrelated definitions."
+  :stages [{:id "interaction" :goal "Toggle a completion flag: true becomes false and false becomes true."
+            :operations ["if-:bool"] :calls [] :depends-on []}
+           {:id "summary" :goal "Count only unfinished (false) completion flags, using toggle as the predicate."
+            :operations ["filter-vector-bool" "count-vector-bool"] :calls ["toggle"] :depends-on ["interaction"]}]
+  :functions [{:id "toggle" :namespace "todo.interaction" :path "src/todo/interaction.cljk" :stage "interaction"
+               :name "toggle" :arg {:name "done" :type :bool} :returns :bool}
+              {:id "remaining" :namespace "todo.summary" :path "src/todo/summary.cljk" :stage "summary"
+               :name "remaining" :arg {:name "states" :type [:vector :bool]} :returns :int}]
+  :literals [{:id "true" :type :bool :value true} {:id "false" :type :bool :value false}]
+  :decision-authority :proposal
+  :max-decisions 96 :max-depth 8 :candidate-limit 8 :confidence-floor 0.6)

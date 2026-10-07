@@ -1,0 +1,27 @@
+{
+  "name": "@mithril/system-one",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "workspaces": [
+    "examples/todo"
+  ],
+  "exports": {
+    ".": "./lib/mithril-language.mjs",
+    "./todo": "./lib/inference.mjs"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs && npm test -w examples/todo",
+    "test:browser": "npm run test:browser -w examples/todo --",
+    "test:python": "python3 -m unittest discover -s test -p \"test_*.py\"",
+    "test:all": "npm test && npm run test:python && npm run test:browser",
+    "status": "node bin/system-one.mjs status"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0"
+  }
+}

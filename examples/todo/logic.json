@@ -1,0 +1,67 @@
+{
+  "functions": [
+    {
+      "id": "toggle",
+      "namespace": "todo.interaction",
+      "name": "toggle",
+      "arg": {
+        "name": "done",
+        "type": "bool"
+      },
+      "returns": "bool"
+    },
+    {
+      "id": "remaining",
+      "namespace": "todo.summary",
+      "name": "remaining",
+      "arg": {
+        "name": "states",
+        "type": [
+          "vector",
+          "bool"
+        ]
+      },
+      "returns": "int"
+    }
+  ],
+  "bodies": {
+    "toggle": {
+      "kind": "operation",
+      "id": "if-:bool",
+      "children": [
+        {
+          "kind": "argument",
+          "argument-index": 0
+        },
+        {
+          "kind": "literal",
+          "value": false
+        },
+        {
+          "kind": "literal",
+          "value": true
+        }
+      ]
+    },
+    "remaining": {
+      "kind": "operation",
+      "id": "count-vector-bool",
+      "children": [
+        {
+          "kind": "operation",
+          "id": "filter-vector-bool",
+          "children": [
+            {
+              "kind": "reference",
+              "function-ref": "toggle"
+            },
+            {
+              "kind": "argument",
+              "argument-index": 0
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

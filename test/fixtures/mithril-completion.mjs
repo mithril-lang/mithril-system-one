@@ -1,0 +1,3 @@
+import {MODEL} from '../../lib/inference.mjs';
+export const bodies={toggle:{kind:'operation',id:'if-:bool',children:[{kind:'argument','argument-index':0},{kind:'literal',value:false},{kind:'literal',value:true}]},remaining:{kind:'operation',id:'count-vector-bool',children:[{kind:'operation',id:'filter-vector-bool',children:[{kind:'reference','function-ref':'toggle'},{kind:'argument','argument-index':0}]}]}};
+export const completion=()=>Response.json({id:'chatcmpl-test',model:MODEL,choices:[{finish_reason:'stop',message:{content:JSON.stringify(bodies)}}],usage:{prompt_tokens:120,completion_tokens:80}},{headers:{'x-mithril-request-id':'chat:test'}});

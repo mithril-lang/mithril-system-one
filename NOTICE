@@ -1,0 +1,9 @@
+Mithril System One Coding
+Core and Todo starter copyright 2026 Kotoba Labs Inc., Apache-2.0.
+
+Hermes adapter retains the Nous Research MIT notice in adapters/hermes/LICENSE.
+TodoMVC CSS/common retain MIT notices in examples/todo/LICENSE.todomvc.
+The retained Wasm policy carries the DeepSeek MIT notice in examples/todo/LICENSE.mithril-policy.
+The policy is a retained starter asset, not evidence that every UI operation runs through Wasm.
+
+Source origins and revisions are recorded in provenance.json. No upstream project endorsement, official TodoMVC submission or all-platform qualification is implied.

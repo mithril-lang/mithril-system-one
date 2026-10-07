@@ -1,0 +1,424 @@
+{
+  "format": "mithril.system-one-source-manifest/v1",
+  "date": "2026-10-07 JST",
+  "files": [
+    {
+      "path": "lib/inference.mjs",
+      "upstream": "mithril-lang/mithril-fund",
+      "revision": "3a55edb66bb2c07c48a2317e43de056a4989f8c7",
+      "source_sha256": "612e8e7538adea706139d9dbf0625341b9fecc3fcad37a914d781fa91510e417",
+      "published_sha256": "612e8e7538adea706139d9dbf0625341b9fecc3fcad37a914d781fa91510e417"
+    },
+    {
+      "path": "lib/mithril-language.mjs",
+      "upstream": "mithril-lang/mithril-fund",
+      "revision": "3a55edb66bb2c07c48a2317e43de056a4989f8c7",
+      "source_sha256": "a5731163545aa3e58e565e7f9ec0883048fa9e53592e4f9d961a44b0e4dfe4a4",
+      "published_sha256": "a5731163545aa3e58e565e7f9ec0883048fa9e53592e4f9d961a44b0e4dfe4a4"
+    },
+    {
+      "path": "lib/mithril-starter.mjs",
+      "upstream": "mithril-lang/mithril-fund",
+      "revision": "3a55edb66bb2c07c48a2317e43de056a4989f8c7",
+      "source_sha256": "db81c820d343711745ecc504f71f01eb0d8a1cb8511cb83db52e064cc7c3b95e",
+      "published_sha256": "db81c820d343711745ecc504f71f01eb0d8a1cb8511cb83db52e064cc7c3b95e"
+    },
+    {
+      "path": "lib/template/core.js",
+      "upstream": "mithril-lang/mithril-fund",
+      "revision": "3a55edb66bb2c07c48a2317e43de056a4989f8c7",
+      "source_sha256": "7c20a668312f4c2cc017915ecf1864d5a41d4e2ad4ebb740d6df34e409f92785",
+      "published_sha256": "7c20a668312f4c2cc017915ecf1864d5a41d4e2ad4ebb740d6df34e409f92785"
+    },
+    {
+      "path": "test/mithril-language.test.mjs",
+      "upstream": "mithril-lang/mithril-fund",
+      "revision": "3a55edb66bb2c07c48a2317e43de056a4989f8c7",
+      "source_sha256": "4e1c5eb08c7b897a9b82bc7e86f6e0aa8d24c051e9867867ab630fb38c355a79",
+      "published_sha256": "9bf32f4557cfa0ff636623be33ca4ef50672644c5d016f32c94f322f7c20f5ab"
+    },
+    {
+      "path": "test/inference.test.mjs",
+      "upstream": "mithril-lang/mithril-fund",
+      "revision": "3a55edb66bb2c07c48a2317e43de056a4989f8c7",
+      "source_sha256": "b31196d80984bf12bfce4f8df0860ac1cb84dbf159e7550618bda00c5986e3aa",
+      "published_sha256": "15be5dcd9e194744d5977fe5473ae18dd1ff6dfae3278ca43dc0d27b5c040662"
+    },
+    {
+      "path": "test/fixtures/mithril-completion.mjs",
+      "upstream": "mithril-lang/mithril-fund",
+      "revision": "3a55edb66bb2c07c48a2317e43de056a4989f8c7",
+      "source_sha256": "e477809aa6fcbe8fe49df11d2975ecb368da3ee50dc30e552205ae4f75f04ac5",
+      "published_sha256": "7c7e9e8f5e998ddb99222296b8975cd8868d32640c9574ce1d4dc9abfa7a3fbf"
+    },
+    {
+      "path": "test/fixtures/mithril-app-compiled.json",
+      "upstream": "mithril-lang/mithril-fund",
+      "revision": "3a55edb66bb2c07c48a2317e43de056a4989f8c7",
+      "source_sha256": "0ebde163d78b8c16fad74cc9f82292f921af042eecf7d48880d70d342105531a",
+      "published_sha256": "0ebde163d78b8c16fad74cc9f82292f921af042eecf7d48880d70d342105531a"
+    },
+    {
+      "path": "adapters/hermes/mithril-code/README.md",
+      "upstream": "mithril-lang/mithril-agent",
+      "revision": "a9c82ee36270b3431e4d2683a180765e5f0d5e1a",
+      "source_sha256": "2f9efbfed0ada2e58cc04d916597efe917fc4089e6362b3d75a82382801c06b7",
+      "published_sha256": "2f9efbfed0ada2e58cc04d916597efe917fc4089e6362b3d75a82382801c06b7"
+    },
+    {
+      "path": "adapters/hermes/mithril-code/__init__.py",
+      "upstream": "mithril-lang/mithril-agent",
+      "revision": "a9c82ee36270b3431e4d2683a180765e5f0d5e1a",
+      "source_sha256": "a0dd0db16d480d93df5967fb5331f6f5a78b71a96251c5fd144e77ead0357082",
+      "published_sha256": "a0dd0db16d480d93df5967fb5331f6f5a78b71a96251c5fd144e77ead0357082"
+    },
+    {
+      "path": "adapters/hermes/mithril-code/client.py",
+      "upstream": "mithril-lang/mithril-agent",
+      "revision": "a9c82ee36270b3431e4d2683a180765e5f0d5e1a",
+      "source_sha256": "014fcf12a04fd9c5c923cb959146bfdf3bf0f8efb44b45747cd78ad860a7aa02",
+      "published_sha256": "014fcf12a04fd9c5c923cb959146bfdf3bf0f8efb44b45747cd78ad860a7aa02"
+    },
+    {
+      "path": "adapters/hermes/mithril-code/plugin.yaml",
+      "upstream": "mithril-lang/mithril-agent",
+      "revision": "a9c82ee36270b3431e4d2683a180765e5f0d5e1a",
+      "source_sha256": "deee06fc82c593ccf71e9b53d1e11538e4ad72fe9c593ef25260e69e643093cc",
+      "published_sha256": "deee06fc82c593ccf71e9b53d1e11538e4ad72fe9c593ef25260e69e643093cc"
+    },
+    {
+      "path": "adapters/hermes/mithril-code/case-study.md",
+      "upstream": "mithril-lang/mithril-agent",
+      "revision": "a9c82ee36270b3431e4d2683a180765e5f0d5e1a",
+      "source_sha256": "2752cfd9ccc248e21e76db52435eca853021b52acc5064b168c4955b5e19471e",
+      "published_sha256": "2752cfd9ccc248e21e76db52435eca853021b52acc5064b168c4955b5e19471e"
+    },
+    {
+      "path": "adapters/hermes/LICENSE",
+      "upstream": "mithril-lang/mithril-agent",
+      "revision": "a9c82ee36270b3431e4d2683a180765e5f0d5e1a",
+      "source_sha256": "821556e6336796450ab852d375117b48a4887e71d255794fd6318d99982a5ab6",
+      "published_sha256": "821556e6336796450ab852d375117b48a4887e71d255794fd6318d99982a5ab6"
+    },
+    {
+      "path": "examples/todo/.gitignore",
+      "upstream": "com-junkawasaki/mithril-todo",
+      "revision": "1567d383776876a745db618b164701e875a74778",
+      "source_sha256": "ba1cb48d23e5e32beac87a8d053b79ce90f1451900c4fd5c08fe8236803ca537",
+      "published_sha256": "ba1cb48d23e5e32beac87a8d053b79ce90f1451900c4fd5c08fe8236803ca537"
+    },
+    {
+      "path": "examples/todo/.nojekyll",
+      "upstream": "com-junkawasaki/mithril-todo",
+      "revision": "1567d383776876a745db618b164701e875a74778",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "examples/todo/LICENSE",
+      "upstream": "com-junkawasaki/mithril-todo",
+      "revision": "1567d383776876a745db618b164701e875a74778",
+      "source_sha256": "f993b5808ed5f82bb8301a481f707e4c6aaa4337db59da9e143ef53f91852f6f",
+      "published_sha256": "6f60f25d9b3d80c38d5ecddd1ffaea85aa027598ee7e2b7440f7264437497028"
+    },
+    {
+      "path": "examples/todo/LICENSE.mithril-policy",
+      "upstream": "com-junkawasaki/mithril-todo",
+      "revision": "1567d383776876a745db618b164701e875a74778",
+      "source_sha256": "ebb4f09972aee8608be255debaf78451a68e95c290f55c240dec2ecfa16ea6be",
+      "published_sha256": "ebb4f09972aee8608be255debaf78451a68e95c290f55c240dec2ecfa16ea6be"
+    },
+    {
+      "path": "examples/todo/LICENSE.todomvc",
+      "upstream": "com-junkawasaki/mithril-todo",
+      "revision": "1567d383776876a745db618b164701e875a74778",
+      "source_sha256": "75408f6c15108f6fd0bea48f17e86d83f3b5b1a79900340d7c4dd1969eca3057",
+      "published_sha256": "75408f6c15108f6fd0bea48f17e86d83f3b5b1a79900340d7c4dd1969eca3057"
+    },
+    {
+      "path": "examples/todo/README.md",
+      "upstream": "com-junkawasaki/mithril-todo",
+      "revision": "1567d383776876a745db618b164701e875a74778",
+      "source_sha256": "43187dcf5bb7ede6c29063a75b53b85574f7d5f6b3c05e1766b34c8e2f5705b8",
+      "published_sha256": "43187dcf5bb7ede6c29063a75b53b85574f7d5f6b3c05e1766b34c8e2f5705b8"
+    },
+    {
+      "path": "examples/todo/app.js",
+      "upstream": "com-junkawasaki/mithril-todo",
+      "revision": "1567d383776876a745db618b164701e875a74778",
+      "source_sha256": "48b1b2e6129bb2b3ce0a86564470aec262998c613929c318fb1e225e17c18c0d",
+      "published_sha256": "48b1b2e6129bb2b3ce0a86564470aec262998c613929c318fb1e225e17c18c0d"
+    },
+    {
+      "path": "examples/todo/base.css",
+      "upstream": "com-junkawasaki/mithril-todo",
+      "revision": "1567d383776876a745db618b164701e875a74778",
+      "source_sha256": "5c67ddc771b558bc07b58695c9c4b7f663d2ba813edb4810341799c47ba0822d",
+      "published_sha256": "5c67ddc771b558bc07b58695c9c4b7f663d2ba813edb4810341799c47ba0822d"
+    },
+    {
+      "path": "examples/todo/core.js",
+      "upstream": "com-junkawasaki/mithril-todo",
+      "revision": "1567d383776876a745db618b164701e875a74778",
+      "source_sha256": "7c20a668312f4c2cc017915ecf1864d5a41d4e2ad4ebb740d6df34e409f92785",
+      "published_sha256": "7c20a668312f4c2cc017915ecf1864d5a41d4e2ad4ebb740d6df34e409f92785"
+    },
+    {
+      "path": "examples/todo/docs/coverage.md",
+      "upstream": "com-junkawasaki/mithril-todo",
+      "revision": "1567d383776876a745db618b164701e875a74778",
+      "source_sha256": "2cd2ec5054c6c729b74bb560bd99b2e58fc34bb4f4b318de6c70d5bb637b81f3",
+      "published_sha256": "2cd2ec5054c6c729b74bb560bd99b2e58fc34bb4f4b318de6c70d5bb637b81f3"
+    },
+    {
+      "path": "examples/todo/docs/publication.md",
+      "upstream": "com-junkawasaki/mithril-todo",
+      "revision": "1567d383776876a745db618b164701e875a74778",
+      "source_sha256": "8bc454fff067f2eda42db9455349951601e99624d4a072e74da3a678c29b63d5",
+      "published_sha256": "8bc454fff067f2eda42db9455349951601e99624d4a072e74da3a678c29b63d5"
+    },
+    {
+      "path": "examples/todo/index.html",
+      "upstream": "com-junkawasaki/mithril-todo",
+      "revision": "1567d383776876a745db618b164701e875a74778",
+      "source_sha256": "2ae1db6fa0b0c4b61efd9deccc46c4df2aef2ceb6eb973fb26175de8f071e52b",
+      "published_sha256": "2ae1db6fa0b0c4b61efd9deccc46c4df2aef2ceb6eb973fb26175de8f071e52b"
+    },
+    {
+      "path": "examples/todo/logic.json",
+      "upstream": "com-junkawasaki/mithril-todo",
+      "revision": "1567d383776876a745db618b164701e875a74778",
+      "source_sha256": "4ed4b43fe2c249e7c21ee1d75a5df0efe456ef125ee6045383b42086f2df6da6",
+      "published_sha256": "4ed4b43fe2c249e7c21ee1d75a5df0efe456ef125ee6045383b42086f2df6da6"
+    },
+    {
+      "path": "examples/todo/metrics.json",
+      "upstream": "com-junkawasaki/mithril-todo",
+      "revision": "1567d383776876a745db618b164701e875a74778",
+      "source_sha256": "a280675d502ba9349e27108cd5b1591e6c72779e8c63fdfa39ecaada099c7a43",
+      "published_sha256": "a280675d502ba9349e27108cd5b1591e6c72779e8c63fdfa39ecaada099c7a43"
+    },
+    {
+      "path": "examples/todo/package-lock.json",
+      "upstream": "com-junkawasaki/mithril-todo",
+      "revision": "1567d383776876a745db618b164701e875a74778",
+      "source_sha256": "246115bc4cc32c7cced1e96b573f0ade4008dac57db0092791919ea759364132",
+      "published_sha256": "246115bc4cc32c7cced1e96b573f0ade4008dac57db0092791919ea759364132"
+    },
+    {
+      "path": "examples/todo/package.json",
+      "upstream": "com-junkawasaki/mithril-todo",
+      "revision": "1567d383776876a745db618b164701e875a74778",
+      "source_sha256": "c5c6d4a776934f99222cfa62498e84d4826ee2381486820e1b3ef4e5fa0d80e4",
+      "published_sha256": "c5c6d4a776934f99222cfa62498e84d4826ee2381486820e1b3ef4e5fa0d80e4"
+    },
+    {
+      "path": "examples/todo/playwright.config.mjs",
+      "upstream": "com-junkawasaki/mithril-todo",
+      "revision": "1567d383776876a745db618b164701e875a74778",
+      "source_sha256": "63346693a91e39dfdb2c8de093a638734b4d860b49cbe71d16ff15fa0c0c4354",
+      "published_sha256": "67c16fd47b97a287019db0ccbeb1a11b8c221f3eb46e57113c231afc82239504"
+    },
+    {
+      "path": "examples/todo/policy.wasm",
+      "upstream": "com-junkawasaki/mithril-todo",
+      "revision": "1567d383776876a745db618b164701e875a74778",
+      "source_sha256": "ad69eb3a3768cc95aef3429c414ea6acfbf7dc778ffa7d48a597f737dc0b8f8c",
+      "published_sha256": "ad69eb3a3768cc95aef3429c414ea6acfbf7dc778ffa7d48a597f737dc0b8f8c"
+    },
+    {
+      "path": "examples/todo/scripts/serve.mjs",
+      "upstream": "com-junkawasaki/mithril-todo",
+      "revision": "1567d383776876a745db618b164701e875a74778",
+      "source_sha256": "17fb6607cf76d8ed0ef4ba8c52543cb313c0b5f1c4b9f960d792009a1831d079",
+      "published_sha256": "17fb6607cf76d8ed0ef4ba8c52543cb313c0b5f1c4b9f960d792009a1831d079"
+    },
+    {
+      "path": "examples/todo/sources/interaction.cljk",
+      "upstream": "com-junkawasaki/mithril-todo",
+      "revision": "1567d383776876a745db618b164701e875a74778",
+      "source_sha256": "5590e06bf29674b740d45e71969f01c5c6f557d1ba386cc78619cc3762d6ee05",
+      "published_sha256": "5590e06bf29674b740d45e71969f01c5c6f557d1ba386cc78619cc3762d6ee05"
+    },
+    {
+      "path": "examples/todo/sources/summary.cljk",
+      "upstream": "com-junkawasaki/mithril-todo",
+      "revision": "1567d383776876a745db618b164701e875a74778",
+      "source_sha256": "3cab4e409504a897bccab58900f9ca315cb5c895d8c9a6047edd7bd50616feb0",
+      "published_sha256": "3cab4e409504a897bccab58900f9ca315cb5c895d8c9a6047edd7bd50616feb0"
+    },
+    {
+      "path": "examples/todo/sources/todo.mith",
+      "upstream": "com-junkawasaki/mithril-todo",
+      "revision": "1567d383776876a745db618b164701e875a74778",
+      "source_sha256": "5745487b36935a30d6e2300f31d0edd2e6a801b41e299d82e2ed0efa7578e3b0",
+      "published_sha256": "5745487b36935a30d6e2300f31d0edd2e6a801b41e299d82e2ed0efa7578e3b0"
+    },
+    {
+      "path": "examples/todo/style.css",
+      "upstream": "com-junkawasaki/mithril-todo",
+      "revision": "1567d383776876a745db618b164701e875a74778",
+      "source_sha256": "0d37e1f4ec74afc4144304f56053877089b93be4af32c1c627a438bf24913871",
+      "published_sha256": "0d37e1f4ec74afc4144304f56053877089b93be4af32c1c627a438bf24913871"
+    },
+    {
+      "path": "examples/todo/test/core.test.mjs",
+      "upstream": "com-junkawasaki/mithril-todo",
+      "revision": "1567d383776876a745db618b164701e875a74778",
+      "source_sha256": "4b2835a86ed40ed19f2665dafdb38f7178bab0786b27b97352a51962e7d83211",
+      "published_sha256": "4b2835a86ed40ed19f2665dafdb38f7178bab0786b27b97352a51962e7d83211"
+    },
+    {
+      "path": "examples/todo/test/todo.spec.mjs",
+      "upstream": "com-junkawasaki/mithril-todo",
+      "revision": "1567d383776876a745db618b164701e875a74778",
+      "source_sha256": "a9292c1e8a39400c36361eede6db6f702363f1cecb3d569c72b8647860721557",
+      "published_sha256": "a9292c1e8a39400c36361eede6db6f702363f1cecb3d569c72b8647860721557"
+    },
+    {
+      "path": "examples/todo/todomvc.css",
+      "upstream": "com-junkawasaki/mithril-todo",
+      "revision": "1567d383776876a745db618b164701e875a74778",
+      "source_sha256": "c7dd5d13d38d0c85b746c0859b837f212754486779e0a9076d092396dfae7746",
+      "published_sha256": "c7dd5d13d38d0c85b746c0859b837f212754486779e0a9076d092396dfae7746"
+    },
+    {
+      "path": "examples/report/.nojekyll",
+      "upstream": "com-junkawasaki/mithril-chat-coding-20261007",
+      "revision": "78ea89bd545186cf492d1095f96526757ec53b5b",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "published_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "examples/report/README.md",
+      "upstream": "com-junkawasaki/mithril-chat-coding-20261007",
+      "revision": "78ea89bd545186cf492d1095f96526757ec53b5b",
+      "source_sha256": "99e91386cc35f5d2830f4e6f15d63128c9ca5e39f48d6748e9b51e097861d333",
+      "published_sha256": "99e91386cc35f5d2830f4e6f15d63128c9ca5e39f48d6748e9b51e097861d333"
+    },
+    {
+      "path": "examples/report/application.mith",
+      "upstream": "com-junkawasaki/mithril-chat-coding-20261007",
+      "revision": "78ea89bd545186cf492d1095f96526757ec53b5b",
+      "source_sha256": "603060def52d602600aa6e3ca5cecaab63dabde0327ea7752e4986229908bbcb",
+      "published_sha256": "603060def52d602600aa6e3ca5cecaab63dabde0327ea7752e4986229908bbcb"
+    },
+    {
+      "path": "examples/report/artifact.json",
+      "upstream": "com-junkawasaki/mithril-chat-coding-20261007",
+      "revision": "78ea89bd545186cf492d1095f96526757ec53b5b",
+      "source_sha256": "2ba838d3281fa91aee04c657c8c00c052f5701be886e1abc9eb1ede6317228de",
+      "published_sha256": "2ba838d3281fa91aee04c657c8c00c052f5701be886e1abc9eb1ede6317228de"
+    },
+    {
+      "path": "examples/report/compilation-receipt.json",
+      "upstream": "com-junkawasaki/mithril-chat-coding-20261007",
+      "revision": "78ea89bd545186cf492d1095f96526757ec53b5b",
+      "source_sha256": "008694042ca3d18c061017ec19ef4c9a3701f716b95834b2876d13ed4644f84a",
+      "published_sha256": "008694042ca3d18c061017ec19ef4c9a3701f716b95834b2876d13ed4644f84a"
+    },
+    {
+      "path": "examples/report/index.html",
+      "upstream": "com-junkawasaki/mithril-chat-coding-20261007",
+      "revision": "78ea89bd545186cf492d1095f96526757ec53b5b",
+      "source_sha256": "eb2dfcbdb503c69a0bbe95fdee79c5036396a0fb8e4c5a65b4f6bde52405648f",
+      "published_sha256": "eb2dfcbdb503c69a0bbe95fdee79c5036396a0fb8e4c5a65b4f6bde52405648f"
+    },
+    {
+      "path": "examples/report/inference-receipt.json",
+      "upstream": "com-junkawasaki/mithril-chat-coding-20261007",
+      "revision": "78ea89bd545186cf492d1095f96526757ec53b5b",
+      "source_sha256": "ba21721aa9562641fb5c5dbe29cd8125c6c7d96b524e83b64c2431b1902b4f07",
+      "published_sha256": "ba21721aa9562641fb5c5dbe29cd8125c6c7d96b524e83b64c2431b1902b4f07"
+    },
+    {
+      "path": "examples/report/metrics.json",
+      "upstream": "com-junkawasaki/mithril-chat-coding-20261007",
+      "revision": "78ea89bd545186cf492d1095f96526757ec53b5b",
+      "source_sha256": "c72ffa5068bc78459ec99b907b30ca670fcf9b118e46da322bcb89fd00028098",
+      "published_sha256": "c72ffa5068bc78459ec99b907b30ca670fcf9b118e46da322bcb89fd00028098"
+    },
+    {
+      "path": "examples/report/qa/app/README.md",
+      "upstream": "com-junkawasaki/mithril-chat-coding-20261007",
+      "revision": "78ea89bd545186cf492d1095f96526757ec53b5b",
+      "source_sha256": "bb9867e9afe5b0c66062fc67914dc139497df9d650121803087d775fa147e5cd",
+      "published_sha256": "bb9867e9afe5b0c66062fc67914dc139497df9d650121803087d775fa147e5cd"
+    },
+    {
+      "path": "examples/report/qa/app/application.mith",
+      "upstream": "com-junkawasaki/mithril-chat-coding-20261007",
+      "revision": "78ea89bd545186cf492d1095f96526757ec53b5b",
+      "source_sha256": "c8a3dca62c4ead97edfec8870519b9b9535d3a3cc85a0f92684332f4a3feed82",
+      "published_sha256": "c8a3dca62c4ead97edfec8870519b9b9535d3a3cc85a0f92684332f4a3feed82"
+    },
+    {
+      "path": "examples/report/qa/app/artifact.json",
+      "upstream": "com-junkawasaki/mithril-chat-coding-20261007",
+      "revision": "78ea89bd545186cf492d1095f96526757ec53b5b",
+      "source_sha256": "6e348fc4fe52fb11c9654c2d746fd7c698f9d1be2415a3dec7f1327ded2ea497",
+      "published_sha256": "6e348fc4fe52fb11c9654c2d746fd7c698f9d1be2415a3dec7f1327ded2ea497"
+    },
+    {
+      "path": "examples/report/qa/app/compilation-receipt.json",
+      "upstream": "com-junkawasaki/mithril-chat-coding-20261007",
+      "revision": "78ea89bd545186cf492d1095f96526757ec53b5b",
+      "source_sha256": "f2acadbdedae5fc910f63dffeb7f987a2dd835b42bf8745c5ed2438af0c3aee4",
+      "published_sha256": "f2acadbdedae5fc910f63dffeb7f987a2dd835b42bf8745c5ed2438af0c3aee4"
+    },
+    {
+      "path": "examples/report/qa/app/index.html",
+      "upstream": "com-junkawasaki/mithril-chat-coding-20261007",
+      "revision": "78ea89bd545186cf492d1095f96526757ec53b5b",
+      "source_sha256": "1c483621c2dd3f5bd6c28486371cf71507a3ea54e1881c6055cdca316f6ebc5d",
+      "published_sha256": "1c483621c2dd3f5bd6c28486371cf71507a3ea54e1881c6055cdca316f6ebc5d"
+    },
+    {
+      "path": "examples/report/qa/app/inference-receipt.json",
+      "upstream": "com-junkawasaki/mithril-chat-coding-20261007",
+      "revision": "78ea89bd545186cf492d1095f96526757ec53b5b",
+      "source_sha256": "649ab529f6dd35bcf44be28f60b7b5fa587f4260e4585333909b704cb6249c2f",
+      "published_sha256": "649ab529f6dd35bcf44be28f60b7b5fa587f4260e4585333909b704cb6249c2f"
+    },
+    {
+      "path": "examples/report/qa/app/metrics.json",
+      "upstream": "com-junkawasaki/mithril-chat-coding-20261007",
+      "revision": "78ea89bd545186cf492d1095f96526757ec53b5b",
+      "source_sha256": "75ed7075ff9445b926f8f039cf8dee9265e80855166b17e5e2c98a979aa7f0f0",
+      "published_sha256": "75ed7075ff9445b926f8f039cf8dee9265e80855166b17e5e2c98a979aa7f0f0"
+    },
+    {
+      "path": "examples/report/qa/original/application.mith",
+      "upstream": "com-junkawasaki/mithril-chat-coding-20261007",
+      "revision": "78ea89bd545186cf492d1095f96526757ec53b5b",
+      "source_sha256": "7f5d84b2ec487173a14287a8d38d2c784fb72ff7861aa6c705b75387f00fdea5",
+      "published_sha256": "7f5d84b2ec487173a14287a8d38d2c784fb72ff7861aa6c705b75387f00fdea5"
+    },
+    {
+      "path": "examples/report/qa/original/artifact.json",
+      "upstream": "com-junkawasaki/mithril-chat-coding-20261007",
+      "revision": "78ea89bd545186cf492d1095f96526757ec53b5b",
+      "source_sha256": "1e086613b2be2602fd1333de7fb4f3dd05159cdb4958db0ace04c99d0a877cf8",
+      "published_sha256": "1e086613b2be2602fd1333de7fb4f3dd05159cdb4958db0ace04c99d0a877cf8"
+    },
+    {
+      "path": "examples/report/qa/original/index.html",
+      "upstream": "com-junkawasaki/mithril-chat-coding-20261007",
+      "revision": "78ea89bd545186cf492d1095f96526757ec53b5b",
+      "source_sha256": "bdc4f40dce61c084f109188417796f62cabd2ddacf3782cc109fc5604e9dd2b1",
+      "published_sha256": "bdc4f40dce61c084f109188417796f62cabd2ddacf3782cc109fc5604e9dd2b1"
+    },
+    {
+      "path": "LICENSE",
+      "upstream": "com-junkawasaki/mithril-todo",
+      "revision": "1567d383776876a745db618b164701e875a74778",
+      "source_sha256": "f993b5808ed5f82bb8301a481f707e4c6aaa4337db59da9e143ef53f91852f6f",
+      "published_sha256": "6f60f25d9b3d80c38d5ecddd1ffaea85aa027598ee7e2b7440f7264437497028"
+    }
+  ],
+  "test_adaptations": [
+    "Module import paths point to lib/. Private API system-policy regression is excluded: it depends on the private API service, not this package. Browser and core Todo tests are unchanged.",
+    "Todo Playwright worker count is fixed at 3 to bound CI memory usage.",
+    "Only surplus final blank lines in Apache notice files are normalized; license terms are retained."
+  ]
+}

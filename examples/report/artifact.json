@@ -1,0 +1,39 @@
+{
+  "format": "https://mithril.fund/artifact/app-agent-v1",
+  "media-type": "application/ld+json",
+  "graph-digest": "sha256:1ac055484600e47797e92d28b65aba92990c40807bb317ef39e88ee36dd6f019",
+  "app-ir": {
+    "version": "v1",
+    "goal": "compile-test-deploy-app",
+    "ontology": "a8d21164d99278f517181b06d063ea8a63249bff57e8e1a5e72aed5758a28f47",
+    "import": {
+      "library": "https://mithril.fund/lib/app/agent-loop-v1",
+      "digest": "sha256:b7d1290a2fe8d8f6f0a17c49d2774b9396e9389fb5d070e98335d8d5517266ce"
+    },
+    "budget": {
+      "max-steps": 6,
+      "max-source-bytes": 8192
+    },
+    "operations": {
+      "reasoner": "https://mithril.fund/lib/app/agent-loop-v1/reasoner/owl2-rl",
+      "query": "https://mithril.fund/lib/app/agent-loop-v1/query/component-catalog",
+      "validator": "https://mithril.fund/lib/app/agent-loop-v1/validator/shacl-core",
+      "compiler": "https://mithril.fund/lib/app/agent-loop-v1/compiler/web-ir",
+      "tester": "https://mithril.fund/lib/app/agent-loop-v1/tester/conformance",
+      "deployer": "https://mithril.fund/lib/app/agent-loop-v1/deployer/self-contained-url",
+      "governor": "https://mithril.fund/lib/app/agent-loop-v1/governor/static-read-only"
+    },
+    "app": {
+      "name": "Mithril coding report 2026-10-07",
+      "description": "静的 report 用の Mithril アプリ。生成した Mithril ソースを確認し、明示的にコンパイルして GitHub に保存する。個人情報、外部通信、自動保存、自動公開を含まない。",
+      "headline": "Chat から Mithril を生成・確認・公開する",
+      "summary": "生成した Mithril を確認し、明示的にコンパイルして GitHub に保存する",
+      "template": "https://mithril.fund/id/template/report",
+      "data-shape": "https://mithril.fund/id/shape/claim-list"
+    },
+    "effects": [
+      "static-document",
+      "self-contained-url"
+    ]
+  }
+}

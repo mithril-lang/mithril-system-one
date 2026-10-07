@@ -1,0 +1,175 @@
+{
+  "format": "mithril.language-inference-receipt/v1",
+  "provider": "mithril",
+  "model": "qwen/qwen3.8-27b",
+  "endpoint": "https://api.mithril.fund/v1/chat/completions",
+  "completion_id": "chatcmpl-2a543392-8cf1-4bb7-abb8-05319db37619",
+  "request_id": "chat:2a543392-8cf1-4bb7-abb8-05319db37619",
+  "goal": "静的 report 用の Mithril アプリを生成してください。アプリ名は「Mithril coding report 2026-10-07」、メイン見出しは「Chat から Mithril ソースへ」、要約は「生成した Mithril を確認し、明示的にコンパイルして GitHub に保存する」。個人情報、外部通信、自動保存、自動公開を含めない静的 report のみ作成してください。",
+  "usage": {
+    "prompt_tokens": 1288,
+    "completion_tokens": 127,
+    "total_tokens": 1415
+  },
+  "source": "(mithril/app-agent\n  :id \"https://app.mithril.fund/id/starter\"\n  :goal \"https://mithril.fund/id/goal/compile-test-deploy-app\"\n  :ontology \"a8d21164d99278f517181b06d063ea8a63249bff57e8e1a5e72aed5758a28f47\"\n  :imports\n  [(mithril/import\n     :library \"https://mithril.fund/lib/app/agent-loop-v1\"\n     :digest \"sha256:b7d1290a2fe8d8f6f0a17c49d2774b9396e9389fb5d070e98335d8d5517266ce\")]\n  :loop\n  (mithril/loop\n    :max-steps 6\n    :reasoner \"https://mithril.fund/lib/app/agent-loop-v1/reasoner/owl2-rl\"\n    :query \"https://mithril.fund/lib/app/agent-loop-v1/query/component-catalog\"\n    :validator \"https://mithril.fund/lib/app/agent-loop-v1/validator/shacl-core\"\n    :compiler \"https://mithril.fund/lib/app/agent-loop-v1/compiler/web-ir\"\n    :tester \"https://mithril.fund/lib/app/agent-loop-v1/tester/conformance\"\n    :deployer \"https://mithril.fund/lib/app/agent-loop-v1/deployer/self-contained-url\"\n    :governor \"https://mithril.fund/lib/app/agent-loop-v1/governor/static-read-only\")\n  :app\n  (mithril/app\n    :name \"Mithril coding report 2026-10-07\"\n    :description \"静的 report 用の Mithril アプリ。生成した Mithril ソースを確認し、明示的にコンパイルして GitHub に保存する。個人情報、外部通信、自動保存、自動公開を含まない。\"\n    :headline \"Chat から Mithril ソースへ\"\n    :summary \"生成した Mithril を確認し、明示的にコンパイルして GitHub に保存する\"\n    :template \"https://mithril.fund/id/template/report\"\n    :data-shape \"https://mithril.fund/id/shape/claim-list\"))\n",
+  "compiler": "https://app.mithril.fund/api/compile",
+  "status": "admitted",
+  "artifact": {
+    "format": "https://mithril.fund/artifact/app-agent-v1",
+    "media-type": "application/ld+json",
+    "graph-digest": "sha256:d47d4a260fa007aea880ec23b29fcbdf198d408e949ba59a9fe68457dc501a23",
+    "app-ir": {
+      "version": "v1",
+      "goal": "compile-test-deploy-app",
+      "ontology": "a8d21164d99278f517181b06d063ea8a63249bff57e8e1a5e72aed5758a28f47",
+      "import": {
+        "library": "https://mithril.fund/lib/app/agent-loop-v1",
+        "digest": "sha256:b7d1290a2fe8d8f6f0a17c49d2774b9396e9389fb5d070e98335d8d5517266ce"
+      },
+      "budget": {
+        "max-steps": 6,
+        "max-source-bytes": 8192
+      },
+      "operations": {
+        "reasoner": "https://mithril.fund/lib/app/agent-loop-v1/reasoner/owl2-rl",
+        "query": "https://mithril.fund/lib/app/agent-loop-v1/query/component-catalog",
+        "validator": "https://mithril.fund/lib/app/agent-loop-v1/validator/shacl-core",
+        "compiler": "https://mithril.fund/lib/app/agent-loop-v1/compiler/web-ir",
+        "tester": "https://mithril.fund/lib/app/agent-loop-v1/tester/conformance",
+        "deployer": "https://mithril.fund/lib/app/agent-loop-v1/deployer/self-contained-url",
+        "governor": "https://mithril.fund/lib/app/agent-loop-v1/governor/static-read-only"
+      },
+      "app": {
+        "name": "Mithril coding report 2026-10-07",
+        "description": "静的 report 用の Mithril アプリ。生成した Mithril ソースを確認し、明示的にコンパイルして GitHub に保存する。個人情報、外部通信、自動保存、自動公開を含まない。",
+        "headline": "Chat から Mithril ソースへ",
+        "summary": "生成した Mithril を確認し、明示的にコンパイルして GitHub に保存する",
+        "template": "https://mithril.fund/id/template/report",
+        "data-shape": "https://mithril.fund/id/shape/claim-list"
+      },
+      "effects": [
+        "static-document",
+        "self-contained-url"
+      ]
+    }
+  },
+  "semanticRun": {
+    "format": "https://mithril.fund/receipt/semantic-execution-v1",
+    "status": "executed",
+    "artifact-digest": "sha256:d47d4a260fa007aea880ec23b29fcbdf198d408e949ba59a9fe68457dc501a23",
+    "state-digest": "sha256:d4849e29da214147f52c32139b27a2eaf31e305b9faec66f4f1cc1cbab9c41ae",
+    "receipts": [
+      {
+        "id": "infer",
+        "operation": "OWL 2 RL materialization",
+        "status": "executed",
+        "engine": "materialize-owl2-rl",
+        "input-digest": "sha256:e1841b6cbe1ac4ca2caa6aca8e15e7cc82854de17fb49f79558b3bdfafdbcc59",
+        "output-digest": "sha256:9af945c55d5840387e58fc42277b33a42077de90bf7939de7dde722bf611f6f9",
+        "metrics": {
+          "asserted-triples": 4,
+          "derived-triples": 1
+        }
+      },
+      {
+        "id": "query",
+        "operation": "SPARQL algebra",
+        "status": "executed",
+        "engine": "select",
+        "input-digest": "sha256:6cff6965018dc84ca53efe9877aa12e4a69aa25bd9a2b9aa2862086ca636040f",
+        "output-digest": "sha256:7cd02a5874e56727fe53265f3f55f65b59504119ee9061384f07d7aa98d0200a",
+        "metrics": {
+          "rows": 1
+        }
+      },
+      {
+        "id": "validate",
+        "operation": "SHACL bounded validation",
+        "status": "executed",
+        "engine": "shacl-edge-adapter",
+        "input-digest": "sha256:a2ad8d5eef7e4d3b0b68b1c1a5905c676092bdec2854bf58f5dd5f3f709ab716",
+        "output-digest": "sha256:adfc5c3d5f487ad7a36294d016050df206aad3d00bd4ed063d87c236049e61aa",
+        "metrics": {
+          "violations": 0,
+          "constraints": [
+            "min-count",
+            "max-count",
+            "datatype",
+            "in"
+          ]
+        }
+      }
+    ]
+  },
+  "trace": [
+    {
+      "id": "infer",
+      "operation": "OWL 2 RL materialization",
+      "status": "executed",
+      "engine": "materialize-owl2-rl",
+      "input-digest": "sha256:e1841b6cbe1ac4ca2caa6aca8e15e7cc82854de17fb49f79558b3bdfafdbcc59",
+      "output-digest": "sha256:9af945c55d5840387e58fc42277b33a42077de90bf7939de7dde722bf611f6f9",
+      "metrics": {
+        "asserted-triples": 4,
+        "derived-triples": 1
+      }
+    },
+    {
+      "id": "query",
+      "operation": "SPARQL algebra",
+      "status": "executed",
+      "engine": "select",
+      "input-digest": "sha256:6cff6965018dc84ca53efe9877aa12e4a69aa25bd9a2b9aa2862086ca636040f",
+      "output-digest": "sha256:7cd02a5874e56727fe53265f3f55f65b59504119ee9061384f07d7aa98d0200a",
+      "metrics": {
+        "rows": 1
+      }
+    },
+    {
+      "id": "validate",
+      "operation": "SHACL bounded validation",
+      "status": "executed",
+      "engine": "shacl-edge-adapter",
+      "input-digest": "sha256:a2ad8d5eef7e4d3b0b68b1c1a5905c676092bdec2854bf58f5dd5f3f709ab716",
+      "output-digest": "sha256:adfc5c3d5f487ad7a36294d016050df206aad3d00bd4ed063d87c236049e61aa",
+      "metrics": {
+        "violations": 0,
+        "constraints": [
+          "min-count",
+          "max-count",
+          "datatype",
+          "in"
+        ]
+      }
+    },
+    {
+      "id": "compile",
+      "operation": "Mithril App IR",
+      "status": "executed",
+      "engine": "compile-text",
+      "input-digest": "sha256:d47d4a260fa007aea880ec23b29fcbdf198d408e949ba59a9fe68457dc501a23",
+      "output-digest": "sha256:5d676c02b4e580662d3f48d580f0edbb65ede6e6cb662c43a450689577c58f3b",
+      "metrics": {
+        "operations": 7
+      }
+    },
+    {
+      "id": "test",
+      "operation": "bounded artifact conformance",
+      "status": "executed",
+      "engine": "artifact-check",
+      "input-digest": "sha256:5d676c02b4e580662d3f48d580f0edbb65ede6e6cb662c43a450689577c58f3b",
+      "output-digest": "sha256:d22d6fa78e5b4c8e058648567a266b3287cc358c90700a0007b3ea7caf8874b6",
+      "metrics": {
+        "checks": 2,
+        "failures": 0
+      }
+    },
+    {
+      "id": "deploy",
+      "operation": "self-contained URL",
+      "status": "not-run",
+      "detail": "deployment requires the separate user action"
+    }
+  ]
+}

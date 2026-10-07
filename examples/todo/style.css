@@ -1,0 +1,4 @@
+[hidden] { display: none !important; }
+.info details { margin-top: 18px; text-align: left; line-height: 1.6; }
+.info summary { cursor: pointer; text-align: center; }
+.toggle-all { width: 1px; height: 1px; }
