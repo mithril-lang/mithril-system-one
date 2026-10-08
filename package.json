@@ -25,7 +25,7 @@
     "test:python": "python3 -m unittest discover -s test -p \"test_*.py\"",
     "test:all": "npm test && npm run test:python && npm run test:browser",
     "status": "node bin/system-one.mjs status",
-    "setup:dynamic": "node runtime/setup.mjs",
+    "setup:dynamic": "npm ci --ignore-scripts && node runtime/setup.mjs && node runtime/setup-module.mjs",
     "test:dynamic": "node --test test/dynamic-runtime.integration.mjs test/registry-runtime.integration.mjs",
     "test:security": "node --test test/security-ontology.test.mjs test/security-runtime.integration.mjs",
     "test:public-review": "node --test test/public-code-review.test.mjs test/public-review-runtime.integration.mjs",
