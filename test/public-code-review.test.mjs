@@ -27,7 +27,7 @@ test('AST extractor keeps direct CLI inputs, unknown flows and shadowed imports 
 test('public acquisition verifies visibility, immutable commit and each blob without executing source',async()=>{
  const r=await fetchPublicSnapshot({repository:'example/public',commit},{transport:fixture()});assert.equal(r.acquisition.excluded_count,1);assert.equal(r.snapshot.coverage.complete,false);assert.equal(r.snapshot.coverage.unresolved,1);
  for(const options of [{privateRepo:true},{badHash:true},{truncated:true}])await assert.rejects(fetchPublicSnapshot({repository:'example/public',commit},{transport:fixture(options)}));
- for(const x of [{repository:'../private',commit},{repository:'example/public',commit:'main'},{repository:'example/public',commit,command:'ls'}])assert.throws(()=>validateTarget(x));
+ for(const x of [{repository:'../private',commit},{repository:'example/public',commit:'main'},{repository:'example/public',commit:[commit]},{repository:'example/public',commit,command:'ls'}])assert.throws(()=>validateTarget(x));
 });
 
 test('MCP native handshake lists the review tool and refuses unsupported arguments',async()=>{
