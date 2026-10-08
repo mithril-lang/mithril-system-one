@@ -1,0 +1,5 @@
+<Benchmark xmlns="http://checklists.nist.gov/xccdf/1.2" id="xccdf_org.mithril_benchmark_fixture">
+<status date="2026-10-08">draft</status><title>Mithril isolated live scanner fixture</title><description>Controlled pass/fail file checks; no real host assurance.</description><version>1.0</version><model system="urn:xccdf:scoring:default"/>
+<Rule id="xccdf_org.mithril_rule_present" selected="true"><title>Present file</title><description>Known existing file</description><check system="http://oval.mitre.org/XMLSchema/oval-definitions-5"><check-content-ref href="definitions.xml" name="oval:org.mithril:def:1"/></check></Rule>
+<Rule id="xccdf_org.mithril_rule_absent" selected="true"><title>Absent file</title><description>Known missing file</description><check system="http://oval.mitre.org/XMLSchema/oval-definitions-5"><check-content-ref href="definitions.xml" name="oval:org.mithril:def:2"/></check></Rule>
+</Benchmark>

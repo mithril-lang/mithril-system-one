@@ -9,3 +9,8 @@ test('MCP dispatches SCAP to real compiler and advertises isolated upgrade effec
  const out=await new Promise((ok,no)=>{const p=execFile(process.execPath,[new URL('../bin/mithril-public-mcp.mjs',import.meta.url).pathname],{timeout:30000,maxBuffer:2000000},(e,out)=>e?no(e):ok(out));p.stdin.end(messages.map(m=>JSON.stringify(m)).join('\n')+'\n');});
  const r=out.trim().split('\n').map(x=>JSON.parse(x));assert.equal(r[1].result.tools.length,3);assert.equal(r[1].result.tools.find(t=>t.name==='mithril_dependency_upgrade').annotations.readOnlyHint,false);assert.equal(r[2].result.structuredContent.ontology.violations.length,2);
 });
+
+test('real OpenSCAP ARF scopes embedded source and result definitions independently',async()=>{
+ const xml=await readFile(new URL('../examples/scap/openscap-arf-results.xml',import.meta.url),'utf8');
+ const r=await assessScap(xml);assert.equal(r.records.length,4);assert.equal(r.ontology.violations.length,2);assert.equal(r.gaps.length,0);assert.deepEqual(r.records.map(x=>x.result).sort(),['fail','false','pass','true']);
+});

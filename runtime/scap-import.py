@@ -32,7 +32,10 @@ def import_xml(text):
         for e in systems[0].findall(f'{{{OVAL}}}definitions/{{{OVAL}}}definition'):
             ident, value = e.get('definition_id'), e.get('result')
             if not ident or value not in {'true','false','unknown','error','not evaluated','not applicable'}: raise ValueError('oval_result_invalid')
-            meta = [d for d in definitions if d['id'] == ident]
+            # ARF can embed both source datastream definitions and result-local copies.
+            # Bind semantics to this oval_results, never a different component/report.
+            local = [e for e in container.iter(f'{{{DEF}}}definition') if e.get('id') == ident]
+            meta = [{'class': e.get('class'), 'cves': [r.get('ref_id') for r in e.iter(f'{{{DEF}}}reference') if r.get('source') == 'CVE' and re.fullmatch(r'CVE-\d{4}-\d{4,}', r.get('ref_id',''))]} for e in local]
             if len(meta) > 1: raise ValueError('oval_definition_ambiguous')
             cls = meta[0]['class'] if meta else None
             failure = (value == 'true' and cls in {'vulnerability','patch'}) or (value == 'false' and cls == 'compliance')

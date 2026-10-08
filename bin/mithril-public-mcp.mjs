@@ -12,7 +12,7 @@ async function handle(raw){
  if(!('id'in m)){if(m.method==='notifications/initialized'&&state==='initializing')state='ready';return;}
  if(m.method==='initialize'){
   if(state!=='new'||typeof m.params?.protocolVersion!=='string'||!m.params?.clientInfo||!m.params?.capabilities)return error(-32602,'Invalid initialize');
-  state='initializing';return result({protocolVersion:'2025-06-18',capabilities:{tools:{listChanged:false}},serverInfo:{name:'mithril-public-review',version:'0.4.0'}});
+  state='initializing';return result({protocolVersion:'2025-06-18',capabilities:{tools:{listChanged:false}},serverInfo:{name:'mithril-public-review',version:'0.4.1'}});
  }
  if(m.method==='ping')return result({});
  if(state!=='ready')return error(-32002,'Initialize first');

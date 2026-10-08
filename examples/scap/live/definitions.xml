@@ -1,0 +1,9 @@
+<oval_definitions xmlns="http://oval.mitre.org/XMLSchema/oval-definitions-5" xmlns:oval="http://oval.mitre.org/XMLSchema/oval-common-5" xmlns:unix="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<generator><oval:product_name>Mithril live qualification</oval:product_name><oval:schema_version>5.11.1</oval:schema_version><oval:timestamp>2026-10-08T00:00:00</oval:timestamp></generator>
+<definitions>
+<definition id="oval:org.mithril:def:1" version="1" class="compliance"><metadata><title>Fixture present file</title><description>Known fixture file exists in isolated container.</description></metadata><criteria><criterion test_ref="oval:org.mithril:tst:1" comment="present file"/></criteria></definition>
+<definition id="oval:org.mithril:def:2" version="1" class="compliance"><metadata><title>Fixture absent file</title><description>Deliberately missing fixture file.</description></metadata><criteria><criterion test_ref="oval:org.mithril:tst:2" comment="missing file"/></criteria></definition>
+</definitions>
+<tests><unix:file_test id="oval:org.mithril:tst:1" version="1" check_existence="at_least_one_exists" check="all" comment="present"><unix:object object_ref="oval:org.mithril:obj:1"/></unix:file_test><unix:file_test id="oval:org.mithril:tst:2" version="1" check_existence="at_least_one_exists" check="all" comment="absent"><unix:object object_ref="oval:org.mithril:obj:2"/></unix:file_test></tests>
+<objects><unix:file_object id="oval:org.mithril:obj:1" version="1"><unix:filepath>/tmp/mithril-present</unix:filepath></unix:file_object><unix:file_object id="oval:org.mithril:obj:2" version="1"><unix:filepath>/tmp/mithril-missing</unix:filepath></unix:file_object></objects>
+</oval_definitions>
