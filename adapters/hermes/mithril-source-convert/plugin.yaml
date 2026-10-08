@@ -1,0 +1,12 @@
+name: mithril-source-convert
+version: 0.1.0
+description: Deterministic source AST to executable Mithril with bounded equivalence checks
+author: Mithril
+license: Apache-2.0
+provides_tools:
+  - mithril_source_convert
+config_schema:
+  system_one_root:
+    type: str
+    required: true
+    description: Reviewed System One checkout with both pinned compiler runtimes installed.

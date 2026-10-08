@@ -1,0 +1,48 @@
+{
+  "source_sha256": "8675b754a06c129048cd8cce899deabf2fec4cd299a55e1e69e27709cab17924",
+  "signatures": [
+    {
+      "name": "toggle",
+      "params": [
+        {
+          "name": "done",
+          "type": "bool"
+        }
+      ],
+      "returns": "bool"
+    },
+    {
+      "name": "remaining",
+      "params": [
+        {
+          "name": "done",
+          "type": "bool[]"
+        }
+      ],
+      "returns": "number"
+    }
+  ],
+  "receipt": {
+    "compiler": {
+      "repository": "mithril-lang/mithril",
+      "commit": "f78ce5756261131509aca0a5f417923eb0c4447d"
+    },
+    "engine": [
+      "kotoba-lang/org-babashka-nbb",
+      "829f0ba11016e925001d80e51f12848c4ad58112"
+    ],
+    "mithril_sha256": "9c8adf7783e9af360cdafb7df34feed05ba62debf5ade75de99d1a73c69d958d",
+    "artifact_sha256": "5b411b310672f6113f206df277e3601ed9e508ace23a93930864308e4aa3e4b7",
+    "verification": {
+      "status": "passed",
+      "cases": 513,
+      "reference": "inert-source-AST-interpreter",
+      "runtime": "compiled-Mithril-native-js",
+      "array_max_length": 8,
+      "result_sha256": "d6c56198624605e342019bcc8f161907dfc429cf1af07c813a87c05d3307472a"
+    },
+    "seconds": 0.40155558299999994,
+    "inference_calls": 0,
+    "scope": "Boolean inputs and dense plain Boolean arrays of length 0–8; bounded exhaustive equivalence to admitted source AST. Not a proof for arbitrary JS values or full programs."
+  }
+}

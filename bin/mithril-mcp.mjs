@@ -1,6 +1,9 @@
 #!/usr/bin/env node
 import {taskCatalog,taskSchema,workflowSchema,executeTask,executeWorkflow,safeError} from '../lib/mithril-entry.mjs';
+import {convertSource} from '../lib/source-to-mithril.mjs';
+import {conversionSchema} from '../lib/source-conversion-schema.mjs';
 const tools=[
+ {name:'mithril_source_convert',description:'Translate bounded pure JS/TS source AST into executable Mithril and source ontology; compile and exhaustively compare Boolean inputs and dense Boolean arrays of length 0–8. No submitted source execution, inference, files or publication.',inputSchema:conversionSchema,annotations:{readOnlyHint:true,destructiveHint:false,openWorldHint:false}},
  {name:'mithril_task_list',description:'List the nine bounded Mithril coding tasks; no inference or compilation.',inputSchema:{type:'object',properties:{},additionalProperties:false},annotations:{readOnlyHint:true,destructiveHint:false,openWorldHint:false}},
  {name:'mithril_task_run',description:'Propose, compile and independently verify one Mithril task. ontology is deterministic; system-one uses one owning-process Mithril API credential. Returns source and actual receipts; never retries.',inputSchema:taskSchema,annotations:{readOnlyHint:false,destructiveHint:false,openWorldHint:true}},
  {name:'mithril_workflow_run',description:'Execute 1–3 distinct supported tasks sequentially; stop immediately on failure or unknown outcome. No files, Git or publication.',inputSchema:workflowSchema,annotations:{readOnlyHint:false,destructiveHint:false,openWorldHint:true}}
@@ -16,7 +19,7 @@ async function handle(raw){
  const result=v=>reply({jsonrpc:'2.0',id,result:v});
  if(m.method==='initialize'){
   if(state!=='new'||typeof m.params?.protocolVersion!=='string'||!m.params?.clientInfo||!m.params?.capabilities)return rpcError(id,-32602,'Invalid initialize');
-  state='initializing';return result({protocolVersion:'2025-06-18',capabilities:{tools:{listChanged:false}},serverInfo:{name:'mithril-system-one',version:'0.3.1'}});
+  state='initializing';return result({protocolVersion:'2025-06-18',capabilities:{tools:{listChanged:false}},serverInfo:{name:'mithril-system-one',version:'0.4.0'}});
  }
  if(m.method==='ping')return result({});
  if(state!=='ready')return rpcError(id,-32002,'Initialize first');
@@ -29,7 +32,8 @@ async function handle(raw){
   if(name==='mithril_task_list'){
    if(!args||typeof args!=='object'||Array.isArray(args)||Object.keys(args).length)throw Error('invalid_arguments');
    value={tasks:taskCatalog};
-  }else value=await (name==='mithril_task_run'?executeTask:executeWorkflow)(args);
+  }else if(name==='mithril_source_convert')value=await convertSource(args);
+  else value=await (name==='mithril_task_run'?executeTask:executeWorkflow)(args);
   return result({content:[{type:'text',text:JSON.stringify(value)}],structuredContent:value,isError:value.row?.success===false});
  }catch(e){return result({content:[{type:'text',text:JSON.stringify({success:false,error:safeError(e),retry:false})}],isError:true});}
 }
