@@ -55,7 +55,7 @@ class UpgradeTests(unittest.TestCase):
             plugin = target / 'plugins/mithril-public-review/plugin.yaml'
             old = plugin.read_text()
             packaged = root / 'adapters/hermes/mithril-public-review/plugin.yaml'
-            packaged.write_text(old.replace('0.3.0', '0.4.0'))
+            packaged.write_text(old.replace('0.3.1', '0.4.0'))
             hashes = root / 'profiles' / installer.PROFILE / 'reviewed-upgrade-hashes.json'
             hashes.write_text(json.dumps({'plugins/mithril-public-review/plugin.yaml': hashlib.sha256(old.encode()).hexdigest()}))
             with self.assertRaises(ValueError):
@@ -84,7 +84,7 @@ class UpgradeTests(unittest.TestCase):
             config.write_text(original)
             plugin = root / 'adapters/hermes/mithril-public-review/plugin.yaml'
             old = plugin.read_bytes()
-            plugin.write_text(old.decode().replace('0.3.0', '0.4.0'))
+            plugin.write_text(old.decode().replace('0.3.1', '0.4.0'))
             hashes = root / 'profiles' / installer.PROFILE / 'reviewed-upgrade-hashes.json'
             hashes.write_text(json.dumps({'plugins/mithril-public-review/plugin.yaml': [hashlib.sha256(old).hexdigest()]}))
             installer.install(root, home, True, True, True)

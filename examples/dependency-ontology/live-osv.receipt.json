@@ -13,8 +13,33 @@
       "fixed_version_hints": [
         "4.17.21"
       ],
-      "feed_sha256": "60765a0e5fb27702f0a24d6f6b20f999dffbbb65856b64bdc516703d31129bbf",
-      "feed_modified": "2026-09-10T03:49:04.067984836Z"
+      "feed_sha256": "88bb6aeff1f02bc2dd7c09e4a49aef1f870d1172e84ffb978d8fbebcd1778df3",
+      "feed_modified": "2026-09-10T03:49:04.067984836Z",
+      "priority": "elevated_epss",
+      "knowledge": [
+        {
+          "cve": "CVE-2021-23337",
+          "kev": false,
+          "epss": {
+            "score": 0.21333,
+            "date": "2026-10-07"
+          },
+          "nvd": {
+            "id": "CVE-2021-23337"
+          }
+        },
+        {
+          "cve": "CVE-2026-4800",
+          "kev": false,
+          "epss": {
+            "score": 0.02618,
+            "date": "2026-10-07"
+          },
+          "nvd": {
+            "id": "CVE-2026-4800"
+          }
+        }
+      ]
     },
     {
       "advisory": "GHSA-r5fr-rjxr-66jc",
@@ -27,8 +52,33 @@
       "fixed_version_hints": [
         "4.18.0"
       ],
-      "feed_sha256": "3d375a9815e91d040c66ad78fcc365642707e9b127c5031308e26ec5229e381f",
-      "feed_modified": "2026-09-10T03:51:02.970455926Z"
+      "feed_sha256": "d1f9fe5c58205368c2b74805e714ecaa48b828c6d15153df10a77e3ddf4fcfde",
+      "feed_modified": "2026-09-10T03:51:02.970455926Z",
+      "priority": "elevated_epss",
+      "knowledge": [
+        {
+          "cve": "CVE-2021-23337",
+          "kev": false,
+          "epss": {
+            "score": 0.21333,
+            "date": "2026-10-07"
+          },
+          "nvd": {
+            "id": "CVE-2021-23337"
+          }
+        },
+        {
+          "cve": "CVE-2026-4800",
+          "kev": false,
+          "epss": {
+            "score": 0.02618,
+            "date": "2026-10-07"
+          },
+          "nvd": {
+            "id": "CVE-2026-4800"
+          }
+        }
+      ]
     },
     {
       "advisory": "GHSA-29mw-wpgm-hmr9",
@@ -40,8 +90,22 @@
       "fixed_version_hints": [
         "4.17.21"
       ],
-      "feed_sha256": "71013f2a7a809b660d9383fd358f23679414efc592f04dfe5229917889a04acf",
-      "feed_modified": "2025-09-29T21:12:31.102523Z"
+      "feed_sha256": "61f80cfb73f5fdd074a9e82e5fec9e377483dec74f37f608c626083d94e24efe",
+      "feed_modified": "2025-09-29T21:12:31.102523Z",
+      "priority": "review",
+      "knowledge": [
+        {
+          "cve": "CVE-2020-28500",
+          "kev": false,
+          "epss": {
+            "score": 0.07336,
+            "date": "2026-10-07"
+          },
+          "nvd": {
+            "id": "CVE-2020-28500"
+          }
+        }
+      ]
     },
     {
       "advisory": "GHSA-f23m-r3pf-42rh",
@@ -54,8 +118,33 @@
       "fixed_version_hints": [
         "4.18.0"
       ],
-      "feed_sha256": "6f3dc5af099cf1204db535021b92fb44e8a9d50cf6f96ef27c460db22dbd1334",
-      "feed_modified": "2026-09-10T03:50:44.050013812Z"
+      "feed_sha256": "d993c1e624d193887d0fae85f2e8e45e8bc4b5054f247974649e1984bd588b80",
+      "feed_modified": "2026-09-10T03:50:44.050013812Z",
+      "priority": "review",
+      "knowledge": [
+        {
+          "cve": "CVE-2025-13465",
+          "kev": false,
+          "epss": {
+            "score": 0.0185,
+            "date": "2026-10-07"
+          },
+          "nvd": {
+            "id": "CVE-2025-13465"
+          }
+        },
+        {
+          "cve": "CVE-2026-2950",
+          "kev": false,
+          "epss": {
+            "score": 0.00377,
+            "date": "2026-10-07"
+          },
+          "nvd": {
+            "id": "CVE-2026-2950"
+          }
+        }
+      ]
     },
     {
       "advisory": "GHSA-xxjr-mmjv-4gpg",
@@ -68,20 +157,261 @@
       "fixed_version_hints": [
         "4.17.23"
       ],
-      "feed_sha256": "9e431156e17b4b11a8acad594c15daf217a1024864fd9e3fa98e7a70e0feb8e2",
-      "feed_modified": "2026-09-10T03:50:33.722177022Z"
+      "feed_sha256": "58b65ddcedafdc482d230a83b2b115330af956a4a0dfc2d0ea616f3a5543f2cf",
+      "feed_modified": "2026-09-10T03:50:33.722177022Z",
+      "priority": "review",
+      "knowledge": [
+        {
+          "cve": "CVE-2025-13465",
+          "kev": false,
+          "epss": {
+            "score": 0.0185,
+            "date": "2026-10-07"
+          },
+          "nvd": {
+            "id": "CVE-2025-13465"
+          }
+        },
+        {
+          "cve": "CVE-2026-2950",
+          "kev": false,
+          "epss": {
+            "score": 0.00377,
+            "date": "2026-10-07"
+          },
+          "nvd": {
+            "id": "CVE-2026-2950"
+          }
+        }
+      ]
     }
   ],
-  "unknown": [
-    {
-      "reason": "knowledge_unavailable_or_stale",
-      "http_status": 503
-    }
-  ],
-  "knowledge": "unavailable",
+  "unknown": [],
+  "knowledge": {
+    "status": "available",
+    "entries": {
+      "CVE-2021-23337": {
+        "kev": false,
+        "epss": {
+          "score": 0.21333,
+          "date": "2026-10-07"
+        },
+        "nvd": {
+          "id": "CVE-2021-23337"
+        }
+      },
+      "CVE-2026-4800": {
+        "kev": false,
+        "epss": {
+          "score": 0.02618,
+          "date": "2026-10-07"
+        },
+        "nvd": {
+          "id": "CVE-2026-4800"
+        }
+      },
+      "CVE-2020-28500": {
+        "kev": false,
+        "epss": {
+          "score": 0.07336,
+          "date": "2026-10-07"
+        },
+        "nvd": {
+          "id": "CVE-2020-28500"
+        }
+      },
+      "CVE-2025-13465": {
+        "kev": false,
+        "epss": {
+          "score": 0.0185,
+          "date": "2026-10-07"
+        },
+        "nvd": {
+          "id": "CVE-2025-13465"
+        }
+      },
+      "CVE-2026-2950": {
+        "kev": false,
+        "epss": {
+          "score": 0.00377,
+          "date": "2026-10-07"
+        },
+        "nvd": {
+          "id": "CVE-2026-2950"
+        }
+      }
+    },
+    "datasets": {
+      "nvd": {
+        "status": "available",
+        "generated_at": "2026-09-24T15:03:11Z",
+        "manifest_sha256": "db0a88dbb177b29c1c21830efae6dc8a67deec1f4791d46087bad1cc7d813a18"
+      },
+      "kev": {
+        "status": "available",
+        "generated_at": "2026-10-07T18:20:03Z",
+        "manifest_sha256": "ca6f3a51e7aeb9cf4d5cf613aff8c4b558287751c6d7d8c151c17435f66f2a18"
+      },
+      "epss": {
+        "status": "available",
+        "generated_at": "2026-10-07T19:30:14Z",
+        "manifest_sha256": "3ec1c9b6e5bf73b2bd66d9372158a6ae6ac44314823fa1ae3f73a42d1b83362c"
+      }
+    },
+    "gaps": [],
+    "receipts": [
+      {
+        "url": "https://knowledge.mithril.fund/nvd/manifest.json",
+        "http_status": 200,
+        "sha256": "db0a88dbb177b29c1c21830efae6dc8a67deec1f4791d46087bad1cc7d813a18",
+        "bytes": 4176,
+        "observed_at": "2026-10-08T04:10:13.263Z"
+      },
+      {
+        "url": "https://knowledge.mithril.fund/api/knowledge/search?dataset=nvd&cve=CVE-2021-23337",
+        "http_status": 200,
+        "sha256": "0282da9bc0d339b09ec4094f1edad03269f03e4f7ed4f621dd4364e695496290",
+        "bytes": 2506,
+        "observed_at": "2026-10-08T04:10:13.450Z"
+      },
+      {
+        "url": "https://knowledge.mithril.fund/api/knowledge/search?dataset=nvd&cve=CVE-2026-4800",
+        "http_status": 200,
+        "sha256": "1eb45d14619936b71bd5269446800de27c585aac0dbe04eaba57ad4b990da2f2",
+        "bytes": 3935,
+        "observed_at": "2026-10-08T04:10:13.636Z"
+      },
+      {
+        "url": "https://knowledge.mithril.fund/api/knowledge/search?dataset=nvd&cve=CVE-2020-28500",
+        "http_status": 200,
+        "sha256": "607361cd69f7ebaf4afe6a49f342f7045d0500e0caf72a9b231e8c2b526b02e3",
+        "bytes": 2583,
+        "observed_at": "2026-10-08T04:10:13.810Z"
+      },
+      {
+        "url": "https://knowledge.mithril.fund/api/knowledge/search?dataset=nvd&cve=CVE-2025-13465",
+        "http_status": 200,
+        "sha256": "8affe6484ed90ab8381eff4466d3878553f1e14776a24b7829fbc72ee0dae2cf",
+        "bytes": 3533,
+        "observed_at": "2026-10-08T04:10:13.999Z"
+      },
+      {
+        "url": "https://knowledge.mithril.fund/api/knowledge/search?dataset=nvd&cve=CVE-2026-2950",
+        "http_status": 200,
+        "sha256": "1099621232262e953e2767dc7ba3c3e6222ede1defb21f6630e274d8d7bfcb30",
+        "bytes": 1434,
+        "observed_at": "2026-10-08T04:10:14.169Z"
+      },
+      {
+        "url": "https://knowledge.mithril.fund/nvd/manifest.json",
+        "http_status": 200,
+        "sha256": "db0a88dbb177b29c1c21830efae6dc8a67deec1f4791d46087bad1cc7d813a18",
+        "bytes": 4176,
+        "observed_at": "2026-10-08T04:10:14.453Z"
+      },
+      {
+        "url": "https://knowledge.mithril.fund/kev/manifest.json",
+        "http_status": 200,
+        "sha256": "ca6f3a51e7aeb9cf4d5cf613aff8c4b558287751c6d7d8c151c17435f66f2a18",
+        "bytes": 434,
+        "observed_at": "2026-10-08T04:10:14.692Z"
+      },
+      {
+        "url": "https://knowledge.mithril.fund/api/knowledge/search?dataset=kev&cve=CVE-2021-23337",
+        "http_status": 404,
+        "sha256": "d13e57bb44ea78a0ce87b26de940e9fe784f2aa4ee94a28e26412eb7679ec625",
+        "bytes": 26,
+        "observed_at": "2026-10-08T04:10:14.852Z"
+      },
+      {
+        "url": "https://knowledge.mithril.fund/api/knowledge/search?dataset=kev&cve=CVE-2026-4800",
+        "http_status": 404,
+        "sha256": "d13e57bb44ea78a0ce87b26de940e9fe784f2aa4ee94a28e26412eb7679ec625",
+        "bytes": 26,
+        "observed_at": "2026-10-08T04:10:15.038Z"
+      },
+      {
+        "url": "https://knowledge.mithril.fund/api/knowledge/search?dataset=kev&cve=CVE-2020-28500",
+        "http_status": 404,
+        "sha256": "d13e57bb44ea78a0ce87b26de940e9fe784f2aa4ee94a28e26412eb7679ec625",
+        "bytes": 26,
+        "observed_at": "2026-10-08T04:10:15.209Z"
+      },
+      {
+        "url": "https://knowledge.mithril.fund/api/knowledge/search?dataset=kev&cve=CVE-2025-13465",
+        "http_status": 404,
+        "sha256": "d13e57bb44ea78a0ce87b26de940e9fe784f2aa4ee94a28e26412eb7679ec625",
+        "bytes": 26,
+        "observed_at": "2026-10-08T04:10:15.379Z"
+      },
+      {
+        "url": "https://knowledge.mithril.fund/api/knowledge/search?dataset=kev&cve=CVE-2026-2950",
+        "http_status": 404,
+        "sha256": "d13e57bb44ea78a0ce87b26de940e9fe784f2aa4ee94a28e26412eb7679ec625",
+        "bytes": 26,
+        "observed_at": "2026-10-08T04:10:15.562Z"
+      },
+      {
+        "url": "https://knowledge.mithril.fund/kev/manifest.json",
+        "http_status": 200,
+        "sha256": "ca6f3a51e7aeb9cf4d5cf613aff8c4b558287751c6d7d8c151c17435f66f2a18",
+        "bytes": 434,
+        "observed_at": "2026-10-08T04:10:15.771Z"
+      },
+      {
+        "url": "https://knowledge.mithril.fund/epss/manifest.json",
+        "http_status": 200,
+        "sha256": "3ec1c9b6e5bf73b2bd66d9372158a6ae6ac44314823fa1ae3f73a42d1b83362c",
+        "bytes": 367,
+        "observed_at": "2026-10-08T04:10:16.023Z"
+      },
+      {
+        "url": "https://knowledge.mithril.fund/api/knowledge/search?dataset=epss&cve=CVE-2021-23337",
+        "http_status": 200,
+        "sha256": "9d55de9f2820df528a740a9b958978c78d143dff22afbd627fa908d22e52bfdc",
+        "bytes": 144,
+        "observed_at": "2026-10-08T04:10:16.982Z"
+      },
+      {
+        "url": "https://knowledge.mithril.fund/api/knowledge/search?dataset=epss&cve=CVE-2026-4800",
+        "http_status": 200,
+        "sha256": "3e8418dde1454bc165f7ac9d7df8e230f047847a5fa215d4015c8f63dbc04651",
+        "bytes": 143,
+        "observed_at": "2026-10-08T04:10:18.012Z"
+      },
+      {
+        "url": "https://knowledge.mithril.fund/api/knowledge/search?dataset=epss&cve=CVE-2020-28500",
+        "http_status": 200,
+        "sha256": "750db8c89aabb5c5e520bf6aafb6b3646ff289bfc83041dfdd27d1be38b89658",
+        "bytes": 143,
+        "observed_at": "2026-10-08T04:10:18.924Z"
+      },
+      {
+        "url": "https://knowledge.mithril.fund/api/knowledge/search?dataset=epss&cve=CVE-2025-13465",
+        "http_status": 200,
+        "sha256": "fe10a7d07272287b73a4c2d58f9c4635ba63adcc1e3c98172adb0e2c462b7c2a",
+        "bytes": 143,
+        "observed_at": "2026-10-08T04:10:19.936Z"
+      },
+      {
+        "url": "https://knowledge.mithril.fund/api/knowledge/search?dataset=epss&cve=CVE-2026-2950",
+        "http_status": 200,
+        "sha256": "63d9fde2885c6707d86844e7e5414e6cd2aff41815c3ebc49f8d0fcb67e5a939",
+        "bytes": 143,
+        "observed_at": "2026-10-08T04:10:20.817Z"
+      },
+      {
+        "url": "https://knowledge.mithril.fund/epss/manifest.json",
+        "http_status": 200,
+        "sha256": "3ec1c9b6e5bf73b2bd66d9372158a6ae6ac44314823fa1ae3f73a42d1b83362c",
+        "bytes": 367,
+        "observed_at": "2026-10-08T04:10:21.057Z"
+      }
+    ]
+  },
   "ontology": {
     "policy_sha256": "758e89c4f92b955892819a525e9f0331b189d45eca59a756772a0575e0b68e19",
-    "data_sha256": "b521ee07c1ddfdb46987237b24fad845af9756e153d72817c37f141784bb6f10",
+    "data_sha256": "2de5ec27fd6fcca64ce92ddc1f57e8e4f55308d73f4d94a83d2afdba011b1f3e",
     "graph_digest": "sha256:90191f2602cf9610b0a3f2a4574e7fda16af4095f6cca5e71dcea74a2582623a",
     "violations": 5
   },
@@ -89,39 +419,45 @@
     "osv": [
       {
         "url": "https://api.osv.dev/v1/querybatch",
+        "http_status": 200,
         "sha256": "2510d172ff32d2bdf452cc82d9991972eab53c0b024accfb355f1f533d9db81f",
         "bytes": 375,
-        "observed_at": "2026-10-08T03:59:21.190Z"
+        "observed_at": "2026-10-08T04:10:11.329Z"
       },
       {
         "url": "https://api.osv.dev/v1/vulns/GHSA-29mw-wpgm-hmr9",
-        "sha256": "852ef939b6e4f036f6f364aa41e8edc94d45cbbb4398c4ada17eeb1606aba7b1",
+        "http_status": 200,
+        "sha256": "222b311e39a02441b59ed4a98f16ab4142c6004bd7578c11445a299ef681d7e1",
         "bytes": 4846,
-        "observed_at": "2026-10-08T03:59:21.456Z"
+        "observed_at": "2026-10-08T04:10:11.587Z"
       },
       {
         "url": "https://api.osv.dev/v1/vulns/GHSA-35jh-r3h4-6jhm",
-        "sha256": "60765a0e5fb27702f0a24d6f6b20f999dffbbb65856b64bdc516703d31129bbf",
+        "http_status": 200,
+        "sha256": "88bb6aeff1f02bc2dd7c09e4a49aef1f870d1172e84ffb978d8fbebcd1778df3",
         "bytes": 4216,
-        "observed_at": "2026-10-08T03:59:21.708Z"
+        "observed_at": "2026-10-08T04:10:11.839Z"
       },
       {
         "url": "https://api.osv.dev/v1/vulns/GHSA-f23m-r3pf-42rh",
-        "sha256": "0e2e9a827b82129569050d69723001f1feff526a3529bc6245a046b98d64765a",
+        "http_status": 200,
+        "sha256": "70f813fd185d752c81dbfca3484320084bccec30b9d8b64be62b8ca098eab095",
         "bytes": 3091,
-        "observed_at": "2026-10-08T03:59:21.957Z"
+        "observed_at": "2026-10-08T04:10:12.086Z"
       },
       {
         "url": "https://api.osv.dev/v1/vulns/GHSA-r5fr-rjxr-66jc",
-        "sha256": "b0a98aa8212abd7a0d2f08d15f7f928f6ca3b38067a2b8b2906eb7e08d55e570",
+        "http_status": 200,
+        "sha256": "8e79fe7027e134737134f4beed338b47215a6cd9536cb88d50b2dd5ff24c566c",
         "bytes": 3742,
-        "observed_at": "2026-10-08T03:59:22.232Z"
+        "observed_at": "2026-10-08T04:10:12.352Z"
       },
       {
         "url": "https://api.osv.dev/v1/vulns/GHSA-xxjr-mmjv-4gpg",
-        "sha256": "5698ed2eddf662a34ad2824ea78b84448dff55b5d0676d20816c58017f3825ff",
+        "http_status": 200,
+        "sha256": "5ad268e66935fce27f8f6e21db04b8f379279c94d7affeceee33b65f47794339",
         "bytes": 2980,
-        "observed_at": "2026-10-08T03:59:22.488Z"
+        "observed_at": "2026-10-08T04:10:12.598Z"
       }
     ],
     "matching_engine": {
@@ -151,5 +487,5 @@
     "target_code_executed": false,
     "inference_calls": 0
   },
-  "seconds": 5.187020375
+  "seconds": 11.294092042
 }

@@ -24,3 +24,14 @@ test('OSV microsecond summary can pin nanosecond detail but changed revisions st
  const good=await queryOsv([component],{transport:transport(false)});assert.equal(good.queries[0].complete,true);
  const bad=await queryOsv([component],{transport:transport(true)});assert.equal(bad.queries[0].complete,false);assert.equal(bad.queries[0].records.length,0);
 });
+
+test('dataset pins preserve independent data; unverified 404 and identity mismatch stay unknown',async()=>{
+ const cve='CVE-2026-10001';
+ let base=fixture();
+ const partial=await enrichKnowledge([cve],{transport:async(url,init)=>url.endsWith('/nvd/manifest.json')?new Response('',{status:503}):base(url,init)});
+ assert.equal(partial.status,'partial');assert.equal(partial.entries[cve].nvd,null);assert.equal(partial.entries[cve].kev,true);assert.equal(partial.entries[cve].epss.score,.9);
+ for(const response of [()=>new Response('<html>not found</html>',{status:404}),()=>Response.json({dataset:'kev',record:{cveID:'CVE-2026-99999'}})]){
+  base=fixture();const r=await enrichKnowledge([cve],{transport:async(url,init)=>url.includes('dataset=kev')?response():base(url,init)});assert.equal(r.entries[cve].kev,null);assert.ok(r.gaps.length);
+ }
+ base=fixture();const absent=await enrichKnowledge([cve],{transport:async(url,init)=>url.includes('dataset=kev')?Response.json({error:'not-found'},{status:404}):base(url,init)});assert.equal(absent.entries[cve].kev,false);assert.equal(absent.status,'available');
+});
