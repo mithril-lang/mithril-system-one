@@ -1,0 +1,14 @@
+<asset-report-collection xmlns="http://scap.nist.gov/schema/asset-reporting-format/1.1" xmlns:x="http://checklists.nist.gov/xccdf/1.2" xmlns:o="http://oval.mitre.org/XMLSchema/oval-results-5" xmlns:d="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+ <reports><report id="synthetic-fixture"><content>
+  <o:oval_results><d:oval_definitions><d:definitions>
+   <d:definition id="oval:fixture:def:1" class="vulnerability"><d:metadata><d:reference source="CVE" ref_id="CVE-2026-10001"/></d:metadata></d:definition>
+   <d:definition id="oval:fixture:def:2" class="compliance"/>
+  </d:definitions></d:oval_definitions><o:results><o:system><o:definitions>
+   <o:definition definition_id="oval:fixture:def:1" result="true"/>
+   <o:definition definition_id="oval:fixture:def:2" result="unknown"/>
+  </o:definitions></o:system></o:results></o:oval_results>
+  <x:TestResult id="xccdf_fixture_result"><x:target>synthetic-host</x:target>
+   <x:rule-result idref="xccdf_fixture_rule"><x:result>fail</x:result><x:check><x:check-content-ref href="definitions.xml" name="oval:fixture:def:1"/></x:check></x:rule-result>
+  </x:TestResult>
+ </content></report></reports>
+</asset-report-collection>
