@@ -1,0 +1,5 @@
+(ns system-one.module (:require [mithril.native-js :as native]))
+(def fs (js/require "fs"))
+(let [input (js/JSON.parse (.readFileSync fs 0 "utf8"))
+      artifact (native/compile-text (.-source input))]
+  (println (js/JSON.stringify (clj->js (assoc artifact :format (subs (str (:format artifact)) 1))))))
