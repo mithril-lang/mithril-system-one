@@ -22,9 +22,13 @@
     "status": "node bin/system-one.mjs status",
     "setup:dynamic": "node runtime/setup.mjs",
     "test:dynamic": "node --test test/dynamic-runtime.integration.mjs test/registry-runtime.integration.mjs",
-    "test:security": "node --test test/security-ontology.test.mjs test/security-runtime.integration.mjs"
+    "test:security": "node --test test/security-ontology.test.mjs test/security-runtime.integration.mjs",
+    "test:public-review": "node --test test/public-code-review.test.mjs test/public-review-runtime.integration.mjs"
   },
   "devDependencies": {
     "@playwright/test": "1.63.0"
+  },
+  "dependencies": {
+    "acorn": "8.15.0"
   }
 }

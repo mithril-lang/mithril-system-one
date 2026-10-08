@@ -1,0 +1,12 @@
+name: mithril-public-review
+version: 0.1.0
+description: Read-only public GitHub source review with bounded AST extraction and Mithril ontology receipts
+author: Mithril
+license: Apache-2.0
+provides_tools:
+  - mithril_public_repo_review
+config_schema:
+  system_one_root:
+    type: str
+    required: true
+    description: Reviewed Mithril System One checkout with pinned compiler runtime installed.

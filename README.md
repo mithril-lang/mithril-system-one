@@ -74,4 +74,8 @@ workflow, MCP stdio server and Hermes plugin without duplicating the executor.
 
 ## Ontology security evaluation prototype
 
-[Security evaluation design and local proof](docs/security-ontology-evaluation.md) uses the actual Mithril compiler and OWL/SHACL engine for three bounded source/environment snapshot policies. It preserves unknown coverage, validates policy-code proposals, and records synthetic graph-only timing. It does not yet extract repositories or prove exploitable vulnerabilities. Run `npm run test:security`.
+[Security evaluation design and local proof](docs/security-ontology-evaluation.md) uses the actual Mithril compiler and OWL/SHACL engine for three bounded source/environment snapshot policies. It preserves unknown coverage, validates policy-code proposals, and records synthetic graph-only timing. The separate [public source review bot](docs/public-code-review-bot.md) now extracts a bounded JavaScript subset from immutable public GitHub commits; neither capability proves exploitable vulnerabilities. Run `npm run test:security`.
+
+## Public source review bot
+
+[Profile, plugin and Registry integration](docs/public-code-review-bot.md) provides `mithril_public_repo_review` with authenticated file provenance and actual Mithril ontology evaluation. Repository reviews always preserve incomplete coverage; target code is never executed.
