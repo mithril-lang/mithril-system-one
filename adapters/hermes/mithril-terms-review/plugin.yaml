@@ -1,0 +1,12 @@
+name: mithril-terms-review
+version: 0.1.0
+description: Source-bound private terms review and version comparison
+author: Mithril
+license: Apache-2.0
+provides_tools:
+  - mithril_terms_review
+config_schema:
+  system_one_root:
+    type: str
+    required: true
+    description: Reviewed pinned Mithril System One checkout. No additional runtime setup.
