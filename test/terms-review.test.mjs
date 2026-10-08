@@ -32,6 +32,19 @@ test('tampered hashes, private URL parameters, invalid dates and extra fields re
   }
   assert.throws(()=>reviewTerms({...input(doc('Welcome')),documents:[doc('One'),doc('Two')]}));
 });
+test('contextual risk records must cite the exact imported source span',()=>{
+  const d=doc('😀 No refunds.');
+  const a={dimension:'billing-exit',risk:'high',rationale:'Refund restriction affects the declared use.',sourceSha256:d.sha256,start:3,end:d.text.length};
+  const r=reviewTerms({...input(d),assessments:[a]});
+  assert.equal(r.contextualAssessments[0].status,'reviewer_supplied_not_independently_verified');
+  assert.equal(d.text.slice(r.findings[0].start,r.findings[0].end),'No refunds');
+  for (const patch of [{end:9999},{sourceSha256:'0'.repeat(64)},{risk:'safe'},{start:-1}])
+    assert.throws(()=>reviewTerms({...input(d),assessments:[{...a,...patch}]}));
+});
+test('candidate floods are bounded with an explicit coverage gap',()=>{
+  const r=reviewTerms(input(doc('No refunds.\n'.repeat(1100))));
+  assert.equal(r.findings.length,1000); assert.equal(r.coverage.candidateLimitReached,true);
+});
 test('workflow bounds tasks and returns no partial output when a later task refuses',()=>{
   assert.equal(runTermsWorkflow({tasks:[input(doc('Welcome'))]}).published,false);
   assert.throws(()=>runTermsWorkflow({tasks:Array(4).fill(input(doc('Welcome')))}));
