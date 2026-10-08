@@ -83,3 +83,5 @@ workflow, MCP stdio server and Hermes plugin without duplicating the executor.
 ## Public source review bot
 
 [Profile, plugin and Registry integration](docs/public-code-review-bot.md) provides `mithril_public_repo_review` with authenticated file provenance and actual Mithril ontology evaluation. Repository reviews always preserve incomplete coverage; target code is never executed.
+
+SCAP/OVAL/XCCDF result ingestion and verified npm upgrade patches are available through CLI, MCP and the owning Hermes profile. [Scope, application and qualification](docs/scap-and-remediation.md).

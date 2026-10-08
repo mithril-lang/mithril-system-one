@@ -14,7 +14,9 @@
     ".": "./lib/mithril-language.mjs",
     "./todo": "./lib/inference.mjs",
     "./convert": "./lib/source-to-mithril.mjs",
-    "./dependencies": "./lib/dependency-assessment.mjs"
+    "./dependencies": "./lib/dependency-assessment.mjs",
+    "./scap": "./lib/scap-assessment.mjs",
+    "./remediation": "./lib/dependency-remediation.mjs"
   },
   "scripts": {
     "test": "node --test test/*.test.mjs && npm test -w examples/todo",
@@ -29,7 +31,9 @@
     "setup:module": "node runtime/setup-module.mjs",
     "test:convert": "node --test test/source-conversion.test.mjs test/source-conversion.integration.mjs && python3 test/source_convert_adapter.integration.py",
     "setup:dependencies": "node runtime/setup-dependency.mjs",
-    "test:dependencies": "node --test test/dependency-assessment.test.mjs test/dependency-runtime.integration.mjs"
+    "test:dependencies": "node --test test/dependency-assessment.test.mjs test/dependency-runtime.integration.mjs",
+    "test:scap": "node --test test/scap-runtime.integration.mjs && python3 -m unittest discover -s test -p test_scap_import.py",
+    "test:remediation": "node --test test/dependency-remediation.test.mjs"
   },
   "devDependencies": {
     "@playwright/test": "1.63.0"

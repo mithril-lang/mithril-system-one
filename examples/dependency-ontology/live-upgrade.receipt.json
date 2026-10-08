@@ -1,0 +1,850 @@
+{
+  "status": "verified_dependency_patch",
+  "changes": [
+    {
+      "name": "lodash",
+      "from": "4.17.20",
+      "to": "4.18.0",
+      "group": "dependencies",
+      "advisories": [
+        "GHSA-35jh-r3h4-6jhm",
+        "GHSA-r5fr-rjxr-66jc",
+        "GHSA-29mw-wpgm-hmr9",
+        "GHSA-f23m-r3pf-42rh",
+        "GHSA-xxjr-mmjv-4gpg"
+      ]
+    }
+  ],
+  "base": [
+    {
+      "path": "package.json",
+      "sha256": "a618a6f202eb7a4fcf65a384652236eac9350ca122dca99e40cf883c5f0f7d97"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "3ab4e64a62e8bf75132c20dc246567800683864e737fca23dd6ed4d965fbf3f9"
+    }
+  ],
+  "files": [
+    {
+      "path": "package.json",
+      "text": "{\n  \"name\": \"mithril-remediation-fixture\",\n  \"version\": \"1.0.0\",\n  \"private\": true,\n  \"dependencies\": {\n    \"lodash\": \"4.18.0\"\n  },\n  \"scripts\": {\n    \"postinstall\": \"exit 93\"\n  }\n}\n",
+      "sha256": "44fee3a7182076f098db2f5f1baec3c805de72d56c5afce0a3f525eed721c63d"
+    },
+    {
+      "path": "package-lock.json",
+      "text": "{\n  \"name\": \"mithril-remediation-fixture\",\n  \"version\": \"1.0.0\",\n  \"lockfileVersion\": 3,\n  \"requires\": true,\n  \"packages\": {\n    \"\": {\n      \"name\": \"mithril-remediation-fixture\",\n      \"version\": \"1.0.0\",\n      \"dependencies\": {\n        \"lodash\": \"4.18.0\"\n      }\n    },\n    \"node_modules/lodash\": {\n      \"version\": \"4.18.0\",\n      \"resolved\": \"https://registry.npmjs.org/lodash/-/lodash-4.18.0.tgz\",\n      \"integrity\": \"sha512-l1mfj2atMqndAHI3ls7XqPxEjV2J9ZkcNyHpoZA3r2T1LLwDB69jgkMWh71YKwhBbK0G2f4WSn05ahmQXVxupA==\",\n      \"deprecated\": \"Bad release. Please use lodash@4.17.21 instead.\",\n      \"license\": \"MIT\"\n    }\n  }\n}\n",
+      "sha256": "d2c443adc8e1729e54b907d3a2b640639af192e0c32e5534e50560626ff8802d"
+    }
+  ],
+  "before": {
+    "status": "review_incomplete",
+    "scope": "npm package-lock v2/v3 only; no target installation or execution; known affected versions are candidates, not reachable-exploit proof; no automatic upgrades",
+    "inventory": {
+      "components": [
+        {
+          "id": "2c872687887891249ad246d9",
+          "name": "lodash",
+          "version": "4.17.20",
+          "ecosystem": "npm",
+          "purl": "pkg:npm/lodash@4.17.20",
+          "dev": false,
+          "evidence": [
+            {
+              "path": "package-lock.json",
+              "pointer": "/packages/node_modules/lodash",
+              "sha256": "3ab4e64a62e8bf75132c20dc246567800683864e737fca23dd6ed4d965fbf3f9"
+            }
+          ]
+        }
+      ],
+      "gaps": [],
+      "scope": "npm package-lock v2/v3 only; no target installation or execution"
+    },
+    "findings": [
+      {
+        "id": "3d7c112efd47e2a4827444c0",
+        "component": {
+          "id": "2c872687887891249ad246d9",
+          "name": "lodash",
+          "version": "4.17.20",
+          "ecosystem": "npm",
+          "purl": "pkg:npm/lodash@4.17.20",
+          "dev": false,
+          "evidence": [
+            {
+              "path": "package-lock.json",
+              "pointer": "/packages/node_modules/lodash",
+              "sha256": "3ab4e64a62e8bf75132c20dc246567800683864e737fca23dd6ed4d965fbf3f9"
+            }
+          ]
+        },
+        "advisory": "GHSA-35jh-r3h4-6jhm",
+        "cves": [
+          "CVE-2021-23337",
+          "CVE-2026-4800"
+        ],
+        "severity": "high",
+        "fixed_versions": [
+          "4.17.21"
+        ],
+        "status": "affected_version_candidate_requires_review",
+        "feed_sha256": "a27c1a50cab19dc88d02566f7e57faeb23a15194a77891f5161a1c9d81955f92",
+        "feed_modified": "2026-09-10T03:49:04.067984836Z",
+        "knowledge": [
+          {
+            "cve": "CVE-2021-23337",
+            "kev": false,
+            "epss": {
+              "score": 0.21333,
+              "date": "2026-10-07"
+            },
+            "nvd": {
+              "id": "CVE-2021-23337"
+            }
+          },
+          {
+            "cve": "CVE-2026-4800",
+            "kev": false,
+            "epss": {
+              "score": 0.02618,
+              "date": "2026-10-07"
+            },
+            "nvd": {
+              "id": "CVE-2026-4800"
+            }
+          }
+        ],
+        "priority": "elevated_epss"
+      },
+      {
+        "id": "7c7d160de599cd66b6cd9b73",
+        "component": {
+          "id": "2c872687887891249ad246d9",
+          "name": "lodash",
+          "version": "4.17.20",
+          "ecosystem": "npm",
+          "purl": "pkg:npm/lodash@4.17.20",
+          "dev": false,
+          "evidence": [
+            {
+              "path": "package-lock.json",
+              "pointer": "/packages/node_modules/lodash",
+              "sha256": "3ab4e64a62e8bf75132c20dc246567800683864e737fca23dd6ed4d965fbf3f9"
+            }
+          ]
+        },
+        "advisory": "GHSA-r5fr-rjxr-66jc",
+        "cves": [
+          "CVE-2021-23337",
+          "CVE-2026-4800"
+        ],
+        "severity": "high",
+        "fixed_versions": [
+          "4.18.0"
+        ],
+        "status": "affected_version_candidate_requires_review",
+        "feed_sha256": "f3bc7b64ae59970bfa22e8857623aaa6099e062fa3264aa75677e5604a47b353",
+        "feed_modified": "2026-09-10T03:51:02.970455926Z",
+        "knowledge": [
+          {
+            "cve": "CVE-2021-23337",
+            "kev": false,
+            "epss": {
+              "score": 0.21333,
+              "date": "2026-10-07"
+            },
+            "nvd": {
+              "id": "CVE-2021-23337"
+            }
+          },
+          {
+            "cve": "CVE-2026-4800",
+            "kev": false,
+            "epss": {
+              "score": 0.02618,
+              "date": "2026-10-07"
+            },
+            "nvd": {
+              "id": "CVE-2026-4800"
+            }
+          }
+        ],
+        "priority": "elevated_epss"
+      },
+      {
+        "id": "409dc26aece44bb12cf508b7",
+        "component": {
+          "id": "2c872687887891249ad246d9",
+          "name": "lodash",
+          "version": "4.17.20",
+          "ecosystem": "npm",
+          "purl": "pkg:npm/lodash@4.17.20",
+          "dev": false,
+          "evidence": [
+            {
+              "path": "package-lock.json",
+              "pointer": "/packages/node_modules/lodash",
+              "sha256": "3ab4e64a62e8bf75132c20dc246567800683864e737fca23dd6ed4d965fbf3f9"
+            }
+          ]
+        },
+        "advisory": "GHSA-29mw-wpgm-hmr9",
+        "cves": [
+          "CVE-2020-28500"
+        ],
+        "severity": "medium",
+        "fixed_versions": [
+          "4.17.21"
+        ],
+        "status": "affected_version_candidate_requires_review",
+        "feed_sha256": "71013f2a7a809b660d9383fd358f23679414efc592f04dfe5229917889a04acf",
+        "feed_modified": "2025-09-29T21:12:31.102523Z",
+        "knowledge": [
+          {
+            "cve": "CVE-2020-28500",
+            "kev": false,
+            "epss": {
+              "score": 0.07336,
+              "date": "2026-10-07"
+            },
+            "nvd": {
+              "id": "CVE-2020-28500"
+            }
+          }
+        ],
+        "priority": "review"
+      },
+      {
+        "id": "abc9e6d9e3062c0028e5f4fb",
+        "component": {
+          "id": "2c872687887891249ad246d9",
+          "name": "lodash",
+          "version": "4.17.20",
+          "ecosystem": "npm",
+          "purl": "pkg:npm/lodash@4.17.20",
+          "dev": false,
+          "evidence": [
+            {
+              "path": "package-lock.json",
+              "pointer": "/packages/node_modules/lodash",
+              "sha256": "3ab4e64a62e8bf75132c20dc246567800683864e737fca23dd6ed4d965fbf3f9"
+            }
+          ]
+        },
+        "advisory": "GHSA-f23m-r3pf-42rh",
+        "cves": [
+          "CVE-2025-13465",
+          "CVE-2026-2950"
+        ],
+        "severity": "medium",
+        "fixed_versions": [
+          "4.18.0"
+        ],
+        "status": "affected_version_candidate_requires_review",
+        "feed_sha256": "6593b25ca30d662e812923549201d281c4b352ba75a6a06696e03b913012aefb",
+        "feed_modified": "2026-09-10T03:50:44.050013812Z",
+        "knowledge": [
+          {
+            "cve": "CVE-2025-13465",
+            "kev": false,
+            "epss": {
+              "score": 0.0185,
+              "date": "2026-10-07"
+            },
+            "nvd": {
+              "id": "CVE-2025-13465"
+            }
+          },
+          {
+            "cve": "CVE-2026-2950",
+            "kev": false,
+            "epss": {
+              "score": 0.00377,
+              "date": "2026-10-07"
+            },
+            "nvd": {
+              "id": "CVE-2026-2950"
+            }
+          }
+        ],
+        "priority": "review"
+      },
+      {
+        "id": "378aeb69927ebc85a79044f5",
+        "component": {
+          "id": "2c872687887891249ad246d9",
+          "name": "lodash",
+          "version": "4.17.20",
+          "ecosystem": "npm",
+          "purl": "pkg:npm/lodash@4.17.20",
+          "dev": false,
+          "evidence": [
+            {
+              "path": "package-lock.json",
+              "pointer": "/packages/node_modules/lodash",
+              "sha256": "3ab4e64a62e8bf75132c20dc246567800683864e737fca23dd6ed4d965fbf3f9"
+            }
+          ]
+        },
+        "advisory": "GHSA-xxjr-mmjv-4gpg",
+        "cves": [
+          "CVE-2025-13465",
+          "CVE-2026-2950"
+        ],
+        "severity": "medium",
+        "fixed_versions": [
+          "4.17.23"
+        ],
+        "status": "affected_version_candidate_requires_review",
+        "feed_sha256": "064c995b03de618d509f8acbeaab9734d470ce284796b4ef292d6c7c307eac7b",
+        "feed_modified": "2026-09-10T03:50:33.722177022Z",
+        "knowledge": [
+          {
+            "cve": "CVE-2025-13465",
+            "kev": false,
+            "epss": {
+              "score": 0.0185,
+              "date": "2026-10-07"
+            },
+            "nvd": {
+              "id": "CVE-2025-13465"
+            }
+          },
+          {
+            "cve": "CVE-2026-2950",
+            "kev": false,
+            "epss": {
+              "score": 0.00377,
+              "date": "2026-10-07"
+            },
+            "nvd": {
+              "id": "CVE-2026-2950"
+            }
+          }
+        ],
+        "priority": "review"
+      }
+    ],
+    "unknown": [],
+    "knowledge": {
+      "status": "available",
+      "entries": {
+        "CVE-2021-23337": {
+          "kev": false,
+          "epss": {
+            "score": 0.21333,
+            "date": "2026-10-07"
+          },
+          "nvd": {
+            "id": "CVE-2021-23337"
+          }
+        },
+        "CVE-2026-4800": {
+          "kev": false,
+          "epss": {
+            "score": 0.02618,
+            "date": "2026-10-07"
+          },
+          "nvd": {
+            "id": "CVE-2026-4800"
+          }
+        },
+        "CVE-2020-28500": {
+          "kev": false,
+          "epss": {
+            "score": 0.07336,
+            "date": "2026-10-07"
+          },
+          "nvd": {
+            "id": "CVE-2020-28500"
+          }
+        },
+        "CVE-2025-13465": {
+          "kev": false,
+          "epss": {
+            "score": 0.0185,
+            "date": "2026-10-07"
+          },
+          "nvd": {
+            "id": "CVE-2025-13465"
+          }
+        },
+        "CVE-2026-2950": {
+          "kev": false,
+          "epss": {
+            "score": 0.00377,
+            "date": "2026-10-07"
+          },
+          "nvd": {
+            "id": "CVE-2026-2950"
+          }
+        }
+      },
+      "datasets": {
+        "nvd": {
+          "status": "available",
+          "generated_at": "2026-09-24T15:03:11Z",
+          "manifest_sha256": "db0a88dbb177b29c1c21830efae6dc8a67deec1f4791d46087bad1cc7d813a18"
+        },
+        "kev": {
+          "status": "available",
+          "generated_at": "2026-10-07T18:20:03Z",
+          "manifest_sha256": "ca6f3a51e7aeb9cf4d5cf613aff8c4b558287751c6d7d8c151c17435f66f2a18"
+        },
+        "epss": {
+          "status": "available",
+          "generated_at": "2026-10-07T19:30:14Z",
+          "manifest_sha256": "3ec1c9b6e5bf73b2bd66d9372158a6ae6ac44314823fa1ae3f73a42d1b83362c"
+        }
+      },
+      "gaps": [],
+      "receipts": [
+        {
+          "url": "https://knowledge.mithril.fund/nvd/manifest.json",
+          "http_status": 200,
+          "sha256": "db0a88dbb177b29c1c21830efae6dc8a67deec1f4791d46087bad1cc7d813a18",
+          "bytes": 4176,
+          "observed_at": "2026-10-08T04:22:27.235Z"
+        },
+        {
+          "url": "https://knowledge.mithril.fund/api/knowledge/search?dataset=nvd&cve=CVE-2021-23337",
+          "http_status": 200,
+          "sha256": "0282da9bc0d339b09ec4094f1edad03269f03e4f7ed4f621dd4364e695496290",
+          "bytes": 2506,
+          "observed_at": "2026-10-08T04:22:27.630Z"
+        },
+        {
+          "url": "https://knowledge.mithril.fund/api/knowledge/search?dataset=nvd&cve=CVE-2026-4800",
+          "http_status": 200,
+          "sha256": "1eb45d14619936b71bd5269446800de27c585aac0dbe04eaba57ad4b990da2f2",
+          "bytes": 3935,
+          "observed_at": "2026-10-08T04:22:27.944Z"
+        },
+        {
+          "url": "https://knowledge.mithril.fund/api/knowledge/search?dataset=nvd&cve=CVE-2020-28500",
+          "http_status": 200,
+          "sha256": "607361cd69f7ebaf4afe6a49f342f7045d0500e0caf72a9b231e8c2b526b02e3",
+          "bytes": 2583,
+          "observed_at": "2026-10-08T04:22:28.173Z"
+        },
+        {
+          "url": "https://knowledge.mithril.fund/api/knowledge/search?dataset=nvd&cve=CVE-2025-13465",
+          "http_status": 200,
+          "sha256": "8affe6484ed90ab8381eff4466d3878553f1e14776a24b7829fbc72ee0dae2cf",
+          "bytes": 3533,
+          "observed_at": "2026-10-08T04:22:28.471Z"
+        },
+        {
+          "url": "https://knowledge.mithril.fund/api/knowledge/search?dataset=nvd&cve=CVE-2026-2950",
+          "http_status": 200,
+          "sha256": "1099621232262e953e2767dc7ba3c3e6222ede1defb21f6630e274d8d7bfcb30",
+          "bytes": 1434,
+          "observed_at": "2026-10-08T04:22:28.683Z"
+        },
+        {
+          "url": "https://knowledge.mithril.fund/nvd/manifest.json",
+          "http_status": 200,
+          "sha256": "db0a88dbb177b29c1c21830efae6dc8a67deec1f4791d46087bad1cc7d813a18",
+          "bytes": 4176,
+          "observed_at": "2026-10-08T04:22:28.992Z"
+        },
+        {
+          "url": "https://knowledge.mithril.fund/kev/manifest.json",
+          "http_status": 200,
+          "sha256": "ca6f3a51e7aeb9cf4d5cf613aff8c4b558287751c6d7d8c151c17435f66f2a18",
+          "bytes": 434,
+          "observed_at": "2026-10-08T04:22:29.237Z"
+        },
+        {
+          "url": "https://knowledge.mithril.fund/api/knowledge/search?dataset=kev&cve=CVE-2021-23337",
+          "http_status": 404,
+          "sha256": "d13e57bb44ea78a0ce87b26de940e9fe784f2aa4ee94a28e26412eb7679ec625",
+          "bytes": 26,
+          "observed_at": "2026-10-08T04:22:29.516Z"
+        },
+        {
+          "url": "https://knowledge.mithril.fund/api/knowledge/search?dataset=kev&cve=CVE-2026-4800",
+          "http_status": 404,
+          "sha256": "d13e57bb44ea78a0ce87b26de940e9fe784f2aa4ee94a28e26412eb7679ec625",
+          "bytes": 26,
+          "observed_at": "2026-10-08T04:22:29.754Z"
+        },
+        {
+          "url": "https://knowledge.mithril.fund/api/knowledge/search?dataset=kev&cve=CVE-2020-28500",
+          "http_status": 404,
+          "sha256": "d13e57bb44ea78a0ce87b26de940e9fe784f2aa4ee94a28e26412eb7679ec625",
+          "bytes": 26,
+          "observed_at": "2026-10-08T04:22:30.039Z"
+        },
+        {
+          "url": "https://knowledge.mithril.fund/api/knowledge/search?dataset=kev&cve=CVE-2025-13465",
+          "http_status": 404,
+          "sha256": "d13e57bb44ea78a0ce87b26de940e9fe784f2aa4ee94a28e26412eb7679ec625",
+          "bytes": 26,
+          "observed_at": "2026-10-08T04:22:30.261Z"
+        },
+        {
+          "url": "https://knowledge.mithril.fund/api/knowledge/search?dataset=kev&cve=CVE-2026-2950",
+          "http_status": 404,
+          "sha256": "d13e57bb44ea78a0ce87b26de940e9fe784f2aa4ee94a28e26412eb7679ec625",
+          "bytes": 26,
+          "observed_at": "2026-10-08T04:22:30.563Z"
+        },
+        {
+          "url": "https://knowledge.mithril.fund/kev/manifest.json",
+          "http_status": 200,
+          "sha256": "ca6f3a51e7aeb9cf4d5cf613aff8c4b558287751c6d7d8c151c17435f66f2a18",
+          "bytes": 434,
+          "observed_at": "2026-10-08T04:22:30.853Z"
+        },
+        {
+          "url": "https://knowledge.mithril.fund/epss/manifest.json",
+          "http_status": 200,
+          "sha256": "3ec1c9b6e5bf73b2bd66d9372158a6ae6ac44314823fa1ae3f73a42d1b83362c",
+          "bytes": 367,
+          "observed_at": "2026-10-08T04:22:31.146Z"
+        },
+        {
+          "url": "https://knowledge.mithril.fund/api/knowledge/search?dataset=epss&cve=CVE-2021-23337",
+          "http_status": 200,
+          "sha256": "9d55de9f2820df528a740a9b958978c78d143dff22afbd627fa908d22e52bfdc",
+          "bytes": 144,
+          "observed_at": "2026-10-08T04:22:32.386Z"
+        },
+        {
+          "url": "https://knowledge.mithril.fund/api/knowledge/search?dataset=epss&cve=CVE-2026-4800",
+          "http_status": 200,
+          "sha256": "3e8418dde1454bc165f7ac9d7df8e230f047847a5fa215d4015c8f63dbc04651",
+          "bytes": 143,
+          "observed_at": "2026-10-08T04:22:33.565Z"
+        },
+        {
+          "url": "https://knowledge.mithril.fund/api/knowledge/search?dataset=epss&cve=CVE-2020-28500",
+          "http_status": 200,
+          "sha256": "750db8c89aabb5c5e520bf6aafb6b3646ff289bfc83041dfdd27d1be38b89658",
+          "bytes": 143,
+          "observed_at": "2026-10-08T04:22:34.777Z"
+        },
+        {
+          "url": "https://knowledge.mithril.fund/api/knowledge/search?dataset=epss&cve=CVE-2025-13465",
+          "http_status": 200,
+          "sha256": "fe10a7d07272287b73a4c2d58f9c4635ba63adcc1e3c98172adb0e2c462b7c2a",
+          "bytes": 143,
+          "observed_at": "2026-10-08T04:22:35.857Z"
+        },
+        {
+          "url": "https://knowledge.mithril.fund/api/knowledge/search?dataset=epss&cve=CVE-2026-2950",
+          "http_status": 200,
+          "sha256": "63d9fde2885c6707d86844e7e5414e6cd2aff41815c3ebc49f8d0fcb67e5a939",
+          "bytes": 143,
+          "observed_at": "2026-10-08T04:22:36.929Z"
+        },
+        {
+          "url": "https://knowledge.mithril.fund/epss/manifest.json",
+          "http_status": 200,
+          "sha256": "3ec1c9b6e5bf73b2bd66d9372158a6ae6ac44314823fa1ae3f73a42d1b83362c",
+          "bytes": 367,
+          "observed_at": "2026-10-08T04:22:37.382Z"
+        }
+      ]
+    },
+    "ontology": {
+      "source": "(mithril/ontology :id \"https://mithril.fund/ontology/dependency-assessment-v1\"\n :profile [\"https://www.w3.org/TR/rdf11-concepts/\" \"https://www.w3.org/TR/owl2-profiles/#OWL_2_RL\" \"https://www.w3.org/TR/shacl/\"]\n :graph [\n  (owl/class :id \"https://mithril.fund/dependency/v1#AffectedDependency\")\n  (owl/class :id \"https://mithril.fund/dependency/v1#KnownExploitedDependency\" :rdfs/sub-class-of \"https://mithril.fund/dependency/v1#AffectedDependency\")\n  (owl/datatype-property :id \"https://mithril.fund/dependency/v1#remediated\")\n  (shacl/node-shape :id \"https://mithril.fund/dependency/v1#RemediationShape\" :sh/target-class \"https://mithril.fund/dependency/v1#AffectedDependency\"\n   :sh/property [(shacl/property-shape :sh/path \"https://mithril.fund/dependency/v1#remediated\" :sh/has-value true)])\n ])\n",
+      "data": "<urn:dependency:assessment> <https://mithril.fund/dependency/v1#inventoryObserved> \"true\" .\n<urn:dependency:assessment> <https://mithril.fund/dependency/v1#coverageComplete> \"false\" .\n<urn:dependency:package:2c872687887891249ad246d9> <https://mithril.fund/dependency/v1#name> \"lodash\" .\n<urn:dependency:package:2c872687887891249ad246d9> <https://mithril.fund/dependency/v1#version> \"4.17.20\" .\n<urn:dependency:package:2c872687887891249ad246d9> <https://mithril.fund/dependency/v1#purl> \"pkg:npm/lodash@4.17.20\" .\n<urn:dependency:package:2c872687887891249ad246d9> <https://mithril.fund/dependency/v1#evidenceDigest> \"3ab4e64a62e8bf75132c20dc246567800683864e737fca23dd6ed4d965fbf3f9\" .\n<urn:dependency:finding:3d7c112efd47e2a4827444c0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://mithril.fund/dependency/v1#AffectedDependency> .\n<urn:dependency:finding:3d7c112efd47e2a4827444c0> <https://mithril.fund/dependency/v1#remediated> \"false\"^^<http://www.w3.org/2001/XMLSchema#boolean> .\n<urn:dependency:finding:3d7c112efd47e2a4827444c0> <https://mithril.fund/dependency/v1#component> <urn:dependency:package:2c872687887891249ad246d9> .\n<urn:dependency:finding:3d7c112efd47e2a4827444c0> <https://mithril.fund/dependency/v1#advisory> \"GHSA-35jh-r3h4-6jhm\" .\n<urn:dependency:finding:3d7c112efd47e2a4827444c0> <https://mithril.fund/dependency/v1#feedDigest> \"a27c1a50cab19dc88d02566f7e57faeb23a15194a77891f5161a1c9d81955f92\" .\n<urn:dependency:finding:3d7c112efd47e2a4827444c0> <https://mithril.fund/dependency/v1#cve> \"CVE-2021-23337\" .\n<urn:dependency:finding:3d7c112efd47e2a4827444c0> <https://mithril.fund/dependency/v1#cve> \"CVE-2026-4800\" .\n<urn:dependency:finding:7c7d160de599cd66b6cd9b73> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://mithril.fund/dependency/v1#AffectedDependency> .\n<urn:dependency:finding:7c7d160de599cd66b6cd9b73> <https://mithril.fund/dependency/v1#remediated> \"false\"^^<http://www.w3.org/2001/XMLSchema#boolean> .\n<urn:dependency:finding:7c7d160de599cd66b6cd9b73> <https://mithril.fund/dependency/v1#component> <urn:dependency:package:2c872687887891249ad246d9> .\n<urn:dependency:finding:7c7d160de599cd66b6cd9b73> <https://mithril.fund/dependency/v1#advisory> \"GHSA-r5fr-rjxr-66jc\" .\n<urn:dependency:finding:7c7d160de599cd66b6cd9b73> <https://mithril.fund/dependency/v1#feedDigest> \"f3bc7b64ae59970bfa22e8857623aaa6099e062fa3264aa75677e5604a47b353\" .\n<urn:dependency:finding:7c7d160de599cd66b6cd9b73> <https://mithril.fund/dependency/v1#cve> \"CVE-2021-23337\" .\n<urn:dependency:finding:7c7d160de599cd66b6cd9b73> <https://mithril.fund/dependency/v1#cve> \"CVE-2026-4800\" .\n<urn:dependency:finding:409dc26aece44bb12cf508b7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://mithril.fund/dependency/v1#AffectedDependency> .\n<urn:dependency:finding:409dc26aece44bb12cf508b7> <https://mithril.fund/dependency/v1#remediated> \"false\"^^<http://www.w3.org/2001/XMLSchema#boolean> .\n<urn:dependency:finding:409dc26aece44bb12cf508b7> <https://mithril.fund/dependency/v1#component> <urn:dependency:package:2c872687887891249ad246d9> .\n<urn:dependency:finding:409dc26aece44bb12cf508b7> <https://mithril.fund/dependency/v1#advisory> \"GHSA-29mw-wpgm-hmr9\" .\n<urn:dependency:finding:409dc26aece44bb12cf508b7> <https://mithril.fund/dependency/v1#feedDigest> \"71013f2a7a809b660d9383fd358f23679414efc592f04dfe5229917889a04acf\" .\n<urn:dependency:finding:409dc26aece44bb12cf508b7> <https://mithril.fund/dependency/v1#cve> \"CVE-2020-28500\" .\n<urn:dependency:finding:abc9e6d9e3062c0028e5f4fb> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://mithril.fund/dependency/v1#AffectedDependency> .\n<urn:dependency:finding:abc9e6d9e3062c0028e5f4fb> <https://mithril.fund/dependency/v1#remediated> \"false\"^^<http://www.w3.org/2001/XMLSchema#boolean> .\n<urn:dependency:finding:abc9e6d9e3062c0028e5f4fb> <https://mithril.fund/dependency/v1#component> <urn:dependency:package:2c872687887891249ad246d9> .\n<urn:dependency:finding:abc9e6d9e3062c0028e5f4fb> <https://mithril.fund/dependency/v1#advisory> \"GHSA-f23m-r3pf-42rh\" .\n<urn:dependency:finding:abc9e6d9e3062c0028e5f4fb> <https://mithril.fund/dependency/v1#feedDigest> \"6593b25ca30d662e812923549201d281c4b352ba75a6a06696e03b913012aefb\" .\n<urn:dependency:finding:abc9e6d9e3062c0028e5f4fb> <https://mithril.fund/dependency/v1#cve> \"CVE-2025-13465\" .\n<urn:dependency:finding:abc9e6d9e3062c0028e5f4fb> <https://mithril.fund/dependency/v1#cve> \"CVE-2026-2950\" .\n<urn:dependency:finding:378aeb69927ebc85a79044f5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://mithril.fund/dependency/v1#AffectedDependency> .\n<urn:dependency:finding:378aeb69927ebc85a79044f5> <https://mithril.fund/dependency/v1#remediated> \"false\"^^<http://www.w3.org/2001/XMLSchema#boolean> .\n<urn:dependency:finding:378aeb69927ebc85a79044f5> <https://mithril.fund/dependency/v1#component> <urn:dependency:package:2c872687887891249ad246d9> .\n<urn:dependency:finding:378aeb69927ebc85a79044f5> <https://mithril.fund/dependency/v1#advisory> \"GHSA-xxjr-mmjv-4gpg\" .\n<urn:dependency:finding:378aeb69927ebc85a79044f5> <https://mithril.fund/dependency/v1#feedDigest> \"064c995b03de618d509f8acbeaab9734d470ce284796b4ef292d6c7c307eac7b\" .\n<urn:dependency:finding:378aeb69927ebc85a79044f5> <https://mithril.fund/dependency/v1#cve> \"CVE-2025-13465\" .\n<urn:dependency:finding:378aeb69927ebc85a79044f5> <https://mithril.fund/dependency/v1#cve> \"CVE-2026-2950\" .\n<urn:dependency:cve:CVE-2021-23337> <https://mithril.fund/dependency/v1#knownExploited> \"false\"^^<http://www.w3.org/2001/XMLSchema#boolean> .\n<urn:dependency:cve:CVE-2021-23337> <https://mithril.fund/dependency/v1#epss> \"0.21333\"^^<http://www.w3.org/2001/XMLSchema#double> .\n<urn:dependency:cve:CVE-2021-23337> <https://mithril.fund/dependency/v1#epssDate> \"2026-10-07\" .\n<urn:dependency:cve:CVE-2026-4800> <https://mithril.fund/dependency/v1#knownExploited> \"false\"^^<http://www.w3.org/2001/XMLSchema#boolean> .\n<urn:dependency:cve:CVE-2026-4800> <https://mithril.fund/dependency/v1#epss> \"0.02618\"^^<http://www.w3.org/2001/XMLSchema#double> .\n<urn:dependency:cve:CVE-2026-4800> <https://mithril.fund/dependency/v1#epssDate> \"2026-10-07\" .\n<urn:dependency:cve:CVE-2020-28500> <https://mithril.fund/dependency/v1#knownExploited> \"false\"^^<http://www.w3.org/2001/XMLSchema#boolean> .\n<urn:dependency:cve:CVE-2020-28500> <https://mithril.fund/dependency/v1#epss> \"0.07336\"^^<http://www.w3.org/2001/XMLSchema#double> .\n<urn:dependency:cve:CVE-2020-28500> <https://mithril.fund/dependency/v1#epssDate> \"2026-10-07\" .\n<urn:dependency:cve:CVE-2025-13465> <https://mithril.fund/dependency/v1#knownExploited> \"false\"^^<http://www.w3.org/2001/XMLSchema#boolean> .\n<urn:dependency:cve:CVE-2025-13465> <https://mithril.fund/dependency/v1#epss> \"0.0185\"^^<http://www.w3.org/2001/XMLSchema#double> .\n<urn:dependency:cve:CVE-2025-13465> <https://mithril.fund/dependency/v1#epssDate> \"2026-10-07\" .\n<urn:dependency:cve:CVE-2026-2950> <https://mithril.fund/dependency/v1#knownExploited> \"false\"^^<http://www.w3.org/2001/XMLSchema#boolean> .\n<urn:dependency:cve:CVE-2026-2950> <https://mithril.fund/dependency/v1#epss> \"0.00377\"^^<http://www.w3.org/2001/XMLSchema#double> .\n<urn:dependency:cve:CVE-2026-2950> <https://mithril.fund/dependency/v1#epssDate> \"2026-10-07\" .",
+      "policy_sha256": "758e89c4f92b955892819a525e9f0331b189d45eca59a756772a0575e0b68e19",
+      "data_sha256": "e7213eed48368b8668f1de3ac20a69c30d955aee29d9026e2d0195f233e86ba6",
+      "graph_digest": "sha256:90191f2602cf9610b0a3f2a4574e7fda16af4095f6cca5e71dcea74a2582623a",
+      "violations": [
+        {
+          "focus": "urn:dependency:finding:378aeb69927ebc85a79044f5",
+          "constraint": "sh:hasValue",
+          "component": "http://www.w3.org/ns/shacl#HasValueConstraintComponent",
+          "severity": "http://www.w3.org/ns/shacl#Violation",
+          "expected": {
+            "literal": "true",
+            "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
+          },
+          "shape": "_:o-b0",
+          "path": "https://mithril.fund/dependency/v1#remediated"
+        },
+        {
+          "focus": "urn:dependency:finding:3d7c112efd47e2a4827444c0",
+          "constraint": "sh:hasValue",
+          "component": "http://www.w3.org/ns/shacl#HasValueConstraintComponent",
+          "severity": "http://www.w3.org/ns/shacl#Violation",
+          "expected": {
+            "literal": "true",
+            "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
+          },
+          "shape": "_:o-b0",
+          "path": "https://mithril.fund/dependency/v1#remediated"
+        },
+        {
+          "focus": "urn:dependency:finding:409dc26aece44bb12cf508b7",
+          "constraint": "sh:hasValue",
+          "component": "http://www.w3.org/ns/shacl#HasValueConstraintComponent",
+          "severity": "http://www.w3.org/ns/shacl#Violation",
+          "expected": {
+            "literal": "true",
+            "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
+          },
+          "shape": "_:o-b0",
+          "path": "https://mithril.fund/dependency/v1#remediated"
+        },
+        {
+          "focus": "urn:dependency:finding:7c7d160de599cd66b6cd9b73",
+          "constraint": "sh:hasValue",
+          "component": "http://www.w3.org/ns/shacl#HasValueConstraintComponent",
+          "severity": "http://www.w3.org/ns/shacl#Violation",
+          "expected": {
+            "literal": "true",
+            "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
+          },
+          "shape": "_:o-b0",
+          "path": "https://mithril.fund/dependency/v1#remediated"
+        },
+        {
+          "focus": "urn:dependency:finding:abc9e6d9e3062c0028e5f4fb",
+          "constraint": "sh:hasValue",
+          "component": "http://www.w3.org/ns/shacl#HasValueConstraintComponent",
+          "severity": "http://www.w3.org/ns/shacl#Violation",
+          "expected": {
+            "literal": "true",
+            "datatype": "http://www.w3.org/2001/XMLSchema#boolean"
+          },
+          "shape": "_:o-b0",
+          "path": "https://mithril.fund/dependency/v1#remediated"
+        }
+      ]
+    },
+    "receipts": {
+      "osv": [
+        {
+          "url": "https://api.osv.dev/v1/querybatch",
+          "http_status": 200,
+          "sha256": "2510d172ff32d2bdf452cc82d9991972eab53c0b024accfb355f1f533d9db81f",
+          "bytes": 375,
+          "observed_at": "2026-10-08T04:22:24.474Z"
+        },
+        {
+          "url": "https://api.osv.dev/v1/vulns/GHSA-29mw-wpgm-hmr9",
+          "http_status": 200,
+          "sha256": "852ef939b6e4f036f6f364aa41e8edc94d45cbbb4398c4ada17eeb1606aba7b1",
+          "bytes": 4846,
+          "observed_at": "2026-10-08T04:22:24.998Z"
+        },
+        {
+          "url": "https://api.osv.dev/v1/vulns/GHSA-35jh-r3h4-6jhm",
+          "http_status": 200,
+          "sha256": "a27c1a50cab19dc88d02566f7e57faeb23a15194a77891f5161a1c9d81955f92",
+          "bytes": 4216,
+          "observed_at": "2026-10-08T04:22:25.514Z"
+        },
+        {
+          "url": "https://api.osv.dev/v1/vulns/GHSA-f23m-r3pf-42rh",
+          "http_status": 200,
+          "sha256": "af1d0d00834657683fac8ab6dd8b347e2a408b6b5a523cbfd9679c9e912eeb54",
+          "bytes": 3091,
+          "observed_at": "2026-10-08T04:22:25.844Z"
+        },
+        {
+          "url": "https://api.osv.dev/v1/vulns/GHSA-r5fr-rjxr-66jc",
+          "http_status": 200,
+          "sha256": "ccc0bfca67c9e9ec5c847a72fa90635a6aa81f132a8dfce1124c8386b18a240e",
+          "bytes": 3742,
+          "observed_at": "2026-10-08T04:22:26.100Z"
+        },
+        {
+          "url": "https://api.osv.dev/v1/vulns/GHSA-xxjr-mmjv-4gpg",
+          "http_status": 200,
+          "sha256": "33206d1cac16e0cd9d328ab794d876a65d019726e6e3375461d64021d75b68b9",
+          "bytes": 2980,
+          "observed_at": "2026-10-08T04:22:26.370Z"
+        }
+      ],
+      "matching_engine": {
+        "repository": "cloud-kotoba/security-core",
+        "commit": "c4d63825241e91347ec30fef4b7a2bbfee6768cd"
+      },
+      "mithril": {
+        "mithril": [
+          "mithril-lang/mithril",
+          "439a202fcf5ad5d0712217c98deb0bfac56de4e9"
+        ],
+        "org-babashka-nbb": [
+          "kotoba-lang/org-babashka-nbb",
+          "829f0ba11016e925001d80e51f12848c4ad58112"
+        ],
+        "kotoba": [
+          "kotoba-lang/kotoba",
+          "6ffc07a7006dd0202b0feb0c586d8bd341f086b9"
+        ],
+        "text": [
+          "kotoba-lang/text",
+          "51f6ad401aa28a916e321c03c39bc25189af283c"
+        ]
+      }
+    },
+    "execution": {
+      "target_code_executed": false,
+      "inference_calls": 0
+    },
+    "seconds": 14.632795542
+  },
+  "after": {
+    "status": "review_incomplete",
+    "scope": "npm package-lock v2/v3 only; no target installation or execution; known affected versions are candidates, not reachable-exploit proof; no automatic upgrades",
+    "inventory": {
+      "components": [
+        {
+          "id": "b1e0e28d17833ae799382b0d",
+          "name": "lodash",
+          "version": "4.18.0",
+          "ecosystem": "npm",
+          "purl": "pkg:npm/lodash@4.18.0",
+          "dev": false,
+          "evidence": [
+            {
+              "path": "package-lock.json",
+              "pointer": "/packages/node_modules/lodash",
+              "sha256": "d2c443adc8e1729e54b907d3a2b640639af192e0c32e5534e50560626ff8802d"
+            }
+          ]
+        }
+      ],
+      "gaps": [],
+      "scope": "npm package-lock v2/v3 only; no target installation or execution"
+    },
+    "findings": [],
+    "unknown": [],
+    "knowledge": {
+      "status": "available",
+      "entries": {},
+      "datasets": {
+        "nvd": {
+          "status": "available",
+          "generated_at": "2026-09-24T15:03:11Z",
+          "manifest_sha256": "db0a88dbb177b29c1c21830efae6dc8a67deec1f4791d46087bad1cc7d813a18"
+        },
+        "kev": {
+          "status": "available",
+          "generated_at": "2026-10-07T18:20:03Z",
+          "manifest_sha256": "ca6f3a51e7aeb9cf4d5cf613aff8c4b558287751c6d7d8c151c17435f66f2a18"
+        },
+        "epss": {
+          "status": "available",
+          "generated_at": "2026-10-07T19:30:14Z",
+          "manifest_sha256": "3ec1c9b6e5bf73b2bd66d9372158a6ae6ac44314823fa1ae3f73a42d1b83362c"
+        }
+      },
+      "gaps": [],
+      "receipts": [
+        {
+          "url": "https://knowledge.mithril.fund/nvd/manifest.json",
+          "http_status": 200,
+          "sha256": "db0a88dbb177b29c1c21830efae6dc8a67deec1f4791d46087bad1cc7d813a18",
+          "bytes": 4176,
+          "observed_at": "2026-10-08T04:22:39.736Z"
+        },
+        {
+          "url": "https://knowledge.mithril.fund/nvd/manifest.json",
+          "http_status": 200,
+          "sha256": "db0a88dbb177b29c1c21830efae6dc8a67deec1f4791d46087bad1cc7d813a18",
+          "bytes": 4176,
+          "observed_at": "2026-10-08T04:22:40.007Z"
+        },
+        {
+          "url": "https://knowledge.mithril.fund/kev/manifest.json",
+          "http_status": 200,
+          "sha256": "ca6f3a51e7aeb9cf4d5cf613aff8c4b558287751c6d7d8c151c17435f66f2a18",
+          "bytes": 434,
+          "observed_at": "2026-10-08T04:22:40.256Z"
+        },
+        {
+          "url": "https://knowledge.mithril.fund/kev/manifest.json",
+          "http_status": 200,
+          "sha256": "ca6f3a51e7aeb9cf4d5cf613aff8c4b558287751c6d7d8c151c17435f66f2a18",
+          "bytes": 434,
+          "observed_at": "2026-10-08T04:22:40.529Z"
+        },
+        {
+          "url": "https://knowledge.mithril.fund/epss/manifest.json",
+          "http_status": 200,
+          "sha256": "3ec1c9b6e5bf73b2bd66d9372158a6ae6ac44314823fa1ae3f73a42d1b83362c",
+          "bytes": 367,
+          "observed_at": "2026-10-08T04:22:40.770Z"
+        },
+        {
+          "url": "https://knowledge.mithril.fund/epss/manifest.json",
+          "http_status": 200,
+          "sha256": "3ec1c9b6e5bf73b2bd66d9372158a6ae6ac44314823fa1ae3f73a42d1b83362c",
+          "bytes": 367,
+          "observed_at": "2026-10-08T04:22:41.048Z"
+        }
+      ]
+    },
+    "ontology": {
+      "source": "(mithril/ontology :id \"https://mithril.fund/ontology/dependency-assessment-v1\"\n :profile [\"https://www.w3.org/TR/rdf11-concepts/\" \"https://www.w3.org/TR/owl2-profiles/#OWL_2_RL\" \"https://www.w3.org/TR/shacl/\"]\n :graph [\n  (owl/class :id \"https://mithril.fund/dependency/v1#AffectedDependency\")\n  (owl/class :id \"https://mithril.fund/dependency/v1#KnownExploitedDependency\" :rdfs/sub-class-of \"https://mithril.fund/dependency/v1#AffectedDependency\")\n  (owl/datatype-property :id \"https://mithril.fund/dependency/v1#remediated\")\n  (shacl/node-shape :id \"https://mithril.fund/dependency/v1#RemediationShape\" :sh/target-class \"https://mithril.fund/dependency/v1#AffectedDependency\"\n   :sh/property [(shacl/property-shape :sh/path \"https://mithril.fund/dependency/v1#remediated\" :sh/has-value true)])\n ])\n",
+      "data": "<urn:dependency:assessment> <https://mithril.fund/dependency/v1#inventoryObserved> \"true\" .\n<urn:dependency:assessment> <https://mithril.fund/dependency/v1#coverageComplete> \"false\" .\n<urn:dependency:package:b1e0e28d17833ae799382b0d> <https://mithril.fund/dependency/v1#name> \"lodash\" .\n<urn:dependency:package:b1e0e28d17833ae799382b0d> <https://mithril.fund/dependency/v1#version> \"4.18.0\" .\n<urn:dependency:package:b1e0e28d17833ae799382b0d> <https://mithril.fund/dependency/v1#purl> \"pkg:npm/lodash@4.18.0\" .\n<urn:dependency:package:b1e0e28d17833ae799382b0d> <https://mithril.fund/dependency/v1#evidenceDigest> \"d2c443adc8e1729e54b907d3a2b640639af192e0c32e5534e50560626ff8802d\" .",
+      "policy_sha256": "758e89c4f92b955892819a525e9f0331b189d45eca59a756772a0575e0b68e19",
+      "data_sha256": "7bdabb3b2c5fc2e83f266971ebf8643839ac3a169cca78afab99bfdaf88289bb",
+      "graph_digest": "sha256:90191f2602cf9610b0a3f2a4574e7fda16af4095f6cca5e71dcea74a2582623a",
+      "violations": []
+    },
+    "receipts": {
+      "osv": [
+        {
+          "url": "https://api.osv.dev/v1/querybatch",
+          "http_status": 200,
+          "sha256": "a0460b2895f6918d679db4ec8ceaa94dc85b501d9060c02839d05e919aac5e31",
+          "bytes": 16,
+          "observed_at": "2026-10-08T04:22:39.007Z"
+        }
+      ],
+      "matching_engine": {
+        "repository": "cloud-kotoba/security-core",
+        "commit": "c4d63825241e91347ec30fef4b7a2bbfee6768cd"
+      },
+      "mithril": {
+        "mithril": [
+          "mithril-lang/mithril",
+          "439a202fcf5ad5d0712217c98deb0bfac56de4e9"
+        ],
+        "org-babashka-nbb": [
+          "kotoba-lang/org-babashka-nbb",
+          "829f0ba11016e925001d80e51f12848c4ad58112"
+        ],
+        "kotoba": [
+          "kotoba-lang/kotoba",
+          "6ffc07a7006dd0202b0feb0c586d8bd341f086b9"
+        ],
+        "text": [
+          "kotoba-lang/text",
+          "51f6ad401aa28a916e321c03c39bc25189af283c"
+        ]
+      }
+    },
+    "execution": {
+      "target_code_executed": false,
+      "inference_calls": 0
+    },
+    "seconds": 3.1681794169999993
+  },
+  "execution": {
+    "target_code_executed": false,
+    "inference_calls": 0,
+    "project_files_written": false,
+    "lock_resolver": "npm registry only; scripts disabled; isolated HOME/cache/config"
+  },
+  "limitations": [
+    "dependency advisory scope only",
+    "application compatibility and tests not executed",
+    "no host remediation or automatic merge"
+  ],
+  "qualification": {
+    "fixture": true,
+    "application_compatibility_tested": false,
+    "local_application": "qualified separately in synthetic clean Git project"
+  }
+}
