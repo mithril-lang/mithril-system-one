@@ -1,0 +1,9 @@
+(mithril/ontology :id "https://mithril.fund/ontology/dependency-assessment-v1"
+ :profile ["https://www.w3.org/TR/rdf11-concepts/" "https://www.w3.org/TR/owl2-profiles/#OWL_2_RL" "https://www.w3.org/TR/shacl/"]
+ :graph [
+  (owl/class :id "https://mithril.fund/dependency/v1#AffectedDependency")
+  (owl/class :id "https://mithril.fund/dependency/v1#KnownExploitedDependency" :rdfs/sub-class-of "https://mithril.fund/dependency/v1#AffectedDependency")
+  (owl/datatype-property :id "https://mithril.fund/dependency/v1#remediated")
+  (shacl/node-shape :id "https://mithril.fund/dependency/v1#RemediationShape" :sh/target-class "https://mithril.fund/dependency/v1#AffectedDependency"
+   :sh/property [(shacl/property-shape :sh/path "https://mithril.fund/dependency/v1#remediated" :sh/has-value true)])
+ ])

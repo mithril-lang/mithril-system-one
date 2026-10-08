@@ -1,0 +1,155 @@
+{
+  "fixture": "Synthetic npm lockfile declaring lodash 4.17.20; not an installed project or exploit test",
+  "status": "review_incomplete",
+  "findings": [
+    {
+      "advisory": "GHSA-35jh-r3h4-6jhm",
+      "cves": [
+        "CVE-2021-23337",
+        "CVE-2026-4800"
+      ],
+      "name": "lodash",
+      "version": "4.17.20",
+      "fixed_version_hints": [
+        "4.17.21"
+      ],
+      "feed_sha256": "60765a0e5fb27702f0a24d6f6b20f999dffbbb65856b64bdc516703d31129bbf",
+      "feed_modified": "2026-09-10T03:49:04.067984836Z"
+    },
+    {
+      "advisory": "GHSA-r5fr-rjxr-66jc",
+      "cves": [
+        "CVE-2021-23337",
+        "CVE-2026-4800"
+      ],
+      "name": "lodash",
+      "version": "4.17.20",
+      "fixed_version_hints": [
+        "4.18.0"
+      ],
+      "feed_sha256": "3d375a9815e91d040c66ad78fcc365642707e9b127c5031308e26ec5229e381f",
+      "feed_modified": "2026-09-10T03:51:02.970455926Z"
+    },
+    {
+      "advisory": "GHSA-29mw-wpgm-hmr9",
+      "cves": [
+        "CVE-2020-28500"
+      ],
+      "name": "lodash",
+      "version": "4.17.20",
+      "fixed_version_hints": [
+        "4.17.21"
+      ],
+      "feed_sha256": "71013f2a7a809b660d9383fd358f23679414efc592f04dfe5229917889a04acf",
+      "feed_modified": "2025-09-29T21:12:31.102523Z"
+    },
+    {
+      "advisory": "GHSA-f23m-r3pf-42rh",
+      "cves": [
+        "CVE-2025-13465",
+        "CVE-2026-2950"
+      ],
+      "name": "lodash",
+      "version": "4.17.20",
+      "fixed_version_hints": [
+        "4.18.0"
+      ],
+      "feed_sha256": "6f3dc5af099cf1204db535021b92fb44e8a9d50cf6f96ef27c460db22dbd1334",
+      "feed_modified": "2026-09-10T03:50:44.050013812Z"
+    },
+    {
+      "advisory": "GHSA-xxjr-mmjv-4gpg",
+      "cves": [
+        "CVE-2025-13465",
+        "CVE-2026-2950"
+      ],
+      "name": "lodash",
+      "version": "4.17.20",
+      "fixed_version_hints": [
+        "4.17.23"
+      ],
+      "feed_sha256": "9e431156e17b4b11a8acad594c15daf217a1024864fd9e3fa98e7a70e0feb8e2",
+      "feed_modified": "2026-09-10T03:50:33.722177022Z"
+    }
+  ],
+  "unknown": [
+    {
+      "reason": "knowledge_unavailable_or_stale",
+      "http_status": 503
+    }
+  ],
+  "knowledge": "unavailable",
+  "ontology": {
+    "policy_sha256": "758e89c4f92b955892819a525e9f0331b189d45eca59a756772a0575e0b68e19",
+    "data_sha256": "b521ee07c1ddfdb46987237b24fad845af9756e153d72817c37f141784bb6f10",
+    "graph_digest": "sha256:90191f2602cf9610b0a3f2a4574e7fda16af4095f6cca5e71dcea74a2582623a",
+    "violations": 5
+  },
+  "receipts": {
+    "osv": [
+      {
+        "url": "https://api.osv.dev/v1/querybatch",
+        "sha256": "2510d172ff32d2bdf452cc82d9991972eab53c0b024accfb355f1f533d9db81f",
+        "bytes": 375,
+        "observed_at": "2026-10-08T03:59:21.190Z"
+      },
+      {
+        "url": "https://api.osv.dev/v1/vulns/GHSA-29mw-wpgm-hmr9",
+        "sha256": "852ef939b6e4f036f6f364aa41e8edc94d45cbbb4398c4ada17eeb1606aba7b1",
+        "bytes": 4846,
+        "observed_at": "2026-10-08T03:59:21.456Z"
+      },
+      {
+        "url": "https://api.osv.dev/v1/vulns/GHSA-35jh-r3h4-6jhm",
+        "sha256": "60765a0e5fb27702f0a24d6f6b20f999dffbbb65856b64bdc516703d31129bbf",
+        "bytes": 4216,
+        "observed_at": "2026-10-08T03:59:21.708Z"
+      },
+      {
+        "url": "https://api.osv.dev/v1/vulns/GHSA-f23m-r3pf-42rh",
+        "sha256": "0e2e9a827b82129569050d69723001f1feff526a3529bc6245a046b98d64765a",
+        "bytes": 3091,
+        "observed_at": "2026-10-08T03:59:21.957Z"
+      },
+      {
+        "url": "https://api.osv.dev/v1/vulns/GHSA-r5fr-rjxr-66jc",
+        "sha256": "b0a98aa8212abd7a0d2f08d15f7f928f6ca3b38067a2b8b2906eb7e08d55e570",
+        "bytes": 3742,
+        "observed_at": "2026-10-08T03:59:22.232Z"
+      },
+      {
+        "url": "https://api.osv.dev/v1/vulns/GHSA-xxjr-mmjv-4gpg",
+        "sha256": "5698ed2eddf662a34ad2824ea78b84448dff55b5d0676d20816c58017f3825ff",
+        "bytes": 2980,
+        "observed_at": "2026-10-08T03:59:22.488Z"
+      }
+    ],
+    "matching_engine": {
+      "repository": "cloud-kotoba/security-core",
+      "commit": "c4d63825241e91347ec30fef4b7a2bbfee6768cd"
+    },
+    "mithril": {
+      "mithril": [
+        "mithril-lang/mithril",
+        "439a202fcf5ad5d0712217c98deb0bfac56de4e9"
+      ],
+      "org-babashka-nbb": [
+        "kotoba-lang/org-babashka-nbb",
+        "829f0ba11016e925001d80e51f12848c4ad58112"
+      ],
+      "kotoba": [
+        "kotoba-lang/kotoba",
+        "6ffc07a7006dd0202b0feb0c586d8bd341f086b9"
+      ],
+      "text": [
+        "kotoba-lang/text",
+        "51f6ad401aa28a916e321c03c39bc25189af283c"
+      ]
+    }
+  },
+  "execution": {
+    "target_code_executed": false,
+    "inference_calls": 0
+  },
+  "seconds": 5.187020375
+}

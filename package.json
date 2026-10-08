@@ -13,7 +13,8 @@
   "exports": {
     ".": "./lib/mithril-language.mjs",
     "./todo": "./lib/inference.mjs",
-    "./convert": "./lib/source-to-mithril.mjs"
+    "./convert": "./lib/source-to-mithril.mjs",
+    "./dependencies": "./lib/dependency-assessment.mjs"
   },
   "scripts": {
     "test": "node --test test/*.test.mjs && npm test -w examples/todo",
@@ -26,7 +27,9 @@
     "test:security": "node --test test/security-ontology.test.mjs test/security-runtime.integration.mjs",
     "test:public-review": "node --test test/public-code-review.test.mjs test/public-review-runtime.integration.mjs",
     "setup:module": "node runtime/setup-module.mjs",
-    "test:convert": "node --test test/source-conversion.test.mjs test/source-conversion.integration.mjs && python3 test/source_convert_adapter.integration.py"
+    "test:convert": "node --test test/source-conversion.test.mjs test/source-conversion.integration.mjs && python3 test/source_convert_adapter.integration.py",
+    "setup:dependencies": "node runtime/setup-dependency.mjs",
+    "test:dependencies": "node --test test/dependency-assessment.test.mjs test/dependency-runtime.integration.mjs"
   },
   "devDependencies": {
     "@playwright/test": "1.63.0"

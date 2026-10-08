@@ -6,11 +6,13 @@ The opt-in `mithril-public-code-review` profile uses `mithril-public-review` and
 
 Input is exactly `{ "repository": "owner/name", "commit": "<40 lowercase hexadecimal characters>" }`. Branch names, arbitrary URLs, private repositories and commands are refused. GitHub public visibility, commit/tree identity, non-truncated inventory, per-file Git blob SHA-1 and SHA-256 are checked. Acquisition sends no authentication header, follows no redirects, and never uses a profile's GitHub token. Budgets are 5,000 tree entries, 100 selected files, 256 KiB per file, 5 MiB source and 1,000 observations. Failures and unknown outcomes are not retried.
 
-Regular JavaScript `.js`, `.mjs`, `.cjs`, `.jsx` and TypeScript `.ts`, `.tsx`, `.mts`, `.cts` files are parsed inertly by pinned Acorn 8.15.0 / Babel parser 7.28.4. Babel uses its documented ESTree and TypeScript plugins (https://babeljs.io/docs/babel-parser). The extractor recognizes named or namespace ESM imports and static top-level CommonJS const bindings from `child_process` and `node:child_process`. It blocks bindings shadowed or reassigned anywhere in a file. Direct `process.argv[2+]` and immutable top-level CLI aliases are a supported external-input subset; mutable, shadowed or forward-referenced aliases stay unknown. Other arguments and unresolved shell options remain unknown. No general interprocedural taint analysis, general module resolution, dependency/CVE analysis, authorization analysis, secret scanning or deployed-environment inventory is claimed.
+Regular JavaScript `.js`, `.mjs`, `.cjs`, `.jsx` and TypeScript `.ts`, `.tsx`, `.mts`, `.cts` files are parsed inertly by pinned Acorn 8.15.0 / Babel parser 7.28.4. Babel uses its documented ESTree and TypeScript plugins (https://babeljs.io/docs/babel-parser). The extractor recognizes named or namespace ESM imports and static top-level CommonJS const bindings from `child_process` and `node:child_process`. It blocks bindings shadowed or reassigned anywhere in a file. Direct `process.argv[2+]` and immutable top-level CLI aliases are a supported external-input subset; mutable, shadowed or forward-referenced aliases stay unknown. Other arguments and unresolved shell options remain unknown. No general interprocedural taint analysis, general module resolution, authorization analysis, secret scanning or deployed-environment inventory is claimed.
 
 Source code and comments remain inert data. The tool does not run package installation, imports, tests, builds, shell commands or target code. The only subprocess runs the trusted pinned Mithril compiler on generated facts; it receives no inference/GitHub credential. This is inert parsing, not a general container sandbox for executable repository workloads. No repository text is sent to a model. The separately published System One policy-refactoring prototype is not enabled here.
 
 Outputs contain file locations/hashes, call observations, known-policy candidates, unknown facts, exclusions, Mithril graph/compiler receipts and elapsed time. Candidate status is `source_policy_candidate_requires_review`, never confirmed exploit. Every repository review remains `review_incomplete`, including zero candidates. Report acquisition/parse/compiler time separately from graph evaluation time; do not market graph-only timing as end-to-end repository scan performance.
+
+The dependency lane adds locked npm OSV matching and Knowledge CVE/KEV/EPSS enrichment through actual Mithril ontology evaluation. See [supported scope, private-engine setup and live Knowledge gate](dependency-ontology-evaluation.md).
 
 ## Profile installation
 
@@ -19,6 +21,7 @@ Use Node 22+ and the reviewed checkout:
 ```sh
 npm ci --ignore-scripts
 npm run setup:dynamic
+npm run setup:dependencies -- --engine-root /absolute/reviewed/security-core
 python3 scripts/install-public-review-profile.py --home /absolute/hermes/home --apply
 ```
 

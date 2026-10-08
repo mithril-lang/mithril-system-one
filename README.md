@@ -12,6 +12,8 @@ The [Mithril task / ontology / terminal suite](docs/mithril-equivalent-tasks.md)
 
 Source-to-Mithril conversion is also available: bounded pure JavaScript/TypeScript functions → inert AST → typed IR and source ontology → executable `.mith` → pinned native compiler → exhaustive finite-domain checks. See [supported syntax, CLI, MCP and Hermes setup](docs/source-to-mithril.md).
 
+[Dependency evaluation](docs/dependency-ontology-evaluation.md) connects supported lockfiles, full OSV advisories, the existing private local version matcher and Knowledge context to actual Mithril ontology evaluation. Feed failures remain unknown; no automatic upgrades or exploit-proof claims.
+
 ## Included
 
 - `lib/mithril-language.mjs`: fixed Mithril API proposal → inert `application.mith` → actual bounded App compiler → source/artifact/HTML/receipts.
