@@ -17,3 +17,11 @@ class ScapTests(unittest.TestCase):
   with self.assertRaises(ValueError):m.import_xml(self.xml.replace('</o:system>','</o:system><o:system/>'))
  def test_fixed_requires_verification(self):
   r=m.import_xml(self.xml.replace('<x:result>fail</x:result>','<x:result>fixed</x:result>'));self.assertEqual(len(r['gaps']),2)
+
+ def test_other_component_cannot_change_result_class(self):
+  extra='<d:oval_definitions><d:definitions><d:definition id="oval:fixture:def:1" class="inventory"/></d:definitions></d:oval_definitions>'
+  xml=self.xml.replace('<reports>',extra+'<reports>')
+  self.assertTrue(m.import_xml(xml)['records'][0]['failure'])
+ def test_same_result_scope_conflicting_definitions_refused(self):
+  xml=self.xml.replace('<d:definitions>', '<d:definitions><d:definition id="oval:fixture:def:1" class="inventory"/>')
+  with self.assertRaises(ValueError):m.import_xml(xml)

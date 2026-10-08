@@ -1,0 +1,188 @@
+{
+  "recorded_at": "2026-10-08T04:46:27.767Z",
+  "fixture": true,
+  "cli": {
+    "applied": "dependency_patch_applied",
+    "before_findings": 5,
+    "after_findings": 0,
+    "after_gaps": 0,
+    "changes": [
+      {
+        "name": "lodash",
+        "from": "4.17.20",
+        "to": "4.18.0",
+        "group": "dependencies",
+        "advisories": [
+          "GHSA-35jh-r3h4-6jhm",
+          "GHSA-r5fr-rjxr-66jc",
+          "GHSA-29mw-wpgm-hmr9",
+          "GHSA-f23m-r3pf-42rh",
+          "GHSA-xxjr-mmjv-4gpg"
+        ]
+      }
+    ],
+    "only_expected_files_changed": true,
+    "no_auto_commit": true,
+    "postinstall_sentinel_executed": false
+  },
+  "compatibility": {
+    "before": {
+      "checks": 5,
+      "version": "4.17.20",
+      "passed": true
+    },
+    "after": {
+      "checks": 5,
+      "version": "4.18.0",
+      "passed": true
+    },
+    "scope": "5 controlled fixture behavior checks, not arbitrary application compatibility"
+  },
+  "negative": {
+    "dirty_project_refused": true,
+    "files_preserved": true,
+    "error": "upgrade_clean_project_required"
+  },
+  "mcp": {
+    "upgrade_dispatched": true,
+    "findings": 0,
+    "project_files_written": false
+  },
+  "inference_calls": 0,
+  "elapsed_seconds": 48.457358375,
+  "scap": {
+    "scanner": "OpenSCAP 1.3.7 (Debian 1.3.7+dfsg-1+deb12u1)",
+    "container_network": "none",
+    "host_mounted": false,
+    "fixes_executed": false,
+    "base_image_digest": "sha256:7c7b2c966bc9ee8cedfeef67e0e279108992c77681fa595db4a9d65c06ccc587",
+    "runtime_image_id": "sha256:7d139ddf1a0e4451a6ad22aae6a4456f30b5a94df4299310f05c39b46b73409d",
+    "results": [
+      {
+        "file": "oval-results.xml",
+        "bytes": 9191,
+        "sha256": "b3bb9e101ea1b622c5e6f6c3d4ba6d728a11dc617cd4fe92c5cc3f6c8982fbb4",
+        "code": 0,
+        "ok": true,
+        "records": [
+          {
+            "kind": "oval",
+            "id": "oval:org.mithril:def:2",
+            "result": "false",
+            "failure": true
+          },
+          {
+            "kind": "oval",
+            "id": "oval:org.mithril:def:1",
+            "result": "true",
+            "failure": false
+          }
+        ],
+        "gaps": [],
+        "violations": 1
+      },
+      {
+        "file": "xccdf-results.xml",
+        "bytes": 3407,
+        "sha256": "d2c8eb57e232f9d7b6ec89738c4f2e8e4637f377c1c14f330f76f46622f8f3db",
+        "code": 0,
+        "ok": true,
+        "records": [
+          {
+            "kind": "xccdf",
+            "id": "xccdf_org.mithril_rule_present",
+            "result": "pass",
+            "failure": false
+          },
+          {
+            "kind": "xccdf",
+            "id": "xccdf_org.mithril_rule_absent",
+            "result": "fail",
+            "failure": true
+          }
+        ],
+        "gaps": [],
+        "violations": 1
+      },
+      {
+        "file": "arf-results.xml",
+        "bytes": 18284,
+        "sha256": "4ad03425aaf409a4d2d6e8fda5e630f2803824e63986b71899af008ada7ee1db",
+        "code": 0,
+        "ok": true,
+        "records": [
+          {
+            "kind": "oval",
+            "id": "oval:org.mithril:def:2",
+            "result": "false",
+            "failure": true
+          },
+          {
+            "kind": "oval",
+            "id": "oval:org.mithril:def:1",
+            "result": "true",
+            "failure": false
+          },
+          {
+            "kind": "xccdf",
+            "id": "xccdf_org.mithril_rule_present",
+            "result": "pass",
+            "failure": false
+          },
+          {
+            "kind": "xccdf",
+            "id": "xccdf_org.mithril_rule_absent",
+            "result": "fail",
+            "failure": true
+          }
+        ],
+        "gaps": [],
+        "violations": 2,
+        "tested_runtime": "0.4.1 source; scope fix after 0.4.0 refused ARF"
+      }
+    ],
+    "runtime_source_sha256": "f76afe188230297fc40a8df7af0c44fdf9890783cdaf56aa6153cf5689d6d60c"
+  },
+  "upgrade_tested_main_commit": "6dfdb6523ff75e8879e0a334a8b9cf115ebace68",
+  "native_profile": {
+    "scap": {
+      "native_dispatch": true,
+      "tools_registered": 3,
+      "other_profile_tools_absent": true,
+      "violations": 2,
+      "unknown": 0,
+      "execution": {
+        "host_probes": false,
+        "fixes_executed": false,
+        "inference_calls": 0
+      }
+    },
+    "upgrade": {
+      "native_dispatch": true,
+      "changes": [
+        {
+          "name": "lodash",
+          "from": "4.17.20",
+          "to": "4.18.0",
+          "group": "dependencies",
+          "advisories": [
+            "GHSA-35jh-r3h4-6jhm",
+            "GHSA-r5fr-rjxr-66jc",
+            "GHSA-29mw-wpgm-hmr9",
+            "GHSA-f23m-r3pf-42rh",
+            "GHSA-xxjr-mmjv-4gpg"
+          ]
+        }
+      ],
+      "before_findings": 5,
+      "after_findings": 0,
+      "after_gaps": 0,
+      "execution": {
+        "target_code_executed": false,
+        "inference_calls": 0,
+        "project_files_written": false,
+        "lock_resolver": "npm registry only; scripts disabled; isolated HOME/cache/config"
+      }
+    }
+  }
+}
