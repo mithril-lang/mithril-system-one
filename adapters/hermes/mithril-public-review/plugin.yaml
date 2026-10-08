@@ -1,5 +1,5 @@
 name: mithril-public-review
-version: 0.4.1
+version: 0.5.0
 description: Read-only public GitHub source review with JavaScript/TypeScript AST extraction and locked npm OSV/Knowledge/Mithril ontology receipts
 author: Mithril
 license: Apache-2.0

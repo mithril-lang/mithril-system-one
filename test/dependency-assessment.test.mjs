@@ -35,3 +35,5 @@ test('dataset pins preserve independent data; unverified 404 and identity mismat
  }
  base=fixture();const absent=await enrichKnowledge([cve],{transport:async(url,init)=>url.includes('dataset=kev')?Response.json({error:'not-found'},{status:404}):base(url,init)});assert.equal(absent.entries[cve].kev,false);assert.equal(absent.status,'available');
 });
+
+test('duplicate lockfile keys retain an invalid-inventory gap rather than choosing a version',()=>{const text='{"lockfileVersion":3,"packages":{"node_modules/a":{"version":"1.0.0","\\u0076ersion":"2.0.0"}}}';const r=extractLockedDependencies([{path:'package-lock.json',text,sha256:createHash('sha256').update(text).digest('hex')}]);assert.equal(r.components.length,0);assert.ok(r.gaps.some(g=>g.reason==='invalid_lockfile'));});

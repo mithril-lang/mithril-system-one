@@ -6,6 +6,7 @@ XCCDF = 'http://checklists.nist.gov/xccdf/1.2'
 DS = 'http://scap.nist.gov/schema/scap/source/1.2'
 ARF = 'http://scap.nist.gov/schema/asset-reporting-format/1.1'
 DEF = 'http://oval.mitre.org/XMLSchema/oval-definitions-5'
+SC = 'http://oval.mitre.org/XMLSchema/oval-system-characteristics-5'
 
 def import_xml(text):
     if not isinstance(text, str) or len(text.encode()) > 1048576 or '<!DOCTYPE' in text.upper() or '<!ENTITY' in text.upper():
@@ -19,7 +20,7 @@ def import_xml(text):
         if d > 64: raise ValueError('xml_depth_budget')
         for c in e: depth(c, d+1)
     depth(root)
-    records, gaps, definitions = [], [], []
+    records, gaps, definitions, oval_targets = [], [], [], set()
     for e in root.iter(f'{{{DEF}}}definition'):
         ident = e.get('id')
         if not ident or len(ident) > 256: raise ValueError('definition_identity')
@@ -29,28 +30,35 @@ def import_xml(text):
     for container in root.iter(f'{{{OVAL}}}oval_results'):
         systems = container.findall(f'{{{OVAL}}}results/{{{OVAL}}}system')
         if len(systems) != 1: raise ValueError('oval_system_scope_ambiguous')
+        targets = [e.text for e in systems[0].findall(f'{{{SC}}}oval_system_characteristics/{{{SC}}}system_info/{{{SC}}}primary_host_name')]
+        if len(targets)>1 or any(not x or len(x)>256 for x in targets): raise ValueError('oval_target_scope_ambiguous')
+        oval_targets.update(x.strip().lower().rstrip('.') for x in targets)
+        metadata = {}
+        for d in container.findall(f'{{{DEF}}}oval_definitions/{{{DEF}}}definitions/{{{DEF}}}definition'):
+            metadata.setdefault(d.get('id'), []).append({'class': d.get('class'), 'cves': [r.get('ref_id') for r in d.iter(f'{{{DEF}}}reference') if r.get('source') == 'CVE' and re.fullmatch(r'CVE-\d{4}-\d{4,}', r.get('ref_id',''))]})
         for e in systems[0].findall(f'{{{OVAL}}}definitions/{{{OVAL}}}definition'):
             ident, value = e.get('definition_id'), e.get('result')
-            if not ident or value not in {'true','false','unknown','error','not evaluated','not applicable'}: raise ValueError('oval_result_invalid')
+            if not ident or len(ident)>256 or value not in {'true','false','unknown','error','not evaluated','not applicable'}: raise ValueError('oval_result_invalid')
             # ARF can embed both source datastream definitions and result-local copies.
             # Bind semantics to this oval_results, never a different component/report.
-            local = [e for e in container.iter(f'{{{DEF}}}definition') if e.get('id') == ident]
-            meta = [{'class': e.get('class'), 'cves': [r.get('ref_id') for r in e.iter(f'{{{DEF}}}reference') if r.get('source') == 'CVE' and re.fullmatch(r'CVE-\d{4}-\d{4,}', r.get('ref_id',''))]} for e in local]
+            meta = metadata.get(ident, [])
             if len(meta) > 1: raise ValueError('oval_definition_ambiguous')
             cls = meta[0]['class'] if meta else None
             failure = (value == 'true' and cls in {'vulnerability','patch'}) or (value == 'false' and cls == 'compliance')
-            records.append({'id':ident,'kind':'oval','result':value,'definition_class':cls,'failure':failure,'cves':meta[0]['cves'] if meta else []})
+            records.append({'id':ident,'kind':'oval','result':value,'definition_class':cls,'targets':targets,'failure':failure,'cves':meta[0]['cves'] if meta else []})
             if cls not in {'vulnerability','patch','compliance','inventory'} or value in {'unknown','error','not evaluated'}:
                 gaps.append({'id':ident,'reason':'oval_semantics_or_result_unknown'})
+    if len(oval_targets)>1: raise ValueError('scap_target_scope_mismatch')
     tests = list(root.iter(f'{{{XCCDF}}}TestResult'))
     if len(tests) > 1: raise ValueError('xccdf_result_scope_ambiguous')
     for t in tests:
         targets = [e.text for e in t.findall(f'{{{XCCDF}}}target')]
         if not targets or any(not x or len(x)>256 for x in targets): raise ValueError('xccdf_target_absent')
+        if oval_targets and not oval_targets.issubset({x.strip().lower().rstrip('.') for x in targets}): raise ValueError('scap_target_scope_mismatch')
         for e in t.findall(f'{{{XCCDF}}}rule-result'):
             ident = e.get('idref'); values=e.findall(f'{{{XCCDF}}}result')
             value=values[0].text if len(values)==1 else None
-            if not ident or value not in {'pass','fail','error','unknown','notapplicable','notchecked','notselected','informational','fixed'}: raise ValueError('xccdf_result_invalid')
+            if not ident or len(ident)>256 or value not in {'pass','fail','error','unknown','notapplicable','notchecked','notselected','informational','fixed'}: raise ValueError('xccdf_result_invalid')
             refs=[{'href':r.get('href'),'name':r.get('name')} for r in e.iter(f'{{{XCCDF}}}check-content-ref')]
             records.append({'id':ident,'kind':'xccdf','result':value,'failure':value=='fail','targets':targets,'check_refs':refs})
             if value in {'error','unknown','notchecked','fixed'}: gaps.append({'id':ident,'reason':'xccdf_unverified_or_unevaluated'})

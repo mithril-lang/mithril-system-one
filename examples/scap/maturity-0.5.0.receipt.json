@@ -1,0 +1,126 @@
+{
+  "recorded_at": "2026-10-08T06:09:40.935Z",
+  "fixture": true,
+  "cli": {
+    "applied": "dependency_patch_applied",
+    "before_findings": 5,
+    "after_findings": 0,
+    "after_gaps": 0,
+    "changes": [
+      {
+        "name": "lodash",
+        "from": "4.17.20",
+        "to": "4.18.0",
+        "group": "dependencies",
+        "advisories": [
+          "GHSA-35jh-r3h4-6jhm",
+          "GHSA-r5fr-rjxr-66jc",
+          "GHSA-29mw-wpgm-hmr9",
+          "GHSA-f23m-r3pf-42rh",
+          "GHSA-xxjr-mmjv-4gpg"
+        ]
+      }
+    ],
+    "only_expected_files_changed": true,
+    "no_auto_commit": true,
+    "postinstall_sentinel_executed": false
+  },
+  "compatibility": {
+    "before": {
+      "checks": 5,
+      "version": "4.17.20",
+      "passed": true
+    },
+    "after": {
+      "checks": 5,
+      "version": "4.18.0",
+      "passed": true
+    },
+    "scope": "5 controlled fixture behavior checks, not arbitrary application compatibility"
+  },
+  "negative": {
+    "dirty_project_refused": true,
+    "files_preserved": true,
+    "error": "upgrade_clean_project_required"
+  },
+  "mcp": {
+    "upgrade_dispatched": true,
+    "findings": 0,
+    "project_files_written": false
+  },
+  "inference_calls": 0,
+  "elapsed_seconds": 30.293012040999997,
+  "qualifier_base_commit": "ab26c6bb27d8337480a162d7828029d3bb810e52",
+  "source_sha256": {
+    "lib/dependency-transaction.mjs": "b8a62c9beea2ca7b1c93246bd27f0a7358d8db5dbf05b79ddce320deea2ad172",
+    "lib/dependency-remediation.mjs": "ec07b8b2a254e113681c9d578341bf60eec72fa2e84fcbb096875ff4ec296593",
+    "lib/json-evidence.mjs": "931bb381a76429f1b77394fa905ea44be22ab983f951bded4b07b0e0408f4986",
+    "lib/dependency-assessment.mjs": "46ab082f059ed94d56a9f1d7c4c03e2472c0efe53e020716f9951f6b2a1d64a5",
+    "runtime/scap-import.py": "29af57329d63fc0c661c341efb3707357fb8eddddbc9cfee7277d224f4c62e37",
+    "bin/mithril-upgrade.mjs": "6af8348a3d89c31a0e31681f6f9409cf5b8aab3b8170c3891e47aec481254143"
+  },
+  "release": "0.5.0",
+  "transaction_qualification": {
+    "exclusive_apply": "passed",
+    "simulated_partial_and_unfinalized_state_recovery": "passed",
+    "explicit_recovery_cli": "passed",
+    "operator_edit_and_git_head_refusal": "passed",
+    "controlled_second_replace_ENOSPC_rollback": "passed",
+    "dirty_preflight_before_feed_calls": "passed",
+    "power_loss": "not qualified",
+    "noncooperative_external_writers": "not qualified"
+  },
+  "evidence_qualification": {
+    "manifest_lock_specs": "checked before and after resolution",
+    "duplicate_json_keys_and_depth": "refused or invalid-inventory gap",
+    "scap_reported_target_mismatch": "refused",
+    "target_attestation": "not provided",
+    "lock_delta": true
+  },
+  "native_profile": {
+    "scap": {
+      "native_dispatch": true,
+      "tools_registered": 3,
+      "other_profile_tools_absent": true,
+      "violations": 2,
+      "unknown": 0,
+      "execution": {
+        "host_probes": false,
+        "fixes_executed": false,
+        "inference_calls": 0
+      }
+    },
+    "upgrade": {
+      "native_dispatch": true,
+      "changes": [
+        {
+          "name": "lodash",
+          "from": "4.17.20",
+          "to": "4.18.0",
+          "group": "dependencies",
+          "advisories": [
+            "GHSA-35jh-r3h4-6jhm",
+            "GHSA-r5fr-rjxr-66jc",
+            "GHSA-29mw-wpgm-hmr9",
+            "GHSA-f23m-r3pf-42rh",
+            "GHSA-xxjr-mmjv-4gpg"
+          ]
+        }
+      ],
+      "before_findings": 5,
+      "after_findings": 0,
+      "after_gaps": 0,
+      "execution": {
+        "target_code_executed": false,
+        "inference_calls": 0,
+        "project_files_written": false,
+        "lock_resolver": "npm registry only; scripts disabled; isolated HOME/cache/config"
+      }
+    }
+  },
+  "validation_environment": {
+    "volume_full_observed": true,
+    "affected_tests_repeated_successfully": true,
+    "cleanup": "owned temporary npm caches only"
+  }
+}

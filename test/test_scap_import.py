@@ -25,3 +25,9 @@ class ScapTests(unittest.TestCase):
  def test_same_result_scope_conflicting_definitions_refused(self):
   xml=self.xml.replace('<d:definitions>', '<d:definitions><d:definition id="oval:fixture:def:1" class="inventory"/>')
   with self.assertRaises(ValueError):m.import_xml(xml)
+
+ def test_real_arf_targets_are_bound_and_mismatches_refuse(self):
+  xml=(root/'examples/scap/openscap-arf-results.xml').read_text()
+  r=m.import_xml(xml);self.assertEqual(r['records'][0]['targets'],r['records'][-1]['targets'])
+  xml=xml.replace('<target>48634de4c20c</target>','<target>different-host</target>')
+  with self.assertRaisesRegex(ValueError,'target_scope'):m.import_xml(xml)

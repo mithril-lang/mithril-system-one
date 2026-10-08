@@ -33,7 +33,8 @@
     "setup:dependencies": "node runtime/setup-dependency.mjs",
     "test:dependencies": "node --test test/dependency-assessment.test.mjs test/dependency-runtime.integration.mjs",
     "test:scap": "node --test test/scap-runtime.integration.mjs && python3 -m unittest discover -s test -p test_scap_import.py",
-    "test:remediation": "node --test test/dependency-remediation.test.mjs"
+    "test:remediation": "node --test test/dependency-remediation.test.mjs test/dependency-transaction.test.mjs test/json-evidence.test.mjs",
+    "check:security-release": "npm test && npm run test:python && npm run test:dependencies && npm run test:scap"
   },
   "devDependencies": {
     "@playwright/test": "1.63.0"

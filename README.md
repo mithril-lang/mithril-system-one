@@ -85,3 +85,5 @@ workflow, MCP stdio server and Hermes plugin without duplicating the executor.
 [Profile, plugin and Registry integration](docs/public-code-review-bot.md) provides `mithril_public_repo_review` with authenticated file provenance and actual Mithril ontology evaluation. Repository reviews always preserve incomplete coverage; target code is never executed.
 
 SCAP/OVAL/XCCDF result ingestion and verified npm upgrade patches are available through CLI, MCP and the owning Hermes profile. [Scope, application and qualification](docs/scap-and-remediation.md).
+
+Security harness 0.5.0 adds exclusive local patch application, explicit journal recovery, strict manifest/lock evidence and SCAP host-scope checks. [Reliability and local CI](docs/security-maturity-0.5.0.md).

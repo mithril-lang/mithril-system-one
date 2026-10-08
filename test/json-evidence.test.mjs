@@ -1,0 +1,3 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {parseJsonEvidence} from '../lib/json-evidence.mjs';
+test('escaped duplicate keys are refused while independent objects and primitives parse',()=>{for(const text of ['{"a":1,"a":2}','{"a":1,"\\u0061":2}','{"x":[{"a":1,"a":2}]}'])assert.throws(()=>parseJsonEvidence(text),/duplicate_json_key/);for(const text of ['{"a":[{"k":1},{"k":2}]}','[{},[],false,null,1.2e3,"a\\\"b"]','{}','[]','null','3','"a"'])assert.deepEqual(parseJsonEvidence(text),JSON.parse(text));});
+test('deep and oversized input are refused',()=>{assert.throws(()=>parseJsonEvidence('['.repeat(66)+'0'+']'.repeat(66)),/budget/);assert.throws(()=>parseJsonEvidence('"'+'a'.repeat(1048576)+'"'),/budget/);});
