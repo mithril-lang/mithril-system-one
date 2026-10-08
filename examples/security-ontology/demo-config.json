@@ -1,0 +1,20 @@
+[
+  {
+    "id": "admin-api",
+    "kind": "endpoint",
+    "public": true,
+    "sensitive": true,
+    "authorization": "missing"
+  },
+  {
+    "id": "build-command",
+    "kind": "shell",
+    "userControlled": true,
+    "shell": true
+  },
+  {
+    "id": "public-secret-binding",
+    "kind": "secret",
+    "public": true
+  }
+]

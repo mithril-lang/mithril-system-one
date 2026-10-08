@@ -1,0 +1,40 @@
+(ns system-one.security
+  (:require [mithril.compiler :as compiler]
+            [mithril.reason :as reason]))
+(def fs (js/require "fs"))
+(defn safe-json [v]
+  (cond (keyword? v) (name v)
+        (map? v) (into {} (map (fn [[k x]] [(safe-json k) (safe-json x)]) v))
+        (or (sequential? v) (set? v)) (mapv safe-json v)
+        :else v))
+(defn evaluate [text]
+ (let [input (js->clj (js/JSON.parse text) :keywordize-keys true)
+      results (mapv
+               (fn [{:keys [source cases]}]
+                 (let [started (.now js/performance)
+                       artifact (compiler/compile-ontology-text "candidate.mith" source)
+                       compile-ms (- (.now js/performance) started)
+                       times (atom [])]
+                   {:compile-ms compile-ms :graph-digest (:graph-digest artifact)
+                    :cases (mapv (fn [{:keys [id data]}]
+                                   (let [began (.now js/performance)
+                                         r (reason/reason artifact (reason/parse-data "state.nq" data) {})]
+                                     (swap! times conj (- (.now js/performance) began))
+                                     {:id id :status (:status r) :types (:types r)
+                                      :violations (:violations r) :counts (:counts r)
+                                      :consistent (:consistent? r)})) cases) :case-ms @times})) (:batches input))]
+  (println (js/JSON.stringify (clj->js (safe-json results))))))
+
+(defn read-input []
+  (js/Promise.
+    (fn [accept reject]
+      (let [stream (.-stdin js/process) text (atom "")]
+        (.setEncoding stream "utf8")
+        (.on stream "data" (fn [chunk]
+                             (swap! text str chunk)
+                             (when (> (count @text) 2000000)
+                               (.pause stream)
+                               (reject (js/Error. "security-input-budget")))))
+        (.on stream "end" #(accept @text))
+        (.on stream "error" reject)))))
+(.then (read-input) evaluate)
