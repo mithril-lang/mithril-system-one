@@ -1,10 +1,13 @@
 name: mithril-public-review
-version: 0.5.0
+version: 0.6.0
 description: Read-only public GitHub source review with JavaScript/TypeScript AST extraction and locked npm OSV/Knowledge/Mithril ontology receipts
 author: Mithril
 license: Apache-2.0
 provides_tools:
   - mithril_public_repo_review
+  - mithril_scap_review
+  - mithril_dependency_upgrade
+  - mithril_business_process_review
 config_schema:
   system_one_root:
     type: str

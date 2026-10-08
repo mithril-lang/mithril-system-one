@@ -7,7 +7,7 @@ test('MCP dispatches SCAP to real compiler and advertises isolated upgrade effec
  const {execFile}=await import('node:child_process');
  const messages=[{jsonrpc:'2.0',id:1,method:'initialize',params:{protocolVersion:'2025-06-18',clientInfo:{name:'qualification',version:'1'},capabilities:{}}},{jsonrpc:'2.0',method:'notifications/initialized'},{jsonrpc:'2.0',id:2,method:'tools/list'},{jsonrpc:'2.0',id:3,method:'tools/call',params:{name:'mithril_scap_review',arguments:{xml}}}];
  const out=await new Promise((ok,no)=>{const p=execFile(process.execPath,[new URL('../bin/mithril-public-mcp.mjs',import.meta.url).pathname],{timeout:30000,maxBuffer:2000000},(e,out)=>e?no(e):ok(out));p.stdin.end(messages.map(m=>JSON.stringify(m)).join('\n')+'\n');});
- const r=out.trim().split('\n').map(x=>JSON.parse(x));assert.equal(r[1].result.tools.length,3);assert.equal(r[1].result.tools.find(t=>t.name==='mithril_dependency_upgrade').annotations.readOnlyHint,false);assert.equal(r[2].result.structuredContent.ontology.violations.length,2);
+ const r=out.trim().split('\n').map(x=>JSON.parse(x));assert.equal(r[1].result.tools.length,4);assert.equal(r[1].result.tools.find(t=>t.name==='mithril_dependency_upgrade').annotations.readOnlyHint,false);assert.equal(r[2].result.structuredContent.ontology.violations.length,2);
 });
 
 test('real OpenSCAP ARF scopes embedded source and result definitions independently',async()=>{

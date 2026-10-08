@@ -1,0 +1,393 @@
+{
+  "profile_version": "0.6.0",
+  "cases": [
+    {
+      "file": "examples/business-process/payment-vulnerable.bpmn",
+      "sha256": "826808ef6aa71e2f2c46ff5a05843de01ad00cd8e7f4c89094ce713a7ed70bfe",
+      "model_status": "policy_violations",
+      "status": "review_incomplete",
+      "findings": [
+        {
+          "node": "execute",
+          "rule": "approval",
+          "value": false,
+          "evidence": {
+            "control": "payment",
+            "bypass_path": [
+              "start",
+              "request",
+              "decision",
+              "merge",
+              "execute"
+            ],
+            "approvals": [
+              "approve"
+            ]
+          },
+          "focus": "urn:business:check:ec123849ae1418bbbdf2407a0a268c089b935a049a9a7d83f814d222b55cfabd"
+        },
+        {
+          "node": "execute",
+          "rule": "authorized",
+          "value": false,
+          "evidence": {
+            "declared": true
+          },
+          "focus": "urn:business:check:ecc3ac5fbfcbbfe7f7153da8d4512654f415c3b8fd4ea98531a4a8e600694629"
+        },
+        {
+          "node": "execute",
+          "rule": "audited",
+          "value": false,
+          "evidence": {
+            "declared": true
+          },
+          "focus": "urn:business:check:47141c3374b371b2f9d4c6d9c305b50de46c6dda8f71c2d5ad735bb44c962d79"
+        },
+        {
+          "node": "approve",
+          "rule": "separation",
+          "value": false,
+          "evidence": {
+            "requesters": [
+              {
+                "node": "request",
+                "principal": "requester-1"
+              }
+            ],
+            "approver": "requester-1"
+          },
+          "focus": "urn:business:check:ac4b1ba687167b03dbe45d316296fdae457b56558cd6af0125afb8718f7b4e93"
+        }
+      ],
+      "gaps": [
+        {
+          "code": "operational_evidence_unverified",
+          "detail": "Principals and controls are caller declarations, not IAM, transaction or audit-log attestation."
+        }
+      ],
+      "policy_sha256": "169ff818e1a0e813bd0846d441ace2c921e1af86b6e9ce926a0ce0c393762ed6",
+      "graph_digest": "sha256:7c4a66f6f7e43cd325316b254893c851b9c9c4eb5caebc5224b46eba09fe8135",
+      "pins": {
+        "mithril": [
+          "mithril-lang/mithril",
+          "439a202fcf5ad5d0712217c98deb0bfac56de4e9"
+        ],
+        "org-babashka-nbb": [
+          "kotoba-lang/org-babashka-nbb",
+          "829f0ba11016e925001d80e51f12848c4ad58112"
+        ],
+        "kotoba": [
+          "kotoba-lang/kotoba",
+          "6ffc07a7006dd0202b0feb0c586d8bd341f086b9"
+        ],
+        "text": [
+          "kotoba-lang/text",
+          "51f6ad401aa28a916e321c03c39bc25189af283c"
+        ]
+      },
+      "elapsed_ms": 933,
+      "execution": {
+        "process_executed": false,
+        "inference_calls": 0
+      }
+    },
+    {
+      "file": "examples/business-process/payment-repaired.bpmn",
+      "sha256": "0935514b95da00f4e8d1dc11faf95c49ad925d8b91392237e6de4970228973b2",
+      "model_status": "conforms",
+      "status": "review_incomplete",
+      "findings": [],
+      "gaps": [
+        {
+          "code": "operational_evidence_unverified",
+          "detail": "Principals and controls are caller declarations, not IAM, transaction or audit-log attestation."
+        }
+      ],
+      "policy_sha256": "169ff818e1a0e813bd0846d441ace2c921e1af86b6e9ce926a0ce0c393762ed6",
+      "graph_digest": "sha256:7c4a66f6f7e43cd325316b254893c851b9c9c4eb5caebc5224b46eba09fe8135",
+      "pins": {
+        "mithril": [
+          "mithril-lang/mithril",
+          "439a202fcf5ad5d0712217c98deb0bfac56de4e9"
+        ],
+        "org-babashka-nbb": [
+          "kotoba-lang/org-babashka-nbb",
+          "829f0ba11016e925001d80e51f12848c4ad58112"
+        ],
+        "kotoba": [
+          "kotoba-lang/kotoba",
+          "6ffc07a7006dd0202b0feb0c586d8bd341f086b9"
+        ],
+        "text": [
+          "kotoba-lang/text",
+          "51f6ad401aa28a916e321c03c39bc25189af283c"
+        ]
+      },
+      "elapsed_ms": 793,
+      "execution": {
+        "process_executed": false,
+        "inference_calls": 0
+      }
+    },
+    {
+      "file": "examples/business-process/access-vulnerable.bpmn",
+      "sha256": "15c4c4cde40415d308ae88235c7ebc01a67d134fbd1d5bf6d569b1594516e6ae",
+      "model_status": "policy_violations",
+      "status": "review_incomplete",
+      "findings": [
+        {
+          "node": "execute",
+          "rule": "approval",
+          "value": false,
+          "evidence": {
+            "control": "access",
+            "bypass_path": [
+              "start",
+              "request",
+              "decision",
+              "merge",
+              "execute"
+            ],
+            "approvals": [
+              "approve"
+            ]
+          },
+          "focus": "urn:business:check:ec123849ae1418bbbdf2407a0a268c089b935a049a9a7d83f814d222b55cfabd"
+        },
+        {
+          "node": "execute",
+          "rule": "authorized",
+          "value": false,
+          "evidence": {
+            "declared": true
+          },
+          "focus": "urn:business:check:ecc3ac5fbfcbbfe7f7153da8d4512654f415c3b8fd4ea98531a4a8e600694629"
+        },
+        {
+          "node": "execute",
+          "rule": "audited",
+          "value": false,
+          "evidence": {
+            "declared": true
+          },
+          "focus": "urn:business:check:47141c3374b371b2f9d4c6d9c305b50de46c6dda8f71c2d5ad735bb44c962d79"
+        },
+        {
+          "node": "approve",
+          "rule": "separation",
+          "value": false,
+          "evidence": {
+            "requesters": [
+              {
+                "node": "request",
+                "principal": "requester-1"
+              }
+            ],
+            "approver": "requester-1"
+          },
+          "focus": "urn:business:check:ac4b1ba687167b03dbe45d316296fdae457b56558cd6af0125afb8718f7b4e93"
+        }
+      ],
+      "gaps": [
+        {
+          "code": "operational_evidence_unverified",
+          "detail": "Principals and controls are caller declarations, not IAM, transaction or audit-log attestation."
+        }
+      ],
+      "policy_sha256": "169ff818e1a0e813bd0846d441ace2c921e1af86b6e9ce926a0ce0c393762ed6",
+      "graph_digest": "sha256:7c4a66f6f7e43cd325316b254893c851b9c9c4eb5caebc5224b46eba09fe8135",
+      "pins": {
+        "mithril": [
+          "mithril-lang/mithril",
+          "439a202fcf5ad5d0712217c98deb0bfac56de4e9"
+        ],
+        "org-babashka-nbb": [
+          "kotoba-lang/org-babashka-nbb",
+          "829f0ba11016e925001d80e51f12848c4ad58112"
+        ],
+        "kotoba": [
+          "kotoba-lang/kotoba",
+          "6ffc07a7006dd0202b0feb0c586d8bd341f086b9"
+        ],
+        "text": [
+          "kotoba-lang/text",
+          "51f6ad401aa28a916e321c03c39bc25189af283c"
+        ]
+      },
+      "elapsed_ms": 816,
+      "execution": {
+        "process_executed": false,
+        "inference_calls": 0
+      }
+    },
+    {
+      "file": "examples/business-process/access-repaired.bpmn",
+      "sha256": "81d2ee23eda405563d500ebec8be4b562c088742d3c7a60aab28a9bf2e46b027",
+      "model_status": "conforms",
+      "status": "review_incomplete",
+      "findings": [],
+      "gaps": [
+        {
+          "code": "operational_evidence_unverified",
+          "detail": "Principals and controls are caller declarations, not IAM, transaction or audit-log attestation."
+        }
+      ],
+      "policy_sha256": "169ff818e1a0e813bd0846d441ace2c921e1af86b6e9ce926a0ce0c393762ed6",
+      "graph_digest": "sha256:7c4a66f6f7e43cd325316b254893c851b9c9c4eb5caebc5224b46eba09fe8135",
+      "pins": {
+        "mithril": [
+          "mithril-lang/mithril",
+          "439a202fcf5ad5d0712217c98deb0bfac56de4e9"
+        ],
+        "org-babashka-nbb": [
+          "kotoba-lang/org-babashka-nbb",
+          "829f0ba11016e925001d80e51f12848c4ad58112"
+        ],
+        "kotoba": [
+          "kotoba-lang/kotoba",
+          "6ffc07a7006dd0202b0feb0c586d8bd341f086b9"
+        ],
+        "text": [
+          "kotoba-lang/text",
+          "51f6ad401aa28a916e321c03c39bc25189af283c"
+        ]
+      },
+      "elapsed_ms": 1267,
+      "execution": {
+        "process_executed": false,
+        "inference_calls": 0
+      }
+    },
+    {
+      "file": "examples/business-process/customer-data-vulnerable.bpmn",
+      "sha256": "30c1896d4740628b182d1e21a86961e590e5c6a4fc771c0c866812a748b9f79c",
+      "model_status": "policy_violations",
+      "status": "review_incomplete",
+      "findings": [
+        {
+          "node": "execute",
+          "rule": "approval",
+          "value": false,
+          "evidence": {
+            "control": "customer-data",
+            "bypass_path": [
+              "start",
+              "request",
+              "decision",
+              "merge",
+              "execute"
+            ],
+            "approvals": [
+              "approve"
+            ]
+          },
+          "focus": "urn:business:check:ec123849ae1418bbbdf2407a0a268c089b935a049a9a7d83f814d222b55cfabd"
+        },
+        {
+          "node": "execute",
+          "rule": "authorized",
+          "value": false,
+          "evidence": {
+            "declared": true
+          },
+          "focus": "urn:business:check:ecc3ac5fbfcbbfe7f7153da8d4512654f415c3b8fd4ea98531a4a8e600694629"
+        },
+        {
+          "node": "execute",
+          "rule": "audited",
+          "value": false,
+          "evidence": {
+            "declared": true
+          },
+          "focus": "urn:business:check:47141c3374b371b2f9d4c6d9c305b50de46c6dda8f71c2d5ad735bb44c962d79"
+        },
+        {
+          "node": "approve",
+          "rule": "separation",
+          "value": false,
+          "evidence": {
+            "requesters": [
+              {
+                "node": "request",
+                "principal": "requester-1"
+              }
+            ],
+            "approver": "requester-1"
+          },
+          "focus": "urn:business:check:ac4b1ba687167b03dbe45d316296fdae457b56558cd6af0125afb8718f7b4e93"
+        }
+      ],
+      "gaps": [
+        {
+          "code": "operational_evidence_unverified",
+          "detail": "Principals and controls are caller declarations, not IAM, transaction or audit-log attestation."
+        }
+      ],
+      "policy_sha256": "169ff818e1a0e813bd0846d441ace2c921e1af86b6e9ce926a0ce0c393762ed6",
+      "graph_digest": "sha256:7c4a66f6f7e43cd325316b254893c851b9c9c4eb5caebc5224b46eba09fe8135",
+      "pins": {
+        "mithril": [
+          "mithril-lang/mithril",
+          "439a202fcf5ad5d0712217c98deb0bfac56de4e9"
+        ],
+        "org-babashka-nbb": [
+          "kotoba-lang/org-babashka-nbb",
+          "829f0ba11016e925001d80e51f12848c4ad58112"
+        ],
+        "kotoba": [
+          "kotoba-lang/kotoba",
+          "6ffc07a7006dd0202b0feb0c586d8bd341f086b9"
+        ],
+        "text": [
+          "kotoba-lang/text",
+          "51f6ad401aa28a916e321c03c39bc25189af283c"
+        ]
+      },
+      "elapsed_ms": 1086,
+      "execution": {
+        "process_executed": false,
+        "inference_calls": 0
+      }
+    },
+    {
+      "file": "examples/business-process/customer-data-repaired.bpmn",
+      "sha256": "620573e41190b00ad2e5d03b5690b1cb7d56f8754712cc1d72cd5cd25ba02d06",
+      "model_status": "conforms",
+      "status": "review_incomplete",
+      "findings": [],
+      "gaps": [
+        {
+          "code": "operational_evidence_unverified",
+          "detail": "Principals and controls are caller declarations, not IAM, transaction or audit-log attestation."
+        }
+      ],
+      "policy_sha256": "169ff818e1a0e813bd0846d441ace2c921e1af86b6e9ce926a0ce0c393762ed6",
+      "graph_digest": "sha256:7c4a66f6f7e43cd325316b254893c851b9c9c4eb5caebc5224b46eba09fe8135",
+      "pins": {
+        "mithril": [
+          "mithril-lang/mithril",
+          "439a202fcf5ad5d0712217c98deb0bfac56de4e9"
+        ],
+        "org-babashka-nbb": [
+          "kotoba-lang/org-babashka-nbb",
+          "829f0ba11016e925001d80e51f12848c4ad58112"
+        ],
+        "kotoba": [
+          "kotoba-lang/kotoba",
+          "6ffc07a7006dd0202b0feb0c586d8bd341f086b9"
+        ],
+        "text": [
+          "kotoba-lang/text",
+          "51f6ad401aa28a916e321c03c39bc25189af283c"
+        ]
+      },
+      "elapsed_ms": 999,
+      "execution": {
+        "process_executed": false,
+        "inference_calls": 0
+      }
+    }
+  ],
+  "scope": "Reference declarations; real pinned compiler. No operational attestation or comparative benchmark."
+}

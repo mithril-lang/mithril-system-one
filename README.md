@@ -87,3 +87,5 @@ workflow, MCP stdio server and Hermes plugin without duplicating the executor.
 SCAP/OVAL/XCCDF result ingestion and verified npm upgrade patches are available through CLI, MCP and the owning Hermes profile. [Scope, application and qualification](docs/scap-and-remediation.md).
 
 Security harness 0.5.0 adds exclusive local patch application, explicit journal recovery, strict manifest/lock evidence and SCAP host-scope checks. [Reliability and local CI](docs/security-maturity-0.5.0.md).
+
+Business-process harness 0.6.0 imports bounded non-executable BPMN into Mithril ontology and checks approval bypass, declared principal separation, authorization and audit. Three before/after examples cover payments, access grants and customer-data sharing. [BPMN scope and usage](docs/business-process.md).
