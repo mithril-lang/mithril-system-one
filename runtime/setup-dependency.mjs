@@ -1,0 +1,11 @@
+import {execFileSync} from 'node:child_process';
+import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
+import {resolve,isAbsolute} from 'node:path';
+const args=process.argv.slice(2);
+if(args.length!==2||args[0]!=='--engine-root'||!isAbsolute(args[1]))throw Error('usage: setup-dependency --engine-root /absolute/reviewed/security-core');
+const pin=JSON.parse(readFileSync(new URL('./dependency-engine-pin.json',import.meta.url))),root=resolve(args[1]);
+const git=args=>execFileSync('git',args,{cwd:root,encoding:'utf8'}).trim();
+if(git(['rev-parse','HEAD'])!==pin.commit||git(['status','--porcelain','--untracked-files=no']))throw Error('dependency_engine_pin_refused');
+const dir=resolve(import.meta.dirname,'../node_modules/mithril-dependency-runtime');mkdirSync(dir,{recursive:true,mode:0o700});
+writeFileSync(resolve(dir,'config.json'),JSON.stringify({root,pin}),{mode:0o600});
+console.log(JSON.stringify({ready:true,pin,sourceCopied:false}));

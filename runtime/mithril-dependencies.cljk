@@ -1,0 +1,15 @@
+(ns system-one.dependencies
+ (:require [ai-gftd.cybersecurity.product.advisory :as advisory]
+           [ai-gftd.cybersecurity.product.osv :as osv]))
+(def fs (js/require "fs"))
+(defn safe-json [x]
+ (cond (keyword? x) (subs (str x) 1)
+       (map? x) (into {} (map (fn [[k v]] [(safe-json k) (safe-json v)]) x))
+       (or (sequential? x) (set? x)) (mapv safe-json x)
+       :else x))
+(let [input (js->clj (js/JSON.parse (.readFileSync fs 0 "utf8")) :keywordize-keys true)
+      results (mapv (fn [{:keys [component records]}]
+                     (let [feed (osv/read-feed records)]
+                       {:component component :problems (:feed/problems feed) :withdrawn (:feed/withdrawn feed)
+                        :evaluation (advisory/match [component] (:advisories feed) {:queried 1})})) (:queries input))]
+ (println (js/JSON.stringify (clj->js (safe-json results)))))

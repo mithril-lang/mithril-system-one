@@ -11,7 +11,7 @@ PROFILE = 'mithril-public-code-review'
 PLUGIN = 'mithril-public-review'
 
 
-def install(root, home, apply=False, upgrade=False):
+def install(root, home, apply=False, upgrade=False, tool_only=False):
     root = Path(root).resolve(strict=True)
     home = Path(home).expanduser()
     if not home.is_absolute():
@@ -21,11 +21,13 @@ def install(root, home, apply=False, upgrade=False):
             raise ValueError('symlink home ancestor refused')
     target = home / 'profiles' / PROFILE
     plan = {}
-    for name in ('SOUL.md', 'USER.md', 'profile.yaml', 'config.yaml'):
+    for name in (('SOUL.md', 'profile.yaml') if tool_only else ('SOUL.md', 'USER.md', 'profile.yaml', 'config.yaml')):
         content = (root / 'profiles' / PROFILE / name).read_text()
         if name == 'config.yaml':
             content = content.replace('${system_one_root}', json.dumps(str(root)))
         plan[target / name] = content
+    if tool_only and not (target / 'config.yaml').is_file():
+        raise ValueError('tool upgrade requires an existing profile')
     plan[target / 'profile-meta.json'] = json.dumps({'name': 'Mithril Public Code Review'}) + '\n'
     plan[target / '.no-bundled-skills'] = ''
     for name in ('plugin.yaml', '__init__.py'):
@@ -39,7 +41,7 @@ def install(root, home, apply=False, upgrade=False):
                 raise ValueError('symlink destination refused')
         if path.exists() and (not path.is_file() or path.read_text() != content):
             rel = path.relative_to(target).as_posix()
-            if not upgrade or not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != reviewed.get(rel):
+            if not upgrade or not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() not in (reviewed.get(rel) if isinstance(reviewed.get(rel), list) else [reviewed.get(rel)]):
                 raise ValueError('existing profile differs: ' + path.name)
             updates.add(path)
     if apply:
@@ -65,6 +67,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--home', required=True)
     parser.add_argument('--apply', action='store_true')
+    parser.add_argument('--tool-only', action='store_true', help='Update reviewed tool/instruction files while preserving operator config')
     parser.add_argument('--upgrade', action='store_true', help='Replace only unchanged, hash-reviewed prior profile/plugin files')
     args = parser.parse_args()
-    print(json.dumps(install(Path(__file__).resolve().parents[1], args.home, args.apply, args.upgrade)))
+    print(json.dumps(install(Path(__file__).resolve().parents[1], args.home, args.apply, args.upgrade, args.tool_only)))

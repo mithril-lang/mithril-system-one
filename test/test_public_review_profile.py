@@ -55,15 +55,38 @@ class UpgradeTests(unittest.TestCase):
             plugin = target / 'plugins/mithril-public-review/plugin.yaml'
             old = plugin.read_text()
             packaged = root / 'adapters/hermes/mithril-public-review/plugin.yaml'
-            packaged.write_text(old.replace('0.2.0', '0.3.0'))
+            packaged.write_text(old.replace('0.3.0', '0.4.0'))
             hashes = root / 'profiles' / installer.PROFILE / 'reviewed-upgrade-hashes.json'
             hashes.write_text(json.dumps({'plugins/mithril-public-review/plugin.yaml': hashlib.sha256(old.encode()).hexdigest()}))
             with self.assertRaises(ValueError):
                 installer.install(root, home, True)
             installer.install(root, home, True, True)
-            self.assertIn('0.3.0', plugin.read_text())
+            self.assertIn('0.4.0', plugin.read_text())
             self.assertEqual((target / '.env').read_text(), 'MITHRIL_API_KEY=own-profile-fixture\n')
             self.assertEqual(plugin.stat().st_mode & 0o777, 0o600)
             plugin.write_text('operator edited this')
             with self.assertRaises(ValueError):
                 installer.install(root, home, True, True)
+
+    def test_tool_only_upgrade_preserves_operator_config(self):
+        import shutil
+        import hashlib
+        import json
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp).resolve() / 'source'
+            shutil.copytree(ROOT / 'profiles', root / 'profiles')
+            shutil.copytree(ROOT / 'adapters', root / 'adapters')
+            home = Path(tmp).resolve() / 'hermes'
+            installer.install(root, home, True)
+            target = home / 'profiles' / installer.PROFILE
+            config = target / 'config.yaml'
+            original = config.read_text() + '\n# operator custom settings\n'
+            config.write_text(original)
+            plugin = root / 'adapters/hermes/mithril-public-review/plugin.yaml'
+            old = plugin.read_bytes()
+            plugin.write_text(old.decode().replace('0.3.0', '0.4.0'))
+            hashes = root / 'profiles' / installer.PROFILE / 'reviewed-upgrade-hashes.json'
+            hashes.write_text(json.dumps({'plugins/mithril-public-review/plugin.yaml': [hashlib.sha256(old).hexdigest()]}))
+            installer.install(root, home, True, True, True)
+            self.assertEqual(config.read_text(), original)
+            self.assertIn('0.4.0', (target / 'plugins/mithril-public-review/plugin.yaml').read_text())
