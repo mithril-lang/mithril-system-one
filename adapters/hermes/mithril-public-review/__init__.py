@@ -58,3 +58,9 @@ def register(ctx):
         check_fn=lambda: bool(ctx.get_config("system_one_root")), emoji="🔧",
         description="Generate and reassess an isolated npm security upgrade patch",
         schema={"name":"mithril_dependency_upgrade","description":"Same-major direct npm upgrades, registry lock resolution with scripts disabled, OSV/Mithril recheck. Returns files only; no project writes, application tests or merge.","parameters":{"type":"object","properties":{"files":{"type":"array","minItems":2,"maxItems":2,"items":{"type":"object","properties":{"path":{"enum":["package.json","package-lock.json"]},"text":{"type":"string"},"sha256":{"type":"string","pattern":"^[a-f0-9]{64}$"}},"required":["path","text","sha256"],"additionalProperties":False}}},"required":["files"],"additionalProperties":False}})
+
+    ctx.register_tool(name="mithril_business_process_review", toolset="mithril_public_review",
+        handler=lambda args, **kwargs: json.dumps(invoke(ctx.get_config("system_one_root") or "", args, "bin/mithril-business-process.mjs", {"xml"})),
+        check_fn=lambda: bool(ctx.get_config("system_one_root")), emoji="🔎",
+        description="Evaluate supplied BPMN approval paths and declared business controls with Mithril",
+        schema={"name":"mithril_business_process_review","description":"Bounded inert BPMN model review. All exclusive paths considered possible. No task execution, external data, IAM or audit-log attestation. Always operationally incomplete.","parameters":{"type":"object","properties":{"xml":{"type":"string","maxLength":1048576}},"required":["xml"],"additionalProperties":False}})

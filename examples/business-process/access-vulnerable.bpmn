@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<b:definitions xmlns:b="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:m="https://mithril.fund/business-process/v1" targetNamespace="https://mithril.fund/examples/business-process">
+  <b:process id="access" isExecutable="false">
+    <b:startEvent id="start" name="Start" />
+    <b:userTask id="request" name="Request access" m:operation="request" m:control="access" m:principal="requester-1" />
+    <b:exclusiveGateway id="decision" name="Approval route" />
+    <b:userTask id="approve" name="Approve access" m:operation="approve" m:control="access" m:principal="requester-1" />
+    <b:exclusiveGateway id="merge" name="Merge alternatives" />
+    <b:serviceTask id="execute" name="Grant access" m:operation="execute" m:control="access" m:authorized="false" m:audited="false" />
+    <b:endEvent id="end" name="Complete" />
+    <b:endEvent id="rejected" name="Rejected" />
+    <b:sequenceFlow id="f1" sourceRef="start" targetRef="request" />
+    <b:sequenceFlow id="f2" sourceRef="request" targetRef="decision" />
+    <b:sequenceFlow id="f3" sourceRef="decision" targetRef="approve" name="Review" />
+    <b:sequenceFlow id="f4" sourceRef="decision" targetRef="merge" name="Bypass" />
+    <b:sequenceFlow id="f5" sourceRef="approve" targetRef="merge" />
+    <b:sequenceFlow id="f6" sourceRef="execute" targetRef="end" />
+    <b:sequenceFlow id="f7" sourceRef="decision" targetRef="rejected" name="Reject" />
+    <b:sequenceFlow id="f8" sourceRef="merge" targetRef="execute" />
+  </b:process>
+  <bpmndi:BPMNDiagram id="diagram">
+    <bpmndi:BPMNPlane id="plane" bpmnElement="access">
+      <bpmndi:BPMNShape id="shape_start" bpmnElement="start">
+        <dc:Bounds x="50" y="200" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_request" bpmnElement="request">
+        <dc:Bounds x="130" y="175" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_decision" bpmnElement="decision">
+        <dc:Bounds x="320" y="193" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_approve" bpmnElement="approve">
+        <dc:Bounds x="430" y="175" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_merge" bpmnElement="merge">
+        <dc:Bounds x="630" y="193" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_execute" bpmnElement="execute">
+        <dc:Bounds x="740" y="175" width="140" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_end" bpmnElement="end">
+        <dc:Bounds x="960" y="200" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_rejected" bpmnElement="rejected">
+        <dc:Bounds x="450" y="350" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="edge_f1" bpmnElement="f1">
+        <di:waypoint x="86" y="218.0" />
+        <di:waypoint x="130" y="215.0" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_f2" bpmnElement="f2">
+        <di:waypoint x="270" y="215.0" />
+        <di:waypoint x="320" y="218.0" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_f3" bpmnElement="f3">
+        <di:waypoint x="370" y="218.0" />
+        <di:waypoint x="430" y="215.0" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_f4" bpmnElement="f4">
+        <di:waypoint x="345.0" y="193" />
+        <di:waypoint x="345.0" y="100" />
+        <di:waypoint x="655.0" y="100" />
+        <di:waypoint x="655.0" y="193" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_f5" bpmnElement="f5">
+        <di:waypoint x="570" y="215.0" />
+        <di:waypoint x="630" y="218.0" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_f6" bpmnElement="f6">
+        <di:waypoint x="880" y="215.0" />
+        <di:waypoint x="960" y="218.0" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_f7" bpmnElement="f7">
+        <di:waypoint x="370" y="218.0" />
+        <di:waypoint x="450" y="368.0" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_f8" bpmnElement="f8">
+        <di:waypoint x="680" y="218.0" />
+        <di:waypoint x="740" y="215.0" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</b:definitions>

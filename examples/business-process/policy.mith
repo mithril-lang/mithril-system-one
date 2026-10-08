@@ -1,0 +1,10 @@
+(mithril/ontology
+ :id "https://mithril.fund/ontology/business-process-v1"
+ :profile ["https://www.w3.org/TR/rdf11-concepts/" "https://www.w3.org/TR/owl2-profiles/#OWL_2_RL" "https://www.w3.org/TR/shacl/"]
+ :graph [
+ (owl/class :id "https://mithril.fund/business-process/v1#RequiredControl")
+ (owl/datatype-property :id "https://mithril.fund/business-process/v1#satisfied")
+ (shacl/node-shape :id "https://mithril.fund/business-process/v1#RequiredControlShape"
+  :sh/target-class "https://mithril.fund/business-process/v1#RequiredControl"
+  :sh/property [(shacl/property-shape :sh/path "https://mithril.fund/business-process/v1#satisfied" :sh/has-value true)])
+])

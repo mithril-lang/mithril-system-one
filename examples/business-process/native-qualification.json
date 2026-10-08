@@ -1,0 +1,43 @@
+{
+  "native_dispatch": true,
+  "other_profile_tool_absent": true,
+  "credentials_touched": false,
+  "cases": [
+    {
+      "process": "payment",
+      "state": "vulnerable",
+      "findings": 4,
+      "sha256": "826808ef6aa71e2f2c46ff5a05843de01ad00cd8e7f4c89094ce713a7ed70bfe"
+    },
+    {
+      "process": "payment",
+      "state": "repaired",
+      "findings": 0,
+      "sha256": "0935514b95da00f4e8d1dc11faf95c49ad925d8b91392237e6de4970228973b2"
+    },
+    {
+      "process": "access",
+      "state": "vulnerable",
+      "findings": 4,
+      "sha256": "15c4c4cde40415d308ae88235c7ebc01a67d134fbd1d5bf6d569b1594516e6ae"
+    },
+    {
+      "process": "access",
+      "state": "repaired",
+      "findings": 0,
+      "sha256": "81d2ee23eda405563d500ebec8be4b562c088742d3c7a60aab28a9bf2e46b027"
+    },
+    {
+      "process": "customer-data",
+      "state": "vulnerable",
+      "findings": 4,
+      "sha256": "30c1896d4740628b182d1e21a86961e590e5c6a4fc771c0c866812a748b9f79c"
+    },
+    {
+      "process": "customer-data",
+      "state": "repaired",
+      "findings": 0,
+      "sha256": "620573e41190b00ad2e5d03b5690b1cb7d56f8754712cc1d72cd5cd25ba02d06"
+    }
+  ]
+}
