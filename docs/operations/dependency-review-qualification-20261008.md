@@ -22,11 +22,13 @@ gap. Existing ontology/compiler pins and Agent core were preserved.
   remediation violations. Advisory aliases and fixed-version hints are retained
   in `examples/dependency-ontology/live-osv.receipt.json`; no exploit or upgrade
   compatibility is asserted.
-- The live Knowledge index returned HTTP 503. This is preserved as unknown and
-  never substituted with KEV=false or an EPSS=0. Live Knowledge enrichment is
-  unqualified; no production deployment or repair is claimed.
+- The combined Knowledge index returned HTTP 503 (`sql-snapshot-stale`).
+  Follow-up confirmed the canonical per-dataset NVD/KEV/EPSS APIs work. Version
+  0.3.1 pins each dataset manifest before/after lookups; the live lodash fixture
+  obtained NVD identity, EPSS scores/date and verified negative KEV membership
+  with no remaining feed gaps. The combined catalog/UI is not repaired.
 - Installed profile `mithril-public-code-review` upgraded four hash-reviewed
-  instruction/plugin files to 0.3.0, preserving operator config and credentials.
+  instruction/plugin files to 0.3.0, then the reviewed plugin manifest to 0.3.1, preserving operator config and credentials.
 - Native Hermes registry dispatch executed the upgraded public-review tool and
   returned the dependency result. Profile A → temporary B → A tool visibility
   was true → false → true. No model call, GitHub write, scheduled run or target
@@ -40,10 +42,11 @@ snapshots, identity checks, detailed-record resolution and timestamp precision.
 Existing public-review, core/Todo and Python adapter/profile tests also pass.
 The installer test verifies that tool-only upgrades preserve customized config.
 
-Knowledge positive enrichment and KEV prioritization are contract-tested with
-fixtures and real matcher/Mithril execution. These are not live production data.
+Live Knowledge enrichment is qualified for the queried CVEs at the recorded
+manifest hashes and dates. Positive KEV membership/priority remains fixture-tested
+with the real matcher/Mithril engine; the live fixture CVEs were absent from KEV.
 Cold timings describe individual qualification runs, not a repeated benchmark.
 
 Delivery is through local verification and GitHub commit status; Actions remains
 manually disabled for this repository. Registry entries preserve the private
-runtime prerequisite and unavailable-live-Knowledge boundary.
+runtime prerequisite and combined-catalog failure and per-dataset snapshot boundary.

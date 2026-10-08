@@ -5,7 +5,8 @@
   ],
   "plugins/mithril-public-review/plugin.yaml": [
     "ce7a1aaf7ac64a01aba575372e552a94c6b0eeaf2d7bd5c47f429022f866366d",
-    "437a269d0814e8e92910cd7da545aa37976f7a4d78934e2b6b6fb754831ef9ae"
+    "437a269d0814e8e92910cd7da545aa37976f7a4d78934e2b6b6fb754831ef9ae",
+    "cd6b750b05547fa5865c7417d5cf4ed089841043d8a1a1ac789dbb80ddb784d5"
   ],
   "plugins/mithril-public-review/__init__.py": [
     "d249eceda7a36f8424e6f6a37bf6e3c8fb836c026c4a82cd0a5c4a94c8dda318",
