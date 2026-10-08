@@ -1,0 +1,17 @@
+(mithril/ontology
+ :id "https://mithril.fund/ontology/security-assessment-v1"
+ :profile ["https://www.w3.org/TR/rdf11-concepts/" "https://www.w3.org/TR/owl2-profiles/#OWL_2_RL" "https://www.w3.org/TR/shacl/"]
+ :graph [
+ (owl/class :id "https://mithril.fund/security/v1#PublicSensitiveEndpoint")
+ (owl/object-property :id "https://mithril.fund/security/v1#authorization")
+ (shacl/node-shape :id "https://mithril.fund/security/v1#PublicSensitiveEndpointShape" :sh/target-class "https://mithril.fund/security/v1#PublicSensitiveEndpoint"
+  :sh/property [(shacl/property-shape :sh/path "https://mithril.fund/security/v1#authorization" :sh/has-value "urn:security:verified")])
+ (owl/class :id "https://mithril.fund/security/v1#UntrustedShellInvocation")
+ (owl/datatype-property :id "https://mithril.fund/security/v1#shell")
+ (shacl/node-shape :id "https://mithril.fund/security/v1#UntrustedShellInvocationShape" :sh/target-class "https://mithril.fund/security/v1#UntrustedShellInvocation"
+  :sh/property [(shacl/property-shape :sh/path "https://mithril.fund/security/v1#shell" :sh/has-value false)])
+ (owl/class :id "https://mithril.fund/security/v1#SecretBinding")
+ (owl/datatype-property :id "https://mithril.fund/security/v1#public")
+ (shacl/node-shape :id "https://mithril.fund/security/v1#SecretBindingShape" :sh/target-class "https://mithril.fund/security/v1#SecretBinding"
+  :sh/property [(shacl/property-shape :sh/path "https://mithril.fund/security/v1#public" :sh/has-value false)])
+])

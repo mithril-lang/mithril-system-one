@@ -1,0 +1,40 @@
+{
+  "benchmark": "security-synthetic-100-three-record-snapshots",
+  "compile_ms": 100.73104099999989,
+  "mean_graph_evaluation_ms": 33.35120253000001,
+  "scope": "No extraction, LLM inference, deployment inventory or exploit checks included",
+  "status": "passed",
+  "date": "2026-10-08",
+  "platform": "macOS-26.3.1-arm64-arm-64bit",
+  "records_per_snapshot": 3,
+  "snapshots": 100,
+  "runs": 1,
+  "provider_calls": 0,
+  "source_sha256": {
+    "lib/security-ontology.mjs": "00df517628c39d571713a3166e89b3f271fe761159c765fea51b4467d8d435d1",
+    "lib/mithril-dynamic.mjs": "fe4716ffb1ad20eba4bb2ea1134801619e1a032be3464394b9bff53da97e5c38",
+    "runtime/mithril-security-batch.cljk": "9fdd8e7c7841c9f8b73299d47f5bed4e8c82e1417a1048036c7502adb4c84871",
+    "examples/security-ontology/policy.mith": "c87edcc3e9070b824149bef83fa45a0ac9cbcaef16bf30acc63fb5a34c63ef48",
+    "examples/security-ontology/snapshot.json": "d447be46dda7d3169e0da6e91af28ea9bf5880a948513e0abd50f71dd42dba56",
+    "test/security-runtime.integration.mjs": "45f99246de365156ce6f1f2fd9427dec4241d5fa2b5cca16e08df5a6fb39536d"
+  },
+  "runtime_pins": {
+    "mithril": [
+      "mithril-lang/mithril",
+      "439a202fcf5ad5d0712217c98deb0bfac56de4e9"
+    ],
+    "org-babashka-nbb": [
+      "kotoba-lang/org-babashka-nbb",
+      "829f0ba11016e925001d80e51f12848c4ad58112"
+    ],
+    "kotoba": [
+      "kotoba-lang/kotoba",
+      "6ffc07a7006dd0202b0feb0c586d8bd341f086b9"
+    ],
+    "text": [
+      "kotoba-lang/text",
+      "51f6ad401aa28a916e321c03c39bc25189af283c"
+    ]
+  },
+  "qualification": "synthetic supplied facts only; not a whole-repository or exploit-detection benchmark"
+}

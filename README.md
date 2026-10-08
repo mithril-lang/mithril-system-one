@@ -71,3 +71,7 @@ validation over eleven Todo states, repair tasks and semantic refactoring. See
 
 [Registry execution surfaces](docs/registry-runtime.md) share the bounded agent,
 workflow, MCP stdio server and Hermes plugin without duplicating the executor.
+
+## Ontology security evaluation prototype
+
+[Security evaluation design and local proof](docs/security-ontology-evaluation.md) uses the actual Mithril compiler and OWL/SHACL engine for three bounded source/environment snapshot policies. It preserves unknown coverage, validates policy-code proposals, and records synthetic graph-only timing. It does not yet extract repositories or prove exploitable vulnerabilities. Run `npm run test:security`.

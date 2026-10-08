@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "records": [
+    {
+      "id": "admin-api",
+      "kind": "endpoint",
+      "public": true,
+      "sensitive": true,
+      "authorization": "missing",
+      "evidence": {
+        "path": "examples/security-ontology/demo-config.json",
+        "line": 3,
+        "sha256": "67c13a449526a2f1bfb1eeeb8a77d5ee3742860d440ed62427fa9776a4c32908",
+        "origin": "configuration"
+      }
+    },
+    {
+      "id": "build-command",
+      "kind": "shell",
+      "userControlled": true,
+      "shell": true,
+      "evidence": {
+        "path": "examples/security-ontology/demo-config.json",
+        "line": 10,
+        "sha256": "67c13a449526a2f1bfb1eeeb8a77d5ee3742860d440ed62427fa9776a4c32908",
+        "origin": "configuration"
+      }
+    },
+    {
+      "id": "public-secret-binding",
+      "kind": "secret",
+      "public": true,
+      "evidence": {
+        "path": "examples/security-ontology/demo-config.json",
+        "line": 16,
+        "sha256": "67c13a449526a2f1bfb1eeeb8a77d5ee3742860d440ed62427fa9776a4c32908",
+        "origin": "configuration"
+      }
+    }
+  ],
+  "coverage": {
+    "complete": false,
+    "unresolved": 0
+  }
+}
