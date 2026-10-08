@@ -21,7 +21,7 @@
     "test:all": "npm test && npm run test:python && npm run test:browser",
     "status": "node bin/system-one.mjs status",
     "setup:dynamic": "node runtime/setup.mjs",
-    "test:dynamic": "node --test test/dynamic-runtime.integration.mjs"
+    "test:dynamic": "node --test test/dynamic-runtime.integration.mjs test/registry-runtime.integration.mjs"
   },
   "devDependencies": {
     "@playwright/test": "1.63.0"

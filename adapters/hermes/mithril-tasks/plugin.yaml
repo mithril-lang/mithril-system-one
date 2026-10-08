@@ -1,10 +1,11 @@
 name: mithril-tasks
-version: 0.2.0
+version: 0.3.0
 description: Original Mithril task harness with bounded edit proposals and compiler verification
 author: Mithril
 license: Apache-2.0
 provides_tools:
   - mithril_task
+  - mithril_workflow
 config_schema:
   system_one_root:
     type: str

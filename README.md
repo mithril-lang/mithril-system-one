@@ -68,3 +68,6 @@ Core/examples: Apache-2.0. Hermes adapter and bundled Todo/policy assets retain 
 Dynamic Mithril evaluation now includes input-dependent OWL inference and SHACL
 validation over eleven Todo states, repair tasks and semantic refactoring. See
 [the dynamic evaluation contract and reproduction steps](docs/mithril-dynamic-evaluation.md).
+
+[Registry execution surfaces](docs/registry-runtime.md) share the bounded agent,
+workflow, MCP stdio server and Hermes plugin without duplicating the executor.

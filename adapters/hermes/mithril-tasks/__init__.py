@@ -7,16 +7,16 @@ import subprocess
 from agent.secret_scope import get_secret
 
 
-def invoke(root, args, key=""):
+def invoke(root, args, key="", *, workflow=False):
     try:
         path = Path(root).expanduser().resolve(strict=True)
         package = json.loads((path / "package.json").read_text())
         if package.get("name") != "@mithril/system-one":
             raise ValueError()
-        script = path / "bin" / "mithril-task.mjs"
+        script = path / "bin" / ("mithril-workflow.mjs" if workflow else "mithril-task.mjs")
         if not script.is_file() or not shutil.which("node"):
             raise ValueError()
-        if not isinstance(args, dict) or set(args) - {"task_id", "method", "source"}:
+        if not isinstance(args, dict) or set(args) - ({"task_ids", "method"} if workflow else {"task_id", "method", "source"}):
             raise ValueError()
         payload = json.dumps(args)
         if len(payload.encode()) > 16384:
@@ -28,9 +28,9 @@ def invoke(root, args, key=""):
             if not isinstance(key, str) or not key or len(key) > 1024 or "\n" in key or "\r" in key:
                 return {"ok": False, "error": "mithril_authorization_required"}
             env["MITHRIL_API_KEY"] = key
-        result = subprocess.run([shutil.which("node"), str(script), "agent", "--stdin"],
+        result = subprocess.run([shutil.which("node"), str(script), *([] if workflow else ["agent"]), "--stdin"],
                                 input=payload, text=True, capture_output=True,
-                                timeout=95, env=env, cwd=path, shell=False)
+                                timeout=285 if workflow else 95, env=env, cwd=path, shell=False)
         if len(result.stdout.encode()) > 2_000_000:
             raise ValueError()
         value = json.loads(result.stdout)
@@ -68,3 +68,24 @@ def register(ctx):
                 "method": {"type": "string", "enum": ["ontology", "system-one"]},
                 "source": {"type": "string", "maxLength": 8192}},
                 "required": ["task_id", "method"], "additionalProperties": False}})
+
+    def workflow_handler(args, **kwargs):
+        return json.dumps(invoke(ctx.get_config("system_one_root") or "", args,
+                                 get_secret("MITHRIL_API_KEY", ""), workflow=True), ensure_ascii=False)
+
+    ctx.register_tool(
+        name="mithril_workflow", toolset="mithril_tasks", handler=workflow_handler,
+        check_fn=lambda: bool(ctx.get_config("system_one_root")), emoji="🧩",
+        description="Run a bounded Mithril coding workflow",
+        schema={"name": "mithril_workflow", "description": (
+            "Run 1–3 distinct Mithril tasks in order through the shared harness. Stop on the first "
+            "failure or unknown outcome; no retries, shell, files or publication. ontology is "
+            "deterministic; system-one uses the owning profile Mithril API credential."),
+            "parameters": {"type": "object", "properties": {
+                "task_ids": {"type": "array", "items": {"type": "string", "enum": [
+                    "create-report", "repair-summary", "migrate-directory", "repair-shape",
+                    "repair-import", "compact-refactor", "dynamic-repair-inheritance",
+                    "dynamic-repair-validation", "dynamic-refactor"]}, "minItems": 1,
+                    "maxItems": 3, "uniqueItems": True},
+                "method": {"type": "string", "enum": ["ontology", "system-one"]}},
+                "required": ["task_ids", "method"], "additionalProperties": False}})

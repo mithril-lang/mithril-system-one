@@ -48,11 +48,12 @@ class AdapterTests(unittest.TestCase):
             call.assert_not_called()
 
     def test_registration_exposes_bounded_task_tool(self):
-        ctx = types.SimpleNamespace(register_tool=lambda **kwargs: setattr(ctx, "tool", kwargs), get_config=lambda name: str(ROOT))
+        registered = []
+        ctx = types.SimpleNamespace(register_tool=lambda **kwargs: registered.append(kwargs), get_config=lambda name: str(ROOT))
         plugin.register(ctx)
-        self.assertEqual(ctx.tool["name"], "mithril_task")
-        self.assertFalse(ctx.tool["schema"]["parameters"]["additionalProperties"])
-        self.assertTrue(ctx.tool["check_fn"]())
+        self.assertEqual([t["name"] for t in registered], ["mithril_task", "mithril_workflow"])
+        self.assertTrue(all(not t["schema"]["parameters"]["additionalProperties"] for t in registered))
+        self.assertTrue(all(t["check_fn"]() for t in registered))
 
     def test_success_omits_null_error_and_failures_retain_their_cause(self):
         for row in ({"success": True, "error": None}, {"success": False, "error": "plan_refused"}):

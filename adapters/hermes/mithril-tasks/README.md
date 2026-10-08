@@ -14,3 +14,7 @@ checkout before using them. They execute the pinned real Mithril compiler and
 OWL/SHACL engine locally over eleven input snapshots. See
 [dynamic evaluation](../../../docs/mithril-dynamic-evaluation.md) for the exact
 contract and limits. Static-document tasks keep their existing hosted compiler.
+
+Version 0.3.0 adds `mithril_workflow` for 1–3 distinct tasks, using the same
+executor as the task CLI and the local stdio MCP. Workflows stop at the first
+failure or unknown outcome. See [registry runtime](../../../docs/registry-runtime.md).
