@@ -24,3 +24,9 @@ test('local apply requires clean Git files and matching base, writes two files w
   await assert.rejects(applyDependencyPatch(dir,patch),/clean_project/);
  }finally{await rm(dir,{recursive:true,force:true});}
 });
+test('manifest/lock identity mismatch and duplicate keys refuse before resolver',async()=>{
+ const options={assessor:async()=>before,resolver:()=>{throw Error('must_not_resolve');}};
+ await assert.rejects(remediateDependencies([f('package.json',JSON.stringify({...manifest,dependencies:{lodash:'4.17.19'}})),files[1]],options),/root_lock_mismatch/);
+ await assert.rejects(remediateDependencies([f('package.json','{"dependencies":{"lodash":"4.17.20","lodash":"4.17.21"}}'),files[1]],options),/duplicate_json_key/);
+ await assert.rejects(remediateDependencies(files,{assessor:async()=>before,resolver:async()=>lock('4.17.21').replace('"dependencies":{"lodash":"4.17.21"}','"dependencies":{"lodash":"4.17.21","injected":"1.0.0"}')}),/root_lock_mismatch/);
+});
