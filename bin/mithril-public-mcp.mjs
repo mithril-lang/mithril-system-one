@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import {reviewPublicRepository,reviewSchema} from '../lib/public-code-review.mjs';
-const tool={name:'mithril_public_repo_review',description:'Read-only public GitHub commit review. Bounded JavaScript ESM extraction and Mithril policies; always incomplete, candidates require review. No target execution or inference.',inputSchema:reviewSchema,annotations:{readOnlyHint:true,destructiveHint:false,openWorldHint:true}};
+const tool={name:'mithril_public_repo_review',description:'Read-only public GitHub commit review. Bounded JavaScript/TypeScript ESM/CommonJS extraction and Mithril policies; always incomplete, candidates require review. No target execution or inference.',inputSchema:reviewSchema,annotations:{readOnlyHint:true,destructiveHint:false,openWorldHint:true}};
 const reply=x=>process.stdout.write(JSON.stringify(x)+'\n');let state='new';
 async function handle(raw){
  let m;try{m=JSON.parse(raw);}catch{return reply({jsonrpc:'2.0',id:null,error:{code:-32700,message:'Parse error'}});}
@@ -9,7 +9,7 @@ async function handle(raw){
  if(!('id'in m)){if(m.method==='notifications/initialized'&&state==='initializing')state='ready';return;}
  if(m.method==='initialize'){
   if(state!=='new'||typeof m.params?.protocolVersion!=='string'||!m.params?.clientInfo||!m.params?.capabilities)return error(-32602,'Invalid initialize');
-  state='initializing';return result({protocolVersion:'2025-06-18',capabilities:{tools:{listChanged:false}},serverInfo:{name:'mithril-public-review',version:'0.1.0'}});
+  state='initializing';return result({protocolVersion:'2025-06-18',capabilities:{tools:{listChanged:false}},serverInfo:{name:'mithril-public-review',version:'0.2.0'}});
  }
  if(m.method==='ping')return result({});
  if(state!=='ready')return error(-32002,'Initialize first');

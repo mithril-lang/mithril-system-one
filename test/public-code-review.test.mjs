@@ -35,3 +35,13 @@ test('MCP native handshake lists the review tool and refuses unsupported argumen
  const msgs=[{jsonrpc:'2.0',id:1,method:'initialize',params:{protocolVersion:'2025-06-18',capabilities:{},clientInfo:{name:'test',version:'1'}}},{jsonrpc:'2.0',method:'notifications/initialized'},{jsonrpc:'2.0',id:2,method:'tools/list'},{jsonrpc:'2.0',id:3,method:'tools/call',params:{name:'mithril_public_repo_review',arguments:{repository:'../private',commit:'main'}}}];
  const r=spawnSync(process.execPath,['bin/mithril-public-mcp.mjs'],{cwd:new URL('..',import.meta.url),input:msgs.map(JSON.stringify).join('\n')+'\n',encoding:'utf8',timeout:5000});assert.equal(r.status,0);const out=r.stdout.trim().split('\n').map(x=>JSON.parse(x));assert.equal(out[0].result.protocolVersion,'2025-06-18');assert.equal(out[1].result.tools[0].name,'mithril_public_repo_review');assert.equal(out[2].result.isError,true);
 });
+
+test('TypeScript, CommonJS, namespace imports and immutable CLI aliases preserve policy facts',()=>{
+ const cases=[['a.ts',"import { exec } from 'node:child_process'; const input: string = process.argv[2]; exec(input as string);"],['a.cjs',"const {exec: run}=require('child_process'); const input=process.argv[2];run(input);"],['a.mts',"import * as cp from 'child_process';cp.exec(process.argv[2]!);"],['a.cts',"const cp=require('child_process');cp.exec(process.argv[2]);"],['a.tsx',"import {exec} from 'child_process';const element=<div/>;exec(process.argv[2]);"]];
+ for(const [path,source]of cases){const r=extractSource(path,Buffer.from(source));assert.equal(r.parsed,true,path);assert.equal(r.records.length,1,path);assert.equal(r.records[0].userControlled,true,path);assert.equal(r.records[0].shell,true,path);}
+ const mutation=extractSource('a.cjs',Buffer.from("const {exec}=require('child_process');let input=process.argv[2];input='fixed';exec(input);"));assert.equal(mutation.records[0].userControlled,null);
+ const shadow=extractSource('a.cjs',Buffer.from("const {exec}=require('child_process');function f(require){exec(process.argv[2]);}"));assert.equal(shadow.records[0].userControlled,null);
+ const typeOnly=extractSource('a.ts',Buffer.from("import type {exec} from 'child_process';exec(process.argv[2]);"));assert.equal(typeOnly.records.length,0);
+ const parameter=extractSource('a.ts',Buffer.from("import {exec} from 'child_process';function f(process: any){exec(process.argv[2]);}"));assert.equal(parameter.records[0].userControlled,null);
+ const aliasShadow=extractSource('a.js',Buffer.from("import {exec} from 'child_process';const input=process.argv[2];function f(input){exec(input);}"));assert.equal(aliasShadow.records[0].userControlled,null);
+});

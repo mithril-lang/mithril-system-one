@@ -36,3 +36,34 @@ class ProfileTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 installer.install(ROOT, home, True)
             self.assertFalse((Path(tmp) / installer.PROFILE).exists())
+
+class UpgradeTests(unittest.TestCase):
+    def test_only_hash_reviewed_files_upgrade_and_credentials_are_preserved(self):
+        import hashlib
+        import json
+        from unittest.mock import patch
+        with tempfile.TemporaryDirectory() as tmp:
+            base = Path(tmp).resolve()
+            root = base / 'source'
+            import shutil
+            shutil.copytree(ROOT / 'profiles', root / 'profiles')
+            shutil.copytree(ROOT / 'adapters', root / 'adapters')
+            home = base / 'hermes'
+            installer.install(root, home, True)
+            target = home / 'profiles' / installer.PROFILE
+            (target / '.env').write_text('MITHRIL_API_KEY=own-profile-fixture\n')
+            plugin = target / 'plugins/mithril-public-review/plugin.yaml'
+            old = plugin.read_text()
+            packaged = root / 'adapters/hermes/mithril-public-review/plugin.yaml'
+            packaged.write_text(old.replace('0.2.0', '0.3.0'))
+            hashes = root / 'profiles' / installer.PROFILE / 'reviewed-upgrade-hashes.json'
+            hashes.write_text(json.dumps({'plugins/mithril-public-review/plugin.yaml': hashlib.sha256(old.encode()).hexdigest()}))
+            with self.assertRaises(ValueError):
+                installer.install(root, home, True)
+            installer.install(root, home, True, True)
+            self.assertIn('0.3.0', plugin.read_text())
+            self.assertEqual((target / '.env').read_text(), 'MITHRIL_API_KEY=own-profile-fixture\n')
+            self.assertEqual(plugin.stat().st_mode & 0o777, 0o600)
+            plugin.write_text('operator edited this')
+            with self.assertRaises(ValueError):
+                installer.install(root, home, True, True)

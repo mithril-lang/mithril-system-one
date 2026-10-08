@@ -41,7 +41,7 @@ def register(ctx):
         check_fn=lambda: bool(ctx.get_config("system_one_root")), emoji="🔎",
         description="Review an exact public GitHub commit using Mithril policies",
         schema={"name": "mithril_public_repo_review", "description":
-            "Read a public GitHub commit, parse bounded JavaScript ESM child_process calls and evaluate Mithril ontology. "
+            "Read a public GitHub commit, parse bounded JavaScript/TypeScript ESM/CommonJS child_process calls and evaluate Mithril ontology. "
             "Always incomplete; source candidates require review. No target execution, LLM inference, GitHub writes or automatic remediation. Never retry unknown outcomes.",
             "parameters": {"type": "object", "properties": {
                 "repository": {"type": "string", "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$"},
