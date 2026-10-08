@@ -64,3 +64,12 @@ class AdapterTests(unittest.TestCase):
                     self.assertNotIn("error", value["result"]["row"])
                 else:
                     self.assertEqual(value["result"]["row"]["error"], "plan_refused")
+
+    def test_successful_workflow_rows_do_not_look_like_native_failures(self):
+        value = {"row": {"success": True, "error": None}, "tasks": [
+            {"row": {"success": True, "error": None}},
+            {"row": {"success": False, "error": "plan_refused"}}]}
+        with patch.object(plugin.subprocess, "run", return_value=types.SimpleNamespace(stdout=json.dumps(value), returncode=0)):
+            result = plugin.invoke(ROOT, {"task_ids": ["dynamic-refactor"], "method": "ontology"}, workflow=True)
+            self.assertNotIn("error", result["result"]["tasks"][0]["row"])
+            self.assertEqual(result["result"]["tasks"][1]["row"]["error"], "plan_refused")

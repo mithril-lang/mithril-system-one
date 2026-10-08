@@ -16,7 +16,7 @@ async function handle(raw){
  const result=v=>reply({jsonrpc:'2.0',id,result:v});
  if(m.method==='initialize'){
   if(state!=='new'||typeof m.params?.protocolVersion!=='string'||!m.params?.clientInfo||!m.params?.capabilities)return rpcError(id,-32602,'Invalid initialize');
-  state='initializing';return result({protocolVersion:'2025-06-18',capabilities:{tools:{listChanged:false}},serverInfo:{name:'mithril-system-one',version:'0.3.0'}});
+  state='initializing';return result({protocolVersion:'2025-06-18',capabilities:{tools:{listChanged:false}},serverInfo:{name:'mithril-system-one',version:'0.3.1'}});
  }
  if(m.method==='ping')return result({});
  if(state!=='ready')return rpcError(id,-32002,'Initialize first');
