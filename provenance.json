@@ -14,7 +14,7 @@
       "upstream": "mithril-lang/mithril-fund",
       "revision": "15565b3a1386de2e05d94ed452154a9d74d5a4e1",
       "source_sha256": "49a6d88f7dbf7538a0d440095f88c8c80a7d823e8bc52c3c4be2845951de4350",
-      "published_sha256": "186cc6d70c9ecf422a1ffbaa37d70f28b4e940a4b62fef06293f598cf6db7893"
+      "published_sha256": "b392d4aa575e67e549c65be96949ad4d9b0569cf940cff6380cc281eb2ef3f68"
     },
     {
       "path": "lib/mithril-starter.mjs",
@@ -35,7 +35,7 @@
       "upstream": "mithril-lang/mithril-fund",
       "revision": "3a55edb66bb2c07c48a2317e43de056a4989f8c7",
       "source_sha256": "4e1c5eb08c7b897a9b82bc7e86f6e0aa8d24c051e9867867ab630fb38c355a79",
-      "published_sha256": "9bf32f4557cfa0ff636623be33ca4ef50672644c5d016f32c94f322f7c20f5ab"
+      "published_sha256": "a589f35a54d00aa146cfc9a64310249fa8033602814f9813c7511e6534c9c146"
     },
     {
       "path": "test/inference.test.mjs",
@@ -420,6 +420,8 @@
     "Module import paths point to lib/. Private API system-policy regression is excluded: it depends on the private API service, not this package. Todo core tests are unchanged; browser-test adaptations are listed below.",
     "Todo Playwright worker count is fixed at 3 to bound CI memory usage.",
     "Only surplus final blank lines in Apache notice files are normalized; license terms are retained.",
-    "Todo single-label expectations use list assertions to wait for asynchronous hashchange rendering without a strict-locator race."
+    "Todo single-label expectations use list assertions to wait for asynchronous hashchange rendering without a strict-locator race.",
+    "Core contract boundary cycle 2026-10-09: require a canonical nonempty SHA-256 graph binding, refuse malformed response envelopes, and test missing/malformed matching digests. Upstream source hashes remain unchanged; published hashes bind the adapted bytes.",
+    "Independent-review follow-up: protect one-sided missing graph bindings and mismatched well-formed digests; production implementation unchanged."
   ]
 }

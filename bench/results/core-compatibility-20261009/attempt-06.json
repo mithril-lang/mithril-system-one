@@ -1,0 +1,21 @@
+{
+  "id": "reject-unknown-template",
+  "expected": "refused",
+  "missing": false,
+  "compiler_calls": 0,
+  "source": null,
+  "source_sha256": null,
+  "generation_ms": 0.008500000000140062,
+  "live_validation_ms": null,
+  "save_publish_ms": null,
+  "human_intervention_ms": null,
+  "billed_cost_usd": null,
+  "outcomes": {
+    "baseline": "refused",
+    "candidate": "refused"
+  },
+  "checks": {},
+  "baseline_error": "mithril_proposal_refused",
+  "candidate_error": "mithril_proposal_refused",
+  "pass": true
+}

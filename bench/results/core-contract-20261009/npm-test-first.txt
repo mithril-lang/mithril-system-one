@@ -1,0 +1,157 @@
+
+> @mithril/system-one@0.1.0 test
+> node --test test/*.test.mjs && npm test -w examples/todo
+
+✔ rotates order and preflights identical per-arm task/round counts (1.819459ms)
+✔ all three arms use the same content and compiler contract; no compiler credentials (38.499792ms)
+✔ semantically admitted wrong content fails and metered failed proposals are retained (0.838291ms)
+✔ uncertain outcome does not retry or echo transport credentials (0.613875ms)
+✔ cost remains unknown without invoices and successes never hide failures (0.955042ms)
+✔ planning is no-network and oversized call budgets stop before credential access (267.69475ms)
+✔ optimized fields control is explicit and must consume its own budget (0.162ms)
+✔ settled cost joins require complete matching request IDs, retain failed charges and reject duplicates (0.239708ms)
+✔ CLI rejects invalid arguments before any network access (103.540208ms)
+✔ CLI rejects oversized or missing goals without echoing input (571.796ms)
+✔ CLI requires explicit Mithril credentials and never prints them (163.746667ms)
+✔ lockfile extraction uses exact locked versions, scoped names, duplicates and evidence (1.941625ms)
+✔ OSV summaries are resolved to full details and 429 never becomes empty success (61.464459ms)
+✔ Knowledge KEV/EPSS/CVE identity and stable snapshot are checked; outages retain unknown (3.170708ms)
+✔ OSV microsecond summary can pin nanosecond detail but changed revisions stay unknown (0.430584ms)
+✔ dataset pins preserve independent data; unverified 404 and identity mismatch stay unknown (7.881209ms)
+✔ duplicate lockfile keys retain an invalid-inventory gap rather than choosing a version (0.197917ms)
+✔ same-major fixed hints selected and script never supplied to resolver (2.932959ms)
+✔ major jumps, incomplete assessment, transitive-only and custom dependency sources refuse (0.483292ms)
+✔ hash mismatch and registry bypass rejected (0.331875ms)
+✔ resolved mismatch or new findings blocks patch output (0.344459ms)
+✔ local apply requires clean Git files and matching base, writes two files without commit (688.285791ms)
+✔ manifest/lock identity mismatch and duplicate keys refuse before resolver (0.5665ms)
+✔ exclusive apply blocks concurrent calls and leaves no recovery state on success (476.2645ms)
+✔ interrupted half-write and fully-written but unfinalized transactions recover original pair (637.577167ms)
+✔ operator changes refuse recovery without partially restoring another file (163.400542ms)
+✔ active owner and altered journal or Git HEAD refuse recovery (514.04175ms)
+✔ CLI apply preflight rejects dirty project before inventory/feed evaluation (243.215458ms)
+✔ recovery CLI restores journal-backed partial write with no input/feed/model calls (283.228125ms)
+✔ second file replacement failure rolls back first and removes journal (231.98525ms)
+✔ equal task weighting differs from pooled attempt success, and costs cannot be guessed (1.229583ms)
+✔ an incomplete task group cannot become a complete benchmark score (0.169875ms)
+✔ known failed deadlines stay in averages and missing invoices prevent cost-per-task claims (0.109458ms)
+✔ duplicate or foreign attempt identities cannot silently inflate a score (0.269417ms)
+✔ typed proposal is independently checked, emitted deterministically and records actual Mithril identity (85.086166ms)
+✔ wrong semantics, extra keys, code injection, recursive calls and excessive depth cannot become verified source (0.509292ms)
+✔ upstream failure never retries, substitutes templates or echoes credentials (0.566625ms)
+✔ failed proposal has a bounded caller receipt, without credentials or a verified fallback (0.720458ms)
+✔ task states callable predicate grammar in both token and server-owned session contexts (5.2615ms)
+✔ escaped duplicate keys are refused while independent objects and primitives parse (1.924209ms)
+✔ deep and oversized input are refused (0.317958ms)
+✔ invalid source and edit instructions stop before external execution (9.062834ms)
+✔ ordinary reference detects invalid inputs and recovers after removal (0.343791ms)
+✔ model proposal is not retried or silently replaced by catalog planner (72.344375ms)
+✔ workflow preflights the entire task set before any external effect (1.372625ms)
+✔ failed or unknown task stops workflow and never retries (0.834958ms)
+✔ real compiler fixture binds Mithril source, canonical artifact and semantic receipts; auth stays at inference (198.471042ms)
+✔ unknown choices, extra effects and source injection cannot enter Mithril emission (0.347583ms)
+✔ a missing semantic stage or mismatched graph cannot be claimed as compiled; no fallback or retry (1.388167ms)
+✔ inference and compiler refuse redirects without following them or retrying (0.42175ms)
+✔ missing or malformed matching digests and invalid response shapes fail closed (2.023583ms)
+✔ all original task ontology plans preserve content, derive shape and repair approved bindings (5.116792ms)
+✔ refactor compacts only whitespace outside strings and preserves escaped text (1.369333ms)
+✔ verifier rejects output drift and entire-IR semantic changes during refactor (0.904584ms)
+✔ model operations cannot execute source, unknown tools or extra keys (0.171042ms)
+✔ ordinary renderer and Mithril renderer agree on hostile text without scripts (0.149625ms)
+✔ initial authentication refusal cannot count as a successful ontology repair (98.697125ms)
+✔ unknown transport outcome stops loop before applying or resubmitting (0.425125ms)
+✔ known malformed model proposal retains usage and diagnostics without a second inference call (1.841875ms)
+✔ published task pack matches executable contracts and initial sources (18.054208ms)
+✖ reviewed source manifest binds every extracted file to published bytes (6.089125ms)
+node:internal/modules/package_json_reader:301
+  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+        ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'acorn' imported from /Users/junkawasaki/Documents/Codex/2026-10-09/task-3/mithril-system-one/lib/public-code-review.mjs
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:301:9)
+    at packageResolve (node:internal/modules/esm/resolve:764:81)
+    at moduleResolve (node:internal/modules/esm/resolve:855:18)
+    at defaultResolve (node:internal/modules/esm/resolve:988:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:700:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:717:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:749:52)
+    at #resolve (node:internal/modules/esm/loader:682:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:602:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:162:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v26.0.0
+✖ test/public-code-review.test.mjs (148.616ms)
+✔ reject malformed or unbounded facts and invented source locations before execution (2.158166ms)
+✔ unknown facts never become graph evidence of a missing authorization (0.178125ms)
+✔ inference transport uncertainty stops after one attempt and does not evaluate (37.310459ms)
+✔ negative cases require the compiler contract refusal, not auth or infrastructure failure (46.04375ms)
+✔ transport uncertainty stays unscored and cannot trigger a retry (0.328ms)
+✔ oversized repetition budget is refused before live access (0.344708ms)
+node:internal/modules/package_json_reader:301
+  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+        ^
+
+Error [ERR_MODULE_NOT_FOUND]: Cannot find package '@babel/parser' imported from /Users/junkawasaki/Documents/Codex/2026-10-09/task-3/mithril-system-one/lib/source-to-mithril.mjs
+    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:301:9)
+    at packageResolve (node:internal/modules/esm/resolve:764:81)
+    at moduleResolve (node:internal/modules/esm/resolve:855:18)
+    at defaultResolve (node:internal/modules/esm/resolve:988:11)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:700:20)
+    at #resolveAndMaybeBlockOnLoaderThread (node:internal/modules/esm/loader:717:38)
+    at ModuleLoader.resolveSync (node:internal/modules/esm/loader:749:52)
+    at #resolve (node:internal/modules/esm/loader:682:17)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:602:35)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:162:33) {
+  code: 'ERR_MODULE_NOT_FOUND'
+}
+
+Node.js v26.0.0
+✖ test/source-conversion.test.mjs (103.377209ms)
+✔ links candidates to exact source positions without disclosing raw clauses (4.135583ms)
+✔ negation, no signals and unsupported language never become safe (0.623ms)
+✔ Japanese rules and whole-document change detection (1.440208ms)
+✔ tampered hashes, private URL parameters, invalid dates and extra fields refuse (0.684041ms)
+✔ contextual risk records must cite the exact imported source span (0.366208ms)
+✔ candidate floods are bounded with an explicit coverage gap (4.1255ms)
+✔ workflow bounds tasks and returns no partial output when a later task refuses (106.44775ms)
+ℹ tests 76
+ℹ suites 0
+ℹ pass 73
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2712.518625
+
+✖ failing tests:
+
+test at test/provenance.test.mjs:5:1
+✖ reviewed source manifest binds every extracted file to published bytes (6.089125ms)
+  AssertionError [ERR_ASSERTION]: lib/mithril-language.mjs
+  + actual - expected
+  
+  + '268a5dea5536559dbd76ae679f1f93138a99368cb5e3b267d944d0c75ab948ad'
+  - '49a6d88f7dbf7538a0d440095f88c8c80a7d823e8bc52c3c4be2845951de4350'
+  
+      at TestContext.<anonymous> (file:///Users/junkawasaki/Documents/Codex/2026-10-09/task-3/mithril-system-one/test/provenance.test.mjs:13:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: '268a5dea5536559dbd76ae679f1f93138a99368cb5e3b267d944d0c75ab948ad',
+    expected: '49a6d88f7dbf7538a0d440095f88c8c80a7d823e8bc52c3c4be2845951de4350',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at test/public-code-review.test.mjs:1:1
+✖ test/public-code-review.test.mjs (148.616ms)
+  'test failed'
+
+test at test/source-conversion.test.mjs:1:1
+✖ test/source-conversion.test.mjs (103.377209ms)
+  'test failed'

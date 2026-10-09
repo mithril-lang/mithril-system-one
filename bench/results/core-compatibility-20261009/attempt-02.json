@@ -1,0 +1,23 @@
+{
+  "id": "unseen-500-character-dashboard",
+  "expected": "accepted",
+  "missing": false,
+  "compiler_calls": 1,
+  "source": "(mithril/app-agent\n  :id \"https://app.mithril.fund/id/starter\"\n  :goal \"https://mithril.fund/id/goal/compile-test-deploy-app\"\n  :ontology \"a8d21164d99278f517181b06d063ea8a63249bff57e8e1a5e72aed5758a28f47\"\n  :imports\n  [(mithril/import\n     :library \"https://mithril.fund/lib/app/agent-loop-v1\"\n     :digest \"sha256:b7d1290a2fe8d8f6f0a17c49d2774b9396e9389fb5d070e98335d8d5517266ce\")]\n  :loop\n  (mithril/loop\n    :max-steps 6\n    :reasoner \"https://mithril.fund/lib/app/agent-loop-v1/reasoner/owl2-rl\"\n    :query \"https://mithril.fund/lib/app/agent-loop-v1/query/component-catalog\"\n    :validator \"https://mithril.fund/lib/app/agent-loop-v1/validator/shacl-core\"\n    :compiler \"https://mithril.fund/lib/app/agent-loop-v1/compiler/web-ir\"\n    :tester \"https://mithril.fund/lib/app/agent-loop-v1/tester/conformance\"\n    :deployer \"https://mithril.fund/lib/app/agent-loop-v1/deployer/self-contained-url\"\n    :governor \"https://mithril.fund/lib/app/agent-loop-v1/governor/static-read-only\")\n  :app\n  (mithril/app\n    :name \"新規互換性検証 2026-10-09\"\n    :description \"Public synthetic document; no personal or private data.\"\n    :headline \"Quoted \\\" heading \\\\ slash\"\n    :summary \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\n    :template \"https://mithril.fund/id/template/dashboard\"\n    :data-shape \"https://mithril.fund/id/shape/metric-cards\"))\n",
+  "source_sha256": "89f12f09ea914179c99dade86eba11e3bc269f50f257f21fc87b6b804753dc7b",
+  "generation_ms": 0.025792000000024018,
+  "live_validation_ms": 20.898000000000025,
+  "save_publish_ms": null,
+  "human_intervention_ms": null,
+  "billed_cost_usd": null,
+  "outcomes": {
+    "baseline": "refused",
+    "candidate": "refused"
+  },
+  "checks": {},
+  "http_status": 422,
+  "response": "{\n  \"status\": \"refused\",\n  \"code\": \":mithril/invalid-app-text\",\n  \"detail\": \"summary must be 1 through 480 characters\"\n}",
+  "baseline_error": "mithril_compile_refused",
+  "candidate_error": "mithril_compile_refused",
+  "pass": false
+}

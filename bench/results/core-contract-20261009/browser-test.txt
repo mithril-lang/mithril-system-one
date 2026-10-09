@@ -1,0 +1,1583 @@
+
+> @mithril/system-one@0.1.0 test:browser
+> npm run test:browser -w examples/todo --
+
+
+> test:browser
+> playwright test
+
+[WebServer] (node:38224) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 60 tests using 3 workers
+
+(node:38247) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:38245) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:38246) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   1 [chromium] › test/todo.spec.mjs:12:1 › Enter appends trimmed titles, rejects blanks, clears input and renders safe text (14ms)
+  ✘   2 [chromium] › test/todo.spec.mjs:17:1 › IME composition does not submit a new todo or an edit (1ms)
+  ✘   3 [chromium] › test/todo.spec.mjs:8:1 › empty state, autofocus and clear button visibility (1ms)
+(node:38253) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:38259) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:38258) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   4 [chromium] › test/todo.spec.mjs:21:1 › individual completion and master state, strong counter and pluralization (1ms)
+  ✘   5 [chromium] › test/todo.spec.mjs:28:1 › master checkbox completes and reactivates all, including hidden items (1ms)
+  ✘   6 [chromium] › test/todo.spec.mjs:34:1 › editing focuses prefilled title, hides view and trims Enter save (1ms)
+(node:38270) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:38272) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:38271) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   7 [chromium] › test/todo.spec.mjs:38:1 › blur saves, Escape cancels without a later blur save (3ms)
+  ✘   9 [chromium] › test/todo.spec.mjs:42:39 › empty edited title deletes on Enter (1ms)
+  ✘   8 [chromium] › test/todo.spec.mjs:42:39 › empty edited title deletes on blur (1ms)
+(node:38277) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:38279) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  10 [chromium] › test/todo.spec.mjs:45:1 › hover exposes delete, delete preserves other tasks (1ms)
+(node:38280) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  11 [chromium] › test/todo.spec.mjs:48:1 › clear completed preserves active tasks and resets master state (1ms)
+  ✘  12 [chromium] › test/todo.spec.mjs:52:1 › all routes, selected link, live removal, reload and history (1ms)
+(node:38284) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:38285) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:38286) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  13 [chromium] › test/todo.spec.mjs:60:1 › persisted schema and completed state; editing is not persisted (1ms)
+  ✘  14 [chromium] › test/todo.spec.mjs:71:1 › legacy migration only when current key is absent; retain old key (1ms)
+  ✘  15 [chromium] › test/todo.spec.mjs:76:1 › invalid storage recovers and storage failure retains in-memory operation (2ms)
+(node:38288) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:38291) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:38292) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  16 [chromium] › test/todo.spec.mjs:80:65 › missing metrics.json fails closed with readable status (1ms)
+  ✘  17 [chromium] › test/todo.spec.mjs:80:65 › missing logic.json fails closed with readable status (1ms)
+  ✘  18 [chromium] › test/todo.spec.mjs:80:65 › missing policy.wasm fails closed with readable status (2ms)
+(node:38293) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:38296) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  19 [chromium] › test/todo.spec.mjs:83:1 › tampered policy refuses startup (1ms)
+(node:38295) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  20 [firefox] › test/todo.spec.mjs:8:1 › empty state, autofocus and clear button visibility (1ms)
+  ✘  21 [chromium] › test/todo.spec.mjs:86:1 › 100-task completion and deletion workload without browser exceptions (1ms)
+(node:38299) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  22 [firefox] › test/todo.spec.mjs:12:1 › Enter appends trimmed titles, rejects blanks, clears input and renders safe text (1ms)
+(node:38300) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:38301) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  23 [firefox] › test/todo.spec.mjs:17:1 › IME composition does not submit a new todo or an edit (1ms)
+  ✘  24 [firefox] › test/todo.spec.mjs:21:1 › individual completion and master state, strong counter and pluralization (1ms)
+(node:38302) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  25 [firefox] › test/todo.spec.mjs:28:1 › master checkbox completes and reactivates all, including hidden items (1ms)
+(node:38303) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:38304) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  26 [firefox] › test/todo.spec.mjs:34:1 › editing focuses prefilled title, hides view and trims Enter save (1ms)
+  ✘  27 [firefox] › test/todo.spec.mjs:38:1 › blur saves, Escape cancels without a later blur save (1ms)
+(node:38305) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  28 [firefox] › test/todo.spec.mjs:42:39 › empty edited title deletes on Enter (1ms)
+(node:38306) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:38307) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  29 [firefox] › test/todo.spec.mjs:42:39 › empty edited title deletes on blur (1ms)
+  ✘  30 [firefox] › test/todo.spec.mjs:45:1 › hover exposes delete, delete preserves other tasks (4ms)
+(node:38312) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:38313) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  31 [firefox] › test/todo.spec.mjs:48:1 › clear completed preserves active tasks and resets master state (1ms)
+(node:38314) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  32 [firefox] › test/todo.spec.mjs:52:1 › all routes, selected link, live removal, reload and history (1ms)
+  ✘  33 [firefox] › test/todo.spec.mjs:60:1 › persisted schema and completed state; editing is not persisted (1ms)
+(node:38316) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:38317) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  34 [firefox] › test/todo.spec.mjs:71:1 › legacy migration only when current key is absent; retain old key (1ms)
+(node:38318) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  35 [firefox] › test/todo.spec.mjs:76:1 › invalid storage recovers and storage failure retains in-memory operation (1ms)
+  ✘  36 [firefox] › test/todo.spec.mjs:80:65 › missing metrics.json fails closed with readable status (1ms)
+(node:38319) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  37 [firefox] › test/todo.spec.mjs:80:65 › missing logic.json fails closed with readable status (2ms)
+(node:38321) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:38322) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  38 [firefox] › test/todo.spec.mjs:80:65 › missing policy.wasm fails closed with readable status (2ms)
+  ✘  39 [firefox] › test/todo.spec.mjs:83:1 › tampered policy refuses startup (1ms)
+(node:38323) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  40 [firefox] › test/todo.spec.mjs:86:1 › 100-task completion and deletion workload without browser exceptions (1ms)
+(node:38325) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:38326) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  41 [webkit] › test/todo.spec.mjs:8:1 › empty state, autofocus and clear button visibility (1ms)
+  ✘  42 [webkit] › test/todo.spec.mjs:12:1 › Enter appends trimmed titles, rejects blanks, clears input and renders safe text (1ms)
+(node:38328) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  43 [webkit] › test/todo.spec.mjs:17:1 › IME composition does not submit a new todo or an edit (1ms)
+(node:38330) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:38331) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  44 [webkit] › test/todo.spec.mjs:21:1 › individual completion and master state, strong counter and pluralization (1ms)
+  ✘  45 [webkit] › test/todo.spec.mjs:28:1 › master checkbox completes and reactivates all, including hidden items (1ms)
+(node:38333) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  46 [webkit] › test/todo.spec.mjs:34:1 › editing focuses prefilled title, hides view and trims Enter save (1ms)
+(node:38334) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:38335) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  47 [webkit] › test/todo.spec.mjs:38:1 › blur saves, Escape cancels without a later blur save (1ms)
+  ✘  48 [webkit] › test/todo.spec.mjs:42:39 › empty edited title deletes on Enter (1ms)
+(node:38339) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  49 [webkit] › test/todo.spec.mjs:42:39 › empty edited title deletes on blur (1ms)
+(node:38340) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:38341) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  50 [webkit] › test/todo.spec.mjs:45:1 › hover exposes delete, delete preserves other tasks (1ms)
+  ✘  51 [webkit] › test/todo.spec.mjs:48:1 › clear completed preserves active tasks and resets master state (1ms)
+(node:38343) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  52 [webkit] › test/todo.spec.mjs:52:1 › all routes, selected link, live removal, reload and history (1ms)
+(node:38344) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:38346) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  53 [webkit] › test/todo.spec.mjs:71:1 › legacy migration only when current key is absent; retain old key (1ms)
+  ✘  54 [webkit] › test/todo.spec.mjs:60:1 › persisted schema and completed state; editing is not persisted (1ms)
+(node:38358) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  55 [webkit] › test/todo.spec.mjs:76:1 › invalid storage recovers and storage failure retains in-memory operation (1ms)
+(node:38367) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:38368) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  56 [webkit] › test/todo.spec.mjs:80:65 › missing logic.json fails closed with readable status (1ms)
+  ✘  57 [webkit] › test/todo.spec.mjs:80:65 › missing metrics.json fails closed with readable status (1ms)
+(node:38376) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  58 [webkit] › test/todo.spec.mjs:80:65 › missing policy.wasm fails closed with readable status (1ms)
+(node:38377) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:38378) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  59 [webkit] › test/todo.spec.mjs:83:1 › tampered policy refuses startup (1ms)
+  ✘  60 [webkit] › test/todo.spec.mjs:86:1 › 100-task completion and deletion workload without browser exceptions (1ms)
+
+
+  1) [chromium] › test/todo.spec.mjs:8:1 › empty state, autofocus and clear button visibility ──────
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-empty-state-autofocus-and-clear-button-visibility-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-empty-state-autofocus-and-clear-button-visibility-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-empty-state-autofocus-and-clear-button-visibility-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › test/todo.spec.mjs:12:1 › Enter appends trimmed titles, rejects blanks, clears input and renders safe text 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-Enter-appends-trimmed-aa877-input-and-renders-safe-text-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-Enter-appends-trimmed-aa877-input-and-renders-safe-text-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-Enter-appends-trimmed-aa877-input-and-renders-safe-text-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › test/todo.spec.mjs:17:1 › IME composition does not submit a new todo or an edit ──
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-IME-composition-does-not-submit-a-new-todo-or-an-edit-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-IME-composition-does-not-submit-a-new-todo-or-an-edit-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-IME-composition-does-not-submit-a-new-todo-or-an-edit-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [chromium] › test/todo.spec.mjs:21:1 › individual completion and master state, strong counter and pluralization 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-individual-completion-07824-g-counter-and-pluralization-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-individual-completion-07824-g-counter-and-pluralization-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-individual-completion-07824-g-counter-and-pluralization-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [chromium] › test/todo.spec.mjs:28:1 › master checkbox completes and reactivates all, including hidden items 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-master-checkbox-compl-26527--all-including-hidden-items-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-master-checkbox-compl-26527--all-including-hidden-items-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-master-checkbox-compl-26527--all-including-hidden-items-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) [chromium] › test/todo.spec.mjs:34:1 › editing focuses prefilled title, hides view and trims Enter save 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-editing-focuses-prefi-a0e5e-s-view-and-trims-Enter-save-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-editing-focuses-prefi-a0e5e-s-view-and-trims-Enter-save-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-editing-focuses-prefi-a0e5e-s-view-and-trims-Enter-save-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  7) [chromium] › test/todo.spec.mjs:38:1 › blur saves, Escape cancels without a later blur save ───
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-blur-saves-Escape-cancels-without-a-later-blur-save-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-blur-saves-Escape-cancels-without-a-later-blur-save-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-blur-saves-Escape-cancels-without-a-later-blur-save-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  8) [chromium] › test/todo.spec.mjs:42:39 › empty edited title deletes on Enter ───────────────────
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-empty-edited-title-deletes-on-Enter-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-empty-edited-title-deletes-on-Enter-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-empty-edited-title-deletes-on-Enter-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  9) [chromium] › test/todo.spec.mjs:42:39 › empty edited title deletes on blur ────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-empty-edited-title-deletes-on-blur-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-empty-edited-title-deletes-on-blur-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-empty-edited-title-deletes-on-blur-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  10) [chromium] › test/todo.spec.mjs:45:1 › hover exposes delete, delete preserves other tasks ────
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-hover-exposes-delete-delete-preserves-other-tasks-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-hover-exposes-delete-delete-preserves-other-tasks-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-hover-exposes-delete-delete-preserves-other-tasks-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  11) [chromium] › test/todo.spec.mjs:48:1 › clear completed preserves active tasks and resets master state 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-clear-completed-prese-6fed9-sks-and-resets-master-state-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-clear-completed-prese-6fed9-sks-and-resets-master-state-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-clear-completed-prese-6fed9-sks-and-resets-master-state-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  12) [chromium] › test/todo.spec.mjs:52:1 › all routes, selected link, live removal, reload and history 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-all-routes-selected-l-5b2ad--removal-reload-and-history-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-all-routes-selected-l-5b2ad--removal-reload-and-history-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-all-routes-selected-l-5b2ad--removal-reload-and-history-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  13) [chromium] › test/todo.spec.mjs:60:1 › persisted schema and completed state; editing is not persisted 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-persisted-schema-and--5a1b4-te-editing-is-not-persisted-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-persisted-schema-and--5a1b4-te-editing-is-not-persisted-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-persisted-schema-and--5a1b4-te-editing-is-not-persisted-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  14) [chromium] › test/todo.spec.mjs:71:1 › legacy migration only when current key is absent; retain old key 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-legacy-migration-only-74b72-ey-is-absent-retain-old-key-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-legacy-migration-only-74b72-ey-is-absent-retain-old-key-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-legacy-migration-only-74b72-ey-is-absent-retain-old-key-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  15) [chromium] › test/todo.spec.mjs:76:1 › invalid storage recovers and storage failure retains in-memory operation 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-invalid-storage-recov-a255a-retains-in-memory-operation-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-invalid-storage-recov-a255a-retains-in-memory-operation-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-invalid-storage-recov-a255a-retains-in-memory-operation-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  16) [chromium] › test/todo.spec.mjs:80:65 › missing metrics.json fails closed with readable status 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-missing-metrics-json-fails-closed-with-readable-status-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-missing-metrics-json-fails-closed-with-readable-status-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-missing-metrics-json-fails-closed-with-readable-status-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  17) [chromium] › test/todo.spec.mjs:80:65 › missing logic.json fails closed with readable status ─
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-missing-logic-json-fails-closed-with-readable-status-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-missing-logic-json-fails-closed-with-readable-status-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-missing-logic-json-fails-closed-with-readable-status-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  18) [chromium] › test/todo.spec.mjs:80:65 › missing policy.wasm fails closed with readable status 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-missing-policy-wasm-fails-closed-with-readable-status-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-missing-policy-wasm-fails-closed-with-readable-status-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-missing-policy-wasm-fails-closed-with-readable-status-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  19) [chromium] › test/todo.spec.mjs:83:1 › tampered policy refuses startup ───────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-tampered-policy-refuses-startup-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-tampered-policy-refuses-startup-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-tampered-policy-refuses-startup-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  20) [chromium] › test/todo.spec.mjs:86:1 › 100-task completion and deletion workload without browser exceptions 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/chromium_headless_shell-1243/chrome-headless-shell-mac-arm64/chrome-headless-shell
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-100-task-completion-a-3db8f--without-browser-exceptions-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-100-task-completion-a-3db8f--without-browser-exceptions-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-100-task-completion-a-3db8f--without-browser-exceptions-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  21) [firefox] › test/todo.spec.mjs:8:1 › empty state, autofocus and clear button visibility ──────
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/firefox-1543/firefox/Nightly.app/Contents/MacOS/firefox
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-empty-state-autofocus-and-clear-button-visibility-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-empty-state-autofocus-and-clear-button-visibility-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-empty-state-autofocus-and-clear-button-visibility-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  22) [firefox] › test/todo.spec.mjs:12:1 › Enter appends trimmed titles, rejects blanks, clears input and renders safe text 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/firefox-1543/firefox/Nightly.app/Contents/MacOS/firefox
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-Enter-appends-trimmed-aa877-input-and-renders-safe-text-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-Enter-appends-trimmed-aa877-input-and-renders-safe-text-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-Enter-appends-trimmed-aa877-input-and-renders-safe-text-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  23) [firefox] › test/todo.spec.mjs:17:1 › IME composition does not submit a new todo or an edit ──
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/firefox-1543/firefox/Nightly.app/Contents/MacOS/firefox
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-IME-composition-does-not-submit-a-new-todo-or-an-edit-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-IME-composition-does-not-submit-a-new-todo-or-an-edit-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-IME-composition-does-not-submit-a-new-todo-or-an-edit-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  24) [firefox] › test/todo.spec.mjs:21:1 › individual completion and master state, strong counter and pluralization 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/firefox-1543/firefox/Nightly.app/Contents/MacOS/firefox
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-individual-completion-07824-g-counter-and-pluralization-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-individual-completion-07824-g-counter-and-pluralization-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-individual-completion-07824-g-counter-and-pluralization-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  25) [firefox] › test/todo.spec.mjs:28:1 › master checkbox completes and reactivates all, including hidden items 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/firefox-1543/firefox/Nightly.app/Contents/MacOS/firefox
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-master-checkbox-compl-26527--all-including-hidden-items-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-master-checkbox-compl-26527--all-including-hidden-items-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-master-checkbox-compl-26527--all-including-hidden-items-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  26) [firefox] › test/todo.spec.mjs:34:1 › editing focuses prefilled title, hides view and trims Enter save 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/firefox-1543/firefox/Nightly.app/Contents/MacOS/firefox
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-editing-focuses-prefi-a0e5e-s-view-and-trims-Enter-save-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-editing-focuses-prefi-a0e5e-s-view-and-trims-Enter-save-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-editing-focuses-prefi-a0e5e-s-view-and-trims-Enter-save-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  27) [firefox] › test/todo.spec.mjs:38:1 › blur saves, Escape cancels without a later blur save ───
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/firefox-1543/firefox/Nightly.app/Contents/MacOS/firefox
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-blur-saves-Escape-cancels-without-a-later-blur-save-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-blur-saves-Escape-cancels-without-a-later-blur-save-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-blur-saves-Escape-cancels-without-a-later-blur-save-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  28) [firefox] › test/todo.spec.mjs:42:39 › empty edited title deletes on Enter ───────────────────
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/firefox-1543/firefox/Nightly.app/Contents/MacOS/firefox
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-empty-edited-title-deletes-on-Enter-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-empty-edited-title-deletes-on-Enter-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-empty-edited-title-deletes-on-Enter-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  29) [firefox] › test/todo.spec.mjs:42:39 › empty edited title deletes on blur ────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/firefox-1543/firefox/Nightly.app/Contents/MacOS/firefox
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-empty-edited-title-deletes-on-blur-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-empty-edited-title-deletes-on-blur-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-empty-edited-title-deletes-on-blur-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  30) [firefox] › test/todo.spec.mjs:45:1 › hover exposes delete, delete preserves other tasks ─────
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/firefox-1543/firefox/Nightly.app/Contents/MacOS/firefox
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-hover-exposes-delete-delete-preserves-other-tasks-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-hover-exposes-delete-delete-preserves-other-tasks-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-hover-exposes-delete-delete-preserves-other-tasks-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  31) [firefox] › test/todo.spec.mjs:48:1 › clear completed preserves active tasks and resets master state 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/firefox-1543/firefox/Nightly.app/Contents/MacOS/firefox
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-clear-completed-prese-6fed9-sks-and-resets-master-state-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-clear-completed-prese-6fed9-sks-and-resets-master-state-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-clear-completed-prese-6fed9-sks-and-resets-master-state-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  32) [firefox] › test/todo.spec.mjs:52:1 › all routes, selected link, live removal, reload and history 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/firefox-1543/firefox/Nightly.app/Contents/MacOS/firefox
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-all-routes-selected-l-5b2ad--removal-reload-and-history-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-all-routes-selected-l-5b2ad--removal-reload-and-history-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-all-routes-selected-l-5b2ad--removal-reload-and-history-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  33) [firefox] › test/todo.spec.mjs:60:1 › persisted schema and completed state; editing is not persisted 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/firefox-1543/firefox/Nightly.app/Contents/MacOS/firefox
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-persisted-schema-and--5a1b4-te-editing-is-not-persisted-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-persisted-schema-and--5a1b4-te-editing-is-not-persisted-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-persisted-schema-and--5a1b4-te-editing-is-not-persisted-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  34) [firefox] › test/todo.spec.mjs:71:1 › legacy migration only when current key is absent; retain old key 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/firefox-1543/firefox/Nightly.app/Contents/MacOS/firefox
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-legacy-migration-only-74b72-ey-is-absent-retain-old-key-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-legacy-migration-only-74b72-ey-is-absent-retain-old-key-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-legacy-migration-only-74b72-ey-is-absent-retain-old-key-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  35) [firefox] › test/todo.spec.mjs:76:1 › invalid storage recovers and storage failure retains in-memory operation 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/firefox-1543/firefox/Nightly.app/Contents/MacOS/firefox
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-invalid-storage-recov-a255a-retains-in-memory-operation-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-invalid-storage-recov-a255a-retains-in-memory-operation-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-invalid-storage-recov-a255a-retains-in-memory-operation-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  36) [firefox] › test/todo.spec.mjs:80:65 › missing metrics.json fails closed with readable status 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/firefox-1543/firefox/Nightly.app/Contents/MacOS/firefox
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-missing-metrics-json-fails-closed-with-readable-status-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-missing-metrics-json-fails-closed-with-readable-status-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-missing-metrics-json-fails-closed-with-readable-status-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  37) [firefox] › test/todo.spec.mjs:80:65 › missing logic.json fails closed with readable status ──
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/firefox-1543/firefox/Nightly.app/Contents/MacOS/firefox
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-missing-logic-json-fails-closed-with-readable-status-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-missing-logic-json-fails-closed-with-readable-status-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-missing-logic-json-fails-closed-with-readable-status-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  38) [firefox] › test/todo.spec.mjs:80:65 › missing policy.wasm fails closed with readable status ─
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/firefox-1543/firefox/Nightly.app/Contents/MacOS/firefox
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-missing-policy-wasm-fails-closed-with-readable-status-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-missing-policy-wasm-fails-closed-with-readable-status-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-missing-policy-wasm-fails-closed-with-readable-status-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  39) [firefox] › test/todo.spec.mjs:83:1 › tampered policy refuses startup ────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/firefox-1543/firefox/Nightly.app/Contents/MacOS/firefox
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-tampered-policy-refuses-startup-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-tampered-policy-refuses-startup-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-tampered-policy-refuses-startup-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  40) [firefox] › test/todo.spec.mjs:86:1 › 100-task completion and deletion workload without browser exceptions 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/firefox-1543/firefox/Nightly.app/Contents/MacOS/firefox
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-100-task-completion-a-3db8f--without-browser-exceptions-firefox/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-100-task-completion-a-3db8f--without-browser-exceptions-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-100-task-completion-a-3db8f--without-browser-exceptions-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  41) [webkit] › test/todo.spec.mjs:8:1 › empty state, autofocus and clear button visibility ───────
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/webkit-2359/pw_run.sh
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-empty-state-autofocus-and-clear-button-visibility-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-empty-state-autofocus-and-clear-button-visibility-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-empty-state-autofocus-and-clear-button-visibility-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  42) [webkit] › test/todo.spec.mjs:12:1 › Enter appends trimmed titles, rejects blanks, clears input and renders safe text 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/webkit-2359/pw_run.sh
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-Enter-appends-trimmed-aa877-input-and-renders-safe-text-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-Enter-appends-trimmed-aa877-input-and-renders-safe-text-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-Enter-appends-trimmed-aa877-input-and-renders-safe-text-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  43) [webkit] › test/todo.spec.mjs:17:1 › IME composition does not submit a new todo or an edit ───
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/webkit-2359/pw_run.sh
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-IME-composition-does-not-submit-a-new-todo-or-an-edit-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-IME-composition-does-not-submit-a-new-todo-or-an-edit-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-IME-composition-does-not-submit-a-new-todo-or-an-edit-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  44) [webkit] › test/todo.spec.mjs:21:1 › individual completion and master state, strong counter and pluralization 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/webkit-2359/pw_run.sh
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-individual-completion-07824-g-counter-and-pluralization-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-individual-completion-07824-g-counter-and-pluralization-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-individual-completion-07824-g-counter-and-pluralization-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  45) [webkit] › test/todo.spec.mjs:28:1 › master checkbox completes and reactivates all, including hidden items 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/webkit-2359/pw_run.sh
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-master-checkbox-compl-26527--all-including-hidden-items-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-master-checkbox-compl-26527--all-including-hidden-items-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-master-checkbox-compl-26527--all-including-hidden-items-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  46) [webkit] › test/todo.spec.mjs:34:1 › editing focuses prefilled title, hides view and trims Enter save 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/webkit-2359/pw_run.sh
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-editing-focuses-prefi-a0e5e-s-view-and-trims-Enter-save-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-editing-focuses-prefi-a0e5e-s-view-and-trims-Enter-save-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-editing-focuses-prefi-a0e5e-s-view-and-trims-Enter-save-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  47) [webkit] › test/todo.spec.mjs:38:1 › blur saves, Escape cancels without a later blur save ────
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/webkit-2359/pw_run.sh
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-blur-saves-Escape-cancels-without-a-later-blur-save-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-blur-saves-Escape-cancels-without-a-later-blur-save-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-blur-saves-Escape-cancels-without-a-later-blur-save-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  48) [webkit] › test/todo.spec.mjs:42:39 › empty edited title deletes on Enter ────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/webkit-2359/pw_run.sh
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-empty-edited-title-deletes-on-Enter-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-empty-edited-title-deletes-on-Enter-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-empty-edited-title-deletes-on-Enter-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  49) [webkit] › test/todo.spec.mjs:42:39 › empty edited title deletes on blur ─────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/webkit-2359/pw_run.sh
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-empty-edited-title-deletes-on-blur-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-empty-edited-title-deletes-on-blur-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-empty-edited-title-deletes-on-blur-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  50) [webkit] › test/todo.spec.mjs:45:1 › hover exposes delete, delete preserves other tasks ──────
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/webkit-2359/pw_run.sh
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-hover-exposes-delete-delete-preserves-other-tasks-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-hover-exposes-delete-delete-preserves-other-tasks-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-hover-exposes-delete-delete-preserves-other-tasks-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  51) [webkit] › test/todo.spec.mjs:48:1 › clear completed preserves active tasks and resets master state 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/webkit-2359/pw_run.sh
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-clear-completed-prese-6fed9-sks-and-resets-master-state-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-clear-completed-prese-6fed9-sks-and-resets-master-state-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-clear-completed-prese-6fed9-sks-and-resets-master-state-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  52) [webkit] › test/todo.spec.mjs:52:1 › all routes, selected link, live removal, reload and history 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/webkit-2359/pw_run.sh
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-all-routes-selected-l-5b2ad--removal-reload-and-history-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-all-routes-selected-l-5b2ad--removal-reload-and-history-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-all-routes-selected-l-5b2ad--removal-reload-and-history-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  53) [webkit] › test/todo.spec.mjs:60:1 › persisted schema and completed state; editing is not persisted 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/webkit-2359/pw_run.sh
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-persisted-schema-and--5a1b4-te-editing-is-not-persisted-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-persisted-schema-and--5a1b4-te-editing-is-not-persisted-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-persisted-schema-and--5a1b4-te-editing-is-not-persisted-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  54) [webkit] › test/todo.spec.mjs:71:1 › legacy migration only when current key is absent; retain old key 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/webkit-2359/pw_run.sh
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-legacy-migration-only-74b72-ey-is-absent-retain-old-key-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-legacy-migration-only-74b72-ey-is-absent-retain-old-key-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-legacy-migration-only-74b72-ey-is-absent-retain-old-key-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  55) [webkit] › test/todo.spec.mjs:76:1 › invalid storage recovers and storage failure retains in-memory operation 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/webkit-2359/pw_run.sh
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-invalid-storage-recov-a255a-retains-in-memory-operation-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-invalid-storage-recov-a255a-retains-in-memory-operation-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-invalid-storage-recov-a255a-retains-in-memory-operation-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  56) [webkit] › test/todo.spec.mjs:80:65 › missing metrics.json fails closed with readable status ─
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/webkit-2359/pw_run.sh
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-missing-metrics-json-fails-closed-with-readable-status-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-missing-metrics-json-fails-closed-with-readable-status-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-missing-metrics-json-fails-closed-with-readable-status-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  57) [webkit] › test/todo.spec.mjs:80:65 › missing logic.json fails closed with readable status ───
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/webkit-2359/pw_run.sh
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-missing-logic-json-fails-closed-with-readable-status-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-missing-logic-json-fails-closed-with-readable-status-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-missing-logic-json-fails-closed-with-readable-status-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  58) [webkit] › test/todo.spec.mjs:80:65 › missing policy.wasm fails closed with readable status ──
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/webkit-2359/pw_run.sh
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-missing-policy-wasm-fails-closed-with-readable-status-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-missing-policy-wasm-fails-closed-with-readable-status-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-missing-policy-wasm-fails-closed-with-readable-status-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  59) [webkit] › test/todo.spec.mjs:83:1 › tampered policy refuses startup ─────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/webkit-2359/pw_run.sh
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-tampered-policy-refuses-startup-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-tampered-policy-refuses-startup-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-tampered-policy-refuses-startup-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  60) [webkit] › test/todo.spec.mjs:86:1 › 100-task completion and deletion workload without browser exceptions 
+
+    Error: browserType.launch: Executable doesn't exist at /Users/junkawasaki/Library/Caches/ms-playwright/webkit-2359/pw_run.sh
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results/todo-100-task-completion-a-3db8f--without-browser-exceptions-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/todo-100-task-completion-a-3db8f--without-browser-exceptions-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/todo-100-task-completion-a-3db8f--without-browser-exceptions-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  60 failed
+    [chromium] › test/todo.spec.mjs:8:1 › empty state, autofocus and clear button visibility ───────
+    [chromium] › test/todo.spec.mjs:12:1 › Enter appends trimmed titles, rejects blanks, clears input and renders safe text 
+    [chromium] › test/todo.spec.mjs:17:1 › IME composition does not submit a new todo or an edit ───
+    [chromium] › test/todo.spec.mjs:21:1 › individual completion and master state, strong counter and pluralization 
+    [chromium] › test/todo.spec.mjs:28:1 › master checkbox completes and reactivates all, including hidden items 
+    [chromium] › test/todo.spec.mjs:34:1 › editing focuses prefilled title, hides view and trims Enter save 
+    [chromium] › test/todo.spec.mjs:38:1 › blur saves, Escape cancels without a later blur save ────
+    [chromium] › test/todo.spec.mjs:42:39 › empty edited title deletes on Enter ────────────────────
+    [chromium] › test/todo.spec.mjs:42:39 › empty edited title deletes on blur ─────────────────────
+    [chromium] › test/todo.spec.mjs:45:1 › hover exposes delete, delete preserves other tasks ──────
+    [chromium] › test/todo.spec.mjs:48:1 › clear completed preserves active tasks and resets master state 
+    [chromium] › test/todo.spec.mjs:52:1 › all routes, selected link, live removal, reload and history 
+    [chromium] › test/todo.spec.mjs:60:1 › persisted schema and completed state; editing is not persisted 
+    [chromium] › test/todo.spec.mjs:71:1 › legacy migration only when current key is absent; retain old key 
+    [chromium] › test/todo.spec.mjs:76:1 › invalid storage recovers and storage failure retains in-memory operation 
+    [chromium] › test/todo.spec.mjs:80:65 › missing metrics.json fails closed with readable status ─
+    [chromium] › test/todo.spec.mjs:80:65 › missing logic.json fails closed with readable status ───
+    [chromium] › test/todo.spec.mjs:80:65 › missing policy.wasm fails closed with readable status ──
+    [chromium] › test/todo.spec.mjs:83:1 › tampered policy refuses startup ─────────────────────────
+    [chromium] › test/todo.spec.mjs:86:1 › 100-task completion and deletion workload without browser exceptions 
+    [firefox] › test/todo.spec.mjs:8:1 › empty state, autofocus and clear button visibility ────────
+    [firefox] › test/todo.spec.mjs:12:1 › Enter appends trimmed titles, rejects blanks, clears input and renders safe text 
+    [firefox] › test/todo.spec.mjs:17:1 › IME composition does not submit a new todo or an edit ────
+    [firefox] › test/todo.spec.mjs:21:1 › individual completion and master state, strong counter and pluralization 
+    [firefox] › test/todo.spec.mjs:28:1 › master checkbox completes and reactivates all, including hidden items 
+    [firefox] › test/todo.spec.mjs:34:1 › editing focuses prefilled title, hides view and trims Enter save 
+    [firefox] › test/todo.spec.mjs:38:1 › blur saves, Escape cancels without a later blur save ─────
+    [firefox] › test/todo.spec.mjs:42:39 › empty edited title deletes on Enter ─────────────────────
+    [firefox] › test/todo.spec.mjs:42:39 › empty edited title deletes on blur ──────────────────────
+    [firefox] › test/todo.spec.mjs:45:1 › hover exposes delete, delete preserves other tasks ───────
+    [firefox] › test/todo.spec.mjs:48:1 › clear completed preserves active tasks and resets master state 
+    [firefox] › test/todo.spec.mjs:52:1 › all routes, selected link, live removal, reload and history 
+    [firefox] › test/todo.spec.mjs:60:1 › persisted schema and completed state; editing is not persisted 
+    [firefox] › test/todo.spec.mjs:71:1 › legacy migration only when current key is absent; retain old key 
+    [firefox] › test/todo.spec.mjs:76:1 › invalid storage recovers and storage failure retains in-memory operation 
+    [firefox] › test/todo.spec.mjs:80:65 › missing metrics.json fails closed with readable status ──
+    [firefox] › test/todo.spec.mjs:80:65 › missing logic.json fails closed with readable status ────
+    [firefox] › test/todo.spec.mjs:80:65 › missing policy.wasm fails closed with readable status ───
+    [firefox] › test/todo.spec.mjs:83:1 › tampered policy refuses startup ──────────────────────────
+    [firefox] › test/todo.spec.mjs:86:1 › 100-task completion and deletion workload without browser exceptions 
+    [webkit] › test/todo.spec.mjs:8:1 › empty state, autofocus and clear button visibility ─────────
+    [webkit] › test/todo.spec.mjs:12:1 › Enter appends trimmed titles, rejects blanks, clears input and renders safe text 
+    [webkit] › test/todo.spec.mjs:17:1 › IME composition does not submit a new todo or an edit ─────
+    [webkit] › test/todo.spec.mjs:21:1 › individual completion and master state, strong counter and pluralization 
+    [webkit] › test/todo.spec.mjs:28:1 › master checkbox completes and reactivates all, including hidden items 
+    [webkit] › test/todo.spec.mjs:34:1 › editing focuses prefilled title, hides view and trims Enter save 
+    [webkit] › test/todo.spec.mjs:38:1 › blur saves, Escape cancels without a later blur save ──────
+    [webkit] › test/todo.spec.mjs:42:39 › empty edited title deletes on Enter ──────────────────────
+    [webkit] › test/todo.spec.mjs:42:39 › empty edited title deletes on blur ───────────────────────
+    [webkit] › test/todo.spec.mjs:45:1 › hover exposes delete, delete preserves other tasks ────────
+    [webkit] › test/todo.spec.mjs:48:1 › clear completed preserves active tasks and resets master state 
+    [webkit] › test/todo.spec.mjs:52:1 › all routes, selected link, live removal, reload and history 
+    [webkit] › test/todo.spec.mjs:60:1 › persisted schema and completed state; editing is not persisted 
+    [webkit] › test/todo.spec.mjs:71:1 › legacy migration only when current key is absent; retain old key 
+    [webkit] › test/todo.spec.mjs:76:1 › invalid storage recovers and storage failure retains in-memory operation 
+    [webkit] › test/todo.spec.mjs:80:65 › missing metrics.json fails closed with readable status ───
+    [webkit] › test/todo.spec.mjs:80:65 › missing logic.json fails closed with readable status ─────
+    [webkit] › test/todo.spec.mjs:80:65 › missing policy.wasm fails closed with readable status ────
+    [webkit] › test/todo.spec.mjs:83:1 › tampered policy refuses startup ───────────────────────────
+    [webkit] › test/todo.spec.mjs:86:1 › 100-task completion and deletion workload without browser exceptions 
+npm error Lifecycle script `test:browser` failed with error:
+npm error code 1
+npm error path /Users/junkawasaki/Documents/Codex/2026-10-09/task-3/mithril-system-one/examples/todo
+npm error workspace mithril-todomvc
+npm error location /Users/junkawasaki/Documents/Codex/2026-10-09/task-3/mithril-system-one/examples/todo
+npm error command failed
+npm error command sh -c playwright test

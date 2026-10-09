@@ -1,0 +1,110 @@
+
+> @mithril/system-one@0.1.0 test
+> node --test test/*.test.mjs && npm test -w examples/todo
+
+✔ rotates order and preflights identical per-arm task/round counts (1.82275ms)
+✔ all three arms use the same content and compiler contract; no compiler credentials (9.831583ms)
+✔ semantically admitted wrong content fails and metered failed proposals are retained (0.763625ms)
+✔ uncertain outcome does not retry or echo transport credentials (0.324875ms)
+✔ cost remains unknown without invoices and successes never hide failures (0.632917ms)
+✔ planning is no-network and oversized call budgets stop before credential access (245.64775ms)
+✔ optimized fields control is explicit and must consume its own budget (0.253125ms)
+✔ settled cost joins require complete matching request IDs, retain failed charges and reject duplicates (0.837375ms)
+✔ CLI rejects invalid arguments before any network access (100.815667ms)
+✔ CLI rejects oversized or missing goals without echoing input (464.406833ms)
+✔ CLI requires explicit Mithril credentials and never prints them (165.64575ms)
+✔ lockfile extraction uses exact locked versions, scoped names, duplicates and evidence (2.083834ms)
+✔ OSV summaries are resolved to full details and 429 never becomes empty success (57.553542ms)
+✔ Knowledge KEV/EPSS/CVE identity and stable snapshot are checked; outages retain unknown (2.550583ms)
+✔ OSV microsecond summary can pin nanosecond detail but changed revisions stay unknown (0.421209ms)
+✔ dataset pins preserve independent data; unverified 404 and identity mismatch stay unknown (22.726209ms)
+✔ duplicate lockfile keys retain an invalid-inventory gap rather than choosing a version (0.628625ms)
+✔ same-major fixed hints selected and script never supplied to resolver (1.953667ms)
+✔ major jumps, incomplete assessment, transitive-only and custom dependency sources refuse (0.373834ms)
+✔ hash mismatch and registry bypass rejected (0.295458ms)
+✔ resolved mismatch or new findings blocks patch output (0.33925ms)
+✔ local apply requires clean Git files and matching base, writes two files without commit (734.758458ms)
+✔ manifest/lock identity mismatch and duplicate keys refuse before resolver (0.605833ms)
+✔ exclusive apply blocks concurrent calls and leaves no recovery state on success (489.511459ms)
+✔ interrupted half-write and fully-written but unfinalized transactions recover original pair (581.686042ms)
+✔ operator changes refuse recovery without partially restoring another file (382.6875ms)
+✔ active owner and altered journal or Git HEAD refuse recovery (682.58125ms)
+✔ CLI apply preflight rejects dirty project before inventory/feed evaluation (325.835958ms)
+✔ recovery CLI restores journal-backed partial write with no input/feed/model calls (327.528166ms)
+✔ second file replacement failure rolls back first and removes journal (283.421ms)
+✔ equal task weighting differs from pooled attempt success, and costs cannot be guessed (1.121541ms)
+✔ an incomplete task group cannot become a complete benchmark score (0.100917ms)
+✔ known failed deadlines stay in averages and missing invoices prevent cost-per-task claims (0.113625ms)
+✔ duplicate or foreign attempt identities cannot silently inflate a score (0.246417ms)
+✔ typed proposal is independently checked, emitted deterministically and records actual Mithril identity (71.47725ms)
+✔ wrong semantics, extra keys, code injection, recursive calls and excessive depth cannot become verified source (0.414083ms)
+✔ upstream failure never retries, substitutes templates or echoes credentials (0.639958ms)
+✔ failed proposal has a bounded caller receipt, without credentials or a verified fallback (2.661083ms)
+✔ task states callable predicate grammar in both token and server-owned session contexts (5.56025ms)
+✔ escaped duplicate keys are refused while independent objects and primitives parse (2.017583ms)
+✔ deep and oversized input are refused (0.348ms)
+✔ invalid source and edit instructions stop before external execution (3.386292ms)
+✔ ordinary reference detects invalid inputs and recovers after removal (0.374333ms)
+✔ model proposal is not retried or silently replaced by catalog planner (64.187792ms)
+✔ workflow preflights the entire task set before any external effect (1.220167ms)
+✔ failed or unknown task stops workflow and never retries (0.150541ms)
+✔ real compiler fixture binds Mithril source, canonical artifact and semantic receipts; auth stays at inference (53.075125ms)
+✔ unknown choices, extra effects and source injection cannot enter Mithril emission (0.376ms)
+✔ a missing semantic stage or mismatched graph cannot be claimed as compiled; no fallback or retry (1.359916ms)
+✔ inference and compiler refuse redirects without following them or retrying (0.532875ms)
+✔ missing or malformed matching digests and invalid response shapes fail closed (5.291125ms)
+✔ all original task ontology plans preserve content, derive shape and repair approved bindings (6.790792ms)
+✔ refactor compacts only whitespace outside strings and preserves escaped text (0.757416ms)
+✔ verifier rejects output drift and entire-IR semantic changes during refactor (0.689583ms)
+✔ model operations cannot execute source, unknown tools or extra keys (0.134875ms)
+✔ ordinary renderer and Mithril renderer agree on hostile text without scripts (0.13925ms)
+✔ initial authentication refusal cannot count as a successful ontology repair (59.550792ms)
+✔ unknown transport outcome stops loop before applying or resubmitting (0.416958ms)
+✔ known malformed model proposal retains usage and diagnostics without a second inference call (1.228041ms)
+✔ published task pack matches executable contracts and initial sources (11.669334ms)
+✔ reviewed source manifest binds every extracted file to published bytes (14.069625ms)
+✔ AST extractor keeps direct CLI inputs, unknown flows and shadowed imports distinct (5.800334ms)
+✔ public acquisition verifies visibility, immutable commit and each blob without executing source (48.987208ms)
+✔ MCP native handshake lists the review tool and refuses unsupported arguments (122.249375ms)
+✔ TypeScript, CommonJS, namespace imports and immutable CLI aliases preserve policy facts (13.0465ms)
+✔ reject malformed or unbounded facts and invented source locations before execution (2.648292ms)
+✔ unknown facts never become graph evidence of a missing authorization (0.212875ms)
+✔ inference transport uncertainty stops after one attempt and does not evaluate (75.138ms)
+✔ negative cases require the compiler contract refusal, not auth or infrastructure failure (51.46325ms)
+✔ transport uncertainty stays unscored and cannot trigger a retry (0.297084ms)
+✔ oversized repetition budget is refused before live access (0.329292ms)
+✔ typed lowering is deterministic and preserves parameter contracts and source provenance (25.290583ms)
+✔ conditional refactor, logical operators, filter captures and parameter shadowing (5.163709ms)
+✔ JavaScript requires explicit parameter contracts (0.8045ms)
+✔ reject side effects, free variables, unsafe calls, unsupported syntax and dishonest contracts (15.84075ms)
+✔ source and expression budgets are enforced before compilation (0.2935ms)
+✔ links candidates to exact source positions without disclosing raw clauses (5.240458ms)
+✔ negation, no signals and unsupported language never become safe (0.502ms)
+✔ Japanese rules and whole-document change detection (1.514709ms)
+✔ tampered hashes, private URL parameters, invalid dates and extra fields refuse (0.530583ms)
+✔ contextual risk records must cite the exact imported source span (0.356458ms)
+✔ candidate floods are bounded with an explicit coverage gap (4.255958ms)
+✔ workflow bounds tasks and returns no partial output when a later task refuses (95.354417ms)
+ℹ tests 83
+ℹ suites 0
+ℹ pass 83
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3226.29375
+
+> test
+> node --test test/core.test.mjs
+
+✔ generated toggle and all 511 completion vectors length 0–8 (3.157541ms)
+✔ rejects malformed completion inputs (0.252209ms)
+✔ standalone runtime assets and policy digest match the recorded generation (1.402334ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 113.786958
