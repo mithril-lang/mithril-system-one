@@ -1,0 +1,21 @@
+{
+  "kind": "deliberate-active-interruption-probe",
+  "planned_tasks": 2,
+  "attempted_tasks": 1,
+  "successful_tasks": 0,
+  "interrupted_tasks": 1,
+  "missing_tasks": 1,
+  "complete": false,
+  "automatic_retries": 0,
+  "continued": false,
+  "error": "dynamic_runtime_failed",
+  "stats": {
+    "runtime_processes": 1,
+    "requests": 1,
+    "result_cache_hits": 0
+  },
+  "seconds": 0.032203999999999997,
+  "inference_calls": 0,
+  "billed_cost_usd": null,
+  "human_seconds": null
+}

@@ -7,8 +7,8 @@
         (map? v) (into {} (map (fn [[k x]] [(safe-json k) (safe-json x)]) v))
         (or (sequential? v) (set? v)) (mapv safe-json v)
         :else v))
-(let [input (js->clj (js/JSON.parse (.readFileSync fs 0 "utf8")) :keywordize-keys true)
-      results (mapv
+(defn execute-batches [input]
+  (mapv
                (fn [{:keys [source cases]}]
                  (let [artifact (compiler/compile-ontology-text "candidate.mith" source)]
                    {:graph-digest (:graph-digest artifact)
@@ -16,5 +16,17 @@
                                    (let [r (reason/reason artifact (reason/parse-data "state.nq" data) {})]
                                      {:id id :status (:status r) :types (:types r)
                                       :violations (:violations r) :counts (:counts r)
-                                      :consistent (:consistent? r)})) cases)})) (:batches input))]
-  (println (js/JSON.stringify (clj->js (safe-json results)))))
+                                      :consistent (:consistent? r)})) cases)})) (:batches input)))
+(defn json [v] (js/JSON.stringify (clj->js (safe-json v))))
+(if (some #{"--worker"} *command-line-args*)
+  (let [lines (.createInterface (js/require "node:readline")
+                               #js {:input js/process.stdin :crlfDelay js/Infinity})]
+    (.on lines "line"
+         (fn [line]
+           (try
+             (let [input (js->clj (js/JSON.parse line) :keywordize-keys true)]
+               (println (json {:id (:id input) :results (execute-batches input)})))
+             (catch :default _
+               (println (json {:error "dynamic_runtime_failed"})))))))
+  (let [input (js->clj (js/JSON.parse (.readFileSync fs 0 "utf8")) :keywordize-keys true)]
+    (println (json (execute-batches input)))))

@@ -1,0 +1,481 @@
+{
+  "started": "2026-10-09T08:58:04.113Z",
+  "finished": "2026-10-09T09:01:20.170Z",
+  "experiment_wall_seconds": 196.052791709,
+  "complete": true,
+  "planned": 90,
+  "observed": 90,
+  "missing": 0,
+  "stopped": null,
+  "successes": 90,
+  "retries": 0,
+  "inference_calls": 0,
+  "measured_api_tokens": 0,
+  "billed_cost_usd": null,
+  "human_seconds": null,
+  "prewarm_seconds": 57.36022641600005,
+  "prewarms": [
+    {
+      "round": 0,
+      "partition": "development",
+      "task": "dynamic-repair-inheritance",
+      "seconds": 7.2990309579999995
+    },
+    {
+      "round": 0,
+      "partition": "development",
+      "task": "dynamic-repair-validation",
+      "seconds": 7.677906999999996
+    },
+    {
+      "round": 0,
+      "partition": "development",
+      "task": "dynamic-refactor",
+      "seconds": 7.380297833000004
+    },
+    {
+      "round": 0,
+      "partition": "holdout",
+      "task": "holdout-0",
+      "seconds": 2.444927041000003
+    },
+    {
+      "round": 0,
+      "partition": "holdout",
+      "task": "holdout-1",
+      "seconds": 2.0868862500000103
+    },
+    {
+      "round": 0,
+      "partition": "holdout",
+      "task": "holdout-2",
+      "seconds": 1.9930219999999972
+    },
+    {
+      "round": 1,
+      "partition": "development",
+      "task": "dynamic-repair-inheritance",
+      "seconds": 2.271730500000005
+    },
+    {
+      "round": 1,
+      "partition": "development",
+      "task": "dynamic-repair-validation",
+      "seconds": 2.755075416000007
+    },
+    {
+      "round": 1,
+      "partition": "development",
+      "task": "dynamic-refactor",
+      "seconds": 2.642338791999995
+    },
+    {
+      "round": 1,
+      "partition": "holdout",
+      "task": "holdout-0",
+      "seconds": 1.8975072090000031
+    },
+    {
+      "round": 1,
+      "partition": "holdout",
+      "task": "holdout-1",
+      "seconds": 2.4493083330000225
+    },
+    {
+      "round": 1,
+      "partition": "holdout",
+      "task": "holdout-2",
+      "seconds": 3.7818819169999913
+    },
+    {
+      "round": 2,
+      "partition": "development",
+      "task": "dynamic-repair-inheritance",
+      "seconds": 1.7440768340000068
+    },
+    {
+      "round": 2,
+      "partition": "development",
+      "task": "dynamic-repair-validation",
+      "seconds": 2.650063999999984
+    },
+    {
+      "round": 2,
+      "partition": "development",
+      "task": "dynamic-refactor",
+      "seconds": 2.3637713750000113
+    },
+    {
+      "round": 2,
+      "partition": "holdout",
+      "task": "holdout-0",
+      "seconds": 2.0792483749999957
+    },
+    {
+      "round": 2,
+      "partition": "holdout",
+      "task": "holdout-1",
+      "seconds": 1.8998021250000166
+    },
+    {
+      "round": 2,
+      "partition": "holdout",
+      "task": "holdout-2",
+      "seconds": 1.9433504580000007
+    }
+  ],
+  "session_rows": [
+    {
+      "round": 0,
+      "partition": "development",
+      "arm": "fresh",
+      "seconds": 6.698033833,
+      "runtime_processes": 3
+    },
+    {
+      "round": 0,
+      "partition": "development",
+      "arm": "reuse-sequential",
+      "seconds": 4.878917499999999,
+      "runtime_processes": 1
+    },
+    {
+      "round": 0,
+      "partition": "development",
+      "arm": "reuse-parallel",
+      "seconds": 3.697825791000001,
+      "runtime_processes": 1
+    },
+    {
+      "round": 0,
+      "partition": "development",
+      "arm": "batch-control",
+      "seconds": 8.958000834,
+      "runtime_processes": 1
+    },
+    {
+      "round": 0,
+      "partition": "development",
+      "arm": "warm-cache-control",
+      "seconds": 0.17037679100000241,
+      "runtime_processes": 0
+    },
+    {
+      "round": 0,
+      "partition": "holdout",
+      "arm": "fresh",
+      "seconds": 18.630601542000004,
+      "runtime_processes": 3
+    },
+    {
+      "round": 0,
+      "partition": "holdout",
+      "arm": "reuse-sequential",
+      "seconds": 9.152923874999994,
+      "runtime_processes": 1
+    },
+    {
+      "round": 0,
+      "partition": "holdout",
+      "arm": "reuse-parallel",
+      "seconds": 6.347746457999994,
+      "runtime_processes": 1
+    },
+    {
+      "round": 0,
+      "partition": "holdout",
+      "arm": "batch-control",
+      "seconds": 4.33775275,
+      "runtime_processes": 1
+    },
+    {
+      "round": 0,
+      "partition": "holdout",
+      "arm": "warm-cache-control",
+      "seconds": 0.12719495800000732,
+      "runtime_processes": 0
+    },
+    {
+      "round": 1,
+      "partition": "development",
+      "arm": "reuse-sequential",
+      "seconds": 3.846836041999995,
+      "runtime_processes": 1
+    },
+    {
+      "round": 1,
+      "partition": "development",
+      "arm": "reuse-parallel",
+      "seconds": 3.2935434580000003,
+      "runtime_processes": 1
+    },
+    {
+      "round": 1,
+      "partition": "development",
+      "arm": "batch-control",
+      "seconds": 3.343539250000002,
+      "runtime_processes": 1
+    },
+    {
+      "round": 1,
+      "partition": "development",
+      "arm": "warm-cache-control",
+      "seconds": 0.14564620800000558,
+      "runtime_processes": 0
+    },
+    {
+      "round": 1,
+      "partition": "development",
+      "arm": "fresh",
+      "seconds": 8.698929292,
+      "runtime_processes": 3
+    },
+    {
+      "round": 1,
+      "partition": "holdout",
+      "arm": "reuse-sequential",
+      "seconds": 5.454960625000007,
+      "runtime_processes": 1
+    },
+    {
+      "round": 1,
+      "partition": "holdout",
+      "arm": "reuse-parallel",
+      "seconds": 3.081570584000001,
+      "runtime_processes": 1
+    },
+    {
+      "round": 1,
+      "partition": "holdout",
+      "arm": "batch-control",
+      "seconds": 4.478433708000011,
+      "runtime_processes": 1
+    },
+    {
+      "round": 1,
+      "partition": "holdout",
+      "arm": "warm-cache-control",
+      "seconds": 0.21229516599999623,
+      "runtime_processes": 0
+    },
+    {
+      "round": 1,
+      "partition": "holdout",
+      "arm": "fresh",
+      "seconds": 7.424022583000013,
+      "runtime_processes": 3
+    },
+    {
+      "round": 2,
+      "partition": "development",
+      "arm": "reuse-parallel",
+      "seconds": 3.068268624999997,
+      "runtime_processes": 1
+    },
+    {
+      "round": 2,
+      "partition": "development",
+      "arm": "batch-control",
+      "seconds": 2.6313106250000127,
+      "runtime_processes": 1
+    },
+    {
+      "round": 2,
+      "partition": "development",
+      "arm": "warm-cache-control",
+      "seconds": 0.39092620899999747,
+      "runtime_processes": 0
+    },
+    {
+      "round": 2,
+      "partition": "development",
+      "arm": "fresh",
+      "seconds": 6.706265333000018,
+      "runtime_processes": 3
+    },
+    {
+      "round": 2,
+      "partition": "development",
+      "arm": "reuse-sequential",
+      "seconds": 4.4650519579999965,
+      "runtime_processes": 1
+    },
+    {
+      "round": 2,
+      "partition": "holdout",
+      "arm": "reuse-parallel",
+      "seconds": 3.4490224589999996,
+      "runtime_processes": 1
+    },
+    {
+      "round": 2,
+      "partition": "holdout",
+      "arm": "batch-control",
+      "seconds": 3.340388249999989,
+      "runtime_processes": 1
+    },
+    {
+      "round": 2,
+      "partition": "holdout",
+      "arm": "warm-cache-control",
+      "seconds": 0.11729483299999265,
+      "runtime_processes": 0
+    },
+    {
+      "round": 2,
+      "partition": "holdout",
+      "arm": "fresh",
+      "seconds": 5.946714375000011,
+      "runtime_processes": 3
+    },
+    {
+      "round": 2,
+      "partition": "holdout",
+      "arm": "reuse-sequential",
+      "seconds": 2.894796207999985,
+      "runtime_processes": 1
+    }
+  ],
+  "arms": {
+    "fresh": {
+      "all_task_seconds": {
+        "n": 18,
+        "p50": 2.5978155835,
+        "p95": 6.324156758000002
+      },
+      "development": {
+        "n": 9,
+        "p50": 2.696918584,
+        "p95": 3.0860201420000086
+      },
+      "holdout": {
+        "n": 9,
+        "p50": 2.414928083000006,
+        "p95": 6.954055283000002
+      },
+      "warm_request_seconds": {
+        "n": 12,
+        "p50": 2.5978155835,
+        "p95": 5.502717541700004
+      },
+      "three_task_session_seconds": {
+        "n": 6,
+        "p50": 7.065143958000015,
+        "p95": 16.147683479500003
+      },
+      "result_cache_hits": 0
+    },
+    "reuse-sequential": {
+      "all_task_seconds": {
+        "n": 18,
+        "p50": 1.3386006664999912,
+        "p95": 3.323714604399997
+      },
+      "development": {
+        "n": 9,
+        "p50": 0.9746518750000105,
+        "p95": 2.801990192000008
+      },
+      "holdout": {
+        "n": 9,
+        "p50": 1.8516428330000054,
+        "p95": 4.143712958400006
+      },
+      "warm_request_seconds": {
+        "n": 12,
+        "p50": 0.9168585415000052,
+        "p95": 2.099505747550012
+      },
+      "three_task_session_seconds": {
+        "n": 6,
+        "p50": 4.671984728999998,
+        "p95": 8.228433062499997
+      },
+      "result_cache_hits": 0
+    },
+    "reuse-parallel": {
+      "all_task_seconds": {
+        "n": 18,
+        "p50": 0.9993438329999991,
+        "p95": 2.411793528549999
+      },
+      "development": {
+        "n": 9,
+        "p50": 0.6958171669999993,
+        "p95": 2.103630207799996
+      },
+      "holdout": {
+        "n": 9,
+        "p50": 1.1094954159999906,
+        "p95": 3.0828611248000137
+      },
+      "warm_request_seconds": {
+        "n": 12,
+        "p50": 0.746880228999995,
+        "p95": 1.1786136911499954
+      },
+      "three_task_session_seconds": {
+        "n": 6,
+        "p50": 3.3712829585,
+        "p95": 5.685266291249996
+      },
+      "result_cache_hits": 0
+    },
+    "batch-control": {
+      "all_task_seconds": {
+        "n": 18,
+        "p50": 3.8403313335000053,
+        "p95": 8.957196789250002
+      },
+      "development": {
+        "n": 9,
+        "p50": 3.3433859169999924,
+        "p95": 8.957617033000002
+      },
+      "holdout": {
+        "n": 9,
+        "p50": 4.3372847080000065,
+        "p95": 4.478366425000012
+      },
+      "warm_request_seconds": {
+        "n": 12,
+        "p50": 3.840410937500004,
+        "p95": 8.957476951750001
+      },
+      "three_task_session_seconds": {
+        "n": 6,
+        "p50": 3.840646000000001,
+        "p95": 7.838109052500003
+      },
+      "result_cache_hits": 0
+    },
+    "warm-cache-control": {
+      "all_task_seconds": {
+        "n": 18,
+        "p50": 0.04834570849999727,
+        "p95": 0.1241183607499956
+      },
+      "development": {
+        "n": 9,
+        "p50": 0.04894054199999664,
+        "p95": 0.21110917519999484
+      },
+      "holdout": {
+        "n": 9,
+        "p50": 0.04204504199999792,
+        "p95": 0.08283670019999845
+      },
+      "warm_request_seconds": {
+        "n": 12,
+        "p50": 0.045484625500001125,
+        "p95": 0.07364892515000063
+      },
+      "three_task_session_seconds": {
+        "n": 6,
+        "p50": 0.15801149950000398,
+        "p95": 0.34626844824999714
+      },
+      "result_cache_hits": 18
+    }
+  }
+}

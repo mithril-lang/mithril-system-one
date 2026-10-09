@@ -1,0 +1,15 @@
+{
+  "discovery-baseline.json": "2a0464a9bf240ada23a7dc64cf02216f990d8bf0419190dbca5eeb12bdb174f7",
+  "interruption-probe.json": "6017592234cf0707e2a34843c1ba408627e6105ffd0cdaccca04393a28a47e7c",
+  "report.md": "a8901bc481f6a48e654160a23b50409f18f86985def330d21392099972aed254",
+  "protocol.md": "470ab36e921e64153b20b36d3de078f83fb5c5d63ae0902c42412aab0cab235d",
+  "comparison-1/summary.json": "9cd56553de61432ec2a5f1d08018f4d4a9de2e8123dc66c313e4a2904ca1cda8",
+  "comparison-1/plan.json": "837b019c5afbb93a95c2c1fd2c652517c66426ba2411b6fd22ff7e059eff5ce3",
+  "comparison-1/rows.json": "bdb4a6af8dc261fe16402e303102284c59bc8c827df8480704e840de92eb7123",
+  "comparison-final/plan.json": "11ff7560f591e493fb1b82bfa30d40275d06411c3dbb7e909be0486c170816a3",
+  "comparison-final/termination.json": "2dcea16a5e3106ab0ac94a0018476bf8f0d317d647f93bce49539be83343bef5",
+  "comparison-final/rows.json": "f3206492ade270d5d45227b330ceaa86f8e09f589c62bc7632baff805b4d9cec",
+  "comparison-final-2/summary.json": "281c5c56ba4cf1a1f83aab27b262ce10bb90f75ad9c54f27af2b4d7de7a939d4",
+  "comparison-final-2/plan.json": "b60effa214c0360d20cbe76a1c693b9f1bd3515c41a40b7ef1bb352c2918721f",
+  "comparison-final-2/rows.json": "a405693109a4e1e127e515f186058d8002b3e6cd405659f65841bbd5420f2750"
+}

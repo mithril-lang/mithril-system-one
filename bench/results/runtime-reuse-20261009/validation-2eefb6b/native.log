@@ -1,0 +1,25 @@
+
+> @mithril/system-one@0.1.0 test:dynamic
+> node --test test/dynamic-runtime.integration.mjs test/registry-runtime.integration.mjs test/dynamic-session.integration.mjs
+
+✔ dynamic-repair-inheritance executes actual compiler/reasoner over eleven changing inputs (2072.963916ms)
+✔ dynamic-repair-validation executes actual compiler/reasoner over eleven changing inputs (1699.725541ms)
+✔ dynamic-refactor executes actual compiler/reasoner over eleven changing inputs (1706.538459ms)
+✔ independent verifier rejects missing inheritance, weaker validation, stale snapshots and wrong order (2027.736917ms)
+✔ terminal stdio agent exposes real dynamic refactor (1480.714542ms)
+✔ scoped reuse exactly matches fresh compilation across changing namespaces and retracts (6516.154166ms)
+✔ compiler refusal closes worker, with no retry or cached fallback (1111.335375ms)
+✔ closing during attestation never launches a late worker (25.704208ms)
+✔ workflow shares one real compiler process and preserves per-task gates (2168.791708ms)
+✔ request bounds and concurrent calls fail before launching extra processes (26.714166ms)
+✔ interrupting active compilation closes the process and refuses continuation (29.866917ms)
+✔ actual MCP lifecycle, catalog, refusal and dynamic compilation (2192.458042ms)
+✔ real workflow shares dynamic compiler and stops only after 3 verified tasks (2855.139292ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 9924.107125
