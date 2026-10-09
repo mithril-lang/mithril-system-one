@@ -45,6 +45,9 @@ if (Object.values(lock.packages).some(p => p.hasInstallScript) ||
 const npmrc = resolve(output, 'public-npmrc');
 writeFileSync(npmrc, 'ignore-scripts=true\n');
 const childEnvironment = { ...process.env, npm_config_userconfig: npmrc, npm_config_ignore_scripts: 'true' };
+delete childEnvironment.npm_config_allow_scripts;
+delete childEnvironment.NPM_CONFIG_ALLOW_SCRIPTS;
+delete childEnvironment.NPM_CONFIG_USERCONFIG;
 const commands = [
   ['dependencies', 'npm', ['ci']],
   ['browser-runtime', 'npx', ['playwright', 'install', '--with-deps', 'chromium', 'firefox', 'webkit']],
