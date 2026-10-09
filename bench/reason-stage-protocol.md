@@ -1,0 +1,21 @@
+# Reason stage experiment (Air, 2026-10-09)
+
+This follows the scoped runtime and pin-check experiments in draft PRs #18 and #20. No inference, deployment, Actions dispatch or merge is required. Elapsed durations are not CPU time. Cost and human review time remain unmeasured, not zero.
+
+## First measurement and hypotheses
+
+A six-request diagnostic used the existing fixed three representative and three boundary inputs, including before/after ontologies and eleven states each. Every receipt matched fresh one-shot compilation and the independent ordinary-result oracle. Representative / boundary median elapsed stages were: data parse 5.452 / 4.655 ms, reason engine 341.458 / 315.983 ms, ontology preparation 83.671 / 74.983 ms, nested quad decode 68.369 / 62.032 ms, entail 197.322 / 182.080 ms, SHACL 9.371 / 8.740 ms. Separate medians do not add to the median total. These six measurements were made on an uncommitted instrumented prototype, with its hashes retained; they are not measurements of the previous commit.
+
+One implementation hypothesis is tested: repeated pure JSON-LD-to-quads conversion of the exact same immutable compiled artifact can be reused within its one batch. Each newly compiled batch owns its cache, which is discarded before the next batch/request. Compilation, artifact-format checks, OWL capability classification, shape compilation, full entailment, and SHACL validation still execute for every applicable input. No result, data, rule-subset or ontology-validation cache is introduced. A second hypothesis, parser reuse, is rejected before implementation because its measured ceiling is under 2% of engine time. Full compiled-ontology caching or a reduced entailment ruleset would remove existing validation/semantics and is outside this experiment.
+
+Instrumentation initially double-counted recursive oak/entail arities; those stage numbers are invalid and retained separately. An outer-phase guard corrects the measurement. An initial cache prototype failed ClojureScript nested shorthand parsing; that failed regression log is retained. Neither failure is counted as success.
+
+## Protocol and stop conditions
+
+Run `node bench/reason-stage-pairs.mjs --run-local NEW_OUTPUT_DIR` from a clean checkout with the pinned dynamic runtime available. The script stores source hashes and the frozen existing six inputs before any execution. Two rounds run baseline/candidate then candidate/baseline for each partition: 24 requests, four three-task sessions per arm. Both arms use the same four fresh parallel Git checks, scoped worker reuse and timed handshake. The candidate is `reasonPlan: 'ontology-quads'`; the trusted baseline control is `reasonPlan: 'baseline'`. Default scoped execution uses the candidate; one-shot execution retains the original path.
+
+A single 60-second sampled preflight requires load1 <= 8 and load5 <= 10 on this ten-CPU Air. The script stops between requests if load1 > 12, records missing rows and never retries to seek a favourable sample. All receipts must match between arms and the independent oracle. Every request must compile twice and prepare/reason/entail for every case. Baseline decode misses equal case count; candidate has two misses and remaining hits. Result-cache hits remain zero.
+
+`reason_seconds` preserves its previous meaning (data parse + engine). `ontology_decode_seconds` is nested in `ontology_prepare_seconds`; do not add it to engine phases again. Exclusive engine phases are preparation, entail, schema, SHACL and residual. Residual transport includes JSON, IPC, scheduler waits and bookkeeping. Cold-only startup reports ordinal-one requests; warm startup zeros are not used as cold samples. Session duration includes row-file writes, consistently in both arms. Profiling is opt-in and startup plus reply share one real 30-second deadline.
+
+Results and exact-revision local regressions are published with the new draft PR. Existing default local-CI disk failures and earlier experiments remain unchanged. A single small AB/BA run cannot certify a global stable speedup, 100x progress, real billing savings or human-time savings. Do not extend to paid model generation without explicit approval and a concrete bounded plan.

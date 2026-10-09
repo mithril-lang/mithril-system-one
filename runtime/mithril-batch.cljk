@@ -1,16 +1,52 @@
 (ns system-one.dynamic
   (:require [mithril.compiler :as compiler]
-            [mithril.reason :as reason]))
+            [mithril.reason :as reason]
+            [oak.semantic :as oak]
+            [mithril.shacl :as shacl]))
 (def fs (js/require "fs"))
 (defn safe-json [v]
   (cond (keyword? v) (name v)
         (map? v) (into {} (map (fn [[k x]] [(safe-json k) (safe-json x)]) v))
         (or (sequential? v) (set? v)) (mapv safe-json v)
         :else v))
+(def reuse-ontology? (some #{"--reuse-ontology-quads"} *command-line-args*))
 (defn measured [times key f]
   (if times
-    (let [start (.now js/performance) result (f)]
-      (swap! times update key + (/ (- (.now js/performance) start) 1000)) result)
+    (let [start (.now js/performance)]
+      (when-let [calls ({:compile_seconds :compile_calls :reason_seconds :reason_calls
+                         :ontology_prepare_seconds :ontology_prepare_calls :entail_seconds :entail_calls} key)]
+        (swap! times update calls inc))
+      (try (f) (finally (swap! times update key + (/ (- (.now js/performance) start) 1000)))))
+    (f)))
+(defn reason-stage [times active key f]
+  ;; oak/entail is recursive; inner calls belong to their outer phase.
+  (if @active (f)
+    (do (reset! active key)
+        (try (measured times key f) (finally (reset! active nil))))))
+(defn traced-reason [artifact data times]
+  (if times
+    (let [active (atom nil) prepare reason/compile-ontology entail oak/entail
+          schema reason/schema-closure validate shacl/validate decode compiler/ontology-quads]
+      (with-redefs [compiler/ontology-quads (fn [& args] (measured times :ontology_decode_seconds #(apply decode args)))
+                    reason/compile-ontology (fn [& args] (reason-stage times active :ontology_prepare_seconds #(apply prepare args)))
+                    oak/entail (fn [& args] (reason-stage times active :entail_seconds #(apply entail args)))
+                    reason/schema-closure (fn [& args] (reason-stage times active :schema_seconds #(apply schema args)))
+                    shacl/validate (fn [& args] (reason-stage times active :shacl_seconds #(apply validate args)))]
+        (measured times :reason_engine_seconds #(reason/reason artifact data {}))))
+    (reason/reason artifact data {})))
+(defn with-batch-quads [artifact times f]
+  (if (or reuse-ontology? times)
+    (let [decode compiler/ontology-quads empty-value (js-obj) cached (atom empty-value)]
+      (with-redefs [compiler/ontology-quads
+                    (fn [actual]
+                      (if (and reuse-ontology? (identical? actual artifact)
+                               (not (identical? @cached empty-value)))
+                        (do (when times (swap! times update :ontology_decode_hits inc)) @cached)
+                        (let [result (vec (decode actual))]
+                          (when times (swap! times update :ontology_decode_misses inc))
+                          (when (and reuse-ontology? (identical? actual artifact)) (reset! cached result))
+                          result)))]
+        (f)))
     (f)))
 (defn execute-batches [input times]
   (mapv
@@ -18,12 +54,13 @@
      (let [artifact (measured times :compile_seconds
                              #(compiler/compile-ontology-text "candidate.mith" source))]
        {:graph-digest (:graph-digest artifact)
-        :cases (mapv (fn [{:keys [id data]}]
+        :cases (with-batch-quads artifact times (fn [] (mapv (fn [{:keys [id data]}]
                        (let [r (measured times :reason_seconds
-                                         #(reason/reason artifact (reason/parse-data "state.nq" data) {}))]
+                                         #(let [parsed (measured times :data_parse_seconds (fn [] (reason/parse-data "state.nq" data)))]
+                                            (traced-reason artifact parsed times)))]
                          {:id id :status (:status r) :types (:types r)
                           :violations (:violations r) :counts (:counts r)
-                          :consistent (:consistent? r)})) cases)})) (:batches input)))
+                          :consistent (:consistent? r)})) cases)))})) (:batches input)))
 (defn json [v] (js/JSON.stringify (clj->js (safe-json v))))
 (if (some #{"--worker"} *command-line-args*)
   (let [timing? (some #{"--timing"} *command-line-args*)
@@ -33,7 +70,11 @@
          (fn [line]
            (try
              (let [input (js->clj (js/JSON.parse line) :keywordize-keys true)
-                   times (when timing? (atom {:compile_seconds 0 :reason_seconds 0}))
+                   times (when timing? (atom {:compile_seconds 0 :data_parse_seconds 0 :reason_seconds 0 :reason_engine_seconds 0
+                                              :ontology_prepare_seconds 0 :ontology_decode_seconds 0 :entail_seconds 0
+                                              :schema_seconds 0 :shacl_seconds 0
+                                              :compile_calls 0 :reason_calls 0 :ontology_prepare_calls 0
+                                              :entail_calls 0 :ontology_decode_hits 0 :ontology_decode_misses 0}))
                    results (execute-batches input times)
                    response {:id (:id input) :results results}]
                (println (json (if timing? (assoc response :timings @times) response))))
