@@ -1,0 +1,13 @@
+✔ real compiler fixture binds Mithril source, canonical artifact and semantic receipts; auth stays at inference (42.2235ms)
+✔ unknown choices, extra effects and source injection cannot enter Mithril emission (0.472792ms)
+✔ a missing semantic stage or mismatched graph cannot be claimed as compiled; no fallback or retry (1.922959ms)
+✔ inference and compiler refuse redirects without following them or retrying (0.511583ms)
+✔ missing or malformed matching digests and invalid response shapes fail closed (2.280458ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 147.935375
