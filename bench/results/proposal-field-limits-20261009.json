@@ -1,0 +1,445 @@
+{
+  "format": "mithril.proposal-boundaries/v1",
+  "timestamp": "2026-10-09T02:55:59.533Z",
+  "compiler": "https://app.mithril.fund/api/compile",
+  "inference_calls": 0,
+  "compiler_calls": 51,
+  "compiler_call_limit": 51,
+  "billed_cost_usd": null,
+  "speedup": null,
+  "rows": [
+    {
+      "id": "name/ascii/-1",
+      "expected": true,
+      "baseline_accepted": true,
+      "candidate_accepted": true,
+      "compiler_accepted": true,
+      "pass": true
+    },
+    {
+      "id": "name/ascii/0",
+      "expected": true,
+      "baseline_accepted": true,
+      "candidate_accepted": true,
+      "compiler_accepted": true,
+      "pass": true
+    },
+    {
+      "id": "name/ascii/1",
+      "expected": false,
+      "baseline_accepted": true,
+      "candidate_accepted": false,
+      "compiler_accepted": false,
+      "compiler_error": null,
+      "pass": true
+    },
+    {
+      "id": "name/japanese/-1",
+      "expected": true,
+      "baseline_accepted": true,
+      "candidate_accepted": true,
+      "compiler_accepted": true,
+      "pass": true
+    },
+    {
+      "id": "name/japanese/0",
+      "expected": true,
+      "baseline_accepted": true,
+      "candidate_accepted": true,
+      "compiler_accepted": true,
+      "pass": true
+    },
+    {
+      "id": "name/japanese/1",
+      "expected": false,
+      "baseline_accepted": true,
+      "candidate_accepted": false,
+      "compiler_accepted": false,
+      "compiler_error": null,
+      "pass": true
+    },
+    {
+      "id": "name/non-bmp/-1",
+      "expected": true,
+      "baseline_accepted": true,
+      "candidate_accepted": true,
+      "compiler_accepted": true,
+      "pass": true
+    },
+    {
+      "id": "name/non-bmp/0",
+      "expected": true,
+      "baseline_accepted": true,
+      "candidate_accepted": true,
+      "compiler_accepted": true,
+      "pass": true
+    },
+    {
+      "id": "name/non-bmp/1",
+      "expected": false,
+      "baseline_accepted": true,
+      "candidate_accepted": false,
+      "compiler_accepted": false,
+      "compiler_error": null,
+      "pass": true
+    },
+    {
+      "id": "name/combining/-1",
+      "expected": true,
+      "baseline_accepted": true,
+      "candidate_accepted": true,
+      "compiler_accepted": true,
+      "pass": true
+    },
+    {
+      "id": "name/combining/0",
+      "expected": true,
+      "baseline_accepted": true,
+      "candidate_accepted": true,
+      "compiler_accepted": true,
+      "pass": true
+    },
+    {
+      "id": "name/combining/1",
+      "expected": false,
+      "baseline_accepted": true,
+      "candidate_accepted": false,
+      "compiler_accepted": false,
+      "compiler_error": null,
+      "pass": true
+    },
+    {
+      "id": "description/ascii/-1",
+      "expected": true,
+      "baseline_accepted": true,
+      "candidate_accepted": true,
+      "compiler_accepted": true,
+      "pass": true
+    },
+    {
+      "id": "description/ascii/0",
+      "expected": true,
+      "baseline_accepted": true,
+      "candidate_accepted": true,
+      "compiler_accepted": true,
+      "pass": true
+    },
+    {
+      "id": "description/ascii/1",
+      "expected": false,
+      "baseline_accepted": true,
+      "candidate_accepted": false,
+      "compiler_accepted": false,
+      "compiler_error": null,
+      "pass": true
+    },
+    {
+      "id": "description/japanese/-1",
+      "expected": true,
+      "baseline_accepted": true,
+      "candidate_accepted": true,
+      "compiler_accepted": true,
+      "pass": true
+    },
+    {
+      "id": "description/japanese/0",
+      "expected": true,
+      "baseline_accepted": true,
+      "candidate_accepted": true,
+      "compiler_accepted": true,
+      "pass": true
+    },
+    {
+      "id": "description/japanese/1",
+      "expected": false,
+      "baseline_accepted": true,
+      "candidate_accepted": false,
+      "compiler_accepted": false,
+      "compiler_error": null,
+      "pass": true
+    },
+    {
+      "id": "description/non-bmp/-1",
+      "expected": true,
+      "baseline_accepted": true,
+      "candidate_accepted": true,
+      "compiler_accepted": true,
+      "pass": true
+    },
+    {
+      "id": "description/non-bmp/0",
+      "expected": true,
+      "baseline_accepted": true,
+      "candidate_accepted": true,
+      "compiler_accepted": true,
+      "pass": true
+    },
+    {
+      "id": "description/non-bmp/1",
+      "expected": false,
+      "baseline_accepted": true,
+      "candidate_accepted": false,
+      "compiler_accepted": false,
+      "compiler_error": null,
+      "pass": true
+    },
+    {
+      "id": "description/combining/-1",
+      "expected": true,
+      "baseline_accepted": true,
+      "candidate_accepted": true,
+      "compiler_accepted": true,
+      "pass": true
+    },
+    {
+      "id": "description/combining/0",
+      "expected": true,
+      "baseline_accepted": true,
+      "candidate_accepted": true,
+      "compiler_accepted": true,
+      "pass": true
+    },
+    {
+      "id": "description/combining/1",
+      "expected": false,
+      "baseline_accepted": true,
+      "candidate_accepted": false,
+      "compiler_accepted": false,
+      "compiler_error": null,
+      "pass": true
+    },
+    {
+      "id": "headline/ascii/-1",
+      "expected": true,
+      "baseline_accepted": true,
+      "candidate_accepted": true,
+      "compiler_accepted": true,
+      "pass": true
+    },
+    {
+      "id": "headline/ascii/0",
+      "expected": true,
+      "baseline_accepted": true,
+      "candidate_accepted": true,
+      "compiler_accepted": true,
+      "pass": true
+    },
+    {
+      "id": "headline/ascii/1",
+      "expected": false,
+      "baseline_accepted": true,
+      "candidate_accepted": false,
+      "compiler_accepted": false,
+      "compiler_error": null,
+      "pass": true
+    },
+    {
+      "id": "headline/japanese/-1",
+      "expected": true,
+      "baseline_accepted": true,
+      "candidate_accepted": true,
+      "compiler_accepted": true,
+      "pass": true
+    },
+    {
+      "id": "headline/japanese/0",
+      "expected": true,
+      "baseline_accepted": true,
+      "candidate_accepted": true,
+      "compiler_accepted": true,
+      "pass": true
+    },
+    {
+      "id": "headline/japanese/1",
+      "expected": false,
+      "baseline_accepted": true,
+      "candidate_accepted": false,
+      "compiler_accepted": false,
+      "compiler_error": null,
+      "pass": true
+    },
+    {
+      "id": "headline/non-bmp/-1",
+      "expected": true,
+      "baseline_accepted": true,
+      "candidate_accepted": true,
+      "compiler_accepted": true,
+      "pass": true
+    },
+    {
+      "id": "headline/non-bmp/0",
+      "expected": true,
+      "baseline_accepted": true,
+      "candidate_accepted": true,
+      "compiler_accepted": true,
+      "pass": true
+    },
+    {
+      "id": "headline/non-bmp/1",
+      "expected": false,
+      "baseline_accepted": true,
+      "candidate_accepted": false,
+      "compiler_accepted": false,
+      "compiler_error": null,
+      "pass": true
+    },
+    {
+      "id": "headline/combining/-1",
+      "expected": true,
+      "baseline_accepted": true,
+      "candidate_accepted": true,
+      "compiler_accepted": true,
+      "pass": true
+    },
+    {
+      "id": "headline/combining/0",
+      "expected": true,
+      "baseline_accepted": true,
+      "candidate_accepted": true,
+      "compiler_accepted": true,
+      "pass": true
+    },
+    {
+      "id": "headline/combining/1",
+      "expected": false,
+      "baseline_accepted": true,
+      "candidate_accepted": false,
+      "compiler_accepted": false,
+      "compiler_error": null,
+      "pass": true
+    },
+    {
+      "id": "summary/ascii/-1",
+      "expected": true,
+      "baseline_accepted": true,
+      "candidate_accepted": true,
+      "compiler_accepted": true,
+      "pass": true
+    },
+    {
+      "id": "summary/ascii/0",
+      "expected": true,
+      "baseline_accepted": true,
+      "candidate_accepted": true,
+      "compiler_accepted": true,
+      "pass": true
+    },
+    {
+      "id": "summary/ascii/1",
+      "expected": false,
+      "baseline_accepted": true,
+      "candidate_accepted": false,
+      "compiler_accepted": false,
+      "compiler_error": null,
+      "pass": true
+    },
+    {
+      "id": "summary/japanese/-1",
+      "expected": true,
+      "baseline_accepted": true,
+      "candidate_accepted": true,
+      "compiler_accepted": true,
+      "pass": true
+    },
+    {
+      "id": "summary/japanese/0",
+      "expected": true,
+      "baseline_accepted": true,
+      "candidate_accepted": true,
+      "compiler_accepted": true,
+      "pass": true
+    },
+    {
+      "id": "summary/japanese/1",
+      "expected": false,
+      "baseline_accepted": true,
+      "candidate_accepted": false,
+      "compiler_accepted": false,
+      "compiler_error": null,
+      "pass": true
+    },
+    {
+      "id": "summary/non-bmp/-1",
+      "expected": true,
+      "baseline_accepted": true,
+      "candidate_accepted": true,
+      "compiler_accepted": true,
+      "pass": true
+    },
+    {
+      "id": "summary/non-bmp/0",
+      "expected": true,
+      "baseline_accepted": true,
+      "candidate_accepted": true,
+      "compiler_accepted": true,
+      "pass": true
+    },
+    {
+      "id": "summary/non-bmp/1",
+      "expected": false,
+      "baseline_accepted": true,
+      "candidate_accepted": false,
+      "compiler_accepted": false,
+      "compiler_error": null,
+      "pass": true
+    },
+    {
+      "id": "summary/combining/-1",
+      "expected": true,
+      "baseline_accepted": true,
+      "candidate_accepted": true,
+      "compiler_accepted": true,
+      "pass": true
+    },
+    {
+      "id": "summary/combining/0",
+      "expected": true,
+      "baseline_accepted": true,
+      "candidate_accepted": true,
+      "compiler_accepted": true,
+      "pass": true
+    },
+    {
+      "id": "summary/combining/1",
+      "expected": false,
+      "baseline_accepted": true,
+      "candidate_accepted": false,
+      "compiler_accepted": false,
+      "compiler_error": null,
+      "pass": true
+    },
+    {
+      "id": "held-out/report",
+      "expected": true,
+      "baseline_accepted": true,
+      "candidate_accepted": true,
+      "compiler_accepted": true,
+      "pass": true
+    },
+    {
+      "id": "held-out/dashboard",
+      "expected": true,
+      "baseline_accepted": true,
+      "candidate_accepted": true,
+      "compiler_accepted": true,
+      "pass": true
+    },
+    {
+      "id": "held-out/directory",
+      "expected": true,
+      "baseline_accepted": true,
+      "candidate_accepted": true,
+      "compiler_accepted": true,
+      "pass": true
+    }
+  ],
+  "stopped": false,
+  "seconds": 4.625673334,
+  "passed": 51,
+  "failed": 0,
+  "unknown": 0,
+  "unexecuted": 0,
+  "baseline_revision": "1d1b370513ae084e0eb0810e5b4c956fa6631571",
+  "baseline_emitter_sha256": "49a6d88f7dbf7538a0d440095f88c8c80a7d823e8bc52c3c4be2845951de4350",
+  "candidate_emitter_sha256": "186cc6d70c9ecf422a1ffbaa37d70f28b4e940a4b62fef06293f598cf6db7893"
+}
