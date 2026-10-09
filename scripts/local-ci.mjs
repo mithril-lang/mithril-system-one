@@ -28,9 +28,23 @@ mkdirSync(output); // Refuse an existing result directory instead of overwriting
 const hash = path => createHash('sha256').update(readFileSync(path)).digest('hex');
 const report = { format: 'mithril.local-ci/v1', revision, tree: run('git', ['rev-parse', 'HEAD^{tree}']),
   started_at: timestamp, environment, status: 'running', steps: [], inference_calls: 0,
-  github_actions_dispatched: 0, workflow_sha256: hash(resolve(root, '.github/workflows/test.yml')) };
+  github_actions_dispatched: 0, dependency_install_scripts: 'disabled', npm_userconfig: 'isolated-public',
+  workflow_sha256: hash(resolve(root, '.github/workflows/test.yml')) };
 const save = () => writeFileSync(resolve(output, 'summary.json'), JSON.stringify(report, null, 2) + '\n');
 save();
+// Public locked dependencies need no install lifecycle. Do not inherit personal auth/allow-scripts.
+const lock = JSON.parse(readFileSync(resolve(root, 'package-lock.json')));
+const pkg = JSON.parse(readFileSync(resolve(root, 'package.json')));
+const lifecycle = ['preinstall', 'install', 'postinstall', 'prepare'];
+if (Object.values(lock.packages).some(p => p.hasInstallScript) ||
+    [pkg, ...pkg.workspaces.map(p => JSON.parse(readFileSync(resolve(root, p, 'package.json'))))]
+      .some(p => lifecycle.some(k => p.scripts?.[k]))) {
+  report.status = 'failed'; report.error = 'dependency_install_lifecycle_requires_review'; save();
+  throw Error(report.error);
+}
+const npmrc = resolve(output, 'public-npmrc');
+writeFileSync(npmrc, 'ignore-scripts=true\n');
+const childEnvironment = { ...process.env, npm_config_userconfig: npmrc, npm_config_ignore_scripts: 'true' };
 const commands = [
   ['dependencies', 'npm', ['ci']],
   ['browser-runtime', 'npx', ['playwright', 'install', '--with-deps', 'chromium', 'firefox', 'webkit']],
@@ -48,7 +62,7 @@ for (const [id, cmd, argv] of commands) {
   const started = performance.now();
   try {
     await new Promise((ok, no) => {
-      const child = spawn(cmd, argv, { cwd: root, stdio: ['ignore', fd, fd] });
+      const child = spawn(cmd, argv, { cwd: root, env: childEnvironment, stdio: ['ignore', fd, fd] });
       child.once('error', no);
       child.once('exit', (code, signal) => { row.exit_code = code; row.signal = signal; ok(); });
     });

@@ -12,6 +12,8 @@ The CI gate is `npm run ci:local`, run on a clean checkout of the exact reviewed
 
 There is no separate build or type-check job in this package. The dynamic job executes the actual pinned Mithril compiler. Normal CI does not request model inference, dispatch GitHub Actions, publish, deploy, or modify branch protections.
 
+The runner uses an isolated npm user configuration for these public dependencies and disables install lifecycle scripts. Personal npm credentials and global `allow-scripts` settings are not needed. It stops if the lockfile or root/workspace packages advertise an install lifecycle, so required installation work is not silently skipped. The native-runtime setup already disables dependency scripts in its existing commands.
+
 ```sh
 # Use Node 24 and Python 3.12 on PATH. On macOS, no Linux apt dependencies are needed.
 # Keep the checkout and optional browser cache outside iCloud-evicted folders.
