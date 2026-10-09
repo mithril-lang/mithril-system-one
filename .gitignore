@@ -7,3 +7,5 @@ coverage/
 .env.*
 __pycache__/
 *.pyc
+.mithril-codegraph/
+/node_modules

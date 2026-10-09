@@ -17,7 +17,8 @@
     "./dependencies": "./lib/dependency-assessment.mjs",
     "./scap": "./lib/scap-assessment.mjs",
     "./remediation": "./lib/dependency-remediation.mjs",
-    "./business-process": "./lib/business-process.mjs"
+    "./business-process": "./lib/business-process.mjs",
+    "./codegraph": "./lib/codegraph.mjs"
   },
   "scripts": {
     "test": "node --test test/*.test.mjs && npm test -w examples/todo",
@@ -37,7 +38,8 @@
     "test:scap": "node --test test/scap-runtime.integration.mjs && python3 -m unittest discover -s test -p test_scap_import.py",
     "test:remediation": "node --test test/dependency-remediation.test.mjs test/dependency-transaction.test.mjs test/json-evidence.test.mjs",
     "check:security-release": "npm test && npm run test:python && npm run test:dependencies && npm run test:scap && npm run test:business-process",
-    "test:business-process": "node --test test/business-process.integration.mjs"
+    "test:business-process": "node --test test/business-process.integration.mjs",
+    "test:codegraph": "node --test test/codegraph.test.mjs test/codegraph.integration.mjs"
   },
   "devDependencies": {
     "@playwright/test": "1.63.0"

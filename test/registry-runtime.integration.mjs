@@ -11,7 +11,7 @@ test('actual MCP lifecycle, catalog, refusal and dynamic compilation',{timeout:3
   assert.equal((await c.call('tools/list')).error.code,-32002);
   const init=await c.call('initialize',{protocolVersion:'2025-06-18',capabilities:{},clientInfo:{name:'qualification',version:'1'}});
   assert.equal(init.result.protocolVersion,'2025-06-18');c.notify('notifications/initialized');
-  const list=await c.call('tools/list');assert.equal(list.result.tools.length,4);
+  const list=await c.call('tools/list');assert.equal(list.result.tools.length,5);
   const converted=await c.call('tools/call',{name:'mithril_source_convert',arguments:{language:'typescript',source:'export const toggle = (x: boolean) => !x;'}});assert.equal(converted.result.structuredContent.receipt.verification.cases,2);
   const catalog=await c.call('tools/call',{name:'mithril_task_list',arguments:{}});assert.equal(catalog.result.structuredContent.tasks.length,9);
   const refused=await c.call('tools/call',{name:'mithril_task_run',arguments:{task_id:'shell',method:'ontology'}});assert.equal(refused.result.isError,true);
