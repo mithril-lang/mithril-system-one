@@ -24,6 +24,7 @@
     "test:browser": "npm run test:browser -w examples/todo --",
     "test:python": "python3 -m unittest discover -s test -p \"test_*.py\"",
     "test:all": "npm test && npm run test:python && npm run test:browser",
+    "ci:local": "node scripts/local-ci.mjs",
     "status": "node bin/system-one.mjs status",
     "setup:dynamic": "npm ci --ignore-scripts && node runtime/setup.mjs && node runtime/setup-module.mjs",
     "test:dynamic": "node --test test/dynamic-runtime.integration.mjs test/registry-runtime.integration.mjs",

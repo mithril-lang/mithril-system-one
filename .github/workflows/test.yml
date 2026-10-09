@@ -1,5 +1,6 @@
 name: System One conformance
-on: [push, pull_request, workflow_dispatch]
+# CI runs locally with npm run ci:local. Retain this recipe for explicit diagnostics only.
+on: workflow_dispatch
 permissions:
   contents: read
 jobs:

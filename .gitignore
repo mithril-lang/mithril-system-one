@@ -2,6 +2,7 @@ node_modules/
 playwright-report/
 test-results/
 coverage/
+.local-ci/
 .env
 .env.*
 __pycache__/
