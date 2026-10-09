@@ -114,3 +114,22 @@ Every request also verifies the four pinned repositories' HEAD and tracked statu
 A change refuses the session rather than using its already-started worker. This
 contract does not claim independent attestation of every transitive classpath
 library. Timeout is a real 30-second request timer, separate from explicit close.
+
+The four-process policy reads HEAD and tracked status together using Git porcelain
+v2 branch output once per pinned repository. Dirty records, missing/mismatched
+HEAD, duplicate/unknown headers or command failure refuse execution. Untracked
+files are ignored under the same existing contract. `pinChecks:'split'` retains
+the eight-process control; no attestation is cached in either policy.
+
+Local diagnostics can pass `onTiming` to `createDynamicExecutor`. The opt-in worker
+ready handshake separates cold startup from compile/reason wall times; transport,
+JSON handling and scheduler delay remain a residual wait interval. Both startup
+and reply share the original 30-second runtime budget. Receipts remain identical.
+These are elapsed times, not CPU time; default execution does not add timing frames.
+
+`node bench/pin-attestation-pairs.mjs --run-local NEW_DIR` freezes a 24-request
+AB/BA comparison (same six inputs, two rounds, no model/cache). It requires a
+60-second quiet preflight (load1 <=8, load5 <=10 on the current 10-CPU Air), declines
+if unavailable, and stops if load1 exceeds12. This is a small descriptive study;
+background load and repeated same-family tasks still limit confidence. No repeated
+search for favourable timing is automatic. Outputs never overwrite a prior run.

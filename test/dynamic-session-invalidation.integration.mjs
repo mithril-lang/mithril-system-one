@@ -9,12 +9,12 @@ import {ontology} from '../bench/mithril-dynamic-tasks.mjs';
 const root=resolve(import.meta.dirname,'..'),runtime=resolve(root,'node_modules/mithril-dynamic-runtime');
 // Private test roots isolate edits from the real runtime and concurrent suites.
 // Pinned repos are read-only links, except the one local clone used for dirty-source checks.
-async function fixture({silent=false,cloneMithril=false}={}){
+async function fixture({silent=false,cloneMithril=false,readyDelay=0}={}){
  const dir=await realpath(await mkdtemp(resolve(tmpdir(),'mithril-session-fixture-')));
  try{
   await mkdir(resolve(dir,'lib'));
   await cp(resolve(root,'lib/mithril-dynamic.mjs'),resolve(dir,'lib/mithril-dynamic.mjs'));
-  for(const p of ['mithril-task-agent.mjs','inference.mjs'])await symlink(resolve(root,'lib',p),resolve(dir,'lib',p));
+  for(const p of ['mithril-task-agent.mjs','inference.mjs','runtime-pin-check.mjs'])await symlink(resolve(root,'lib',p),resolve(dir,'lib',p));
   await mkdir(resolve(dir,'bench'));
   for(const p of ['mithril-dynamic-tasks.mjs','mithril-equivalent-tasks.mjs'])await symlink(resolve(root,'bench',p),resolve(dir,'bench',p));
   await writeFile(resolve(dir,'package.json'),' {"type":"module"}\n');
@@ -28,7 +28,7 @@ async function fixture({silent=false,cloneMithril=false}={}){
   const config=JSON.parse(await readFile(resolve(runtime,'classpath.json'),'utf8'));
   config.engine=resolve(local,'org-babashka-nbb/cli.js');
   await writeFile(resolve(local,'classpath.json'),JSON.stringify(config));
-  if(silent)await writeFile(resolve(dir,'runtime/mithril-batch.cljk'),'(js/setTimeout (fn [] nil) 60000)\n');
+  if(silent)await writeFile(resolve(dir,'runtime/mithril-batch.cljk'),(readyDelay?'(js/setTimeout (fn [] (println \"{\\\"ready\\\":true}\")) '+readyDelay+')\n':'')+'(js/setTimeout (fn [] nil) 60000)\n');
   const api=await import(pathToFileURL(resolve(dir,'lib/mithril-dynamic.mjs')).href);
   return {dir,local,api,cleanup:()=>rm(dir,{recursive:true,force:true})};
  }catch(e){await rm(dir,{recursive:true,force:true});throw e;}
@@ -60,6 +60,16 @@ test('real 30-second timeout terminates a silent worker and refuses continuation
  try{
   await assert.rejects(session.execute(batches),/dynamic_runtime_failed/);
   assert.ok(performance.now()-start>=29900,'real timer must expire, without mock clocks or manual close');
+  await assert.rejects(session.execute(batches),/dynamic_session_refused/);
+  assert.deepEqual(session.stats,{runtime_processes:1,requests:1,result_cache_hits:0});
+ }finally{session.close();await f.cleanup();}
+});
+test('profile startup plus silent reply retain one real 30-second deadline',{timeout:60000},async()=>{
+ const f=await fixture({silent:true,readyDelay:2000}),session=f.api.createDynamicExecutor({onTiming:()=>{}}),start=performance.now();
+ try{
+  await assert.rejects(session.execute(batches),/dynamic_runtime_failed/);
+  const elapsed=performance.now()-start;
+  assert.ok(elapsed>=29900&&elapsed<31500,'startup must consume, not extend, the real runtime deadline');
   await assert.rejects(session.execute(batches),/dynamic_session_refused/);
   assert.deepEqual(session.stats,{runtime_processes:1,requests:1,result_cache_hits:0});
  }finally{session.close();await f.cleanup();}

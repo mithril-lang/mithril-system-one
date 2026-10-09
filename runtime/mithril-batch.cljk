@@ -7,26 +7,38 @@
         (map? v) (into {} (map (fn [[k x]] [(safe-json k) (safe-json x)]) v))
         (or (sequential? v) (set? v)) (mapv safe-json v)
         :else v))
-(defn execute-batches [input]
+(defn measured [times key f]
+  (if times
+    (let [start (.now js/performance) result (f)]
+      (swap! times update key + (/ (- (.now js/performance) start) 1000)) result)
+    (f)))
+(defn execute-batches [input times]
   (mapv
-               (fn [{:keys [source cases]}]
-                 (let [artifact (compiler/compile-ontology-text "candidate.mith" source)]
-                   {:graph-digest (:graph-digest artifact)
-                    :cases (mapv (fn [{:keys [id data]}]
-                                   (let [r (reason/reason artifact (reason/parse-data "state.nq" data) {})]
-                                     {:id id :status (:status r) :types (:types r)
-                                      :violations (:violations r) :counts (:counts r)
-                                      :consistent (:consistent? r)})) cases)})) (:batches input)))
+   (fn [{:keys [source cases]}]
+     (let [artifact (measured times :compile_seconds
+                             #(compiler/compile-ontology-text "candidate.mith" source))]
+       {:graph-digest (:graph-digest artifact)
+        :cases (mapv (fn [{:keys [id data]}]
+                       (let [r (measured times :reason_seconds
+                                         #(reason/reason artifact (reason/parse-data "state.nq" data) {}))]
+                         {:id id :status (:status r) :types (:types r)
+                          :violations (:violations r) :counts (:counts r)
+                          :consistent (:consistent? r)})) cases)})) (:batches input)))
 (defn json [v] (js/JSON.stringify (clj->js (safe-json v))))
 (if (some #{"--worker"} *command-line-args*)
-  (let [lines (.createInterface (js/require "node:readline")
-                               #js {:input js/process.stdin :crlfDelay js/Infinity})]
+  (let [timing? (some #{"--timing"} *command-line-args*)
+        lines (.createInterface (js/require "node:readline")
+                                #js {:input js/process.stdin :crlfDelay js/Infinity})]
     (.on lines "line"
          (fn [line]
            (try
-             (let [input (js->clj (js/JSON.parse line) :keywordize-keys true)]
-               (println (json {:id (:id input) :results (execute-batches input)})))
+             (let [input (js->clj (js/JSON.parse line) :keywordize-keys true)
+                   times (when timing? (atom {:compile_seconds 0 :reason_seconds 0}))
+                   results (execute-batches input times)
+                   response {:id (:id input) :results results}]
+               (println (json (if timing? (assoc response :timings @times) response))))
              (catch :default _
-               (println (json {:error "dynamic_runtime_failed"})))))))
+               (println (json {:error "dynamic_runtime_failed"}))))))
+    (when timing? (println (json {:ready true}))))
   (let [input (js->clj (js/JSON.parse (.readFileSync fs 0 "utf8")) :keywordize-keys true)]
-    (println (json (execute-batches input)))))
+    (println (json (execute-batches input nil)))))
