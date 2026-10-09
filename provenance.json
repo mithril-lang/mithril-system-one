@@ -14,7 +14,7 @@
       "upstream": "mithril-lang/mithril-fund",
       "revision": "15565b3a1386de2e05d94ed452154a9d74d5a4e1",
       "source_sha256": "49a6d88f7dbf7538a0d440095f88c8c80a7d823e8bc52c3c4be2845951de4350",
-      "published_sha256": "49a6d88f7dbf7538a0d440095f88c8c80a7d823e8bc52c3c4be2845951de4350"
+      "published_sha256": "186cc6d70c9ecf422a1ffbaa37d70f28b4e940a4b62fef06293f598cf6db7893"
     },
     {
       "path": "lib/mithril-starter.mjs",
