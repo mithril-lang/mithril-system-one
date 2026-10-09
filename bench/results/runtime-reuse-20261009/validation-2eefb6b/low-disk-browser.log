@@ -1,0 +1,72 @@
+
+> @mithril/system-one@0.1.0 test:browser
+> npm run test:browser -w examples/todo -- --workers=1 --trace=off --reporter=line --retries=0 --output=/tmp/mithril-runtime-experiment/low-disk-browser/output
+
+
+> test:browser
+> playwright test --workers=1 --trace=off --reporter=line --retries=0 --output=/tmp/mithril-runtime-experiment/low-disk-browser/output
+
+
+Running 60 tests using 1 worker
+
+[1/60] [chromium] › test/todo.spec.mjs:8:1 › empty state, autofocus and clear button visibility
+[2/60] [chromium] › test/todo.spec.mjs:12:1 › Enter appends trimmed titles, rejects blanks, clears input and renders safe text
+[3/60] [chromium] › test/todo.spec.mjs:17:1 › IME composition does not submit a new todo or an edit
+[4/60] [chromium] › test/todo.spec.mjs:21:1 › individual completion and master state, strong counter and pluralization
+[5/60] [chromium] › test/todo.spec.mjs:28:1 › master checkbox completes and reactivates all, including hidden items
+[6/60] [chromium] › test/todo.spec.mjs:34:1 › editing focuses prefilled title, hides view and trims Enter save
+[7/60] [chromium] › test/todo.spec.mjs:38:1 › blur saves, Escape cancels without a later blur save
+[8/60] [chromium] › test/todo.spec.mjs:42:39 › empty edited title deletes on Enter
+[9/60] [chromium] › test/todo.spec.mjs:42:39 › empty edited title deletes on blur
+[10/60] [chromium] › test/todo.spec.mjs:45:1 › hover exposes delete, delete preserves other tasks
+[11/60] [chromium] › test/todo.spec.mjs:48:1 › clear completed preserves active tasks and resets master state
+[12/60] [chromium] › test/todo.spec.mjs:52:1 › all routes, selected link, live removal, reload and history
+[13/60] [chromium] › test/todo.spec.mjs:60:1 › persisted schema and completed state; editing is not persisted
+[14/60] [chromium] › test/todo.spec.mjs:71:1 › legacy migration only when current key is absent; retain old key
+[15/60] [chromium] › test/todo.spec.mjs:76:1 › invalid storage recovers and storage failure retains in-memory operation
+[16/60] [chromium] › test/todo.spec.mjs:80:65 › missing metrics.json fails closed with readable status
+[17/60] [chromium] › test/todo.spec.mjs:80:65 › missing logic.json fails closed with readable status
+[18/60] [chromium] › test/todo.spec.mjs:80:65 › missing policy.wasm fails closed with readable status
+[19/60] [chromium] › test/todo.spec.mjs:83:1 › tampered policy refuses startup
+[20/60] [chromium] › test/todo.spec.mjs:86:1 › 100-task completion and deletion workload without browser exceptions
+[21/60] [firefox] › test/todo.spec.mjs:8:1 › empty state, autofocus and clear button visibility
+[22/60] [firefox] › test/todo.spec.mjs:12:1 › Enter appends trimmed titles, rejects blanks, clears input and renders safe text
+[23/60] [firefox] › test/todo.spec.mjs:17:1 › IME composition does not submit a new todo or an edit
+[24/60] [firefox] › test/todo.spec.mjs:21:1 › individual completion and master state, strong counter and pluralization
+[25/60] [firefox] › test/todo.spec.mjs:28:1 › master checkbox completes and reactivates all, including hidden items
+[26/60] [firefox] › test/todo.spec.mjs:34:1 › editing focuses prefilled title, hides view and trims Enter save
+[27/60] [firefox] › test/todo.spec.mjs:38:1 › blur saves, Escape cancels without a later blur save
+[28/60] [firefox] › test/todo.spec.mjs:42:39 › empty edited title deletes on Enter
+[29/60] [firefox] › test/todo.spec.mjs:42:39 › empty edited title deletes on blur
+[30/60] [firefox] › test/todo.spec.mjs:45:1 › hover exposes delete, delete preserves other tasks
+[31/60] [firefox] › test/todo.spec.mjs:48:1 › clear completed preserves active tasks and resets master state
+[32/60] [firefox] › test/todo.spec.mjs:52:1 › all routes, selected link, live removal, reload and history
+[33/60] [firefox] › test/todo.spec.mjs:60:1 › persisted schema and completed state; editing is not persisted
+[34/60] [firefox] › test/todo.spec.mjs:71:1 › legacy migration only when current key is absent; retain old key
+[35/60] [firefox] › test/todo.spec.mjs:76:1 › invalid storage recovers and storage failure retains in-memory operation
+[36/60] [firefox] › test/todo.spec.mjs:80:65 › missing metrics.json fails closed with readable status
+[37/60] [firefox] › test/todo.spec.mjs:80:65 › missing logic.json fails closed with readable status
+[38/60] [firefox] › test/todo.spec.mjs:80:65 › missing policy.wasm fails closed with readable status
+[39/60] [firefox] › test/todo.spec.mjs:83:1 › tampered policy refuses startup
+[40/60] [firefox] › test/todo.spec.mjs:86:1 › 100-task completion and deletion workload without browser exceptions
+[41/60] [webkit] › test/todo.spec.mjs:8:1 › empty state, autofocus and clear button visibility
+[42/60] [webkit] › test/todo.spec.mjs:12:1 › Enter appends trimmed titles, rejects blanks, clears input and renders safe text
+[43/60] [webkit] › test/todo.spec.mjs:17:1 › IME composition does not submit a new todo or an edit
+[44/60] [webkit] › test/todo.spec.mjs:21:1 › individual completion and master state, strong counter and pluralization
+[45/60] [webkit] › test/todo.spec.mjs:28:1 › master checkbox completes and reactivates all, including hidden items
+[46/60] [webkit] › test/todo.spec.mjs:34:1 › editing focuses prefilled title, hides view and trims Enter save
+[47/60] [webkit] › test/todo.spec.mjs:38:1 › blur saves, Escape cancels without a later blur save
+[48/60] [webkit] › test/todo.spec.mjs:42:39 › empty edited title deletes on Enter
+[49/60] [webkit] › test/todo.spec.mjs:42:39 › empty edited title deletes on blur
+[50/60] [webkit] › test/todo.spec.mjs:45:1 › hover exposes delete, delete preserves other tasks
+[51/60] [webkit] › test/todo.spec.mjs:48:1 › clear completed preserves active tasks and resets master state
+[52/60] [webkit] › test/todo.spec.mjs:52:1 › all routes, selected link, live removal, reload and history
+[53/60] [webkit] › test/todo.spec.mjs:60:1 › persisted schema and completed state; editing is not persisted
+[54/60] [webkit] › test/todo.spec.mjs:71:1 › legacy migration only when current key is absent; retain old key
+[55/60] [webkit] › test/todo.spec.mjs:76:1 › invalid storage recovers and storage failure retains in-memory operation
+[56/60] [webkit] › test/todo.spec.mjs:80:65 › missing metrics.json fails closed with readable status
+[57/60] [webkit] › test/todo.spec.mjs:80:65 › missing logic.json fails closed with readable status
+[58/60] [webkit] › test/todo.spec.mjs:80:65 › missing policy.wasm fails closed with readable status
+[59/60] [webkit] › test/todo.spec.mjs:83:1 › tampered policy refuses startup
+[60/60] [webkit] › test/todo.spec.mjs:86:1 › 100-task completion and deletion workload without browser exceptions
+  60 passed (21.5s)

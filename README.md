@@ -107,3 +107,10 @@ compares five execution policies across development and separate boundary inputs
 and saves raw rows, cache prewarm costs, missing attempts, and p50/p95 including
 process startup. Batch and receipt-cache controls are measurement controls only.
 Model generation, human review/repair, and invoiced cost remain unmeasured.
+
+A session's identity binds the parsed runtime classpath configuration, the bytes
+of `runtime/mithril-batch.cljk`, and the bytes of the nbb `runtime/empty.edn` config.
+Every request also verifies the four pinned repositories' HEAD and tracked status.
+A change refuses the session rather than using its already-started worker. This
+contract does not claim independent attestation of every transitive classpath
+library. Timeout is a real 30-second request timer, separate from explicit close.

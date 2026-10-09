@@ -1,0 +1,37 @@
+{
+  "revision": "2eefb6bee9dde2da0d0e0d7a7319dcaa8da48b77",
+  "command": [
+    "npm",
+    "run",
+    "test:browser",
+    "--",
+    "--workers=1",
+    "--trace=off",
+    "--reporter=line",
+    "--retries=0",
+    "--output=<new-local-output>"
+  ],
+  "started_at": "2026-10-09T09:18:06.284709+00:00",
+  "source_hashes_before": {
+    "examples/todo/playwright.config.mjs": "67c16fd47b97a287019db0ccbeb1a11b8c221f3eb46e57113c231afc82239504",
+    "examples/todo/test/todo.spec.mjs": "218be215e99fd93a35a3e3260bbc8f75ed6e9c2b11c4755a28ef2e88612d8be7"
+  },
+  "retries": 0,
+  "trace": "off",
+  "workers": 1,
+  "same_test_assertions": true,
+  "capacity_floor_bytes": 16777216,
+  "aborted_capacity": false,
+  "exit_code": 0,
+  "finished_at": "2026-10-09T09:18:28.929545+00:00",
+  "minimum_available_bytes": 122855424,
+  "host_free_drop_bytes": 16621568,
+  "peak_test_disk_usage_bytes": null,
+  "capacity_note": "Host-wide free changes include other activity; they are not isolated test disk consumption.",
+  "source_hashes_after": {
+    "examples/todo/playwright.config.mjs": "67c16fd47b97a287019db0ccbeb1a11b8c221f3eb46e57113c231afc82239504",
+    "examples/todo/test/todo.spec.mjs": "218be215e99fd93a35a3e3260bbc8f75ed6e9c2b11c4755a28ef2e88612d8be7"
+  },
+  "source_unchanged": true,
+  "clean_after": true
+}

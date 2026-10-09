@@ -1,0 +1,74 @@
+{
+  "format": "mithril.local-ci/v1",
+  "revision": "2eefb6bee9dde2da0d0e0d7a7319dcaa8da48b77",
+  "tree": "8067bfad8ea582ee2994d7cb48cd621355fa5e29",
+  "started_at": "2026-10-09T09:09:00.173Z",
+  "environment": {
+    "node": "v24.21.0",
+    "npm": "11.19.0",
+    "python": "Python 3.12.12",
+    "platform": "darwin",
+    "arch": "arm64",
+    "git": "git version 2.51.0"
+  },
+  "status": "failed",
+  "steps": [
+    {
+      "id": "dependencies",
+      "command": [
+        "npm",
+        "ci"
+      ],
+      "started_at": "2026-10-09T09:09:00.191Z",
+      "log": "01-dependencies.log",
+      "exit_code": 0,
+      "signal": null,
+      "status": "passed",
+      "finished_at": "2026-10-09T09:09:01.765Z",
+      "seconds": 1.5710680419999998,
+      "log_sha256": "2eb344011eb5333a000b3ba9332269b92ec2a4968ece414053bcd78620b82d4f"
+    },
+    {
+      "id": "browser-runtime",
+      "command": [
+        "npx",
+        "playwright",
+        "install",
+        "--with-deps",
+        "chromium",
+        "firefox",
+        "webkit"
+      ],
+      "started_at": "2026-10-09T09:09:01.766Z",
+      "log": "02-browser-runtime.log",
+      "exit_code": 0,
+      "signal": null,
+      "status": "passed",
+      "finished_at": "2026-10-09T09:09:02.858Z",
+      "seconds": 1.091479083,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "conformance",
+      "command": [
+        "npm",
+        "run",
+        "test:all"
+      ],
+      "started_at": "2026-10-09T09:09:02.858Z",
+      "log": "03-conformance.log",
+      "exit_code": 1,
+      "signal": null,
+      "status": "failed",
+      "finished_at": "2026-10-09T09:09:51.565Z",
+      "seconds": 48.70631624999999,
+      "log_sha256": "ef073355a5c60f5515b4571954eaccbb59211f31d8f7b200ab6acff0c55efe7c"
+    }
+  ],
+  "inference_calls": 0,
+  "github_actions_dispatched": 0,
+  "dependency_install_scripts": "disabled",
+  "npm_userconfig": "isolated-public",
+  "workflow_sha256": "0111de3e76e5c340cc7b71cf003bfb560249fb086b934f751a3081bb64b63360",
+  "finished_at": "2026-10-09T09:09:51.566Z"
+}
