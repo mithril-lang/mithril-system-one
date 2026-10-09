@@ -51,7 +51,7 @@ class AdapterTests(unittest.TestCase):
         registered = []
         ctx = types.SimpleNamespace(register_tool=lambda **kwargs: registered.append(kwargs), get_config=lambda name: str(ROOT))
         plugin.register(ctx)
-        self.assertEqual([t["name"] for t in registered], ["mithril_task", "mithril_workflow"])
+        self.assertEqual([t["name"] for t in registered], ["mithril_task", "mithril_workflow", "mithril_codegraph"])
         self.assertTrue(all(not t["schema"]["parameters"]["additionalProperties"] for t in registered))
         self.assertTrue(all(t["check_fn"]() for t in registered))
 
@@ -73,3 +73,24 @@ class AdapterTests(unittest.TestCase):
             result = plugin.invoke(ROOT, {"task_ids": ["dynamic-refactor"], "method": "ontology"}, workflow=True)
             self.assertNotIn("error", result["result"]["tasks"][0]["row"])
             self.assertEqual(result["result"]["tasks"][1]["row"]["error"], "plan_refused")
+
+    def test_graph_roots_are_owner_configuration_and_graph_child_has_no_credential(self):
+        with patch.object(plugin.subprocess, "run", return_value=types.SimpleNamespace(stdout=json.dumps({"ok": True, "result": {"nodes": 1}}), returncode=0)) as call:
+            self.assertTrue(plugin.invoke_graph(ROOT, {"action": "query", "request": {"operation": "status"}}, ROOT, ROOT)["ok"])
+            self.assertEqual(call.call_args.args[0][1:], [str(ROOT / "bin/mithril-codegraph.mjs"), "--stdin"])
+            self.assertNotIn("MITHRIL_API_KEY", call.call_args.kwargs["env"])
+            self.assertEqual(call.call_args.kwargs["env"]["MITHRIL_CODEGRAPH_REPOSITORY"], str(ROOT))
+            self.assertFalse(call.call_args.kwargs["shell"])
+
+    def test_graph_arguments_cannot_select_roots_or_commands(self):
+        with patch.object(plugin.subprocess, "run") as call:
+            self.assertFalse(plugin.invoke_graph(ROOT, {"action": "query", "root": "/tmp"}, ROOT, ROOT)["ok"])
+            call.assert_not_called()
+
+    def test_graph_task_requires_configuration_and_preserves_existing_task_environment(self):
+        args = {"task_id": "dynamic-refactor", "method": "ontology", "codegraph": {"target": "policy.mith", "request": {"operation": "status"}}}
+        with patch.object(plugin.subprocess, "run", return_value=types.SimpleNamespace(stdout=json.dumps({"row": {"success": True}}), returncode=0)) as call:
+            self.assertEqual(plugin.invoke(ROOT, args)["error"], "codegraph_configuration_required")
+            call.assert_not_called()
+            self.assertTrue(plugin.invoke(ROOT, args, codegraph_runtime_root=ROOT, codegraph_repository=ROOT)["ok"])
+            self.assertEqual(call.call_args.kwargs["timeout"], 700)

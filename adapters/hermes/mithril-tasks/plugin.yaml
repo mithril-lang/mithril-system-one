@@ -6,8 +6,17 @@ license: Apache-2.0
 provides_tools:
   - mithril_task
   - mithril_workflow
+  - mithril_codegraph
 config_schema:
   system_one_root:
     type: str
     required: true
     description: Reviewed local checkout of mithril-lang/mithril-system-one (Node.js22+).
+  codegraph_runtime_root:
+    type: str
+    required: false
+    description: Reviewed Mithril checkout containing the System One graph bridge and SCI runner.
+  codegraph_repository:
+    type: str
+    required: false
+    description: Owner-selected local Git repository for graph evidence and private candidate archives.

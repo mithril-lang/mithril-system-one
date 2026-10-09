@@ -12,6 +12,14 @@ The [Mithril task / ontology / terminal suite](docs/mithril-equivalent-tasks.md)
 
 Source-to-Mithril conversion is also available: bounded pure JavaScript/TypeScript functions → inert AST → typed IR and source ontology → executable `.mith` → pinned native compiler → exhaustive finite-domain checks. See [supported syntax, CLI, MCP and Hermes setup](docs/source-to-mithril.md).
 
+[CodeGraph integration](docs/codegraph-integration.md) adds owner-configured local
+graph queries and optional task/workflow grounding. Successful candidates receive
+incremental indexing, saved `.mith` premises and OWL/SHACL replay in private
+candidate repositories, with source/revision identities and separate inference
+layers. Original source is retained; existing compiler checks remain required.
+[Local qualification](docs/operations/codegraph-integration-qualification-20261009.md)
+records the verified scope and remaining consumer activation gates.
+
 [Dependency evaluation](docs/dependency-ontology-evaluation.md) connects supported lockfiles, full OSV advisories, the existing private local version matcher and Knowledge context to actual Mithril ontology evaluation. Feed failures remain unknown; no automatic upgrades or exploit-proof claims.
 
 ## Included

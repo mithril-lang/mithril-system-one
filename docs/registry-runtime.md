@@ -10,10 +10,11 @@ System One uses one bounded Mithril executor through four entrypoints:
 | Hermes plugin | `mithril_task`, `mithril_workflow` | Owning-profile configuration and credentials |
 
 Run `npm run setup:dynamic` in a reviewed checkout before dynamic tasks.
-The MCP initialization handshake advertises three tools: `mithril_task_list`,
-`mithril_task_run`, `mithril_workflow_run`. Requests are newline-delimited JSON-RPC;
+The MCP initialization handshake advertises five tools: `mithril_task_list`,
+`mithril_task_run`, `mithril_workflow_run`, `mithril_source_convert` and
+`mithril_codegraph`. Requests are newline-delimited JSON-RPC;
 stdout contains only protocol messages. Inputs are bounded; arbitrary commands,
-paths, task IDs and extra arguments are refused. Discovery and ontology proposals
+repository roots, task IDs and extra arguments are refused. Discovery and ontology proposals
 need no model credential. `system-one` is an explicit inference choice using
 `MITHRIL_API_KEY` from the owning process/profile; only api.mithril.fund is called.
 The dynamic compiler child never receives this credential. Listing the MCP tools
@@ -33,7 +34,9 @@ printf '%s' '{"task_ids":["dynamic-repair-inheritance","dynamic-repair-validatio
 ```
 
 The agent implements bounded inspect/propose/apply/compile/verify behavior and
-returns candidates and receipts. These entrypoints do not save files, commit,
+returns candidates and receipts. Optional [CodeGraph contexts](codegraph-integration.md)
+save private indices, Mithril evidence and isolated candidate previews. The default
+task path returns artifacts without saving them. Neither path commits,
 create GitHub repositories or publish Pages. Those effects remain in the owning
 product's existing user-authorized save/publish flow. A finite task workflow is
 not a scheduler or a general autonomous agent. Dynamic behavior means actual

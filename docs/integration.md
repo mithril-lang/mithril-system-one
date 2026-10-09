@@ -6,6 +6,13 @@ The core here invokes https://api.mithril.fund/v1/chat/completions and https://a
 
 ## Existing consumers
 
+Local task/CLI/MCP and the Hermes adapter support opt-in
+[saved Mithril CodeGraph integration](codegraph-integration.md). The model receives
+bounded revision-bound evidence; candidate source is compiled, independently
+checked, indexed in a private preview repository and reasoned from saved Mithril.
+This addition does not migrate existing hosted Web/Desktop consumers or activate
+an owning Hermes profile.
+
 - Hermes plugin source: adapters/hermes/mithril-code, extracted from https://github.com/mithril-lang/mithril-agent/tree/main/plugins/mithril-code. Install through the owning Hermes profile's normal plugin mechanism. Existing conversations keep their cached toolsets; new conversations discover updated tools.
 - Native UI: https://github.com/mithril-lang/mithril-desktop, using canonical shared workspace components. No Desktop screens are duplicated here.
 - Code/App service and shared package: mithril-lang/mithril-fund (private). Service auth/metering/compiler/deployment ownership remains there. The core extraction is not a production consumer migration.
