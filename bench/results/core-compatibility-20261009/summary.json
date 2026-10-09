@@ -1,0 +1,269 @@
+{
+  "mode": "live-compiler-replay",
+  "versions": [
+    "1d1b370513ae084e0eb0810e5b4c956fa6631571",
+    "ba979db37bec85ff1780f79d4fca6101ff949da2"
+  ],
+  "endpoint": "https://app.mithril.fund/api/compile",
+  "max_live_compiler_calls": 5,
+  "inference_calls": 0,
+  "retries": 0,
+  "billed_cost_usd": null,
+  "planned_cases": 10,
+  "planned_version_checks": 20,
+  "attempted": 10,
+  "missing": 0,
+  "compiler_calls": 5,
+  "passed": 9,
+  "failed": 1,
+  "rows": [
+    {
+      "id": "unseen-unicode-report",
+      "expected": "accepted",
+      "missing": false,
+      "compiler_calls": 1,
+      "source": "(mithril/app-agent\n  :id \"https://app.mithril.fund/id/starter\"\n  :goal \"https://mithril.fund/id/goal/compile-test-deploy-app\"\n  :ontology \"a8d21164d99278f517181b06d063ea8a63249bff57e8e1a5e72aed5758a28f47\"\n  :imports\n  [(mithril/import\n     :library \"https://mithril.fund/lib/app/agent-loop-v1\"\n     :digest \"sha256:b7d1290a2fe8d8f6f0a17c49d2774b9396e9389fb5d070e98335d8d5517266ce\")]\n  :loop\n  (mithril/loop\n    :max-steps 6\n    :reasoner \"https://mithril.fund/lib/app/agent-loop-v1/reasoner/owl2-rl\"\n    :query \"https://mithril.fund/lib/app/agent-loop-v1/query/component-catalog\"\n    :validator \"https://mithril.fund/lib/app/agent-loop-v1/validator/shacl-core\"\n    :compiler \"https://mithril.fund/lib/app/agent-loop-v1/compiler/web-ir\"\n    :tester \"https://mithril.fund/lib/app/agent-loop-v1/tester/conformance\"\n    :deployer \"https://mithril.fund/lib/app/agent-loop-v1/deployer/self-contained-url\"\n    :governor \"https://mithril.fund/lib/app/agent-loop-v1/governor/static-read-only\")\n  :app\n  (mithril/app\n    :name \"新規互換性検証 2026-10-09\"\n    :description \"Public synthetic document; no personal or private data.\"\n    :headline \"Quoted \\\" heading \\\\ slash\"\n    :summary \"日本語 · café · <script>safe text</script> & \\\"quoted\\\"\"\n    :template \"https://mithril.fund/id/template/report\"\n    :data-shape \"https://mithril.fund/id/shape/claim-list\"))\n",
+      "source_sha256": "4af186e7d86f848feceb205de756c2daa0907c59666288b7f7cf848923fee471",
+      "generation_ms": 0.30512500000000387,
+      "live_validation_ms": 839.735666,
+      "save_publish_ms": null,
+      "human_intervention_ms": null,
+      "billed_cost_usd": null,
+      "outcomes": {
+        "baseline": "accepted",
+        "candidate": "accepted"
+      },
+      "checks": {
+        "baseline": [
+          "exact-content",
+          "shape-binding",
+          "approved-bindings",
+          "ordinary-html-equivalence",
+          "semantic-stages-executed"
+        ],
+        "candidate": [
+          "exact-content",
+          "shape-binding",
+          "approved-bindings",
+          "ordinary-html-equivalence",
+          "semantic-stages-executed"
+        ]
+      },
+      "http_status": 200,
+      "response": "{\n  \"status\": \"admitted\",\n  \"artifact\": {\n    \"format\": \"https://mithril.fund/artifact/app-agent-v1\",\n    \"media-type\": \"application/ld+json\",\n    \"graph-digest\": \"sha256:8efc256f5e2cd94f527ac2200b5746034f5fdb0f152d90dc9b92dbb48e494d05\",\n    \"app-ir\": {\n      \"version\": \"v1\",\n      \"goal\": \"compile-test-deploy-app\",\n      \"ontology\": \"a8d21164d99278f517181b06d063ea8a63249bff57e8e1a5e72aed5758a28f47\",\n      \"import\": {\n        \"library\": \"https://mithril.fund/lib/app/agent-loop-v1\",\n        \"digest\": \"sha256:b7d1290a2fe8d8f6f0a17c49d2774b9396e9389fb5d070e98335d8d5517266ce\"\n      },\n      \"budget\": {\n        \"max-steps\": 6,\n        \"max-source-bytes\": 8192\n      },\n      \"operations\": {\n        \"reasoner\": \"https://mithril.fund/lib/app/agent-loop-v1/reasoner/owl2-rl\",\n        \"query\": \"https://mithril.fund/lib/app/agent-loop-v1/query/component-catalog\",\n        \"validator\": \"https://mithril.fund/lib/app/agent-loop-v1/validator/shacl-core\",\n        \"compiler\": \"https://mithril.fund/lib/app/agent-loop-v1/compiler/web-ir\",\n        \"tester\": \"https://mithril.fund/lib/app/agent-loop-v1/tester/conformance\",\n        \"deployer\": \"https://mithril.fund/lib/app/agent-loop-v1/deployer/self-contained-url\",\n        \"governor\": \"https://mithril.fund/lib/app/agent-loop-v1/governor/static-read-only\"\n      },\n      \"app\": {\n        \"name\": \"新規互換性検証 2026-10-09\",\n        \"description\": \"Public synthetic document; no personal or private data.\",\n        \"headline\": \"Quoted \\\" heading \\\\ slash\",\n        \"summary\": \"日本語 · café · <script>safe text</script> & \\\"quoted\\\"\",\n        \"template\": \"https://mithril.fund/id/template/report\",\n        \"data-shape\": \"https://mithril.fund/id/shape/claim-list\"\n      },\n      \"effects\": [\n        \"static-document\",\n        \"self-contained-url\"\n      ]\n    }\n  },\n  \"semanticRun\": {\n    \"format\": \"https://mithril.fund/receipt/semantic-execution-v1\",\n    \"status\": \"executed\",\n    \"artifact-digest\": \"sha256:8efc256f5e2cd94f527ac2200b5746034f5fdb0f152d90dc9b92dbb48e494d05\",\n    \"state-digest\": \"sha256:0784d5b05681f9730e68db06bb39dfc70103a9019d4ed2fef20f8f2712772c2a\",\n    \"receipts\": [\n      {\n        \"id\": \"infer\",\n        \"operation\": \"OWL 2 RL materialization\",\n        \"status\": \"executed\",\n        \"engine\": \"materialize-owl2-rl\",\n        \"input-digest\": \"sha256:2d2f6fdd216568249d7bd2010809dcfcaae67e1cc3ba0c27cbc804a00f9e0f1b\",\n        \"output-digest\": \"sha256:a11c253a210623e5856babb9ff55c505be853b23248f3586c02370c574503050\",\n        \"metrics\": {\n          \"asserted-triples\": 4,\n          \"derived-triples\": 1\n        }\n      },\n      {\n        \"id\": \"query\",\n        \"operation\": \"SPARQL algebra\",\n        \"status\": \"executed\",\n        \"engine\": \"select\",\n        \"input-digest\": \"sha256:3bd6c8018fbfe3dd5da8efbac6ba00faa893aae5798c80d98d1420d020ae823c\",\n        \"output-digest\": \"sha256:c39f31d2e228e1d559c0d2a1f8dd40a77f4c6fd746c8dec07cc92e95b8003c56\",\n        \"metrics\": {\n          \"rows\": 1\n        }\n      },\n      {\n        \"id\": \"validate\",\n        \"operation\": \"SHACL bounded validation\",\n        \"status\": \"executed\",\n        \"engine\": \"shacl-edge-adapter\",\n        \"input-digest\": \"sha256:bbfc6b3ea8e8fc87d3ef74c4763e3c00d10939abecb291812585b9c4c287664b\",\n        \"output-digest\": \"sha256:adfc5c3d5f487ad7a36294d016050df206aad3d00bd4ed063d87c236049e61aa\",\n        \"metrics\": {\n          \"violations\": 0,\n          \"constraints\": [\n            \"min-count\",\n            \"max-count\",\n            \"datatype\",\n            \"in\"\n          ]\n        }\n      }\n    ]\n  },\n  \"trace\": [\n    {\n      \"id\": \"infer\",\n      \"operation\": \"OWL 2 RL materialization\",\n      \"status\": \"executed\",\n      \"engine\": \"materialize-owl2-rl\",\n      \"input-digest\": \"sha256:2d2f6fdd216568249d7bd2010809dcfcaae67e1cc3ba0c27cbc804a00f9e0f1b\",\n      \"output-digest\": \"sha256:a11c253a210623e5856babb9ff55c505be853b23248f3586c02370c574503050\",\n      \"metrics\": {\n        \"asserted-triples\": 4,\n        \"derived-triples\": 1\n      }\n    },\n    {\n      \"id\": \"query\",\n      \"operation\": \"SPARQL algebra\",\n      \"status\": \"executed\",\n      \"engine\": \"select\",\n      \"input-digest\": \"sha256:3bd6c8018fbfe3dd5da8efbac6ba00faa893aae5798c80d98d1420d020ae823c\",\n      \"output-digest\": \"sha256:c39f31d2e228e1d559c0d2a1f8dd40a77f4c6fd746c8dec07cc92e95b8003c56\",\n      \"metrics\": {\n        \"rows\": 1\n      }\n    },\n    {\n      \"id\": \"validate\",\n      \"operation\": \"SHACL bounded validation\",\n      \"status\": \"executed\",\n      \"engine\": \"shacl-edge-adapter\",\n      \"input-digest\": \"sha256:bbfc6b3ea8e8fc87d3ef74c4763e3c00d10939abecb291812585b9c4c287664b\",\n      \"output-digest\": \"sha256:adfc5c3d5f487ad7a36294d016050df206aad3d00bd4ed063d87c236049e61aa\",\n      \"metrics\": {\n        \"violations\": 0,\n        \"constraints\": [\n          \"min-count\",\n          \"max-count\",\n          \"datatype\",\n          \"in\"\n        ]\n      }\n    },\n    {\n      \"id\": \"compile\",\n      \"operation\": \"Mithril App IR\",\n      \"status\": \"executed\",\n      \"engine\": \"compile-text\",\n      \"input-digest\": \"sha256:8efc256f5e2cd94f527ac2200b5746034f5fdb0f152d90dc9b92dbb48e494d05\",\n      \"output-digest\": \"sha256:1a3fa4d5b195d9e4734ed76f27aefbfd517b3bd4401a5e0d653c589c770cea02\",\n      \"metrics\": {\n        \"operations\": 7\n      }\n    },\n    {\n      \"id\": \"test\",\n      \"operation\": \"bounded artifact conformance\",\n      \"status\": \"executed\",\n      \"engine\": \"artifact-check\",\n      \"input-digest\": \"sha256:1a3fa4d5b195d9e4734ed76f27aefbfd517b3bd4401a5e0d653c589c770cea02\",\n      \"output-digest\": \"sha256:d22d6fa78e5b4c8e058648567a266b3287cc358c90700a0007b3ea7caf8874b6\",\n      \"metrics\": {\n        \"checks\": 2,\n        \"failures\": 0\n      }\n    },\n    {\n      \"id\": \"deploy\",\n      \"operation\": \"self-contained URL\",\n      \"status\": \"not-run\",\n      \"detail\": \"deployment requires the separate user action\"\n    }\n  ]\n}",
+      "rendered_sha256": "7c986d4c67a54b2a6e0c39508df400b8aa1d6f934f722502d256971db5bf7abd",
+      "pass": true
+    },
+    {
+      "id": "unseen-500-character-dashboard",
+      "expected": "accepted",
+      "missing": false,
+      "compiler_calls": 1,
+      "source": "(mithril/app-agent\n  :id \"https://app.mithril.fund/id/starter\"\n  :goal \"https://mithril.fund/id/goal/compile-test-deploy-app\"\n  :ontology \"a8d21164d99278f517181b06d063ea8a63249bff57e8e1a5e72aed5758a28f47\"\n  :imports\n  [(mithril/import\n     :library \"https://mithril.fund/lib/app/agent-loop-v1\"\n     :digest \"sha256:b7d1290a2fe8d8f6f0a17c49d2774b9396e9389fb5d070e98335d8d5517266ce\")]\n  :loop\n  (mithril/loop\n    :max-steps 6\n    :reasoner \"https://mithril.fund/lib/app/agent-loop-v1/reasoner/owl2-rl\"\n    :query \"https://mithril.fund/lib/app/agent-loop-v1/query/component-catalog\"\n    :validator \"https://mithril.fund/lib/app/agent-loop-v1/validator/shacl-core\"\n    :compiler \"https://mithril.fund/lib/app/agent-loop-v1/compiler/web-ir\"\n    :tester \"https://mithril.fund/lib/app/agent-loop-v1/tester/conformance\"\n    :deployer \"https://mithril.fund/lib/app/agent-loop-v1/deployer/self-contained-url\"\n    :governor \"https://mithril.fund/lib/app/agent-loop-v1/governor/static-read-only\")\n  :app\n  (mithril/app\n    :name \"新規互換性検証 2026-10-09\"\n    :description \"Public synthetic document; no personal or private data.\"\n    :headline \"Quoted \\\" heading \\\\ slash\"\n    :summary \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\n    :template \"https://mithril.fund/id/template/dashboard\"\n    :data-shape \"https://mithril.fund/id/shape/metric-cards\"))\n",
+      "source_sha256": "89f12f09ea914179c99dade86eba11e3bc269f50f257f21fc87b6b804753dc7b",
+      "generation_ms": 0.025792000000024018,
+      "live_validation_ms": 20.898000000000025,
+      "save_publish_ms": null,
+      "human_intervention_ms": null,
+      "billed_cost_usd": null,
+      "outcomes": {
+        "baseline": "refused",
+        "candidate": "refused"
+      },
+      "checks": {},
+      "http_status": 422,
+      "response": "{\n  \"status\": \"refused\",\n  \"code\": \":mithril/invalid-app-text\",\n  \"detail\": \"summary must be 1 through 480 characters\"\n}",
+      "baseline_error": "mithril_compile_refused",
+      "candidate_error": "mithril_compile_refused",
+      "pass": false
+    },
+    {
+      "id": "unseen-escaped-directory",
+      "expected": "accepted",
+      "missing": false,
+      "compiler_calls": 1,
+      "source": "(mithril/app-agent\n  :id \"https://app.mithril.fund/id/starter\"\n  :goal \"https://mithril.fund/id/goal/compile-test-deploy-app\"\n  :ontology \"a8d21164d99278f517181b06d063ea8a63249bff57e8e1a5e72aed5758a28f47\"\n  :imports\n  [(mithril/import\n     :library \"https://mithril.fund/lib/app/agent-loop-v1\"\n     :digest \"sha256:b7d1290a2fe8d8f6f0a17c49d2774b9396e9389fb5d070e98335d8d5517266ce\")]\n  :loop\n  (mithril/loop\n    :max-steps 6\n    :reasoner \"https://mithril.fund/lib/app/agent-loop-v1/reasoner/owl2-rl\"\n    :query \"https://mithril.fund/lib/app/agent-loop-v1/query/component-catalog\"\n    :validator \"https://mithril.fund/lib/app/agent-loop-v1/validator/shacl-core\"\n    :compiler \"https://mithril.fund/lib/app/agent-loop-v1/compiler/web-ir\"\n    :tester \"https://mithril.fund/lib/app/agent-loop-v1/tester/conformance\"\n    :deployer \"https://mithril.fund/lib/app/agent-loop-v1/deployer/self-contained-url\"\n    :governor \"https://mithril.fund/lib/app/agent-loop-v1/governor/static-read-only\")\n  :app\n  (mithril/app\n    :name \"<img src=x onerror=alert(1)>\"\n    :description \"Public synthetic document; no personal or private data.\"\n    :headline \"Entities & facts\"\n    :summary \"日本語 · café · <script>safe text</script> & \\\"quoted\\\"\"\n    :template \"https://mithril.fund/id/template/directory\"\n    :data-shape \"https://mithril.fund/id/shape/entity-directory\"))\n",
+      "source_sha256": "d4544b9b9cee7b6de85e06b86dbd5f12bd89074ea52503df93aba72adffae795",
+      "generation_ms": 0.043750000000045475,
+      "live_validation_ms": 107.68683300000009,
+      "save_publish_ms": null,
+      "human_intervention_ms": null,
+      "billed_cost_usd": null,
+      "outcomes": {
+        "baseline": "accepted",
+        "candidate": "accepted"
+      },
+      "checks": {
+        "baseline": [
+          "exact-content",
+          "shape-binding",
+          "approved-bindings",
+          "ordinary-html-equivalence",
+          "semantic-stages-executed"
+        ],
+        "candidate": [
+          "exact-content",
+          "shape-binding",
+          "approved-bindings",
+          "ordinary-html-equivalence",
+          "semantic-stages-executed"
+        ]
+      },
+      "http_status": 200,
+      "response": "{\n  \"status\": \"admitted\",\n  \"artifact\": {\n    \"format\": \"https://mithril.fund/artifact/app-agent-v1\",\n    \"media-type\": \"application/ld+json\",\n    \"graph-digest\": \"sha256:f123901dce5d22ce9035d99758d7db25c2bc247faf952fa2518a6b2ccdbc654e\",\n    \"app-ir\": {\n      \"version\": \"v1\",\n      \"goal\": \"compile-test-deploy-app\",\n      \"ontology\": \"a8d21164d99278f517181b06d063ea8a63249bff57e8e1a5e72aed5758a28f47\",\n      \"import\": {\n        \"library\": \"https://mithril.fund/lib/app/agent-loop-v1\",\n        \"digest\": \"sha256:b7d1290a2fe8d8f6f0a17c49d2774b9396e9389fb5d070e98335d8d5517266ce\"\n      },\n      \"budget\": {\n        \"max-steps\": 6,\n        \"max-source-bytes\": 8192\n      },\n      \"operations\": {\n        \"reasoner\": \"https://mithril.fund/lib/app/agent-loop-v1/reasoner/owl2-rl\",\n        \"query\": \"https://mithril.fund/lib/app/agent-loop-v1/query/component-catalog\",\n        \"validator\": \"https://mithril.fund/lib/app/agent-loop-v1/validator/shacl-core\",\n        \"compiler\": \"https://mithril.fund/lib/app/agent-loop-v1/compiler/web-ir\",\n        \"tester\": \"https://mithril.fund/lib/app/agent-loop-v1/tester/conformance\",\n        \"deployer\": \"https://mithril.fund/lib/app/agent-loop-v1/deployer/self-contained-url\",\n        \"governor\": \"https://mithril.fund/lib/app/agent-loop-v1/governor/static-read-only\"\n      },\n      \"app\": {\n        \"name\": \"<img src=x onerror=alert(1)>\",\n        \"description\": \"Public synthetic document; no personal or private data.\",\n        \"headline\": \"Entities & facts\",\n        \"summary\": \"日本語 · café · <script>safe text</script> & \\\"quoted\\\"\",\n        \"template\": \"https://mithril.fund/id/template/directory\",\n        \"data-shape\": \"https://mithril.fund/id/shape/entity-directory\"\n      },\n      \"effects\": [\n        \"static-document\",\n        \"self-contained-url\"\n      ]\n    }\n  },\n  \"semanticRun\": {\n    \"format\": \"https://mithril.fund/receipt/semantic-execution-v1\",\n    \"status\": \"executed\",\n    \"artifact-digest\": \"sha256:f123901dce5d22ce9035d99758d7db25c2bc247faf952fa2518a6b2ccdbc654e\",\n    \"state-digest\": \"sha256:36f6693d7addf02f5066afa573696319723e7516b041765fd00e64b11f4f16e3\",\n    \"receipts\": [\n      {\n        \"id\": \"infer\",\n        \"operation\": \"OWL 2 RL materialization\",\n        \"status\": \"executed\",\n        \"engine\": \"materialize-owl2-rl\",\n        \"input-digest\": \"sha256:344aba18f79549759703d96a9f178787afcd728c8bbb1e4349bcfc9bfc6a7441\",\n        \"output-digest\": \"sha256:1277c1afbe08bb83d25fadd23295f6c5450ee6543116f2ed2ee783a40ff03185\",\n        \"metrics\": {\n          \"asserted-triples\": 4,\n          \"derived-triples\": 1\n        }\n      },\n      {\n        \"id\": \"query\",\n        \"operation\": \"SPARQL algebra\",\n        \"status\": \"executed\",\n        \"engine\": \"select\",\n        \"input-digest\": \"sha256:ddfe5954dd4c65a2d281e9314b3de88142629c0aa0d9e4b1352e91c2884146fa\",\n        \"output-digest\": \"sha256:69b1ce93e0d4457f720f2808c10208cccd74f5e474e040d9217601641c839eae\",\n        \"metrics\": {\n          \"rows\": 1\n        }\n      },\n      {\n        \"id\": \"validate\",\n        \"operation\": \"SHACL bounded validation\",\n        \"status\": \"executed\",\n        \"engine\": \"shacl-edge-adapter\",\n        \"input-digest\": \"sha256:49cd42e5caa3a93101c26c40902d209b187fea1d351eb0d12f28d0ede7c74d06\",\n        \"output-digest\": \"sha256:adfc5c3d5f487ad7a36294d016050df206aad3d00bd4ed063d87c236049e61aa\",\n        \"metrics\": {\n          \"violations\": 0,\n          \"constraints\": [\n            \"min-count\",\n            \"max-count\",\n            \"datatype\",\n            \"in\"\n          ]\n        }\n      }\n    ]\n  },\n  \"trace\": [\n    {\n      \"id\": \"infer\",\n      \"operation\": \"OWL 2 RL materialization\",\n      \"status\": \"executed\",\n      \"engine\": \"materialize-owl2-rl\",\n      \"input-digest\": \"sha256:344aba18f79549759703d96a9f178787afcd728c8bbb1e4349bcfc9bfc6a7441\",\n      \"output-digest\": \"sha256:1277c1afbe08bb83d25fadd23295f6c5450ee6543116f2ed2ee783a40ff03185\",\n      \"metrics\": {\n        \"asserted-triples\": 4,\n        \"derived-triples\": 1\n      }\n    },\n    {\n      \"id\": \"query\",\n      \"operation\": \"SPARQL algebra\",\n      \"status\": \"executed\",\n      \"engine\": \"select\",\n      \"input-digest\": \"sha256:ddfe5954dd4c65a2d281e9314b3de88142629c0aa0d9e4b1352e91c2884146fa\",\n      \"output-digest\": \"sha256:69b1ce93e0d4457f720f2808c10208cccd74f5e474e040d9217601641c839eae\",\n      \"metrics\": {\n        \"rows\": 1\n      }\n    },\n    {\n      \"id\": \"validate\",\n      \"operation\": \"SHACL bounded validation\",\n      \"status\": \"executed\",\n      \"engine\": \"shacl-edge-adapter\",\n      \"input-digest\": \"sha256:49cd42e5caa3a93101c26c40902d209b187fea1d351eb0d12f28d0ede7c74d06\",\n      \"output-digest\": \"sha256:adfc5c3d5f487ad7a36294d016050df206aad3d00bd4ed063d87c236049e61aa\",\n      \"metrics\": {\n        \"violations\": 0,\n        \"constraints\": [\n          \"min-count\",\n          \"max-count\",\n          \"datatype\",\n          \"in\"\n        ]\n      }\n    },\n    {\n      \"id\": \"compile\",\n      \"operation\": \"Mithril App IR\",\n      \"status\": \"executed\",\n      \"engine\": \"compile-text\",\n      \"input-digest\": \"sha256:f123901dce5d22ce9035d99758d7db25c2bc247faf952fa2518a6b2ccdbc654e\",\n      \"output-digest\": \"sha256:a1ac2589cd73c362a06ba1957029d56a3a090f619e81219c06c80c1d5321cff0\",\n      \"metrics\": {\n        \"operations\": 7\n      }\n    },\n    {\n      \"id\": \"test\",\n      \"operation\": \"bounded artifact conformance\",\n      \"status\": \"executed\",\n      \"engine\": \"artifact-check\",\n      \"input-digest\": \"sha256:a1ac2589cd73c362a06ba1957029d56a3a090f619e81219c06c80c1d5321cff0\",\n      \"output-digest\": \"sha256:d22d6fa78e5b4c8e058648567a266b3287cc358c90700a0007b3ea7caf8874b6\",\n      \"metrics\": {\n        \"checks\": 2,\n        \"failures\": 0\n      }\n    },\n    {\n      \"id\": \"deploy\",\n      \"operation\": \"self-contained URL\",\n      \"status\": \"not-run\",\n      \"detail\": \"deployment requires the separate user action\"\n    }\n  ]\n}",
+      "rendered_sha256": "4c30e6803c0e4f3654af5c46a4784aa23fe536b07770bd31ccd355f5ff2328df",
+      "pass": true
+    },
+    {
+      "id": "reject-501-character-field",
+      "expected": "refused",
+      "missing": false,
+      "compiler_calls": 0,
+      "source": null,
+      "source_sha256": null,
+      "generation_ms": 0.020040999999991982,
+      "live_validation_ms": null,
+      "save_publish_ms": null,
+      "human_intervention_ms": null,
+      "billed_cost_usd": null,
+      "outcomes": {
+        "baseline": "refused",
+        "candidate": "refused"
+      },
+      "checks": {},
+      "baseline_error": "mithril_proposal_refused",
+      "candidate_error": "mithril_proposal_refused",
+      "pass": true
+    },
+    {
+      "id": "reject-extra-effect",
+      "expected": "refused",
+      "missing": false,
+      "compiler_calls": 0,
+      "source": null,
+      "source_sha256": null,
+      "generation_ms": 0.007624999999961801,
+      "live_validation_ms": null,
+      "save_publish_ms": null,
+      "human_intervention_ms": null,
+      "billed_cost_usd": null,
+      "outcomes": {
+        "baseline": "refused",
+        "candidate": "refused"
+      },
+      "checks": {},
+      "baseline_error": "mithril_proposal_refused",
+      "candidate_error": "mithril_proposal_refused",
+      "pass": true
+    },
+    {
+      "id": "reject-unknown-template",
+      "expected": "refused",
+      "missing": false,
+      "compiler_calls": 0,
+      "source": null,
+      "source_sha256": null,
+      "generation_ms": 0.008500000000140062,
+      "live_validation_ms": null,
+      "save_publish_ms": null,
+      "human_intervention_ms": null,
+      "billed_cost_usd": null,
+      "outcomes": {
+        "baseline": "refused",
+        "candidate": "refused"
+      },
+      "checks": {},
+      "baseline_error": "mithril_proposal_refused",
+      "candidate_error": "mithril_proposal_refused",
+      "pass": true
+    },
+    {
+      "id": "reject-control-character",
+      "expected": "refused",
+      "missing": false,
+      "compiler_calls": 0,
+      "source": null,
+      "source_sha256": null,
+      "generation_ms": 0.0105829999999969,
+      "live_validation_ms": null,
+      "save_publish_ms": null,
+      "human_intervention_ms": null,
+      "billed_cost_usd": null,
+      "outcomes": {
+        "baseline": "refused",
+        "candidate": "refused"
+      },
+      "checks": {},
+      "baseline_error": "mithril_proposal_refused",
+      "candidate_error": "mithril_proposal_refused",
+      "pass": true
+    },
+    {
+      "id": "reject-unknown-library",
+      "expected": "refused",
+      "missing": false,
+      "compiler_calls": 1,
+      "source": "(mithril/app-agent\n  :id \"https://app.mithril.fund/id/starter\"\n  :goal \"https://mithril.fund/id/goal/compile-test-deploy-app\"\n  :ontology \"a8d21164d99278f517181b06d063ea8a63249bff57e8e1a5e72aed5758a28f47\"\n  :imports\n  [(mithril/import\n     :library \"https://example.invalid/unapproved-library\"\n     :digest \"sha256:b7d1290a2fe8d8f6f0a17c49d2774b9396e9389fb5d070e98335d8d5517266ce\")]\n  :loop\n  (mithril/loop\n    :max-steps 6\n    :reasoner \"https://mithril.fund/lib/app/agent-loop-v1/reasoner/owl2-rl\"\n    :query \"https://mithril.fund/lib/app/agent-loop-v1/query/component-catalog\"\n    :validator \"https://mithril.fund/lib/app/agent-loop-v1/validator/shacl-core\"\n    :compiler \"https://mithril.fund/lib/app/agent-loop-v1/compiler/web-ir\"\n    :tester \"https://mithril.fund/lib/app/agent-loop-v1/tester/conformance\"\n    :deployer \"https://mithril.fund/lib/app/agent-loop-v1/deployer/self-contained-url\"\n    :governor \"https://mithril.fund/lib/app/agent-loop-v1/governor/static-read-only\")\n  :app\n  (mithril/app\n    :name \"新規互換性検証 2026-10-09\"\n    :description \"Public synthetic document; no personal or private data.\"\n    :headline \"Quoted \\\" heading \\\\ slash\"\n    :summary \"日本語 · café · <script>safe text</script> & \\\"quoted\\\"\"\n    :template \"https://mithril.fund/id/template/report\"\n    :data-shape \"https://mithril.fund/id/shape/claim-list\"))\n",
+      "source_sha256": "c880abcf6800e7b81aaf22a1d22762e2f5f143987916340a77cb4dd1319f7a34",
+      "generation_ms": 0.021041999999852123,
+      "live_validation_ms": 18.77841699999999,
+      "save_publish_ms": null,
+      "human_intervention_ms": null,
+      "billed_cost_usd": null,
+      "outcomes": {
+        "baseline": "refused",
+        "candidate": "refused"
+      },
+      "checks": {},
+      "http_status": 422,
+      "response": "{\n  \"status\": \"refused\",\n  \"code\": \":mithril/missing-library\",\n  \"detail\": \"app agent library was not supplied\"\n}",
+      "baseline_error": "mithril_compile_refused",
+      "candidate_error": "mithril_compile_refused",
+      "pass": true
+    },
+    {
+      "id": "reject-invalid-form",
+      "expected": "refused",
+      "missing": false,
+      "compiler_calls": 1,
+      "source": "(mithril/arbitrary-shell :command \"echo unsupported\")\n",
+      "source_sha256": "fb67abf296c7368006fabee175f72c3675c18c8f425bfb43aff8f4569b63ea5e",
+      "generation_ms": 0.0005000000001018634,
+      "live_validation_ms": 14.336583000000019,
+      "save_publish_ms": null,
+      "human_intervention_ms": null,
+      "billed_cost_usd": null,
+      "outcomes": {
+        "baseline": "refused",
+        "candidate": "refused"
+      },
+      "checks": {},
+      "http_status": 422,
+      "response": "{\n  \"status\": \"refused\",\n  \"code\": \":mithril.form/unknown-tag\",\n  \"detail\": \"unknown Mithril form tag: mithril/arbitrary-shell\"\n}",
+      "baseline_error": "mithril_compile_refused",
+      "candidate_error": "mithril_compile_refused",
+      "pass": true
+    },
+    {
+      "id": "reject-source-byte-budget",
+      "expected": "refused",
+      "missing": false,
+      "compiler_calls": 0,
+      "source": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "source_sha256": "e5c8309afda18ec4ec225ada92dab2d5768f7d845d8cebf2b9968392a6bfd6de",
+      "generation_ms": 0.0009589999999661813,
+      "live_validation_ms": null,
+      "save_publish_ms": null,
+      "human_intervention_ms": null,
+      "billed_cost_usd": null,
+      "outcomes": {
+        "baseline": "refused",
+        "candidate": "refused"
+      },
+      "checks": {},
+      "baseline_error": "mithril_source_budget",
+      "candidate_error": "mithril_source_budget",
+      "pass": true
+    }
+  ]
+}

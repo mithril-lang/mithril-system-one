@@ -35,7 +35,7 @@
       "upstream": "mithril-lang/mithril-fund",
       "revision": "3a55edb66bb2c07c48a2317e43de056a4989f8c7",
       "source_sha256": "4e1c5eb08c7b897a9b82bc7e86f6e0aa8d24c051e9867867ab630fb38c355a79",
-      "published_sha256": "a6901f513dc6eb531d6bdf54cb4f577a8806609119cb0f46abf653da122f9ae4"
+      "published_sha256": "a589f35a54d00aa146cfc9a64310249fa8033602814f9813c7511e6534c9c146"
     },
     {
       "path": "test/inference.test.mjs",
@@ -421,6 +421,7 @@
     "Todo Playwright worker count is fixed at 3 to bound CI memory usage.",
     "Only surplus final blank lines in Apache notice files are normalized; license terms are retained.",
     "Todo single-label expectations use list assertions to wait for asynchronous hashchange rendering without a strict-locator race.",
-    "Core contract boundary cycle 2026-10-09: require a canonical nonempty SHA-256 graph binding, refuse malformed response envelopes, and test missing/malformed matching digests. Upstream source hashes remain unchanged; published hashes bind the adapted bytes."
+    "Core contract boundary cycle 2026-10-09: require a canonical nonempty SHA-256 graph binding, refuse malformed response envelopes, and test missing/malformed matching digests. Upstream source hashes remain unchanged; published hashes bind the adapted bytes.",
+    "Independent-review follow-up: protect one-sided missing graph bindings and mismatched well-formed digests; production implementation unchanged."
   ]
 }

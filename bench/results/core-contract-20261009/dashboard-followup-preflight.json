@@ -1,0 +1,27 @@
+{
+  "mode": "plan-only",
+  "versions": [
+    "1d1b370513ae084e0eb0810e5b4c956fa6631571",
+    "ba979db37bec85ff1780f79d4fca6101ff949da2"
+  ],
+  "endpoint": "https://app.mithril.fund/api/compile",
+  "max_live_compiler_calls": 1,
+  "inference_calls": 0,
+  "retries": 0,
+  "billed_cost_usd": null,
+  "planned_cases": 1,
+  "planned_version_checks": 2,
+  "cases": [
+    {
+      "id": "followup-compatible-dashboard",
+      "expected": "accepted",
+      "proposal": {
+        "name": "新規互換性検証 2026-10-09",
+        "description": "Public synthetic document; no personal or private data.",
+        "headline": "Quoted \" heading \\ slash",
+        "summary": "Compatible dashboard with a short, new summary.",
+        "template": "dashboard"
+      }
+    }
+  ]
+}

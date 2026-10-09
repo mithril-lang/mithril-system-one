@@ -1,0 +1,23 @@
+{
+  "id": "reject-invalid-form",
+  "expected": "refused",
+  "missing": false,
+  "compiler_calls": 1,
+  "source": "(mithril/arbitrary-shell :command \"echo unsupported\")\n",
+  "source_sha256": "fb67abf296c7368006fabee175f72c3675c18c8f425bfb43aff8f4569b63ea5e",
+  "generation_ms": 0.0005000000001018634,
+  "live_validation_ms": 14.336583000000019,
+  "save_publish_ms": null,
+  "human_intervention_ms": null,
+  "billed_cost_usd": null,
+  "outcomes": {
+    "baseline": "refused",
+    "candidate": "refused"
+  },
+  "checks": {},
+  "http_status": 422,
+  "response": "{\n  \"status\": \"refused\",\n  \"code\": \":mithril.form/unknown-tag\",\n  \"detail\": \"unknown Mithril form tag: mithril/arbitrary-shell\"\n}",
+  "baseline_error": "mithril_compile_refused",
+  "candidate_error": "mithril_compile_refused",
+  "pass": true
+}

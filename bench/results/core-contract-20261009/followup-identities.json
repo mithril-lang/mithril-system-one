@@ -1,0 +1,5 @@
+{
+  "bench/core-compatibility.mjs": "c1bfe382d3b6f9d5571d019af7f4caa69d9083540dd32e182134f7a103a78dd2",
+  "lib/mithril-language.mjs": "268a5dea5536559dbd76ae679f1f93138a99368cb5e3b267d944d0c75ab948ad",
+  "test/mithril-language.test.mjs": "a589f35a54d00aa146cfc9a64310249fa8033602814f9813c7511e6534c9c146"
+}

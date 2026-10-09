@@ -109,3 +109,20 @@ test('missing or malformed matching digests and invalid response shapes fail clo
     await assert.rejects(compileMithril(emitMithril(app), async () => Response.json(value)),
       {code: 'mithril_compile_refused'});
 });
+
+test('one-sided missing digests and distinct valid digests cannot bind a receipt', async () => {
+  for (const mutate of [
+    v => {delete v.artifact['graph-digest'];},
+    v => {delete v.semanticRun['artifact-digest'];},
+    v => {v.semanticRun['artifact-digest'] = 'sha256:' + '0'.repeat(64);},
+  ]) {
+    const value = compiled();
+    mutate(value);
+    let calls = 0;
+    await assert.rejects(compileMithril(emitMithril(app), async () => {
+      calls++;
+      return Response.json(value);
+    }), {code: 'mithril_compile_refused'});
+    assert.equal(calls, 1);
+  }
+});

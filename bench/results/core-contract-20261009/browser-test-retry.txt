@@ -1,0 +1,93 @@
+
+> @mithril/system-one@0.1.0 test:browser
+> npm run test:browser -w examples/todo --
+
+
+> test:browser
+> playwright test
+
+[WebServer] (node:45699) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 60 tests using 3 workers
+
+(node:45715) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:45712) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:45713) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › test/todo.spec.mjs:12:1 › Enter appends trimmed titles, rejects blanks, clears input and renders safe text (424ms)
+  ✓   3 [chromium] › test/todo.spec.mjs:17:1 › IME composition does not submit a new todo or an edit (1.2s)
+  ✓   4 [chromium] › test/todo.spec.mjs:21:1 › individual completion and master state, strong counter and pluralization (866ms)
+  ✓   6 [chromium] › test/todo.spec.mjs:34:1 › editing focuses prefilled title, hides view and trims Enter save (322ms)
+  ✓   2 [chromium] › test/todo.spec.mjs:8:1 › empty state, autofocus and clear button visibility (1.6s)
+  ✓   5 [chromium] › test/todo.spec.mjs:28:1 › master checkbox completes and reactivates all, including hidden items (397ms)
+  ✓   9 [chromium] › test/todo.spec.mjs:42:39 › empty edited title deletes on blur (299ms)
+  ✓   8 [chromium] › test/todo.spec.mjs:42:39 › empty edited title deletes on Enter (316ms)
+  ✓   7 [chromium] › test/todo.spec.mjs:38:1 › blur saves, Escape cancels without a later blur save (403ms)
+  ✓  10 [chromium] › test/todo.spec.mjs:45:1 › hover exposes delete, delete preserves other tasks (369ms)
+  ✓  11 [chromium] › test/todo.spec.mjs:48:1 › clear completed preserves active tasks and resets master state (471ms)
+  ✓  13 [chromium] › test/todo.spec.mjs:60:1 › persisted schema and completed state; editing is not persisted (388ms)
+  ✓  12 [chromium] › test/todo.spec.mjs:52:1 › all routes, selected link, live removal, reload and history (702ms)
+  ✓  14 [chromium] › test/todo.spec.mjs:71:1 › legacy migration only when current key is absent; retain old key (306ms)
+  ✓  17 [chromium] › test/todo.spec.mjs:80:65 › missing logic.json fails closed with readable status (344ms)
+  ✓  16 [chromium] › test/todo.spec.mjs:80:65 › missing metrics.json fails closed with readable status (387ms)
+  ✓  15 [chromium] › test/todo.spec.mjs:76:1 › invalid storage recovers and storage failure retains in-memory operation (511ms)
+  ✓  19 [chromium] › test/todo.spec.mjs:83:1 › tampered policy refuses startup (219ms)
+  ✓  18 [chromium] › test/todo.spec.mjs:80:65 › missing policy.wasm fails closed with readable status (249ms)
+  ✓  20 [chromium] › test/todo.spec.mjs:86:1 › 100-task completion and deletion workload without browser exceptions (296ms)
+(node:45906) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:45907) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:45912) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  23 [firefox] › test/todo.spec.mjs:17:1 › IME composition does not submit a new todo or an edit (1.8s)
+  ✓  22 [firefox] › test/todo.spec.mjs:12:1 › Enter appends trimmed titles, rejects blanks, clears input and renders safe text (1.8s)
+  ✓  21 [firefox] › test/todo.spec.mjs:8:1 › empty state, autofocus and clear button visibility (2.1s)
+  ✓  24 [firefox] › test/todo.spec.mjs:21:1 › individual completion and master state, strong counter and pluralization (1.6s)
+  ✓  25 [firefox] › test/todo.spec.mjs:28:1 › master checkbox completes and reactivates all, including hidden items (1.2s)
+  ✓  26 [firefox] › test/todo.spec.mjs:34:1 › editing focuses prefilled title, hides view and trims Enter save (841ms)
+  ✓  28 [firefox] › test/todo.spec.mjs:42:39 › empty edited title deletes on Enter (588ms)
+  ✓  27 [firefox] › test/todo.spec.mjs:38:1 › blur saves, Escape cancels without a later blur save (924ms)
+  ✓  30 [firefox] › test/todo.spec.mjs:45:1 › hover exposes delete, delete preserves other tasks (594ms)
+  ✓  29 [firefox] › test/todo.spec.mjs:42:39 › empty edited title deletes on blur (769ms)
+  ✓  31 [firefox] › test/todo.spec.mjs:48:1 › clear completed preserves active tasks and resets master state (711ms)
+  ✓  33 [firefox] › test/todo.spec.mjs:60:1 › persisted schema and completed state; editing is not persisted (638ms)
+  ✓  32 [firefox] › test/todo.spec.mjs:52:1 › all routes, selected link, live removal, reload and history (841ms)
+  ✓  34 [firefox] › test/todo.spec.mjs:71:1 › legacy migration only when current key is absent; retain old key (525ms)
+  ✓  35 [firefox] › test/todo.spec.mjs:76:1 › invalid storage recovers and storage failure retains in-memory operation (514ms)
+  ✓  36 [firefox] › test/todo.spec.mjs:80:65 › missing metrics.json fails closed with readable status (420ms)
+  ✓  37 [firefox] › test/todo.spec.mjs:80:65 › missing logic.json fails closed with readable status (437ms)
+  ✓  38 [firefox] › test/todo.spec.mjs:80:65 › missing policy.wasm fails closed with readable status (411ms)
+  ✓  39 [firefox] › test/todo.spec.mjs:83:1 › tampered policy refuses startup (409ms)
+  ✓  40 [firefox] › test/todo.spec.mjs:86:1 › 100-task completion and deletion workload without browser exceptions (696ms)
+(node:46182) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:46183) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:46194) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  42 [webkit] › test/todo.spec.mjs:12:1 › Enter appends trimmed titles, rejects blanks, clears input and renders safe text (1.5s)
+  ✓  43 [webkit] › test/todo.spec.mjs:17:1 › IME composition does not submit a new todo or an edit (1.6s)
+  ✓  41 [webkit] › test/todo.spec.mjs:8:1 › empty state, autofocus and clear button visibility (1.6s)
+  ✓  46 [webkit] › test/todo.spec.mjs:34:1 › editing focuses prefilled title, hides view and trims Enter save (500ms)
+  ✓  44 [webkit] › test/todo.spec.mjs:21:1 › individual completion and master state, strong counter and pluralization (625ms)
+  ✓  45 [webkit] › test/todo.spec.mjs:28:1 › master checkbox completes and reactivates all, including hidden items (642ms)
+  ✓  48 [webkit] › test/todo.spec.mjs:42:39 › empty edited title deletes on Enter (439ms)
+  ✓  47 [webkit] › test/todo.spec.mjs:38:1 › blur saves, Escape cancels without a later blur save (586ms)
+  ✓  49 [webkit] › test/todo.spec.mjs:42:39 › empty edited title deletes on blur (600ms)
+  ✓  50 [webkit] › test/todo.spec.mjs:45:1 › hover exposes delete, delete preserves other tasks (557ms)
+  ✓  51 [webkit] › test/todo.spec.mjs:48:1 › clear completed preserves active tasks and resets master state (578ms)
+  ✓  52 [webkit] › test/todo.spec.mjs:52:1 › all routes, selected link, live removal, reload and history (759ms)
+  ✓  53 [webkit] › test/todo.spec.mjs:60:1 › persisted schema and completed state; editing is not persisted (527ms)
+  ✓  54 [webkit] › test/todo.spec.mjs:71:1 › legacy migration only when current key is absent; retain old key (476ms)
+  ✓  55 [webkit] › test/todo.spec.mjs:76:1 › invalid storage recovers and storage failure retains in-memory operation (432ms)
+  ✓  56 [webkit] › test/todo.spec.mjs:80:65 › missing metrics.json fails closed with readable status (332ms)
+  ✓  57 [webkit] › test/todo.spec.mjs:80:65 › missing logic.json fails closed with readable status (325ms)
+  ✓  59 [webkit] › test/todo.spec.mjs:83:1 › tampered policy refuses startup (335ms)
+  ✓  58 [webkit] › test/todo.spec.mjs:80:65 › missing policy.wasm fails closed with readable status (353ms)
+  ✓  60 [webkit] › test/todo.spec.mjs:86:1 › 100-task completion and deletion workload without browser exceptions (494ms)
+
+  60 passed (32.9s)
