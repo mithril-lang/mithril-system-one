@@ -1,0 +1,481 @@
+{
+  "started": "2026-10-09T09:04:30.063Z",
+  "finished": "2026-10-09T09:07:12.810Z",
+  "experiment_wall_seconds": 162.738573833,
+  "complete": true,
+  "planned": 90,
+  "observed": 90,
+  "missing": 0,
+  "stopped": null,
+  "successes": 90,
+  "retries": 0,
+  "inference_calls": 0,
+  "measured_api_tokens": 0,
+  "billed_cost_usd": null,
+  "human_seconds": null,
+  "prewarm_seconds": 41.294379166999995,
+  "prewarms": [
+    {
+      "round": 0,
+      "partition": "development",
+      "task": "dynamic-repair-inheritance",
+      "seconds": 1.747180124999999
+    },
+    {
+      "round": 0,
+      "partition": "development",
+      "task": "dynamic-repair-validation",
+      "seconds": 1.7718336660000005
+    },
+    {
+      "round": 0,
+      "partition": "development",
+      "task": "dynamic-refactor",
+      "seconds": 1.9672571669999999
+    },
+    {
+      "round": 0,
+      "partition": "holdout",
+      "task": "holdout-0",
+      "seconds": 1.574752625000001
+    },
+    {
+      "round": 0,
+      "partition": "holdout",
+      "task": "holdout-1",
+      "seconds": 1.5558143750000017
+    },
+    {
+      "round": 0,
+      "partition": "holdout",
+      "task": "holdout-2",
+      "seconds": 2.4582749169999953
+    },
+    {
+      "round": 1,
+      "partition": "development",
+      "task": "dynamic-repair-inheritance",
+      "seconds": 3.5626582500000006
+    },
+    {
+      "round": 1,
+      "partition": "development",
+      "task": "dynamic-repair-validation",
+      "seconds": 3.655097542000003
+    },
+    {
+      "round": 1,
+      "partition": "development",
+      "task": "dynamic-refactor",
+      "seconds": 3.732038959000005
+    },
+    {
+      "round": 1,
+      "partition": "holdout",
+      "task": "holdout-0",
+      "seconds": 1.6253874579999974
+    },
+    {
+      "round": 1,
+      "partition": "holdout",
+      "task": "holdout-1",
+      "seconds": 1.7635371250000025
+    },
+    {
+      "round": 1,
+      "partition": "holdout",
+      "task": "holdout-2",
+      "seconds": 2.137925500000012
+    },
+    {
+      "round": 2,
+      "partition": "development",
+      "task": "dynamic-repair-inheritance",
+      "seconds": 1.8154672500000015
+    },
+    {
+      "round": 2,
+      "partition": "development",
+      "task": "dynamic-repair-validation",
+      "seconds": 1.9350460419999873
+    },
+    {
+      "round": 2,
+      "partition": "development",
+      "task": "dynamic-refactor",
+      "seconds": 2.4283053749999963
+    },
+    {
+      "round": 2,
+      "partition": "holdout",
+      "task": "holdout-0",
+      "seconds": 2.094607208000001
+    },
+    {
+      "round": 2,
+      "partition": "holdout",
+      "task": "holdout-1",
+      "seconds": 3.175745292000007
+    },
+    {
+      "round": 2,
+      "partition": "holdout",
+      "task": "holdout-2",
+      "seconds": 2.2934502909999863
+    }
+  ],
+  "session_rows": [
+    {
+      "round": 0,
+      "partition": "development",
+      "arm": "fresh",
+      "seconds": 3.4950512080000005,
+      "runtime_processes": 3
+    },
+    {
+      "round": 0,
+      "partition": "development",
+      "arm": "reuse-sequential",
+      "seconds": 2.2102110420000005,
+      "runtime_processes": 1
+    },
+    {
+      "round": 0,
+      "partition": "development",
+      "arm": "reuse-parallel",
+      "seconds": 3.1752442920000004,
+      "runtime_processes": 1
+    },
+    {
+      "round": 0,
+      "partition": "development",
+      "arm": "batch-control",
+      "seconds": 2.8963010830000004,
+      "runtime_processes": 1
+    },
+    {
+      "round": 0,
+      "partition": "development",
+      "arm": "warm-cache-control",
+      "seconds": 0.11045416699999987,
+      "runtime_processes": 0
+    },
+    {
+      "round": 0,
+      "partition": "holdout",
+      "arm": "fresh",
+      "seconds": 6.411793375000001,
+      "runtime_processes": 3
+    },
+    {
+      "round": 0,
+      "partition": "holdout",
+      "arm": "reuse-sequential",
+      "seconds": 3.8556114579999994,
+      "runtime_processes": 1
+    },
+    {
+      "round": 0,
+      "partition": "holdout",
+      "arm": "reuse-parallel",
+      "seconds": 2.416550209000001,
+      "runtime_processes": 1
+    },
+    {
+      "round": 0,
+      "partition": "holdout",
+      "arm": "batch-control",
+      "seconds": 2.371538958999998,
+      "runtime_processes": 1
+    },
+    {
+      "round": 0,
+      "partition": "holdout",
+      "arm": "warm-cache-control",
+      "seconds": 0.13062241599999833,
+      "runtime_processes": 0
+    },
+    {
+      "round": 1,
+      "partition": "development",
+      "arm": "reuse-sequential",
+      "seconds": 5.650142291999996,
+      "runtime_processes": 1
+    },
+    {
+      "round": 1,
+      "partition": "development",
+      "arm": "reuse-parallel",
+      "seconds": 7.231733333999997,
+      "runtime_processes": 1
+    },
+    {
+      "round": 1,
+      "partition": "development",
+      "arm": "batch-control",
+      "seconds": 6.239615624999998,
+      "runtime_processes": 1
+    },
+    {
+      "round": 1,
+      "partition": "development",
+      "arm": "warm-cache-control",
+      "seconds": 0.17640604200000234,
+      "runtime_processes": 0
+    },
+    {
+      "round": 1,
+      "partition": "development",
+      "arm": "fresh",
+      "seconds": 6.972232208000001,
+      "runtime_processes": 3
+    },
+    {
+      "round": 1,
+      "partition": "holdout",
+      "arm": "reuse-sequential",
+      "seconds": 3.0641370000000023,
+      "runtime_processes": 1
+    },
+    {
+      "round": 1,
+      "partition": "holdout",
+      "arm": "reuse-parallel",
+      "seconds": 3.1593198329999868,
+      "runtime_processes": 1
+    },
+    {
+      "round": 1,
+      "partition": "holdout",
+      "arm": "batch-control",
+      "seconds": 3.0709942080000037,
+      "runtime_processes": 1
+    },
+    {
+      "round": 1,
+      "partition": "holdout",
+      "arm": "warm-cache-control",
+      "seconds": 0.1414119170000049,
+      "runtime_processes": 0
+    },
+    {
+      "round": 1,
+      "partition": "holdout",
+      "arm": "fresh",
+      "seconds": 10.771358165999992,
+      "runtime_processes": 3
+    },
+    {
+      "round": 2,
+      "partition": "development",
+      "arm": "reuse-parallel",
+      "seconds": 3.964854833000005,
+      "runtime_processes": 1
+    },
+    {
+      "round": 2,
+      "partition": "development",
+      "arm": "batch-control",
+      "seconds": 4.0213564170000025,
+      "runtime_processes": 1
+    },
+    {
+      "round": 2,
+      "partition": "development",
+      "arm": "warm-cache-control",
+      "seconds": 0.164257500000007,
+      "runtime_processes": 0
+    },
+    {
+      "round": 2,
+      "partition": "development",
+      "arm": "fresh",
+      "seconds": 7.8647393339999985,
+      "runtime_processes": 3
+    },
+    {
+      "round": 2,
+      "partition": "development",
+      "arm": "reuse-sequential",
+      "seconds": 3.932551000000007,
+      "runtime_processes": 1
+    },
+    {
+      "round": 2,
+      "partition": "holdout",
+      "arm": "reuse-parallel",
+      "seconds": 3.144201457999996,
+      "runtime_processes": 1
+    },
+    {
+      "round": 2,
+      "partition": "holdout",
+      "arm": "batch-control",
+      "seconds": 3.662425541000004,
+      "runtime_processes": 1
+    },
+    {
+      "round": 2,
+      "partition": "holdout",
+      "arm": "warm-cache-control",
+      "seconds": 0.10497558299999218,
+      "runtime_processes": 0
+    },
+    {
+      "round": 2,
+      "partition": "holdout",
+      "arm": "fresh",
+      "seconds": 13.743385167,
+      "runtime_processes": 3
+    },
+    {
+      "round": 2,
+      "partition": "holdout",
+      "arm": "reuse-sequential",
+      "seconds": 6.997188792000001,
+      "runtime_processes": 1
+    }
+  ],
+  "arms": {
+    "fresh": {
+      "all_task_seconds": {
+        "n": 18,
+        "p50": 2.4999772084999967,
+        "p95": 5.254255376900006
+      },
+      "development": {
+        "n": 9,
+        "p50": 1.976123040999999,
+        "p95": 3.438166049999997
+      },
+      "holdout": {
+        "n": 9,
+        "p50": 2.9635089160000208,
+        "p95": 5.428695008600008
+      },
+      "warm_request_seconds": {
+        "n": 12,
+        "p50": 2.228455146,
+        "p95": 5.370548464700008
+      },
+      "three_task_session_seconds": {
+        "n": 6,
+        "p50": 7.418485771,
+        "p95": 13.000378416749998
+      },
+      "result_cache_hits": 0
+    },
+    "reuse-sequential": {
+      "all_task_seconds": {
+        "n": 18,
+        "p50": 1.1167865624999962,
+        "p95": 2.776591391999992
+      },
+      "development": {
+        "n": 9,
+        "p50": 1.1380880000000002,
+        "p95": 2.223011583799997
+      },
+      "holdout": {
+        "n": 9,
+        "p50": 0.9372784580000152,
+        "p95": 3.7933547669999923
+      },
+      "warm_request_seconds": {
+        "n": 12,
+        "p50": 0.8354483960000016,
+        "p95": 1.5848251126499986
+      },
+      "three_task_session_seconds": {
+        "n": 6,
+        "p50": 3.894081229000003,
+        "p95": 6.660427167
+      },
+      "result_cache_hits": 0
+    },
+    "reuse-parallel": {
+      "all_task_seconds": {
+        "n": 18,
+        "p50": 0.8846278539999985,
+        "p95": 2.705262418749993
+      },
+      "development": {
+        "n": 9,
+        "p50": 1.394683334000001,
+        "p95": 3.6181464249999955
+      },
+      "holdout": {
+        "n": 9,
+        "p50": 0.836614333000005,
+        "p95": 1.6884572581999977
+      },
+      "warm_request_seconds": {
+        "n": 12,
+        "p50": 0.7176428335000018,
+        "p95": 1.4004201023000022
+      },
+      "three_task_session_seconds": {
+        "n": 6,
+        "p50": 3.1672820624999938,
+        "p95": 6.415013708749999
+      },
+      "result_cache_hits": 0
+    },
+    "batch-control": {
+      "all_task_seconds": {
+        "n": 18,
+        "p50": 3.366215958500004,
+        "p95": 6.239234842050002
+      },
+      "development": {
+        "n": 9,
+        "p50": 4.021211458000005,
+        "p95": 6.239434492200002
+      },
+      "holdout": {
+        "n": 9,
+        "p50": 3.0708719169999967,
+        "p95": 3.662304233200007
+      },
+      "warm_request_seconds": {
+        "n": 12,
+        "p50": 3.366561062499997,
+        "p95": 6.239367942150002
+      },
+      "three_task_session_seconds": {
+        "n": 6,
+        "p50": 3.366709874500004,
+        "p95": 5.685050822999999
+      },
+      "result_cache_hits": 0
+    },
+    "warm-cache-control": {
+      "all_task_seconds": {
+        "n": 18,
+        "p50": 0.0459652915000006,
+        "p95": 0.06074369365000748
+      },
+      "development": {
+        "n": 9,
+        "p50": 0.05280479199999536,
+        "p95": 0.06209089960000128
+      },
+      "holdout": {
+        "n": 9,
+        "p50": 0.04373483299999498,
+        "p95": 0.04898121639999445
+      },
+      "warm_request_seconds": {
+        "n": 12,
+        "p50": 0.04382981199999995,
+        "p95": 0.05964282935000737
+      },
+      "three_task_session_seconds": {
+        "n": 6,
+        "p50": 0.13601716650000162,
+        "p95": 0.1733689065000035
+      },
+      "result_cache_hits": 18
+    }
+  }
+}

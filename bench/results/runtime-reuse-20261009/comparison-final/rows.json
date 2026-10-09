@@ -1,0 +1,41 @@
+[
+  {
+    "round": 0,
+    "partition": "development",
+    "arm": "fresh",
+    "task": "dynamic-repair-inheritance",
+    "ordinal": 1,
+    "success": true,
+    "seconds": 2.073916375,
+    "assembly_seconds": 0.00014300000000000068,
+    "runtime_seconds": 2.072504375,
+    "verification_seconds": 0.0012782499999998435,
+    "result_cache_hit": false
+  },
+  {
+    "round": 0,
+    "partition": "development",
+    "arm": "fresh",
+    "task": "dynamic-repair-validation",
+    "ordinal": 2,
+    "success": true,
+    "seconds": 1.7297554169999998,
+    "assembly_seconds": 0.00006349999999974898,
+    "runtime_seconds": 1.72933025,
+    "verification_seconds": 0.00036108299999978045,
+    "result_cache_hit": false
+  },
+  {
+    "round": 0,
+    "partition": "development",
+    "arm": "fresh",
+    "task": "dynamic-refactor",
+    "ordinal": 3,
+    "success": true,
+    "seconds": 1.8095792920000005,
+    "assembly_seconds": 0.00006354199999987031,
+    "runtime_seconds": 1.8091484999999998,
+    "verification_seconds": 0.000366624999999658,
+    "result_cache_hit": false
+  }
+]

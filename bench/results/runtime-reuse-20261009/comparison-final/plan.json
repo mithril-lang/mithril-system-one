@@ -1,0 +1,1459 @@
+{
+  "started": "2026-10-09T09:01:59.590Z",
+  "baseline_revision": "b71a56842400be33e8c5194e0882a61ba587f008",
+  "arms": [
+    "fresh",
+    "reuse-sequential",
+    "reuse-parallel",
+    "batch-control",
+    "warm-cache-control"
+  ],
+  "rounds": 3,
+  "groups": [
+    {
+      "partition": "development",
+      "tasks": [
+        {
+          "id": "dynamic-repair-inheritance",
+          "namespace": "https://mithril.fund/test/dynamic#",
+          "states": [
+            {
+              "id": "add",
+              "items": [
+                {
+                  "key": "a",
+                  "labels": [
+                    "Write Mithril"
+                  ],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "complete",
+              "items": [
+                {
+                  "key": "a",
+                  "labels": [
+                    "Write Mithril"
+                  ],
+                  "done": true
+                }
+              ]
+            },
+            {
+              "id": "second-task",
+              "items": [
+                {
+                  "key": "a",
+                  "labels": [
+                    "Write Mithril"
+                  ],
+                  "done": true
+                },
+                {
+                  "key": "b",
+                  "labels": [
+                    "Publish"
+                  ],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "reopen",
+              "items": [
+                {
+                  "key": "a",
+                  "labels": [
+                    "Write Mithril"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "b",
+                  "labels": [
+                    "Publish"
+                  ],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "delete",
+              "items": [
+                {
+                  "key": "a",
+                  "labels": [
+                    "Write Mithril"
+                  ],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "missing-label",
+              "items": [
+                {
+                  "key": "a",
+                  "labels": [
+                    "Write Mithril"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "c",
+                  "labels": [],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "duplicate-label",
+              "items": [
+                {
+                  "key": "a",
+                  "labels": [
+                    "Write Mithril"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "c",
+                  "labels": [],
+                  "done": false
+                },
+                {
+                  "key": "d",
+                  "labels": [
+                    "one",
+                    "two"
+                  ],
+                  "done": true
+                }
+              ]
+            },
+            {
+              "id": "wrong-datatype",
+              "items": [
+                {
+                  "key": "a",
+                  "labels": [
+                    "Write Mithril"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "c",
+                  "labels": [],
+                  "done": false
+                },
+                {
+                  "key": "d",
+                  "labels": [
+                    "one",
+                    "two"
+                  ],
+                  "done": true
+                },
+                {
+                  "key": "e",
+                  "labels": [
+                    42
+                  ],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "repair-input",
+              "items": [
+                {
+                  "key": "a",
+                  "labels": [
+                    "Write Mithril"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "c",
+                  "labels": [
+                    "Fixed"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "d",
+                  "labels": [
+                    "one",
+                    "two"
+                  ],
+                  "done": true
+                },
+                {
+                  "key": "e",
+                  "labels": [
+                    42
+                  ],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "remove-invalid-duplicate",
+              "items": [
+                {
+                  "key": "a",
+                  "labels": [
+                    "Write Mithril"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "c",
+                  "labels": [
+                    "Fixed"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "e",
+                  "labels": [
+                    42
+                  ],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "remove-invalid-type",
+              "items": [
+                {
+                  "key": "a",
+                  "labels": [
+                    "Write Mithril"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "c",
+                  "labels": [
+                    "Fixed"
+                  ],
+                  "done": false
+                }
+              ]
+            }
+          ],
+          "initial": "(mithril/ontology\n :id \"https://mithril.fund/ontology/dynamic-todo-v1\"\n :profile [\"https://www.w3.org/TR/rdf11-concepts/\" \"https://www.w3.org/TR/owl2-profiles/#OWL_2_RL\" \"https://www.w3.org/TR/shacl/\"]\n :graph [(owl/class :id \"https://mithril.fund/test/dynamic#Task\")\n (owl/class :id \"https://mithril.fund/test/dynamic#Open\" :rdfs/sub-class-of \"https://mithril.fund/test/dynamic#Task\")\n (owl/class :id \"https://mithril.fund/test/dynamic#Done\")\n (owl/datatype-property :id \"https://mithril.fund/test/dynamic#label\")\n (shacl/node-shape :id \"https://mithril.fund/test/dynamic#TaskShape\" :sh/target-class \"https://mithril.fund/test/dynamic#Task\"\n :sh/property [(shacl/property-shape :sh/path \"https://mithril.fund/test/dynamic#label\"\n :sh/min-count 1 :sh/max-count 1 :sh/datatype \"http://www.w3.org/2001/XMLSchema#string\")])])\n",
+          "source": "(mithril/ontology\n :id \"https://mithril.fund/ontology/dynamic-todo-v1\"\n :profile [\"https://www.w3.org/TR/rdf11-concepts/\" \"https://www.w3.org/TR/owl2-profiles/#OWL_2_RL\" \"https://www.w3.org/TR/shacl/\"]\n :graph [(owl/class :id \"https://mithril.fund/test/dynamic#Task\")\n (owl/class :id \"https://mithril.fund/test/dynamic#Open\" :rdfs/sub-class-of \"https://mithril.fund/test/dynamic#Task\")\n (owl/class :id \"https://mithril.fund/test/dynamic#Done\" :rdfs/sub-class-of \"https://mithril.fund/test/dynamic#Task\")\n (owl/datatype-property :id \"https://mithril.fund/test/dynamic#label\")\n (shacl/node-shape :id \"https://mithril.fund/test/dynamic#TaskShape\" :sh/target-class \"https://mithril.fund/test/dynamic#Task\"\n :sh/property [(shacl/property-shape :sh/path \"https://mithril.fund/test/dynamic#label\"\n :sh/min-count 1 :sh/max-count 1 :sh/datatype \"http://www.w3.org/2001/XMLSchema#string\")])])\n",
+          "kind": "repair"
+        },
+        {
+          "id": "dynamic-repair-validation",
+          "namespace": "https://mithril.fund/test/dynamic#",
+          "states": [
+            {
+              "id": "add",
+              "items": [
+                {
+                  "key": "a",
+                  "labels": [
+                    "Write Mithril"
+                  ],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "complete",
+              "items": [
+                {
+                  "key": "a",
+                  "labels": [
+                    "Write Mithril"
+                  ],
+                  "done": true
+                }
+              ]
+            },
+            {
+              "id": "second-task",
+              "items": [
+                {
+                  "key": "a",
+                  "labels": [
+                    "Write Mithril"
+                  ],
+                  "done": true
+                },
+                {
+                  "key": "b",
+                  "labels": [
+                    "Publish"
+                  ],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "reopen",
+              "items": [
+                {
+                  "key": "a",
+                  "labels": [
+                    "Write Mithril"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "b",
+                  "labels": [
+                    "Publish"
+                  ],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "delete",
+              "items": [
+                {
+                  "key": "a",
+                  "labels": [
+                    "Write Mithril"
+                  ],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "missing-label",
+              "items": [
+                {
+                  "key": "a",
+                  "labels": [
+                    "Write Mithril"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "c",
+                  "labels": [],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "duplicate-label",
+              "items": [
+                {
+                  "key": "a",
+                  "labels": [
+                    "Write Mithril"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "c",
+                  "labels": [],
+                  "done": false
+                },
+                {
+                  "key": "d",
+                  "labels": [
+                    "one",
+                    "two"
+                  ],
+                  "done": true
+                }
+              ]
+            },
+            {
+              "id": "wrong-datatype",
+              "items": [
+                {
+                  "key": "a",
+                  "labels": [
+                    "Write Mithril"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "c",
+                  "labels": [],
+                  "done": false
+                },
+                {
+                  "key": "d",
+                  "labels": [
+                    "one",
+                    "two"
+                  ],
+                  "done": true
+                },
+                {
+                  "key": "e",
+                  "labels": [
+                    42
+                  ],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "repair-input",
+              "items": [
+                {
+                  "key": "a",
+                  "labels": [
+                    "Write Mithril"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "c",
+                  "labels": [
+                    "Fixed"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "d",
+                  "labels": [
+                    "one",
+                    "two"
+                  ],
+                  "done": true
+                },
+                {
+                  "key": "e",
+                  "labels": [
+                    42
+                  ],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "remove-invalid-duplicate",
+              "items": [
+                {
+                  "key": "a",
+                  "labels": [
+                    "Write Mithril"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "c",
+                  "labels": [
+                    "Fixed"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "e",
+                  "labels": [
+                    42
+                  ],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "remove-invalid-type",
+              "items": [
+                {
+                  "key": "a",
+                  "labels": [
+                    "Write Mithril"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "c",
+                  "labels": [
+                    "Fixed"
+                  ],
+                  "done": false
+                }
+              ]
+            }
+          ],
+          "initial": "(mithril/ontology\n :id \"https://mithril.fund/ontology/dynamic-todo-v1\"\n :profile [\"https://www.w3.org/TR/rdf11-concepts/\" \"https://www.w3.org/TR/owl2-profiles/#OWL_2_RL\" \"https://www.w3.org/TR/shacl/\"]\n :graph [(owl/class :id \"https://mithril.fund/test/dynamic#Task\")\n (owl/class :id \"https://mithril.fund/test/dynamic#Open\" :rdfs/sub-class-of \"https://mithril.fund/test/dynamic#Task\")\n (owl/class :id \"https://mithril.fund/test/dynamic#Done\" :rdfs/sub-class-of \"https://mithril.fund/test/dynamic#Task\")\n (owl/datatype-property :id \"https://mithril.fund/test/dynamic#label\")\n (shacl/node-shape :id \"https://mithril.fund/test/dynamic#TaskShape\" :sh/target-class \"https://mithril.fund/test/dynamic#Task\"\n :sh/property [(shacl/property-shape :sh/path \"https://mithril.fund/test/dynamic#label\"\n :sh/min-count 0 :sh/max-count 1 :sh/datatype \"http://www.w3.org/2001/XMLSchema#string\")])])\n",
+          "source": "(mithril/ontology\n :id \"https://mithril.fund/ontology/dynamic-todo-v1\"\n :profile [\"https://www.w3.org/TR/rdf11-concepts/\" \"https://www.w3.org/TR/owl2-profiles/#OWL_2_RL\" \"https://www.w3.org/TR/shacl/\"]\n :graph [(owl/class :id \"https://mithril.fund/test/dynamic#Task\")\n (owl/class :id \"https://mithril.fund/test/dynamic#Open\" :rdfs/sub-class-of \"https://mithril.fund/test/dynamic#Task\")\n (owl/class :id \"https://mithril.fund/test/dynamic#Done\" :rdfs/sub-class-of \"https://mithril.fund/test/dynamic#Task\")\n (owl/datatype-property :id \"https://mithril.fund/test/dynamic#label\")\n (shacl/node-shape :id \"https://mithril.fund/test/dynamic#TaskShape\" :sh/target-class \"https://mithril.fund/test/dynamic#Task\"\n :sh/property [(shacl/property-shape :sh/path \"https://mithril.fund/test/dynamic#label\"\n :sh/min-count 1 :sh/max-count 1 :sh/datatype \"http://www.w3.org/2001/XMLSchema#string\")])])\n",
+          "kind": "repair"
+        },
+        {
+          "id": "dynamic-refactor",
+          "namespace": "https://mithril.fund/test/dynamic#",
+          "states": [
+            {
+              "id": "add",
+              "items": [
+                {
+                  "key": "a",
+                  "labels": [
+                    "Write Mithril"
+                  ],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "complete",
+              "items": [
+                {
+                  "key": "a",
+                  "labels": [
+                    "Write Mithril"
+                  ],
+                  "done": true
+                }
+              ]
+            },
+            {
+              "id": "second-task",
+              "items": [
+                {
+                  "key": "a",
+                  "labels": [
+                    "Write Mithril"
+                  ],
+                  "done": true
+                },
+                {
+                  "key": "b",
+                  "labels": [
+                    "Publish"
+                  ],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "reopen",
+              "items": [
+                {
+                  "key": "a",
+                  "labels": [
+                    "Write Mithril"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "b",
+                  "labels": [
+                    "Publish"
+                  ],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "delete",
+              "items": [
+                {
+                  "key": "a",
+                  "labels": [
+                    "Write Mithril"
+                  ],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "missing-label",
+              "items": [
+                {
+                  "key": "a",
+                  "labels": [
+                    "Write Mithril"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "c",
+                  "labels": [],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "duplicate-label",
+              "items": [
+                {
+                  "key": "a",
+                  "labels": [
+                    "Write Mithril"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "c",
+                  "labels": [],
+                  "done": false
+                },
+                {
+                  "key": "d",
+                  "labels": [
+                    "one",
+                    "two"
+                  ],
+                  "done": true
+                }
+              ]
+            },
+            {
+              "id": "wrong-datatype",
+              "items": [
+                {
+                  "key": "a",
+                  "labels": [
+                    "Write Mithril"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "c",
+                  "labels": [],
+                  "done": false
+                },
+                {
+                  "key": "d",
+                  "labels": [
+                    "one",
+                    "two"
+                  ],
+                  "done": true
+                },
+                {
+                  "key": "e",
+                  "labels": [
+                    42
+                  ],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "repair-input",
+              "items": [
+                {
+                  "key": "a",
+                  "labels": [
+                    "Write Mithril"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "c",
+                  "labels": [
+                    "Fixed"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "d",
+                  "labels": [
+                    "one",
+                    "two"
+                  ],
+                  "done": true
+                },
+                {
+                  "key": "e",
+                  "labels": [
+                    42
+                  ],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "remove-invalid-duplicate",
+              "items": [
+                {
+                  "key": "a",
+                  "labels": [
+                    "Write Mithril"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "c",
+                  "labels": [
+                    "Fixed"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "e",
+                  "labels": [
+                    42
+                  ],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "remove-invalid-type",
+              "items": [
+                {
+                  "key": "a",
+                  "labels": [
+                    "Write Mithril"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "c",
+                  "labels": [
+                    "Fixed"
+                  ],
+                  "done": false
+                }
+              ]
+            }
+          ],
+          "initial": "(mithril/ontology\n        :id \"https://mithril.fund/ontology/dynamic-todo-v1\"\n        :profile [\"https://www.w3.org/TR/rdf11-concepts/\" \"https://www.w3.org/TR/owl2-profiles/#OWL_2_RL\" \"https://www.w3.org/TR/shacl/\"]\n        :graph [(owl/class :id \"https://mithril.fund/test/dynamic#Task\")\n        (owl/class :id \"https://mithril.fund/test/dynamic#Open\" :rdfs/sub-class-of \"https://mithril.fund/test/dynamic#Task\")\n        (owl/class :id \"https://mithril.fund/test/dynamic#Done\" :rdfs/sub-class-of \"https://mithril.fund/test/dynamic#Task\")\n        (owl/datatype-property :id \"https://mithril.fund/test/dynamic#label\")\n        (shacl/node-shape :id \"https://mithril.fund/test/dynamic#TaskShape\" :sh/target-class \"https://mithril.fund/test/dynamic#Task\"\n        :sh/property [(shacl/property-shape :sh/path \"https://mithril.fund/test/dynamic#label\"\n        :sh/min-count 1 :sh/max-count 1 :sh/datatype \"http://www.w3.org/2001/XMLSchema#string\")])])\n       ",
+          "source": "(mithril/ontology :id \"https://mithril.fund/ontology/dynamic-todo-v1\" :profile [\"https://www.w3.org/TR/rdf11-concepts/\" \"https://www.w3.org/TR/owl2-profiles/#OWL_2_RL\" \"https://www.w3.org/TR/shacl/\"] :graph [(owl/class :id \"https://mithril.fund/test/dynamic#Task\") (owl/class :id \"https://mithril.fund/test/dynamic#Open\" :rdfs/sub-class-of \"https://mithril.fund/test/dynamic#Task\") (owl/class :id \"https://mithril.fund/test/dynamic#Done\" :rdfs/sub-class-of \"https://mithril.fund/test/dynamic#Task\") (owl/datatype-property :id \"https://mithril.fund/test/dynamic#label\") (shacl/node-shape :id \"https://mithril.fund/test/dynamic#TaskShape\" :sh/target-class \"https://mithril.fund/test/dynamic#Task\" :sh/property [(shacl/property-shape :sh/path \"https://mithril.fund/test/dynamic#label\" :sh/min-count 1 :sh/max-count 1 :sh/datatype \"http://www.w3.org/2001/XMLSchema#string\")])])\n",
+          "kind": "refactor"
+        }
+      ]
+    },
+    {
+      "partition": "holdout",
+      "tasks": [
+        {
+          "id": "holdout-0",
+          "namespace": "https://example.invalid/unseen/0/日本語😀#",
+          "states": [
+            {
+              "id": "unseen-remove-invalid-type",
+              "items": [
+                {
+                  "key": "ha",
+                  "labels": [
+                    "日本語😀é Write Mithril"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "hc",
+                  "labels": [
+                    "日本語😀é Fixed"
+                  ],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "unseen-remove-invalid-duplicate",
+              "items": [
+                {
+                  "key": "ha",
+                  "labels": [
+                    "日本語😀é Write Mithril"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "hc",
+                  "labels": [
+                    "日本語😀é Fixed"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "he",
+                  "labels": [
+                    42
+                  ],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "unseen-repair-input",
+              "items": [
+                {
+                  "key": "ha",
+                  "labels": [
+                    "日本語😀é Write Mithril"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "hc",
+                  "labels": [
+                    "日本語😀é Fixed"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "hd",
+                  "labels": [
+                    "日本語😀é one",
+                    "日本語😀é two"
+                  ],
+                  "done": true
+                },
+                {
+                  "key": "he",
+                  "labels": [
+                    42
+                  ],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "unseen-wrong-datatype",
+              "items": [
+                {
+                  "key": "ha",
+                  "labels": [
+                    "日本語😀é Write Mithril"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "hc",
+                  "labels": [],
+                  "done": false
+                },
+                {
+                  "key": "hd",
+                  "labels": [
+                    "日本語😀é one",
+                    "日本語😀é two"
+                  ],
+                  "done": true
+                },
+                {
+                  "key": "he",
+                  "labels": [
+                    42
+                  ],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "unseen-duplicate-label",
+              "items": [
+                {
+                  "key": "ha",
+                  "labels": [
+                    "日本語😀é Write Mithril"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "hc",
+                  "labels": [],
+                  "done": false
+                },
+                {
+                  "key": "hd",
+                  "labels": [
+                    "日本語😀é one",
+                    "日本語😀é two"
+                  ],
+                  "done": true
+                }
+              ]
+            },
+            {
+              "id": "unseen-missing-label",
+              "items": [
+                {
+                  "key": "ha",
+                  "labels": [
+                    "日本語😀é Write Mithril"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "hc",
+                  "labels": [],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "unseen-delete",
+              "items": [
+                {
+                  "key": "ha",
+                  "labels": [
+                    "日本語😀é Write Mithril"
+                  ],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "unseen-reopen",
+              "items": [
+                {
+                  "key": "ha",
+                  "labels": [
+                    "日本語😀é Write Mithril"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "hb",
+                  "labels": [
+                    "日本語😀é Publish"
+                  ],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "unseen-second-task",
+              "items": [
+                {
+                  "key": "ha",
+                  "labels": [
+                    "日本語😀é Write Mithril"
+                  ],
+                  "done": true
+                },
+                {
+                  "key": "hb",
+                  "labels": [
+                    "日本語😀é Publish"
+                  ],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "unseen-complete",
+              "items": [
+                {
+                  "key": "ha",
+                  "labels": [
+                    "日本語😀é Write Mithril"
+                  ],
+                  "done": true
+                }
+              ]
+            },
+            {
+              "id": "unseen-add",
+              "items": [
+                {
+                  "key": "ha",
+                  "labels": [
+                    "日本語😀é Write Mithril"
+                  ],
+                  "done": false
+                }
+              ]
+            }
+          ],
+          "initial": "(mithril/ontology\n :id \"https://mithril.fund/ontology/dynamic-todo-v1\"\n :profile [\"https://www.w3.org/TR/rdf11-concepts/\" \"https://www.w3.org/TR/owl2-profiles/#OWL_2_RL\" \"https://www.w3.org/TR/shacl/\"]\n :graph [(owl/class :id \"https://example.invalid/unseen/0/日本語😀#Task\")\n (owl/class :id \"https://example.invalid/unseen/0/日本語😀#Open\" :rdfs/sub-class-of \"https://example.invalid/unseen/0/日本語😀#Task\")\n (owl/class :id \"https://example.invalid/unseen/0/日本語😀#Done\")\n (owl/datatype-property :id \"https://example.invalid/unseen/0/日本語😀#label\")\n (shacl/node-shape :id \"https://example.invalid/unseen/0/日本語😀#TaskShape\" :sh/target-class \"https://example.invalid/unseen/0/日本語😀#Task\"\n :sh/property [(shacl/property-shape :sh/path \"https://example.invalid/unseen/0/日本語😀#label\"\n :sh/min-count 1 :sh/max-count 1 :sh/datatype \"http://www.w3.org/2001/XMLSchema#string\")])])\n",
+          "source": "(mithril/ontology\n :id \"https://mithril.fund/ontology/dynamic-todo-v1\"\n :profile [\"https://www.w3.org/TR/rdf11-concepts/\" \"https://www.w3.org/TR/owl2-profiles/#OWL_2_RL\" \"https://www.w3.org/TR/shacl/\"]\n :graph [(owl/class :id \"https://example.invalid/unseen/0/日本語😀#Task\")\n (owl/class :id \"https://example.invalid/unseen/0/日本語😀#Open\" :rdfs/sub-class-of \"https://example.invalid/unseen/0/日本語😀#Task\")\n (owl/class :id \"https://example.invalid/unseen/0/日本語😀#Done\" :rdfs/sub-class-of \"https://example.invalid/unseen/0/日本語😀#Task\")\n (owl/datatype-property :id \"https://example.invalid/unseen/0/日本語😀#label\")\n (shacl/node-shape :id \"https://example.invalid/unseen/0/日本語😀#TaskShape\" :sh/target-class \"https://example.invalid/unseen/0/日本語😀#Task\"\n :sh/property [(shacl/property-shape :sh/path \"https://example.invalid/unseen/0/日本語😀#label\"\n :sh/min-count 1 :sh/max-count 1 :sh/datatype \"http://www.w3.org/2001/XMLSchema#string\")])])\n",
+          "kind": "repair"
+        },
+        {
+          "id": "holdout-1",
+          "namespace": "https://example.invalid/unseen/1/日本語😀#",
+          "states": [
+            {
+              "id": "unseen-remove-invalid-type",
+              "items": [
+                {
+                  "key": "ha",
+                  "labels": [
+                    "日本語😀é Write Mithril"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "hc",
+                  "labels": [
+                    "日本語😀é Fixed"
+                  ],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "unseen-remove-invalid-duplicate",
+              "items": [
+                {
+                  "key": "ha",
+                  "labels": [
+                    "日本語😀é Write Mithril"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "hc",
+                  "labels": [
+                    "日本語😀é Fixed"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "he",
+                  "labels": [
+                    42
+                  ],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "unseen-repair-input",
+              "items": [
+                {
+                  "key": "ha",
+                  "labels": [
+                    "日本語😀é Write Mithril"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "hc",
+                  "labels": [
+                    "日本語😀é Fixed"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "hd",
+                  "labels": [
+                    "日本語😀é one",
+                    "日本語😀é two"
+                  ],
+                  "done": true
+                },
+                {
+                  "key": "he",
+                  "labels": [
+                    42
+                  ],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "unseen-wrong-datatype",
+              "items": [
+                {
+                  "key": "ha",
+                  "labels": [
+                    "日本語😀é Write Mithril"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "hc",
+                  "labels": [],
+                  "done": false
+                },
+                {
+                  "key": "hd",
+                  "labels": [
+                    "日本語😀é one",
+                    "日本語😀é two"
+                  ],
+                  "done": true
+                },
+                {
+                  "key": "he",
+                  "labels": [
+                    42
+                  ],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "unseen-duplicate-label",
+              "items": [
+                {
+                  "key": "ha",
+                  "labels": [
+                    "日本語😀é Write Mithril"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "hc",
+                  "labels": [],
+                  "done": false
+                },
+                {
+                  "key": "hd",
+                  "labels": [
+                    "日本語😀é one",
+                    "日本語😀é two"
+                  ],
+                  "done": true
+                }
+              ]
+            },
+            {
+              "id": "unseen-missing-label",
+              "items": [
+                {
+                  "key": "ha",
+                  "labels": [
+                    "日本語😀é Write Mithril"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "hc",
+                  "labels": [],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "unseen-delete",
+              "items": [
+                {
+                  "key": "ha",
+                  "labels": [
+                    "日本語😀é Write Mithril"
+                  ],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "unseen-reopen",
+              "items": [
+                {
+                  "key": "ha",
+                  "labels": [
+                    "日本語😀é Write Mithril"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "hb",
+                  "labels": [
+                    "日本語😀é Publish"
+                  ],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "unseen-second-task",
+              "items": [
+                {
+                  "key": "ha",
+                  "labels": [
+                    "日本語😀é Write Mithril"
+                  ],
+                  "done": true
+                },
+                {
+                  "key": "hb",
+                  "labels": [
+                    "日本語😀é Publish"
+                  ],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "unseen-complete",
+              "items": [
+                {
+                  "key": "ha",
+                  "labels": [
+                    "日本語😀é Write Mithril"
+                  ],
+                  "done": true
+                }
+              ]
+            },
+            {
+              "id": "unseen-add",
+              "items": [
+                {
+                  "key": "ha",
+                  "labels": [
+                    "日本語😀é Write Mithril"
+                  ],
+                  "done": false
+                }
+              ]
+            }
+          ],
+          "initial": "(mithril/ontology\n :id \"https://mithril.fund/ontology/dynamic-todo-v1\"\n :profile [\"https://www.w3.org/TR/rdf11-concepts/\" \"https://www.w3.org/TR/owl2-profiles/#OWL_2_RL\" \"https://www.w3.org/TR/shacl/\"]\n :graph [(owl/class :id \"https://example.invalid/unseen/1/日本語😀#Task\")\n (owl/class :id \"https://example.invalid/unseen/1/日本語😀#Open\" :rdfs/sub-class-of \"https://example.invalid/unseen/1/日本語😀#Task\")\n (owl/class :id \"https://example.invalid/unseen/1/日本語😀#Done\" :rdfs/sub-class-of \"https://example.invalid/unseen/1/日本語😀#Task\")\n (owl/datatype-property :id \"https://example.invalid/unseen/1/日本語😀#label\")\n (shacl/node-shape :id \"https://example.invalid/unseen/1/日本語😀#TaskShape\" :sh/target-class \"https://example.invalid/unseen/1/日本語😀#Task\"\n :sh/property [(shacl/property-shape :sh/path \"https://example.invalid/unseen/1/日本語😀#label\"\n :sh/min-count 0 :sh/max-count 1 :sh/datatype \"http://www.w3.org/2001/XMLSchema#string\")])])\n",
+          "source": "(mithril/ontology\n :id \"https://mithril.fund/ontology/dynamic-todo-v1\"\n :profile [\"https://www.w3.org/TR/rdf11-concepts/\" \"https://www.w3.org/TR/owl2-profiles/#OWL_2_RL\" \"https://www.w3.org/TR/shacl/\"]\n :graph [(owl/class :id \"https://example.invalid/unseen/1/日本語😀#Task\")\n (owl/class :id \"https://example.invalid/unseen/1/日本語😀#Open\" :rdfs/sub-class-of \"https://example.invalid/unseen/1/日本語😀#Task\")\n (owl/class :id \"https://example.invalid/unseen/1/日本語😀#Done\" :rdfs/sub-class-of \"https://example.invalid/unseen/1/日本語😀#Task\")\n (owl/datatype-property :id \"https://example.invalid/unseen/1/日本語😀#label\")\n (shacl/node-shape :id \"https://example.invalid/unseen/1/日本語😀#TaskShape\" :sh/target-class \"https://example.invalid/unseen/1/日本語😀#Task\"\n :sh/property [(shacl/property-shape :sh/path \"https://example.invalid/unseen/1/日本語😀#label\"\n :sh/min-count 1 :sh/max-count 1 :sh/datatype \"http://www.w3.org/2001/XMLSchema#string\")])])\n",
+          "kind": "repair"
+        },
+        {
+          "id": "holdout-2",
+          "namespace": "https://example.invalid/unseen/2/日本語😀#",
+          "states": [
+            {
+              "id": "unseen-remove-invalid-type",
+              "items": [
+                {
+                  "key": "ha",
+                  "labels": [
+                    "日本語😀é Write Mithril"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "hc",
+                  "labels": [
+                    "日本語😀é Fixed"
+                  ],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "unseen-remove-invalid-duplicate",
+              "items": [
+                {
+                  "key": "ha",
+                  "labels": [
+                    "日本語😀é Write Mithril"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "hc",
+                  "labels": [
+                    "日本語😀é Fixed"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "he",
+                  "labels": [
+                    42
+                  ],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "unseen-repair-input",
+              "items": [
+                {
+                  "key": "ha",
+                  "labels": [
+                    "日本語😀é Write Mithril"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "hc",
+                  "labels": [
+                    "日本語😀é Fixed"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "hd",
+                  "labels": [
+                    "日本語😀é one",
+                    "日本語😀é two"
+                  ],
+                  "done": true
+                },
+                {
+                  "key": "he",
+                  "labels": [
+                    42
+                  ],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "unseen-wrong-datatype",
+              "items": [
+                {
+                  "key": "ha",
+                  "labels": [
+                    "日本語😀é Write Mithril"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "hc",
+                  "labels": [],
+                  "done": false
+                },
+                {
+                  "key": "hd",
+                  "labels": [
+                    "日本語😀é one",
+                    "日本語😀é two"
+                  ],
+                  "done": true
+                },
+                {
+                  "key": "he",
+                  "labels": [
+                    42
+                  ],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "unseen-duplicate-label",
+              "items": [
+                {
+                  "key": "ha",
+                  "labels": [
+                    "日本語😀é Write Mithril"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "hc",
+                  "labels": [],
+                  "done": false
+                },
+                {
+                  "key": "hd",
+                  "labels": [
+                    "日本語😀é one",
+                    "日本語😀é two"
+                  ],
+                  "done": true
+                }
+              ]
+            },
+            {
+              "id": "unseen-missing-label",
+              "items": [
+                {
+                  "key": "ha",
+                  "labels": [
+                    "日本語😀é Write Mithril"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "hc",
+                  "labels": [],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "unseen-delete",
+              "items": [
+                {
+                  "key": "ha",
+                  "labels": [
+                    "日本語😀é Write Mithril"
+                  ],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "unseen-reopen",
+              "items": [
+                {
+                  "key": "ha",
+                  "labels": [
+                    "日本語😀é Write Mithril"
+                  ],
+                  "done": false
+                },
+                {
+                  "key": "hb",
+                  "labels": [
+                    "日本語😀é Publish"
+                  ],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "unseen-second-task",
+              "items": [
+                {
+                  "key": "ha",
+                  "labels": [
+                    "日本語😀é Write Mithril"
+                  ],
+                  "done": true
+                },
+                {
+                  "key": "hb",
+                  "labels": [
+                    "日本語😀é Publish"
+                  ],
+                  "done": false
+                }
+              ]
+            },
+            {
+              "id": "unseen-complete",
+              "items": [
+                {
+                  "key": "ha",
+                  "labels": [
+                    "日本語😀é Write Mithril"
+                  ],
+                  "done": true
+                }
+              ]
+            },
+            {
+              "id": "unseen-add",
+              "items": [
+                {
+                  "key": "ha",
+                  "labels": [
+                    "日本語😀é Write Mithril"
+                  ],
+                  "done": false
+                }
+              ]
+            }
+          ],
+          "initial": "(mithril/ontology\n        :id \"https://mithril.fund/ontology/dynamic-todo-v1\"\n        :profile [\"https://www.w3.org/TR/rdf11-concepts/\" \"https://www.w3.org/TR/owl2-profiles/#OWL_2_RL\" \"https://www.w3.org/TR/shacl/\"]\n        :graph [(owl/class :id \"https://example.invalid/unseen/2/日本語😀#Task\")\n        (owl/class :id \"https://example.invalid/unseen/2/日本語😀#Open\" :rdfs/sub-class-of \"https://example.invalid/unseen/2/日本語😀#Task\")\n        (owl/class :id \"https://example.invalid/unseen/2/日本語😀#Done\" :rdfs/sub-class-of \"https://example.invalid/unseen/2/日本語😀#Task\")\n        (owl/datatype-property :id \"https://example.invalid/unseen/2/日本語😀#label\")\n        (shacl/node-shape :id \"https://example.invalid/unseen/2/日本語😀#TaskShape\" :sh/target-class \"https://example.invalid/unseen/2/日本語😀#Task\"\n        :sh/property [(shacl/property-shape :sh/path \"https://example.invalid/unseen/2/日本語😀#label\"\n        :sh/min-count 1 :sh/max-count 1 :sh/datatype \"http://www.w3.org/2001/XMLSchema#string\")])])\n       ",
+          "source": "(mithril/ontology :id \"https://mithril.fund/ontology/dynamic-todo-v1\" :profile [\"https://www.w3.org/TR/rdf11-concepts/\" \"https://www.w3.org/TR/owl2-profiles/#OWL_2_RL\" \"https://www.w3.org/TR/shacl/\"] :graph [(owl/class :id \"https://example.invalid/unseen/2/日本語😀#Task\") (owl/class :id \"https://example.invalid/unseen/2/日本語😀#Open\" :rdfs/sub-class-of \"https://example.invalid/unseen/2/日本語😀#Task\") (owl/class :id \"https://example.invalid/unseen/2/日本語😀#Done\" :rdfs/sub-class-of \"https://example.invalid/unseen/2/日本語😀#Task\") (owl/datatype-property :id \"https://example.invalid/unseen/2/日本語😀#label\") (shacl/node-shape :id \"https://example.invalid/unseen/2/日本語😀#TaskShape\" :sh/target-class \"https://example.invalid/unseen/2/日本語😀#Task\" :sh/property [(shacl/property-shape :sh/path \"https://example.invalid/unseen/2/日本語😀#label\" :sh/min-count 1 :sh/max-count 1 :sh/datatype \"http://www.w3.org/2001/XMLSchema#string\")])])\n",
+          "kind": "refactor"
+        }
+      ]
+    }
+  ],
+  "condition": "same pinned compiler; warm filesystem/dependencies; bounded process cold start included; no model invocation",
+  "limits": {
+    "planned_measured_tasks": 90,
+    "planned_cache_prewarms": 18,
+    "max_requests_per_process": 3,
+    "automatic_retries": 0
+  },
+  "unmeasured": {
+    "model_generation_seconds": null,
+    "human_review_repair_seconds": null,
+    "invoiced_cost_usd": null
+  },
+  "production_scope": "sequential dynamic workflows <=3; cache and batch controls are not enabled",
+  "implementation_hashes": {
+    "lib/mithril-dynamic.mjs": "4efcff87b3c45948f9e04f90ec21246b4dfeb02d25144e05a452da58cb566037",
+    "lib/mithril-entry.mjs": "a589de8dcb779611174fa35aeec1ec09d94ed4e99be2da266621877dc9df601a",
+    "runtime/mithril-batch.cljk": "1b15a02b5e032d63d9ff2ac23dd7c6dcf1c274a4bb4830b06df29ec783047432",
+    "bench/runtime-reuse.mjs": "ff1f41e49f9d2b78826911105af163d696f5d41eb39b708aeb6b15dc3a82ea41"
+  }
+}

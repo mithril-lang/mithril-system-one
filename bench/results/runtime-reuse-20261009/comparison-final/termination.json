@@ -1,0 +1,13 @@
+{
+  "complete": false,
+  "planned": 90,
+  "observed": 3,
+  "missing": 87,
+  "successes": 3,
+  "termination_exit_code": 1,
+  "diagnostic_log_bytes": 0,
+  "cause": "unknown; harness did not finalize summary",
+  "in_flight_outcome": "unknown",
+  "automatic_task_retries": 0,
+  "next_run": "separate manually initiated comparison-final-2; not a result overwrite"
+}
