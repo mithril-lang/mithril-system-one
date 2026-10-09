@@ -28,7 +28,7 @@
     "ci:local": "node scripts/local-ci.mjs",
     "status": "node bin/system-one.mjs status",
     "setup:dynamic": "npm ci --ignore-scripts && node runtime/setup.mjs && node runtime/setup-module.mjs",
-    "test:dynamic": "node --test test/dynamic-runtime.integration.mjs test/registry-runtime.integration.mjs test/dynamic-session.integration.mjs test/dynamic-session-invalidation.integration.mjs test/dynamic-profile.integration.mjs",
+    "test:dynamic": "node --test test/dynamic-runtime.integration.mjs test/registry-runtime.integration.mjs test/dynamic-session.integration.mjs test/dynamic-session-invalidation.integration.mjs test/dynamic-profile.integration.mjs test/dynamic-rehearsal.integration.mjs",
     "test:security": "node --test test/security-ontology.test.mjs test/security-runtime.integration.mjs",
     "test:public-review": "node --test test/public-code-review.test.mjs test/public-review-runtime.integration.mjs",
     "setup:module": "node runtime/setup-module.mjs",
