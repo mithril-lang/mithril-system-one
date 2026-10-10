@@ -1,8 +1,10 @@
 # Mithril System One Coding
 
-**A Mithril-specific agent harness for short proposals, fast compilation and checked results.**
+**System One Coding — Generate Mithril code, verify its meaning, and iterate through a semantic loop.**
 
 System One Coding turns a bounded model proposal into an inspectable `application.mith`, then runs the actual Mithril compiler and checks its semantic receipts and task contract. The current supported tasks are static reports, dashboards and directories. Hermes, Desktop and Web can use this flow through their existing tools and shared editor.
+
+The agent loop is **Mithril Semantic Loop**; its technical descriptor is **ontology-driven generation and verification**. See the [canonical names and introduction](docs/naming.md).
 
 The product goal is to clear supported Mithril contracts quickly. Evaluation focuses on contract pass rate, time to a checked artifact, proposal size and correct refusal of invalid sources. The package's CLI returns artifacts; saving and publishing use the owning product's workflow.
 

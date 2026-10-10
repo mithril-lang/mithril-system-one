@@ -1,5 +1,7 @@
 # 発信案 — 公開・投稿前の下書き
 
+名称は **System One Coding**、エージェントループは **Mithril Semantic Loop**。英語の基本紹介文は **System One Coding — Generate Mithril code, verify its meaning, and iterate through a semantic loop.** とします。[名称と主張の範囲](../naming.md)。
+
 ## Mithril 特化の位置づけ
 
 System One Coding は Mithril 特化の agent harness。短い提案から `.mith` を組み立て、意味検証・コンパイル・内容チェックを通った成果物を返します。対象は静的レポート・ダッシュボード・ディレクトリです。
