@@ -1,5 +1,7 @@
 # Architecture and integration boundaries
 
+The development method is **System One Coding**, the agent loop is **Mithril Semantic Loop**, and the technical descriptor is **ontology-driven generation and verification**. See [canonical naming](naming.md).
+
 Normal Desktop/Web Chat → owner-bound tool execution → Mithril Code result → shared source editor → explicit recompile → explicit GitHub save / publication.
 
 The core here invokes https://api.mithril.fund/v1/chat/completions and https://app.mithril.fund/api/compile. There is no direct OpenRouter client. Compiler requests do not carry the inference credential; redirects and uncertain retries are refused. The output is admitted only after its expected semantic stages are reported. Browser-reported receipts are not independent signed attestations.
