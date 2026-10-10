@@ -18,7 +18,7 @@ test('real System One compiler → candidate delta → saved Mithril OWL/SHACL r
  try{
   execFileSync('git',['init','-q',repo]);
   const initial=dynamicTaskById('dynamic-repair-inheritance').initial;
-  await writeFile(join(repo,'policy.mith'),initial);await writeFile(join(repo,'notes.txt'),'たまは猫である。\n');
+  await writeFile(join(repo,'policy.mith'),initial);await writeFile(join(repo,'validation.mith'),dynamicTaskById('dynamic-repair-validation').initial);await writeFile(join(repo,'notes.txt'),'たまは猫である。\n');
   const before=await graph({action:'index'});
   const context={target:'policy.mith',request:{operation:'search',query:'Done',limit:5}};
   const result=await executeTask({task_id:'dynamic-repair-inheritance',method:'ontology',codegraph:context},{graph});
@@ -42,6 +42,20 @@ test('real System One compiler → candidate delta → saved Mithril OWL/SHACL r
   // The existing workflow dispatch also passes the optional context end to end.
   const flow=await executeWorkflow({task_ids:['dynamic-repair-inheritance'],method:'ontology',codegraph:[context]},input=>executeTask(input,{graph}));
   assert.equal(flow.row.success,true);assert.equal(flow.tasks[0].codegraph.candidate['conforms?'],true);
+  // Exercise the default workflow entry point: real graph + real reused compiler.
+  const previousRuntime=process.env.MITHRIL_CODEGRAPH_RUNTIME_ROOT,previousRepository=process.env.MITHRIL_CODEGRAPH_REPOSITORY;
+  process.env.MITHRIL_CODEGRAPH_RUNTIME_ROOT=resolve(runtime);process.env.MITHRIL_CODEGRAPH_REPOSITORY=repo;
+  try{
+   const reused=await executeWorkflow({task_ids:['dynamic-repair-inheritance','dynamic-repair-validation'],method:'ontology',codegraph:[context,{...context,target:'validation.mith'}]});
+   assert.equal(reused.row.success,true);assert.equal(reused.row.completed_tasks,2);
+   assert.deepEqual(reused.runtime_reuse,{runtime_processes:1,requests:2,result_cache_hits:0});
+   for(const task of reused.tasks){assert.equal(task.projections.length,11);assert.equal(task.codegraph.candidate['conforms?'],true);assert.equal(task.codegraph.candidate.reasoning.status,'conforms');}
+   assert.notEqual(reused.tasks[0].codegraph.candidate['candidate-path'],reused.tasks[1].codegraph.candidate['candidate-path']);
+   assert.equal(await readFile(join(repo,'policy.mith'),'utf8'),initial);
+  }finally{
+   if(previousRuntime===undefined)delete process.env.MITHRIL_CODEGRAPH_RUNTIME_ROOT;else process.env.MITHRIL_CODEGRAPH_RUNTIME_ROOT=previousRuntime;
+   if(previousRepository===undefined)delete process.env.MITHRIL_CODEGRAPH_REPOSITORY;else process.env.MITHRIL_CODEGRAPH_REPOSITORY=previousRepository;
+  }
   // The actual MCP process routes the configured tool to the same saved graph.
   const child=spawn(process.execPath,['bin/mithril-mcp.mjs'],{env,stdio:['pipe','pipe','pipe']});
   const lines=createInterface({input:child.stdout});const responses=lines[Symbol.asyncIterator]();

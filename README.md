@@ -97,3 +97,47 @@ SCAP/OVAL/XCCDF result ingestion and verified npm upgrade patches are available 
 Security harness 0.5.0 adds exclusive local patch application, explicit journal recovery, strict manifest/lock evidence and SCAP host-scope checks. [Reliability and local CI](docs/security-maturity-0.5.0.md).
 
 Business-process harness 0.6.0 imports bounded non-executable BPMN into Mithril ontology and checks approval bypass, declared principal separation, authorization and audit. Three before/after examples cover payments, access grants and customer-data sharing. [BPMN scope and usage](docs/business-process.md).
+
+Scoped compiler reuse is available for sequential workflows of up to three dynamic
+ontology tasks. Each request still verifies all pinned runtime repositories and
+compiles and reasons from its new input. The process closes at the workflow limit,
+on failure, or on explicit close; there is no result cache or automatic retry.
+Single tasks and mixed workflows retain their existing execution path.
+
+For an opt-in local comparison (no model inference), after `npm run setup:dynamic`:
+
+```sh
+npm run bench:runtime-reuse -- --run-local /tmp/NEW-runtime-comparison
+```
+
+The output directory must be new. The harness freezes the plan before running,
+compares five execution policies across development and separate boundary inputs,
+and saves raw rows, cache prewarm costs, missing attempts, and p50/p95 including
+process startup. Batch and receipt-cache controls are measurement controls only.
+Model generation, human review/repair, and invoiced cost remain unmeasured.
+
+A session's identity binds the parsed runtime classpath configuration, the bytes
+of `runtime/mithril-batch.cljk`, and the bytes of the nbb `runtime/empty.edn` config.
+Every request also verifies the four pinned repositories' HEAD and tracked status.
+A change refuses the session rather than using its already-started worker. This
+contract does not claim independent attestation of every transitive classpath
+library. Timeout is a real 30-second request timer, separate from explicit close.
+
+The four-process policy reads HEAD and tracked status together using Git porcelain
+v2 branch output once per pinned repository. Dirty records, missing/mismatched
+HEAD, duplicate/unknown headers or command failure refuse execution. Untracked
+files are ignored under the same existing contract. `pinChecks:'split'` retains
+the eight-process control; no attestation is cached in either policy.
+
+Local diagnostics can pass `onTiming` to `createDynamicExecutor`. The opt-in worker
+ready handshake separates cold startup from compile/reason wall times; transport,
+JSON handling and scheduler delay remain a residual wait interval. Both startup
+and reply share the original 30-second runtime budget. Receipts remain identical.
+These are elapsed times, not CPU time; default execution does not add timing frames.
+
+`node bench/pin-attestation-pairs.mjs --run-local NEW_DIR` freezes a 24-request
+AB/BA comparison (same six inputs, two rounds, no model/cache). It requires a
+60-second quiet preflight (load1 <=8, load5 <=10 on the current 10-CPU Air), declines
+if unavailable, and stops if load1 exceeds12. This is a small descriptive study;
+background load and repeated same-family tasks still limit confidence. No repeated
+search for favourable timing is automatic. Outputs never overwrite a prior run.
