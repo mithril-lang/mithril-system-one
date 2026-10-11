@@ -18,7 +18,8 @@
     "./scap": "./lib/scap-assessment.mjs",
     "./remediation": "./lib/dependency-remediation.mjs",
     "./business-process": "./lib/business-process.mjs",
-    "./codegraph": "./lib/codegraph.mjs"
+    "./codegraph": "./lib/codegraph.mjs",
+    "./extract": "./lib/polyglot-source.mjs"
   },
   "scripts": {
     "test": "node --test test/*.test.mjs && npm test -w examples/todo",
@@ -40,7 +41,9 @@
     "check:security-release": "npm test && npm run test:python && npm run test:dependencies && npm run test:scap && npm run test:business-process",
     "test:business-process": "node --test test/business-process.integration.mjs",
     "test:codegraph": "node --test test/codegraph.test.mjs test/codegraph.integration.mjs",
-    "bench:runtime-reuse": "node bench/runtime-reuse.mjs"
+    "bench:runtime-reuse": "node bench/runtime-reuse.mjs",
+    "test:extract": "node --test test/polyglot-source.test.mjs",
+    "test:extract:runtime": "node --test test/polyglot-source.integration.mjs"
   },
   "devDependencies": {
     "@playwright/test": "1.63.0"
