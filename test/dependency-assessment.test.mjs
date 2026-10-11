@@ -37,3 +37,47 @@ test('dataset pins preserve independent data; unverified 404 and identity mismat
 });
 
 test('duplicate lockfile keys retain an invalid-inventory gap rather than choosing a version',()=>{const text='{"lockfileVersion":3,"packages":{"node_modules/a":{"version":"1.0.0","\\u0076ersion":"2.0.0"}}}';const r=extractLockedDependencies([{path:'package-lock.json',text,sha256:createHash('sha256').update(text).digest('hex')}]);assert.equal(r.components.length,0);assert.ok(r.gaps.some(g=>g.reason==='invalid_lockfile'));});
+const sha=text=>createHash('sha256').update(text).digest('hex');
+const hash='a'.repeat(64);
+test('go.sum pins module and pseudo versions; h1: and /go.mod lines collapse into one component',()=>{
+ const h1='jmXUvGomnU1o3W/V5h2VEradbpJDwGrzugQQvL0POH4=';
+ const text=['github.com/stretchr/objx v0.5.3 h1:'+h1,'golang.org/x/net v0.0.0-20220101010101-abcdefabcdef/go.mod h1:AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=','github.com/stretchr/objx v0.5.3 h1:'+h1].join('\n');
+ const r=extractLockedDependencies([{path:'go.sum',text,sha256:sha(text)}]);
+ assert.equal(r.components.length,2);
+ const g=r.components.find(c=>c.name==='github.com/stretchr/objx');
+ assert.equal(g.version,'v0.5.3');assert.equal(g.ecosystem,'go');assert.equal(g.evidence.length,2);assert.match(g.purl,/pkg:golang\/github\.com\/stretchr\/objx@0\.5\.3/);
+ const p=r.components.find(c=>c.name==='golang.org/x/net');
+ assert.equal(p.version,'v0.0.0-20220101010101-abcdefabcdef');assert.match(p.purl,/abcdef/);
+});
+test('Cargo.lock pins locked package versions per [[package]] section',()=>{
+ const text='[[package]]\nname = "serde"\nversion = "1.0.100"\nsource = "registry+https://github.com/rust-lang/crates.io-index"\n\n[[package]]\nname = "tokio"\nversion = "1.7.0"\n';
+ const r=extractLockedDependencies([{path:'Cargo.lock',text,sha256:sha(text)}]);
+ assert.equal(r.components.length,2);
+ assert.ok(r.components.some(c=>c.name==='tokio'&&c.version==='1.7.0'&&c.ecosystem==='cargo'&&c.purl==='pkg:cargo/tokio@1.7.0'));
+});
+test('unknown inventory formats and malformed pins stay explicit gaps',()=>{
+ const req='requests==2.31.0\n';
+ assert.ok(extractLockedDependencies([{path:'requirements.txt',text:req,sha256:sha(req)}]).gaps.some(g=>g.reason==='unsupported_inventory_format'));
+ const bad='github.com/x/net v1.2.3.4 '+hash+'\n';
+ const r=extractLockedDependencies([{path:'go.sum',text:bad,sha256:sha(bad)}]);
+ assert.equal(r.components.length,0);assert.ok(r.gaps.some(g=>g.reason==='package_identity_or_version_unknown'));
+});
+test('assessDependencies carries go and cargo components through OSV and the engine without npm assumptions',async()=>{
+ const goRecord={id:'GHSA-gotest-0001',modified:'2026-01-01T00:00:00Z',aliases:['CVE-2026-42424'],affected:[{package:{name:'golang.org/x/net',ecosystem:'Go'},ranges:[{type:'SEMVER',events:[{introduced:'0'},{fixed:'0.7.0'}]}]}]};
+ const cargoRecord={id:'RUSTSEC-2026-0001',modified:'2026-01-01T00:00:00Z',aliases:[],affected:[{package:{name:'tokio',ecosystem:'crates.io'},ranges:[{type:'SEMVER',events:[{introduced:'0'},{fixed:'1.23.1'}]}]}]};
+ const transport=async(url,init)=>{
+  assert.equal(init.redirect,'error');assert.equal(init.headers.Authorization,undefined);
+  if(url.endsWith('/querybatch')){const body=JSON.parse(init.body);return Response.json({results:body.queries.map(q=>({vulns:[{id:q.package.ecosystem==='Go'?goRecord.id:cargoRecord.id,modified:'2026-01-01T00:00:00Z'}]}))});}
+  if(url.includes('/vulns/'))return Response.json(url.includes(goRecord.id)?goRecord:cargoRecord);
+  if(url.endsWith('/manifest.json')){const dataset=url.split('/').at(-2);return Response.json({dataset,name:dataset==='nvd'?'nvd-cve-full':dataset,generatedAt:'2026-01-01T00:00:00Z',files:[{file:dataset+'.json',sha256:sha(dataset)}]});}
+  const dataset=new URL(url).searchParams.get('dataset');return Response.json({dataset,record:dataset==='kev'?{cveID:'CVE-2026-42424'}:dataset==='epss'?{cve:'CVE-2026-42424',epss:'0.2',date:'2026-01-01'}:{id:'CVE-2026-42424'}});
+ };
+ const {assessDependencies}=await import('../lib/dependency-assessment.mjs');
+ const goSum='golang.org/x/net v0.5.0 '+hash+'\n';
+ const cargoLock='[[package]]\nname = "tokio"\nversion = "1.21.0"\n';
+ const r=await assessDependencies([{path:'go.sum',text:goSum,sha256:sha(goSum)},{path:'Cargo.lock',text:cargoLock,sha256:sha(cargoLock)}],{transport});
+ assert.equal(r.inventory.components.length,2);
+ assert.ok(r.findings.some(f=>f.component.ecosystem==='go'&&f.advisory===goRecord.id&&f.cves.includes('CVE-2026-42424')));
+ assert.ok(r.findings.some(f=>f.component.ecosystem==='cargo'&&f.advisory===cargoRecord.id));
+ for(const f of r.findings)assert.equal(f.status,'affected_version_candidate_requires_review');
+});

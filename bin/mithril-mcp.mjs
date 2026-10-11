@@ -3,7 +3,9 @@ import {taskCatalog,taskSchema,workflowSchema,executeTask,executeWorkflow,safeEr
 import {convertSource} from '../lib/source-to-mithril.mjs';
 import {conversionSchema} from '../lib/source-conversion-schema.mjs';
 import {executeCodegraph,codegraphToolSchema} from '../lib/codegraph.mjs';
+import {extractSourceOntology,sourceExtractSchema} from '../lib/polyglot-source.mjs';
 const tools=[
+ {name:'mithril_source_extract',description:'Extract bounded inert polyglot source syntax into Mithril ontology. Pinned offline parser required; no target execution, inference, symbol-resolution proof, files or publication.',inputSchema:sourceExtractSchema,annotations:{readOnlyHint:true,destructiveHint:false,openWorldHint:false}},
  {name:'mithril_codegraph',description:'Explore, index or reason over the owner-configured local repository. Saves private Mithril archives. Explicit rebuild migrates an old index; no source edits or publication.',inputSchema:codegraphToolSchema,annotations:{readOnlyHint:false,destructiveHint:false,openWorldHint:false}},
  {name:'mithril_source_convert',description:'Translate bounded pure JS/TS source AST into executable Mithril and source ontology; compile and exhaustively compare Boolean inputs and dense Boolean arrays of length 0–8. No submitted source execution, inference, files or publication.',inputSchema:conversionSchema,annotations:{readOnlyHint:true,destructiveHint:false,openWorldHint:false}},
  {name:'mithril_task_list',description:'List the nine bounded Mithril coding tasks; no inference or compilation.',inputSchema:{type:'object',properties:{},additionalProperties:false},annotations:{readOnlyHint:true,destructiveHint:false,openWorldHint:false}},
@@ -35,9 +37,10 @@ async function handle(raw){
    if(!args||typeof args!=='object'||Array.isArray(args)||Object.keys(args).length)throw Error('invalid_arguments');
    value={tasks:taskCatalog};
   }else if(name==='mithril_codegraph')value=await executeCodegraph(args);
+  else if(name==='mithril_source_extract')value=extractSourceOntology(args);
   else if(name==='mithril_source_convert')value=await convertSource(args);
   else value=await (name==='mithril_task_run'?executeTask:executeWorkflow)(args);
-  return result({content:[{type:'text',text:JSON.stringify(value)}],structuredContent:value,isError:value.row?.success===false||Boolean(value.status&&value.status!=='conforms')});
+  return result({content:[{type:'text',text:JSON.stringify(value)}],structuredContent:value,isError:value.ok===false||value.row?.success===false||Boolean(value.status&&value.status!=='conforms')});
  }catch(e){return result({content:[{type:'text',text:JSON.stringify({success:false,error:safeError(e),retry:false})}],isError:true});}
 }
 // Bounded newline-delimited MCP stdio. Requests execute sequentially, so one
